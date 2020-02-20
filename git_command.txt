@@ -9,6 +9,6 @@ git push -u origin master
 #####after first commit#######
 
 git add *
-git commit -m "adding day_ files"
-git remote add origin
+git commit -m "adding day2 files"
 git push -u origin master
+
