@@ -1,0 +1,169 @@
+CREATE TABLE country
+(
+country_id INT,
+country_name VARCHAR(15) NOT NULL,
+country_code VARCHAR(10) NOT NULL,
+PRIMARY KEY (country_id)
+);
+
+CREATE TABLE state
+(
+state_id INT PRIMARY KEY,
+state_name VARCHAR(15) NOT NULL,
+state_code VARCHAR(10) NOT NULL,
+country_id INT references country(country_id)
+);
+
+CREATE TABLE city
+(
+city_id INT PRIMARY KEY,
+city_name VARCHAR(15) NOT NULL,
+city_code VARCHAR(10) NOT NULL,
+state_id INT references state(state_id)
+);
+
+
+CREATE TABLE store
+(
+store_id INT PRIMARY KEY,
+store_name VARCHAR(20) NOT NULL,
+city_id INT references city(city_id)
+);
+
+CREATE TABLE product_family
+(
+PF_id INT PRIMARY KEY,
+PF_name VARCHAR(20) NOT NULL
+);
+
+
+
+CREATE TABLE product
+(
+product_id INT PRIMARY KEY,
+product_name VARCHAR(25) NOT NULL,
+product_price NUMBER CHECK(product_price>0),
+PF_id INT references product_family(PF_id)
+);
+
+
+CREATE TABLE customer_detail
+(
+cust_id INT PRIMARY KEY,
+cust_name VARCHAR(15) NOT NULL,
+cust_gender VARCHAR(7) NOT NULL,
+cust_phone NUMBER(10) CHECK(LENGTH(cust_phone)=10),
+cust_email VARCHAR(25),
+cust_dob DATE,
+city_id INT references city(city_id)
+);
+
+
+CREATE TABLE sales
+(
+sales_id INT PRIMARY KEY,
+cust_id INT references customer_detail(cust_id),
+store_id INT references store(store_id),
+product_id INT references product(product_id),
+sales_qty NUMBER,
+pay_mode VARCHAR(10),
+tx_date DATE DEFAULT(SYSDATE)
+);
+
+ALTER TABLE CITY
+DROP COLUMN CITY_CODE;
+
+insert into country values (101, 'INDIA','IN');
+insert into country values (102, 'USA','US');
+
+
+SELECT * FROM COUNTRY;
+
+
+insert into state values(11, 'HARYANA', 'HR', 101);
+insert into state values(12, 'MAHARASHTRA', 'MH', 101);
+insert into state values(21, 'NORTH CAROLINA', 'NC', 102);
+insert into state values(22, 'SAN FRANCISCO', 'SF', 102);
+
+insert into state values(13, 'MADHYAPRADESH', 'MP', 101);
+
+
+SELECT * FROM STATE;
+
+
+
+insert into city values( 301, 'BHOPAL', 13);
+insert into city values( 302, 'DELHI', 11);
+insert into city values( 303, 'PUNE', 12);
+insert into city values( 304, 'CAROLINA', 21);
+insert into city values( 305, 'DALLAS', 22);
+insert into city values( 306, 'NEW YORK', 21);
+
+
+SELECT * FROM CITY;
+
+
+
+insert into store values( 601, 'SHYAM HARDWARE', 301);
+insert into store values( 602, 'CROMA', 304);
+insert into store values( 603, 'DMART', 301);
+insert into store values( 604, 'WESTSIDE', 204);
+insert into store values( 605, 'FLYING MACHINE', 304);
+insert into store values( 606, 'ZARA', 303);
+insert into store values( 607, 'MOCHI', 302);
+insert into store values( 608, 'WALLMART', 306);
+insert into store values( 609, 'JAGUAR', 305);
+insert into store values( 610, 'BATA', 301);
+
+SELECT * FROM CITY;
+
+
+
+insert into product_family values( 701,	'ELECTRONICS');
+insert into product_family values( 702,	'FASHION');
+insert into product_family values( 703,	'HOME NEEDS');
+insert into product_family values( 704,	'AUTOMOBILES');
+
+SELECT * FROM product_family;
+
+insert into product values(2101, 'SHIRT', 3500,	702);
+insert into product values(2869, 'HAND BAG', 6000, 702);
+insert into product values(2348, 'SHOES', 5500, 702);
+insert into product values(4397, 'TSHIRT', 2500, 702);
+insert into product values(8723, 'PANT', 5200, 702);
+insert into product values(7720, 'TRIMMER', 6000, 701);
+insert into product values(4328, 'SHOES', 12000, 702);
+insert into product values(4323, 'CAR',	5000000, 704);
+insert into product values(2750, 'CHEESE', 250, 703);
+insert into product values(7390, 'LED TV', 80000, 701);
+
+
+SELECT * FROM product;
+
+
+insert into customer_detail values( 1011, 'SHAILENDRA', 'MALE', 8770065751,	'shailendran70@gmail.com', '21-AUG-96',	301);
+insert into customer_detail values( 1012, 'SHAILI', 'MALE',	9685132999,	'shaili@gmail.com', '22-JUL-96', 305);
+insert into customer_detail values( 1013,  'RAJ', 'MALE',	9865768356,	'raj@gmail.com', '23-MAR-94', 304);
+insert into customer_detail values( 1014, 'ILA', 'MALE', 8403857508,	'illa@gmail.com', '24-AUG-96', 302);
+insert into customer_detail values( 1015, 'NIKITA', 'FEMALE', 9736485764,	'nikita@gmail.com', '25-MAY-96', 305);
+insert into customer_detail values( 1016, 'SONY', 'FEMALE', 8643256789,	'sony@gmail.com', '26-MaR-97', 302);
+insert into customer_detail values( 1017, 'TUSHAR', 'MALE', 8759875789,	'tushar@gmail.com', '27-OCT-91', 303);
+insert into customer_detail values( 1018, 'ARCHNA', 'FEMALE', 9354758976,	'archna@gmail.com', '28-JAN-92', 301);
+insert into customer_detail values( 1019, 'GAURAV', 'MALE', 9254755638,	'gaurav@gmail.com', '29-DEC-90', 306);
+insert into customer_detail values( 1020, 'YADAV', 'MALE', 8776655443,	'yadav@gmail.com', '30-FEB-198', 304);
+
+SELECT * FROM customer_detail;
+
+
+insert into sales values( 1202,	1014,	604,	2101,	6,	'CASH',	'31-FEB-2020');
+insert into sales values( 1203,	1017,	603,	7720,	8,	'CASH',	'01-FEB-2020');
+insert into sales values( 1204,	1011,	607,	4323,	2,	'CHEQUE',	'02-FEB-2020');
+insert into sales values( 1205,	1019,	604,	4397,	2,	'CASH',	'03-FEB-2020');
+insert into sales values( 1206,	1015,	610,	2348,	1,	'CHEQUE',	'04-FEB-2020');
+insert into sales values( 1207,	1013,	606,	2869,	4,	'CASH',	'05-FEB-2020');
+insert into sales values( 1208,	1018,	606,	4323,	3,	'CHEQUE',	'06-FEB-2020');
+insert into sales values( 1209,	1020,	606,	2869,	2,	'CASH',	'07-FEB-2020');
+insert into sales values( 1210,	1012,	602,	7390,	7,	'CHEQUE',	'08-FEB-2020');
+insert into sales values( 1211,	1016,	607,	4328,	2,	'CHEQUE',	'09-FEB-2020');
+
+SELECT * FROM SALES;
