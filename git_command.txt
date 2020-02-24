@@ -9,6 +9,6 @@ git push -u origin master
 #####after first commit#######
 
 git add *
-git commit -m "adding day2 files"
+git commit -m "assignment files"
 git push -u origin master
 
