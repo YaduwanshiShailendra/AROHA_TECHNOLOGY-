@@ -184,7 +184,9 @@ ORDER BY COUNT(B.B_NAME) DESC;
 
 --10. Display the city name population no. of branches in each city.
 
-SELECT C.CITY_NAME, B_POPULAION COUNT(B.B_NAME)
+SELECT * FROM CITY1;
+
+SELECT C.CITY_NAME, SUM(C.CITY_POPULATION), COUNT(B.B_NAME)
 FROM CITY1 C, BRANCH B
 WHERE C.CITY_ID = B.CITY_ID
 GROUP BY C.CITY_NAME;
@@ -320,7 +322,7 @@ WHERE SPECIALTY=(SELECT SPECIALTY
                 WHERE FNAME='tim') AND FNAME NOT IN ('tim');
 
 --6. Find out the number of cases monthly wise for the current year
-    
+
 SELECT COUNT(PAT_ID), TO_CHAR(ADMISSION_DATE,'mon') FROM CASE
 WHERE TO_CHAR(ADMISSION_DATE,'yyyy')= TO_CHAR(SYSDATE,'yyyy') 
 GROUP BY TO_CHAR(ADMISSION_DATE,'mon');
@@ -336,7 +338,7 @@ WHERE DOC_ID NOT IN(SELECT DOC_ID
 
 --8. Display Doctor Name, Patient Name, Diagnosis for all the admissions which happened on 1st of Jan this year
 
-SELECT D.FNAME AS DOC_NAME,P.FNAME AS PAT_NAME,C.DIAGNOSIS
+SELECT D.FNAME AS DOC_NAME, P.FNAME AS PAT_NAME, C.DIAGNOSIS
 FROM CASE C INNER JOIN PATIENT P
 ON P.PAT_ID=C.PAT_ID JOIN DOCTOR D
 ON D.DOC_ID=C.DOC_ID
@@ -344,7 +346,7 @@ WHERE TRUNC( ADMISSION_DATE,'yyyy')=TRUNC(SYSDATE,'yyyy');
 
 --9.	Display Doctor Name, patient count based on the cases registered in the hospital.
 
-SELECT D.FNAME,COUNT(C.PAT_ID)
+SELECT D.FNAME, COUNT(C.PAT_ID)
 FROM DOCTOR D INNER JOIN CASE C
 ON D.DOC_ID=C.DOC_ID
 GROUP BY D.FNAME
@@ -352,6 +354,6 @@ ORDER BY D.FNAME DESC;
 
 --10.	Display the Patient_name, phone, insurance company, insurance code (first 3 characters of insurance company)
 
-SELECT FNAME,PHONE,INS_COMP,SUBSTR(INS_COMP,1,3)  INSURANCE_CODE
+SELECT FNAME, PHONE, INS_COMP, SUBSTR(INS_COMP,1,3) INSURANCE_CODE
 FROM PATIENT;
 
