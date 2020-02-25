@@ -2,65 +2,66 @@
 --                       TODYAS EXCERCISE 25-Feb-2020
 --###########################################################################--
 
-1. Display the city name wise number of customer.
+--1. Display the city name wise number of customer.
 
 SELECT CT.CITY_NAME, COUNT(CU.CUST_NAME) AS CUSTOMER_NO
 FROM CITY CT INNER JOIN CUST CU
 ON CT.CITY_ID = C.CITY_ID
 GROUP BY CT.CITY_NAME;
 
-2. Display all the product name which was launched on the previous year.
+--2. Display all the product name which was launched on the previous year.
 
 SELECT PRODUCT_NAME
 FROM PRODUCT
 WHERE TO_CHAR(LAUNCH_DATE, 'YYYY') = TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE, 'YYYY'),-1), 'YYYY');
 
-3. Display the product name that were launched on the sunday.
+--3. Display the product name that were launched on the sunday.
 
 SELECT PRODUCT_NAME
 FROM PRODUCT
-WHERE TO_CHAR(LAUNCH_DATE, 'DY') = 'Sun';
+WHERE TO_CHAR(LAUNCH_DATE, 'DY') = 'SUN';
 
 		or
 
 SELECT PRODUCT_NAME
 FROM PRODUCT
-WHERE TO_CHAR(LAUNCH_DATE, 'DAY') = 'Sunday   ';
+WHERE TO_CHAR(LAUNCH_DATE, 'DAY') = 'SUNDAY   ';
 
-4. Display the customers who are from bangalore.
+--4. Display the customers who are from bangalore.
 
 SELECT C.CUST_NAME
 FROM CUST C INNER JOIN CITY CT
 ON CT.CITY_ID = C.CITY_ID
 WHERE C.CUST_NAME = 'bangalore';
 
-5. Display all the customers who on boarded in the last month.
+--5. Display all the customers who on boarded in the last month.
 
 SELECT CUST_NAME
 FROM CUST
 WHERE TO_CHAR(JOIN_DATE, 'MM-YY') = TO_CHAR(ADD_MONTHS(SYSDATE,-1), 'MM-YY'); 
 
-6. Display the customer name wise no. of sales.
+--6. Display the customer name wise no. of sales.
 
 SELECT C.CUST_NAME, S.COUNT(SALES)
 FROM CUST C INNER JOIN SALES S
 ON C.CUST_ID = S.CUST_ID
 GROUP BY C.CUST_NAME;
 
-7. Display the customer who have their birthday in the current month.
+--7. Display the customer who have their birthday in the current month.
 
 SELECT CUST_NAME
 FROM CUST
 WHERE TO_CHAR(DOB, 'MONTH') = TO_CHAR(SYSDATE, 'MONTH');
 
-8. Display the city name that have more then 10 customer.
+--8. Display the city name that have more then 10 customer.
 
 SELECT CT.CITY_NAME
 FROM CITY CT INNER JOIN CUST C
+ON CT.CITY_ID = C.CITY_ID
 GROUP BY CT.CITY_NAME
 HAVING COUNT(CT.CUST_NAME) > 10;
 
-9. Display the city names that have more no. of customer then city 'pune'.
+--9. Display the city names that have more no. of customer then city 'pune'.
 
 SELECT CT.CITY_NAME
 FROM CITY CT INNER JOIN CUST C
@@ -71,7 +72,7 @@ HAVING COUNT(CT.CUST_NAME) > (SELECT CT.COUNT(CUST_NAME)
 							  ON CT.CITY_ID = C.CITY_ID 
 							  WHERE CT.CITY_NAME = 'pune');
 
-10. Display the cities that have more than five customer whose age is byond 60.
+--10. Display the cities that have more than five customer whose age is byond 60.
 
 SELECT CT.CITY_NAME
 FROM CITY CT INNER JOIN CUST C
@@ -80,9 +81,9 @@ WHERE MONTH_BETWEEN((SYSDATE, C.DOB)/12)>60
 GROUP BY CT.CITY_NAME
 HAVING COUNT(CT.CUST_NAME) > 5;
 
-11. Display the youngest customer name.
+--11. Display the youngest customer name.
 
 SELECT CUTS_NAME
 FROM CUST
-WHERE DOB = (SELECT MIN(DOB)
+WHERE DOB = (SELECT MAX(DOB)
 			 FROM CUST);
