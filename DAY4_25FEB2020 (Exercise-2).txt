@@ -1,0 +1,9 @@
+--###########################################################################--
+--                       TODYAS EXCERCISE-2 25-Feb-2020
+--###########################################################################--
+
+
+SELECT SUBSTR(cust_email,1,INSTR(cust_email,'@')-1) AS USER_NAME,
+SUBSTR(cust_email,INSTR(cust_email,'@')+1,INSTR(cust_email,'.')-INSTR(cust_email,'@')-1) AS DOMAIN_NAME,
+SUBSTR(cust_email,INSTR(cust_email,'.')) AS EXTENSION
+FROM customer_detail;
