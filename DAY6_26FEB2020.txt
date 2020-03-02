@@ -1,0 +1,269 @@
+################################################################
+----------------------------------------------------------------------------------------------------
+-------------------------------------ON DELETE SET NULL-----------------------------------------------
+           
+CREATE TABLE COUN(
+C_ID NUMBER PRIMARY KEY,
+C_NAME VARCHAR2(20)
+);
+
+INSERT ALL
+INTO COUN VALUES(1,'INDIA')
+INTO COUN VALUES(2,'USA')
+SELECT * FROM DUAL;
+
+CREATE TABLE STATE1(
+S_ID NUMBER PRIMARY KEY,
+S_NAME VARCHAR2(20),
+C_ID REFERENCES COUN(C_ID) ON DELETE SET NULL);
+
+INSERT ALL
+INTO STATE1 VALUES(10,'UP',1) 
+INTO STATE1 VALUES(11,'NY',2) 
+INTO STATE1 VALUES(12,'KARNATAKA',1) 
+INTO STATE1 VALUES(13,'LOSANGELES',2) 
+INTO STATE1 VALUES(14,'HARYANA',1) 
+SELECT * FROM DUAL;
+
+CREATE  TABLE CITY1(
+C_ID NUMBER PRIMARY KEY,
+C_NAME VARCHAR2(30),
+S_ID REFERENCES STATE1(S_ID) ON DELETE SET NULL);
+
+
+INSERT ALL
+INTO CITY1 VALUES(100,'GZB',10)
+INTO CITY1 VALUES(101,'BLR',12)
+INTO CITY1 VALUES(102,'LACITY',13)
+INTO CITY1 VALUES(103,'MORADABAD',10)
+INTO CITY1 VALUES(104,'GURGAON',14)
+INTO CITY1 VALUES(105,'NOIDA',10)
+SELECT * FROM DUAL;
+           
+           
+ SELECT * FROM COUN;
+ SELECT * FROM STATE1;
+ SELECT * FROM CITY1;
+
+
+DELETE FROM COUN
+WHERE C_ID=1;
+
+SAVEPOINT COUN;
+ROLLBACK COUN;
+
+-----------------------------------------------------------------------------------------------------
+-------------------------------------ON DELETE CASCADE-----------------------------------------------
+CREATE TABLE COUN1(
+C_ID NUMBER PRIMARY KEY,
+C_NAME VARCHAR2(20)
+);
+
+INSERT ALL
+INTO COUN1 VALUES(1,'INDIA')
+INTO COUN1 VALUES(2,'USA')
+SELECT * FROM DUAL;
+
+CREATE TABLE STATE2(
+S_ID NUMBER PRIMARY KEY,
+S_NAME VARCHAR2(20),
+C_ID REFERENCES COUN1(C_ID) ON DELETE CASCADE);
+
+INSERT ALL
+INTO STATE2 VALUES(10,'UP',1) 
+INTO STATE2 VALUES(11,'NY',2) 
+INTO STATE2 VALUES(12,'KARNATAKA',1) 
+INTO STATE2 VALUES(13,'LOSANGELES',2) 
+INTO STATE2 VALUES(14,'HARYANA',1) 
+SELECT * FROM DUAL;
+
+CREATE  TABLE CITY2(
+C_ID NUMBER PRIMARY KEY,
+C_NAME VARCHAR2(30),
+S_ID REFERENCES STATE2(S_ID) ON DELETE CASCADE);
+
+
+INSERT ALL
+INTO CITY2 VALUES(100,'GZB',10)
+INTO CITY2 VALUES(101,'BLR',12)
+INTO CITY2 VALUES(102,'LACITY',11)
+INTO CITY2 VALUES(103,'MORADABAD',10)
+INTO CITY2 VALUES(104,'GURGAON',14)
+INTO CITY2 VALUES(105,'NOIDA',10)
+SELECT * FROM DUAL;
+
+
+
+SELECT * FROM COUN1;
+SELECT * FROM STATE2;
+SELECT * FROM CITY2;
+           
+DELETE FROM COUN1
+WHERE C_ID=1;
+
+DELETE FROM STATE2
+WHERE S_ID=10;
+
+ROLLBACK;
+
+SAVEPOINT STATE2;
+
+DROP TABLE CITY2;
+
+
+
+ROLLBACK STATE2;
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+----------------------------------CUSTOMER-CIY MODEL----------------------------------------------------
+/*SELECT * FROM CUSTOMER;
+SELECT * FROM CITY;
+SELECT * FROM STATE;
+SELECT * FROM STATE1;*/
+
+1.Display the customer names who are from 'BENGALURU'.
+
+SELECT CUST_NAME 
+FROM CUSTOMER
+WHERE CITY_ID = (SELECT CITY_ID
+              FROM CITY
+			  WHERE CITY_NAME='BENGALURU');
+			  
+2.Display the state wise no of cities and no of customers.
+
+SELECT S_NAME ,COUNT(CITY_ID),COUNT(CUST_ID)
+FROM STATE S,CITY C,CUSTOMER CUST
+WHERE S.S_ID=C.S_ID
+AND C.C_ID=CUST.C_ID
+GROUP BY S_NAME;
+
+3.Display the customer name wise no. of sales.
+
+SELECT CUST_NAME,COUNT(SALES_ID)
+FROM CUSTOM C,SALES S
+WHERE C.CUST_ID=S.CUST_ID
+GROUP BY CUST_NAME;
+
+
+4.Display the products that were never sold.
+
+SELECT PROD_NAME
+FROM PRODUCT
+WHERE PROD_ID NOT IN (SELECT PROD_ID
+                      FROM SALES);
+					  
+5.Display the cities that have more than 10 customers.
+
+ SELECT CITY,COUNT(CUST_ID)
+FROM CUSTOMER C,SALES SALES
+WHERE C.CUST_ID=S.CUST_ID
+GROUP BY CITY
+HAVING COUNT(CUST_ID)>10; 
+
+6.Display the youngest customer name.
+
+ SELECT CUST_NAME 
+ FROM CUSTOMER2
+ WHERE DOB=(SELECT MAX(DOB)
+            FROM CUSTOMER2);
+			
+7.Display the oldest customer in each city.
+
+SELECT CITY_NAME, CUST_NAME 
+FROM CITY
+WHERE DOB = (SELECT MIN(DOB) 
+                 FROM CUSTOMER2)
+GROUP BY CITY_NAME);
+
+8.Display product name whose price is more than 4000 and less than 6000.
+
+SELECT * FROM PRODUCT;
+SELECT PROD_NAME 
+FROM PRODUCT
+WHERE PROD_PRICE>4000 AND PROD_PRICE<6000;
+
+9.Display state name wise no. of male and female customers.
+
+SELECT S_NAME,COUNT(CASE WHEN GENDER='M' THEN 1 END),
+COUNT(CASE WHEN GENDER='F' THEN 1 END)
+FROM STATE1 S,CITY C,CUSTOMER CUST
+WHERE S.STATE_ID=C.STATE_ID
+AND C.CITY_ID=CUST.CITY_ID
+GROUP BY S.S_NAME;
+
+
+
+
+10.Display state that have more than 5 cities and more than 30 customers.
+/*SELECT * FROM STATE;
+SELECT * FROM STATE1;*/
+SELECT S_NAME
+FROM STATE1 S
+WHERE S_ID = (SELECT S_ID 
+              FROM CITY1 
+			  WHERE C_ID IN (SELECT C_ID 
+			                  FROM CITY1
+							  GROUP BY C_ID
+			             HAVING COUNT(C_ID)>5)
+			  
+AND
+C_ID IN (SELECT C_ID
+            FROM CUSTOMER 
+		   GROUP BY CUST_ID
+		   HAVING COUNT(CUST_ID)>30));
+
+11.Display products that were not sold in the previous year.
+
+SELECT PROD_NAME
+ FROM PRODUCT P,SALES S
+  WHERE P.PROD_ID=S.PROD_ID
+  AND TO_CHAR(SALES_DATE,'YYYY')!=TO_CHAR((SYSDATE,'YYYY')-1,'YYYY');
+  
+  12.Display city names that have more female customers.
+  
+  SELECT CITY_NAME 
+  FROM CITY
+  WHERE C_ID IN (SELECT C_ID 
+                 FROM CUSTOMER
+				 WHERE CUST_ID =(SELECT MAX(COUNT(CUST_ID)
+				                FROM CUSTOMER
+								WHERE GENDER='F'));
+								
+13.Extract Domain name from email.
+        TIM@GMAIL.COM
+
+SELECT SUBSTR(EMAIL,INSTR(EMAIL,'@')+1,INSTR(EMAIL,'.')-INSTR(EMAIL,'@')-1) AS Domain
+FROM CUSTOMER1;
+
+SELECT * FROM CUSTOMER1;
+
+14.Display state wise youngest customer.
+
+SELECT CUST_NAME 
+FROM CUSTOMER
+WHERE DOB=(SELECT MAX(DOB)
+           FROM CUSTOMER
+		   WHERE C_ID=(SELECT C_ID
+		               FROM CITY
+					   WHERE S_ID =(SELECT S_ID 
+					                FROM STATE
+					                GROUP BY S_NAME)));
+					 
+					 
+15.Difference between DELETE & TRUNCATE.
+
+DELETE:- A DML Statement |
+       -CAN PERFORM ROLLBACK AFTER PERFORMING DELETE | 
+	   -CAN USE WHERE CLAUSE | 
+	   -DELETE REMOVES CONDITIONALLY ACC. TO WHERE CLAUSE
+TRUNCATE: -A DDL Statement | 
+         -CANNOT PERFORM ROLLBACK AFTER TRUNCATE | 
+		 -CANNOT USE WHERE CLAUSE |
+		 -IT ALWAYS REMOVES ALL THE ROWS FROM THE TABLE
+

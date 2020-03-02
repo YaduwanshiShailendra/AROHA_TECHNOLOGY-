@@ -94,7 +94,7 @@ CREATE TABLE CATEGORIES
 CATEGORY_ID		NUMBER(3) PRIMARY KEY,
 CATEGORY_NAME	VARCHAR(20)
 );
- 
+
 INSERT ALL
     INTO CATEGORIES VALUES(111,'Paranormal Romance')
     INTO CATEGORIES VALUES(112,'Prayer')
@@ -106,8 +106,6 @@ INSERT ALL
     INTO CATEGORIES VALUES(118,'Fantasy')
 SELECT * FROM DUAL;
 
-drop table book_details;
-
 
 CREATE TABLE BOOK_DETAILS(
 BD_ID NUMBER(3) PRIMARY KEY,
@@ -115,8 +113,6 @@ BOOK_ID NUMBER(3) REFERENCES BOOK(BOOK_ID),
 AU_ID NUMBER(4) REFERENCES AUTHOR(AU_ID) ,
 CATEGORY_ID NUMBER(3) REFERENCES CATEGORIES(CATEGORY_ID));
   
-DROP TABLE BOOK_DETAILS;
-
 INSERT ALL
     INTO BOOK_DETAILS VALUES(1,100,1000,116)
     INTO BOOK_DETAILS VALUES(2,101,1002,117)
@@ -166,10 +162,22 @@ COMMIT;
 
 
 
+
+
+drop table BOOK_ISSUE;
+drop table BOOK_DETAILS;
+drop table AUTHOR;
+drop table BOOK;
+drop table BOOK_LOAN;
+drop table USER1;
+
+
 --Questions
 
---1. Write a query to display users who have books under category fantasy and author is not chetan bhagat.
-SELECT U_NAME 
+Questions
+
+1. Write a query to display users who have books under category fantasy and author is not chetan bhagat.
+  SELECT U_NAME 
   FROM USER1
   WHERE USER_ID =(SELECT USER_ID
                   FROM BOOK_ISSUE
@@ -184,79 +192,229 @@ SELECT U_NAME
 													  AU_ID<>(SELECT AU_ID
 															  FROM AUTHOR		
 															  WHERE AU_NAME='CHETAN BHAGAT')));
+															  
+  
 
---2. Write a query to modify the column name user_address to user_city.
+2. Write a query to modify the column name user_address to user_city.
+ ALTER TABLE USER1 
+RENAME U_ADDRESS TO U_CITY; 
 
-ALTER TABLE USER1 
-RENAME COLUMN U_ADDRESS TO U_CITY; 
-
---3. Write a query to display user name and maximum number of books in each category.
+3. Write a query to display user name and number of books in each category.
 
 SELECT U.U_NAME,COUNT(BD.BD_ID)
 FROM USER1 U INNER JOIN BOOK_ISSUE BI
-ON U.USER_ID=BI.USER_ID INNER JOIN BOOK_DETAILS BD
+ON U.USER_ID=BI.USER_ID INNER JOIN BOOK_DETAIL BD
 ON BI.BD_ID=BD.BD_ID
 GROUP BY U.U_NAME,BD.CATEGORY_ID;
 
---4. Write a query to display the youngest user who has books from the horror category.
+4. Write a query to display the youngest user who has books from the horror category.
  SELECT U_NAME 
- FROM USER1 U ,BOOK_ISSUE BI,BOOK_DETAILS BD
+ FROM USER1 ,BOOK_ISSUE BI,BOOK_DETAILS BD
  WHERE 	U.USER_ID=BI.USER_ID 
  AND 	BI.BD_ID=BD.BD_ID
  AND 	U.DOB IN (SELECT MAX(DOB) 
 				  FROM USER1)
  AND	BD.CATEGORY_ID=(SELECT CATEGORY_ID 
 						FROM CATEGORIES
-						WHERE CATEGORY_NAME='HORROR');
---5. Write a query to the user whose returned date was in the previous year and author name is 'JK Rowling'.
+						WHERE CATEGORY_NAME='HORROR'));
+ 
 
- SELECT U.U_NAME 
+5. Write a query to display the user who returned jk rowling's book last year.
+
+ SELECT U_NAME 
  FROM USER1 U,BOOK_ISSUE BI,BOOK_DETAILS BD
  WHERE U.USER_ID=BI.USER_ID
  
  AND	 BI.BD_ID=BD.BD_ID
  
- AND	 BI.BL_ID IN (SELECT BL_ID
+ AND	 BL_ID IN (SELECT BL_ID
 					FROM BOOK_LOAN
 					WHERE TO_CHAR(BOOK_RDATE,'YY')=TO_CHAR(ADD_MONTHS(SYSDATE,-12),'YY'))
 					
  AND 
 
- BI.BD_ID IN (SELECT BD_ID
+ BD_ID IN (SELECT BD_ID
 		  FROM BOOK_DETAILS
 		  WHERE AU_ID=(SELECT AU_ID
 						FROM AUTHOR	
 						WHERE AU_NAME='JK ROWLING'));
---6. Write a query to display the book name which was issued in the previous month, but not in the current month staying in the same city.
+
+
+
+6. Write a query to display the book name which was issued in the previous month, but not in the current month.
+
 SELECT BOOK_TITLE 
 FROM BOOK B,BOOK_ISSUE BI,BOOK_DETAILS BD
-WHERE B.BOOK_ID=BD.BOOK_ID 
+WHERE B.BOOK_ID=BI.BOOK_ID 
 AND 	BI.BD_ID=BD.BD_ID
 
 AND
 BL_ID IN (SELECT BL_ID
            FROM BOOK_LOAN
-		    WHERE TO_CHAR(BOOKISUUE_DATE,'MM-YY')=TO_CHAR(ADD_MONTHS(SYSDATE,-1),'MM-YY'))
+		    WHERE TO_CHAR(BOOKISUUE_DATE,'MM-YY')=TO_CHAR(ADD_MONTHS(SYSDATE,-1),'MM-YY')
 			
 			AND
 			
 			BL_ID NOT IN(SELECT BL_ID
 			             FROM BOOK_LOAN
 						 WHERE TO_CHAR(BOOKISUUE_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY'));
---7. Write a query to update the phone no. whose phone no. starting with 91 and belongs to USA then change it to 11.
 
---8. Write a query to display user name author wise.
---9. Write a query to display books name category wise which is more than 3.
---10. Write a query to display books which are issued in the month before previous month and issued at least twice.
---11. Write a query to update username whose name and user_name of email_id doesn't match and replace the name with user_name from email.
---12. Write a query to display all the users who have a birthday in the 4th week of month and the issued book category is ’horror’.
---13. Write a query to display users who have similar interests but it should be in sorted interest wise.
---14. Write a query to display books whose publish date is within the previous 2 years and author name is 'BARACK OBAMA'.
---15. Write a query to display books which were published before ‘THE FUTURE’ and after ‘ESCAPE PLAN’.
---16. Write a query to display user name and number of books in category.
---17. Display the author_name who has his books present in more than one category.
---18. Write a query to update the age column in the user table and update age of all.
---19. Write a query to display book names who published year before last year and have the users present in both USA  or INDIA and have the author ‘STEPHEN HAWKING’ or ‘CHETAN BHAGAT’.
+	
+7. Write a query to update the phone no. Whose having 91 from the phone no in starting
+
+8. Write a query to display user name author wise.
+ select u.u_name 
+from user1 u,book_issue bi,book_details bd  ,author a
+where u.user_id=bi.user_id
+
+and     bi.bd_id=bd.bd_id
+
+and bd.au_id=a.au_id
+
+group by  bd.bd_id,u.u_name;
+
+
+9. Write a query to display books name category wise which is more than 3.
+	select book_name 
+from book b, book_details bd,book_issue bi
+where b.book_id=bd.book_id
+and bd.bd_id=bi.bd_id
+and group by(book_id)
+having count(bi_id)>3;
+
+
+10. Write a query to display books which are issued in the month before previous month and issued at least twice.
+	select book_name
+from book b
+where book_id in (select book_id        
+              from book_detail
+              where bd_id in(select bd_id
+                             from book_issue
+                             where bl_id in(select bl_id
+                                            from book_load
+                                            where to_char(bookissue_date)=tochar(add_months(sysdate,-2),'mm-yy'))))
+                                            
+group by book_id
+having count(book_id)>=2;
+
+
+11. Write a query to update username whose name and user_name of email_id doesn't match and replace the name with user_name from email.
+update table user u2
+set u_name=( select substr(email,1,instr(email,'@')-1)
+             from user u1
+             where u1.user_id=(select user_id
+                               from user
+                               where u_name<> substr(email,1,instr(email,'@')-1))
+                               
+             and u1.user_id=u2.user_id);
+
+12. Write a query to display all the users who have a birthday in the 4th week of month and the issued book category is ’horror’.
+select user_name
+from user1 u,book_issue bi,book_detail bd
+where u.user_id=bi.user_id 
+and  bi.bd_id=bd.bd_detail
+and
+bd.catogery_id=(select category_id
+                from category
+                where category_name='horror')
+and
+to_char(dob,'w')=4;
+
+
+
+13. Write a query to display users who have similar interests but it should be in sorted interest wise.
+
+14. Write a query to display books whose publish date is within the previous 2 years and author name is 'BARACK OBAMA'.
+
+15. Write a query to display books which were published before ‘THE FUTURE’ and after ‘ESCAPE PLAN’.
+
+SELECT  BOOK_TITLE 
+FROM BOOK B1
+WHERE DATE_OF_PUBLICATION<(SELECT DATE_OF_PUBLICATION
+                            FROM BOOK B2
+							WHERE BOOK_TITLE='THE FUTURE')
+	AND
+	DATE_OF_PUBLICATION>(SELECT DATE_OF_PUBLICATION
+                            FROM BOOK B3
+							WHERE BOOK_TITLE='ESCAPE PLAN');
+
+
+
+16. Write a query to display user name and number of books in category.
+
+17. Display the author_name who has his books present in more than one category.
+
+
+18. Write a query to update the age column in the user table and update age of all.
+SELECT * FROM USER1;
+ALTER TABLE USER1
+ADD AGE NUMBER(3);
+
+UPDATE USER1 U1 SET AGE =(SELECT MONTHS_BETWEEN(SYSDATE,DOB)/12 
+                        FROM USER1 U2
+                        WHERE U1.USER_ID=U2.USER_ID);
+
+
+
+19. Write a query to display book names who were published year before last year and have the users present in both USA  or INDIA and have the author ‘STEPHEN HAWKING’ or ‘CHETAN BHAGAT’.
+
+SELECT B.BOOK_TITLE
+FROM BOOK B,BOOK_ISSUE BI,BOOK_DETAILS BD
+WHERE BI.BD_ID=BD.BD_ID
+AND	 BI.BD_ID=BD.BD_ID
+
+AND BI.BD_ID IN (SELECT BD_ID
+              FROM BOOK_DETAILS
+			  WHERE AU_ID IN (SELECT AU_ID
+			                  FROM AUTHOR
+							  WHERE AU_NAME IN ('STEPHEN HAWKING','CHETAN BHAGAT')
+	AND
+BI.USER_ID IN (SELECT USER_ID
+               FROM USER1
+               WHERE COUNTRY IN ('INDIA','USA')
+AND
+BD.BOOK_ID IN (SELECT BOOK_ID
+            FROM BOOK
+            WHERE TO_CHAR(DATE_OF_PUBLICATION,'YY')=TO_CHAR(ADD_MONTHS(SYSDATE,-24),'YY')))));			
+
+
+
+
 --20. Write a query to display user names who have more than two vowels in their name as well as book names.
+SELECT DISTINCT U.U_NAME
+FROM USER1 U,BOOK_ISSUE BI,BOOK_DETAILS BD
+WHERE U.USER_ID=BI.USER_ID
+AND  BI.BD_ID=BD.BD_ID
+AND BD.BD_ID IN(SELECT BD_ID
+              FROM BOOK_DETAILS
+			  WHERE BOOK_ID IN (SELECT BOOK_ID
+                                FROM BOOK
+                                WHERE BOOK_TITLE));
+                                
+                                 
+                                instr(BOOK_TITLE,(lower(substr(BOOK_TITLE,1,length(BOOK_TITLE)) in ('a','e','i','o','u')),2)>0;
+                                
+
 --21.WQTD the user name who has studied from all categories of books.
+SELECT DISTINCT U.U_NAME
+FROM USER1 U,BOOK_ISSUE BI,BOOK_DETAILS BD
+WHERE U.USER_ID=BI.USER_ID
+AND  BI.BD_ID=BD.BD_ID
+AND BD.BD_ID IN(SELECT BD_ID
+              FROM BOOK_DETAILS
+			  WHERE CATEGORY_ID IN (SELECT CATEGORY_ID
+			                           FROM CATEGORIES));
+
+
+
 --22. Write a query to display the category name which book does not have a publication date.
+SELECT DISTINCT CATEGORY_NAME 
+FROM CATEGORIES C,BOOK_DETAILS BD
+WHERE C.CATEGORY_ID=BD.CATEGORY_ID
+AND	BOOK_ID IN (SELECT BOOK_ID
+                FROM BOOK
+				WHERE DATE_OF_PUBLICATION IS NULL);
+
+
+
+
