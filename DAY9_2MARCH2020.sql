@@ -164,7 +164,10 @@ select * from dual;
 
 
 --1.	Identify the relationships between each table.
-
+--ANS
+--author, book_author  ----> 1:M
+--BOOK, BOOK)AUTHOR    ----> 1:M
+--PUBLISHER, BOOK      ----> 1:M
 
 
 --2.	Query to get the number of books by each publisher.
@@ -213,33 +216,39 @@ WHERE AU_DOB>(SELECT AU_DOB FROM AUTHOR
 
 SELECT AU_F_NAME, AU_ID
 FROM AUTHOR1
-WHERE MONTHS_BETWEEN(SYSDATE,AU_DOB)>(select MONTHS_BETWEEN(SYSDATE,AU_DOB) from author1 WHERE AU_F_NAME ='RAM KUMAR'); 
+WHERE MONTHS_BETWEEN(SYSDATE,AU_DOB)>(SELECT MONTHS_BETWEEN(SYSDATE,AU_DOB) FROM AUTHOR1 WHERE AU_F_NAME ='RAM KUMAR'); 
 
 
 --8.	Display the publisher name, author_name and no of books they wrote.
-select pub_nm
-from (select p.pub_nm, a.au_f_name 
-        from publisher p, book b, book_author ba, author1 a
-        where p.pub_id=b.pub_id 
-        and b.book_id=ba.book_id
-        and ba.au_id=a.au_id) a,
-        (selec a.au_f_name, count(bk_au_id)
-        from author1 a, book_author ba
-        where a.au_id=ba.au_id(+)
-        group by au_f_name) b
-where a.au_f_name=b.au_f_name;
+SELECT PUB_NM
+FROM (SELECT P.PUB_NM, A.AU_F_NAME 
+        FROM PUBLISHER P, BOOK1 B, BOOK_AUTHOR BA, AUTHOR1 A
+        WHERE P.PUB_ID=B.PUB_ID 
+        AND B.BOOK_ID=BA.BOOK_ID
+        AND BA.AU_ID=A.AU_ID) A,
+        (SELECT A.AU_F_NAME, COUNT(BK_AU_ID)
+        FROM AUTHOR1 A, BOOK_AUTHOR BA
+        WHERE A.AU_ID=BA.AU_ID(+)
+        GROUP BY AU_F_NAME) B
+WHERE A.AU_F_NAME=B.AU_F_NAME;
 
 --9.	Which author wrote the maximum number of books?
-select a.au_f_name, max(count(b.book_id))
-from author1 a, book_author ba, book1 b, publisher p
-where a.au_id=ba.au_id
-and ba.book_id=b.book_id
-and b.pub_id=p.pub_id
-group by a.au_f_name;
-
+SELECT A.AU_F_NAME, MAX(COUNT(B.BOOK_ID))
+FROM AUTHOR1 A, BOOK_AUTHOR BA, BOOK1 B, PUBLISHER P
+WHERE A.AU_ID=BA.AU_ID
+AND BA.BOOK_ID=B.BOOK_ID
+AND B.PUB_ID=P.PUB_ID
+GROUP BY A.AU_F_NAME;
 
 --10.	Create a stored procedure which returns book_name, author_full_name by taking publisher name as the input.
-
+SELECT B.BOOK_NM, A.AU_F_NAME || ' ' || A.AU_L_NAME
+FROM BOOK1 B, BOOK_AUTHOR BA, AUTHOR1 A
+WHERE B.BOOK_ID=BA.BOOK_ID(+)
+AND BA.AU_ID=A.AU_ID(+)
+AND B.PUB_ID IN (SELECT PUB_ID
+                FROM PUBLISHER
+                WHERE PUB_NM='pqr publications');
+                
 --11.	Take the publisher name as input and give the number of books which that publisher published where there are only one author.
 
 
