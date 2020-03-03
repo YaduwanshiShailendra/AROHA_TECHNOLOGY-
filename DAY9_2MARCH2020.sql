@@ -220,13 +220,14 @@ WHERE MONTHS_BETWEEN(SYSDATE,AU_DOB)>(SELECT MONTHS_BETWEEN(SYSDATE,AU_DOB) FROM
 
 
 --8.	Display the publisher name, author_name and no of books they wrote.
-SELECT PUB_NM
+SELECT distinct A.AU_F_NAME,pub_nm,B.COUNT
 FROM (SELECT P.PUB_NM, A.AU_F_NAME 
         FROM PUBLISHER P, BOOK1 B, BOOK_AUTHOR BA, AUTHOR1 A
         WHERE P.PUB_ID=B.PUB_ID 
         AND B.BOOK_ID=BA.BOOK_ID
         AND BA.AU_ID=A.AU_ID) A,
-        (SELECT A.AU_F_NAME, COUNT(BK_AU_ID)
+        
+        (SELECT A.AU_F_NAME, COUNT(BK_AU_ID) AS COUNT
         FROM AUTHOR1 A, BOOK_AUTHOR BA
         WHERE A.AU_ID=BA.AU_ID(+)
         GROUP BY AU_F_NAME) B
@@ -251,5 +252,15 @@ AND B.PUB_ID IN (SELECT PUB_ID
                 
 --11.	Take the publisher name as input and give the number of books which that publisher published where there are only one author.
 
+SELECT P.PUB_NM, COUNT(BA.BOOK_ID)
+FROM BOOK1 B, BOOK_AUTHOR BA, PUBLISHER P
+WHERE B.BOOK_ID=BA.BOOK_ID
+AND P.PUB_ID=B.PUB_ID
+AND P.PUB_NM='&PUBLISHER_NAME'
 
+AND B.BOOK_ID IN (SELECT BOOK_ID
+                    FROM BOOK_AUTHOR
+                    GROUP BY BOOK_ID
+                    HAVING COUNT(AU_ID)=1)
+GROUP BY B.PUB_ID, P.PUB_NM;
 
