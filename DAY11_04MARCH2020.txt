@@ -133,9 +133,10 @@ SELECT ENAME
  AND TO_CHAR(HIREDATE,'D') BETWEEN '1' AND '10';
 
 --17.Display the employees who joined the company in the Friday date of last 2 years.
-SELECT ENAME
+SELECT ENAME 
 FROM EMP
-WHERE TO_CHAR(ADD_MONTHS (HIREDATE, -24), 'FMDAY')='FRIDAY'; 
+WHERE TO_CHAR(HIREDATE,'fmday')='friday'
+AND HIREDATE BETWEEN TRUNC(ADD_MONTHS(SYSDATE,-24),'yy') AND SYSDATE;
 
 --18.Display the employees whose salary is greater than manager’s salary.
 SELECT ENAME, SAL
