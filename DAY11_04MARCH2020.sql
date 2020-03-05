@@ -42,11 +42,19 @@ WHERE HIREDATE=(SELECT MIN(HIREDATE)
 
 --5.Display the latest 3 employees who joined the company very recently.
 SELECT ENAME 
+      FROM (SELECT DENSE_RANK() OVER(ORDER BY HIREDATE DESC) AS RN, EMP.*
+            FROM EMP)
+WHERE RN<4;
+
+
+SELECT ENAME 
 FROM (SELECT ROWNUM SLNO, ENAME, HIREDATE
       FROM (SELECT DISTINCT HIREDATE, ENAME
             FROM EMP
             ORDER BY HIREDATE DESC))
 WHERE SLNO<4;
+
+
 
 --6.Display the dname which has highest no. of employees.
 SELECT DNAME,COUNT(EMPNO) 
