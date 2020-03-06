@@ -279,7 +279,7 @@ connect sys as sysdba;
 
 select * from v1
 ;
-
+  
 update v1 set sal=70 where ename='SMITH';
 DROP VIEW V1;
 
