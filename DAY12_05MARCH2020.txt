@@ -1,0 +1,259 @@
+
+--###########################################################################--
+--                       	DAY12_05-MARCH-2020
+--###########################################################################--
+
+
+--SQL Questions_Test2(1-30)
+--
+--1.Display the monthwise no of employees in the current year.
+select to_char(hiredate, 'month'), count(empno)
+from emp 
+where to_char(hiredate, 'year')=to_char(sysdate, 'year')
+group by to_char(hiredate, 'month');
+
+
+
+select to_char(add_months(trunc(hiredate,'year'),level)-1, 'month'), count(empno)
+from emp 
+connect by level <=12
+where to_char(hiredate, 'year')=to_char(sysdate, 'year')
+group by to_char(hiredate, 'month');
+
+
+
+
+--2.Display Top 2 department names based on the no. of employees.
+SELECT DNAME
+FROM
+    (SELECT ROWNUM RN,DNAME
+     FROM (SELECT DNAME,COUNT(EMPNO)
+           FROM DEPT  NATURAL JOIN EMP
+           GROUP BY DNAME
+           ORDER BY COUNT(EMPNO) DESC))
+WHERE RN<=2;
+      
+--3.Display the employees which contains % in the ename.
+SELECT ENAME
+FROM EMP
+WHERE SUBSTR(ENAME,1,LENGTH(ENAME))='%';
+
+--OR
+
+SELECT ENAME
+FROM EMP
+WHERE ENAME LIKE '%!%%';
+
+--4.Display the grades based on the employees salaries.
+--     If sal>20000 print ‘A’, sal>15000 print ‘B’ else ‘C’.
+SELECT ENAME,(CASE WHEN SAL>15000 AND SAL<20000
+        THEN 'B' ELSE (CASE WHEN SAL>20000 THEN'A' ELSE 'C' END) END) AS GRADE 
+FROM EMP;
+
+--5.Display the given date is weekday or weekend.
+SELECT TO_DATE('&datett','ddmmyy'), (CASE WHEN TO_CHAR(TO_DATE('&datett','ddmmyy'), 'd') IN (1,7)
+            THEN 'weekend'
+            ELSE 'weekdays' 
+            END) AS DAYS
+FROM DUAL;
+
+--6.Update the names of employees Smith, John and Clark to Sm,Jo,Cl.
+UPDATE EMP SET ENAME=
+  CASE WHEN ENAME='SMITH' THEN 'SM'
+       WHEN ENAME='JOHN' THEN 'JO'
+       WHEN ENAME='CLARK' THEN 'CL' END;
+
+--OR
+
+UPDATE EMP SET ENAME='SM' WHERE ENAME='SMITH';
+UPDATE EMP SET ENAME='JO' WHERE ENAME='JOHN';
+UPDATE EMP SET ENAME='CL' WHERE ENAME='CLARK';
+
+
+SAVEPOINT ONE_UPDATE;
+UPDATE EMP SET ENAME=('SM','JO','CL') WHERE ENAME=('SMITH','JOHN','CLARK');
+
+--7.Display the departments where employees are present.
+SELECT DNAME FROM DEPT
+WHERE DEPTNO IN (SELECT DEPTNO FROM EMP);
+
+--8.Display the departments where employees are not present.
+SELECT DNAME FROM DEPT
+WHERE DEPTNO NOT IN (SELECT DEPTNO FROM EMP);
+
+--9.Delete the 10th record from employee table
+SAVEPOINT ONE;
+
+DELETE FROM EMP A
+WHERE 10=(SELECT COUNT(ROWID)
+FROM EMP B
+WHERE A.ROWID>=B.ROWID);
+
+SELECT * FROM EMP;
+ROLLBACK ONE;
+
+
+
+--10.Display unique records from the table
+--     Tbl1
+--      Col1	col2
+--          1	1
+--          1	1
+--          2	4
+--          2	4
+--          3	9
+SELECT COL1,COL2
+FROM TBL
+GROUP BY COL1,COL2
+HAVING COUNT(*)=1;
+
+--11.Delete duplicate records from the above table.
+DELETE FROM TBL1 T1
+WHERE ROWID > (SELECT MIN(ROWID)
+               FROM TBL1 T2
+               WHERE T2.SNO=T1.SNO);
+
+--12.Display the first day of current year.
+SELECT TRUNC(SYSDATE,'year') FROM DUAL;
+
+--13.Display the last day of current year.
+SELECT ADD_MONTHS(TRUNC(SYSDATE,'year'),12)-1 FROM DUAL;
+
+--14.Display the first day of next year.
+SELECT ADD_MONTHS(TRUNC(SYSDATE,'year'),12) FROM DUAL;
+
+--15.Display the last day of next year.
+SELECT ADD_MONTHS(TRUNC(SYSDATE,'year'),24)-1 FROM DUAL;
+
+--16.Display the first day of current quarter.
+SELECT TRUNC(SYSDATE,'q') FROM DUAL;
+
+--17.Display the first day of next quarter.
+SELECT ADD_MONTHS(TRUNC(SYSDATE,'q'),3)
+FROM DUAL;
+
+--18 Display the Output as
+--Using case
+--	Dname		existence
+--	Sales		emp’s exist
+--	Hr			emp’s exist
+--	Accounts		No emp’s
+--
+SELECT DNAME,CASE WHEN COUNT(EMPNO)>=1 THEN 'emp exists' ELSE 'emp not exists' END 
+FROM EMP E,DEPT D 
+WHERE E.DEPTNO(+)=D.DEPTNO 
+GROUP BY DNAME;
+
+----------------------------------------------------------------------
+--other 
+SELECT (CASE WHEN DNAME IN ('SALES','HR','ACCOUNTS')
+            THEN 'EMP EXIST'
+            ELSE 'NO EMP' END)
+FROM (SELECT DNAME 
+       FROM DEPT D 
+       WHERE  EXISTS (SELECT DEPTNO 
+                        FROM EMP E
+                        WHERE E.DEPTNO=D.DEPTNO));
+                        
+--------------------------------------------------------------------
+
+
+--19. Display the output as
+--Emps with comm.		 Emps without comm.
+--Using inline query or Case
+SELECT A.EMPS_WITHOUT_COMM,B.EMPS_WITH_COMM
+FROM (SELECT E1.ENAME EM1 FROM EMP E1
+      WHERE COMM IS NULL) AS A,
+      (SELECT E2.ENAME EM2  FROM EMP E2
+       WHERE COMM IS NOT NULL) AS B
+WHERE A.EM1=B.EM2;
+
+--OR
+
+--20. Display the employees whose name starts and ends in a vowel.
+SELECT ENAME
+FROM EMP
+WHERE SUBSTR(ENAME,1,1) IN ('A','E','I','O','U') AND SUBSTR(ENAME,-1,1) IN ('A','E','I','O','U');
+
+--21.Display the employees whose name starts and ends with the same character.
+SELECT ENAME
+FROM EMP
+WHERE SUBSTR(ENAME,1,1)=SUBSTR(ENAME,-1);
+
+--22. There are 2 tables one is parent and the other is child table, I want to delete the parent table records and I don’t want to see the error as child record found. How will you do it?
+Answer:- That time we can use delete on cascade or use delete on set null.
+;
+--23.Write a SQL command which will display all the emp names and their dept names for those employees whose salary is more than the avg salary of their dept.
+SELECT E.ENAME,D.DNAME
+FROM EMP E,DEPT D
+WHERE E.DEPTNO=D.DEPTNO
+AND E.SAL>(SELECT AVG(SAL)
+           FROM EMP A
+           WHERE A.DEPTNO=E.DEPTNO);
+
+
+--24.Display the emp names whose salary is more than the avg salary of all the depts..
+SELECT ENAME 
+FROM EMP A
+WHERE SAL>(SELECT AVG(SAL)
+           FROM EMP B
+           WHERE A.DEPTNO=B.DEPTNO);
+
+--25.Display output as---Using case
+--Deptno and no of employees
+--10		20		30		40
+--5		    8		6		noemps
+
+SELECT WM_CONCATE(DEPTNO) FROM EMP;
+
+--25. Display the output as---Using Case
+--Class			No.of emps
+--Class1			5
+--Class2			8
+--Class1 are the employees who belongs to the job Manager and Analyst
+--Class2 are the employees who belongs to the job Salesman and Clerk.
+--
+SELECT CASE WHEN LOWER(JOB) IN('manager','analyst') THEN 'class1' ELSE 'class2' END AS CLASS,
+COUNT(CASE WHEN LOWER(JOB) IN('manager','analyst') THEN 1  ELSE 2 END )
+FROM emp
+WHERE JOB IN('CLERK','SALESMAN','MANAGER','ANALYST')
+GROUP BY CASE WHEN LOWER(JOB) IN('manager','analyst') THEN 'class1' ELSE 'class2' END;
+
+--26.Table
+--Col1		Col2		Col3
+--1		    Null		3
+--2		    Null		6
+--Null		5		    Null
+--Write a query to display the Count of number of Nulls in the table.
+--O/p:4
+
+
+--27. Write a Query to get the output as: 
+--I/p
+--Col1					O/p
+--1234567				0001234567
+---1234.678			-01234.678
+---345.678				-00345.678
+--9689.378				009689.378
+
+
+
+--28. Write a query to replace all the characters and print only numbers in a given string.
+--‘ax12fn45z678lo7fg’
+--o/p:12456787
+SELECT REGEXP_REPLACE('ax12fn45z678lo7fg', '[^0-9]', '')
+FROM DUAL;
+
+--29.Write a query to count the number of spaces in a given string.
+--‘hello world Namaste’.
+SELECT REGEXP_COUNT('hello world Namaste', ' ')
+FROM DUAL;
+
+
+--30.Write a query to print the first letter in a given string is alphabet, number or special character.
+--‘A1234567’
+SELECT STR, CASE WHEN ASCII(STR)  BETWEEN 97 AND 122 THEN 'alphabet'
+                 WHEN ASCII(STR) BETWEEN 48 AND 57 THEN 'number' 
+                 ELSE 'special character' END 
+FROM (SELECT SUBSTR('&anystring',1,1) AS STR
+FROM DUAL);
