@@ -133,9 +133,18 @@ where to_char(hiredate, 'year')=to_char(sysdate, 'year')
 group by to_char(hiredate, 'month');
 
 --21.Display the enames and managers whom atleast 3 employees are reporting to him.
-select e.ename, m.ename
+SELECT A.ENAME, B.MGR_NAME, COUNT
+from (select E.ENAME, mgr.ename as MGR_NAME
+from emp e, emp mgr
+where e.mgr=mgr.empno) A,
+(select mgr.ename as MGR_NAME, count(e.ename) AS COUNT
+from emp e, emp mgr
+where e.mgr=mgr.empno
+group by mgr.ename
+having count(e.ename)>=3) B
+WHERE A.MGR_NAME=B.MGR_NAME;
 
-select * from emp;
+
 --22.Display the deptwise no. of employees in each job using case or decode or inline view.
 --DEPTNO      CLERK   SALESMAN    MANAGER
 -------- ---------- ---------- ----------
@@ -190,9 +199,63 @@ into source_data_feb14 values(102,'BALA',95)
 SELECT * FROM DUAL;
 COMMIT;
 
+
+INSERT INTO tgt_data_feb14
+(select z.st_id, 
+z.st_name, 
+z.marks, 
+(select max(marks) from source_data_feb14)top_marks ,
+(select min(marks) from source_data_feb14) least_marks
+from
+            (select B.marks - A.MINs vl,a.st_id as st_id
+            FROM (select st_id,( select MIN(marks) from source_data_feb14) MINs from source_data_feb14) A,
+                (SELECT ST_ID, MARKS FROM source_data_feb14) B
+            WHERE A.ST_ID=B.ST_ID) vfl,
+
+        (select B.marks - A.MAXs,a.st_id as st_id
+        FROM (select st_id,( select MAX(marks) from source_data_feb14) MAXs from source_data_feb14) A,
+            (SELECT ST_ID, MARKS FROM source_data_feb14) B
+        WHERE A.ST_ID=B.ST_ID) vfh,
+
+            (select st_id,st_name,marks
+            from source_data_feb14)z
+            
+where  vfl.st_id=vfh.st_id and z.st_id=vfl);
+
+SELECT * FROM DUAL;
+
+
+
+
+
+
+SELECT ST_ID, 
+ST_NAME, 
+MARKS, 
+(SELECT MAX(MARKS) FROM SOURCE_DATA_FEB14)TOP_MARKS ,
+(SELECT MIN(MARKS) FROM SOURCE_DATA_FEB14) LEAST_MARKS,
+(SELECT B.MARKS - A.MINS 
+                    FROM (SELECT ST_ID,( SELECT MIN(MARKS) FROM SOURCE_DATA_FEB14) MINS FROM SOURCE_DATA_FEB14) A,
+                    (SELECT ST_ID, MARKS FROM SOURCE_DATA_FEB14 W WHERE W.ST_ID=C.ST_ID ) B
+                        WHERE A.ST_ID=B.ST_ID
+                    ) VARIENCE_FIRST_LOWEST,
+
+(SELECT B.MARKS - A.MAXS 
+            FROM (SELECT ST_ID,( SELECT MAX(MARKS) FROM SOURCE_DATA_FEB14) MAXS FROM SOURCE_DATA_FEB14) A,
+    (       SELECT ST_ID, MARKS FROM SOURCE_DATA_FEB14 Q WHERE Q.ST_ID=C.ST_ID) B
+            WHERE A.ST_ID=B.ST_ID) VARIENCE_FIRST_HIGHEST
+FROM SOURCE_DATA_FEB14 C;
+
+SELECT ROUND(TRUNC(160.99999,-1),2) FROM dual;
+
+select TRUNC(666.111111,-3) from dual;
+
+conn;
+
+
 create table tgt_data_feb14(st_id number,st_name varchar(20),marks number,TOP_MARKS NUMBER,LEAST_MARKS NUMBER,VAR_F_LOWEST NUMBER,VAR_F_HIGHEST NUMBER);
 
-
+DESC TGT_DATA_FEB14;
 --26.Find the hours and minutes of current date and time.
 SELECT TO_CHAR(SYSDATE, 'HH:MI') FROM DUAL;
 
@@ -207,4 +270,22 @@ SELECT TO_CHAR(SYSDATE, 'HH:MI') FROM DUAL;
 --5-Feb-19			8-Feb-19
 --7-feb-19			8-Feb-19
 --9-Feb-19			11-Feb-19
---
+----
+
+create table orders(order_date date, order_complition_date date);
+
+insert all
+into orders values('1-Feb-19','04-Feb-19')
+into orders values('05-Feb-19','08-Feb-19')
+into orders values('07-feb-19','08-Feb-19')
+into orders values('09-Feb-19','11-Feb-19')
+select * from dual;
+
+
+select to_char(order_date,'fmDay') from orders;
+
+Monday to Thursday
+
+UPDATE orders
+SET order_complition_date='Friday'
+WHERE to_char(order_date,'fmDay');
