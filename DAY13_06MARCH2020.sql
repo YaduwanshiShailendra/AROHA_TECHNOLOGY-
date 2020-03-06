@@ -4,7 +4,7 @@
 --###########################################################################--
 
 --SQL Questions_Test3(1-27)
---
+-- 
 --1.Display the first day of current week.
 SELECT to_char(TRUNC(sysdate, 'w'), 'day') FROM dual;
 
