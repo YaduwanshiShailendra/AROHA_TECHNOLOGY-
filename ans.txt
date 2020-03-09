@@ -1,0 +1,76 @@
+1.Examine the structures of the EMPLOYEE and CURR_ORDER tables as shown below: EMPLOYEE Table EMPLOYEE_ID NUMBER NOT NULL, Primary Key LAST_NAME VARCHAR2 (25) FIRST NAME VARCHAR2 (25) DEPT_ID NUMBER Foreign key to DEPT_ID column of the DEPARTMENTS ta
+
+Actual Answer:
+The employee information displayed will be for employees that have a commission that is less than the average commission of all employees who have the same job.
+
+
+Examine the description of the STUDENTS table STD_ID NUMBER(4) COURSE_ID VARCHARD2(10) START_DATE DATE END_DATE DATE. Which two aggregate functions are valid on the START_DATE column? (Choose two)
+
+Actual Answer:
+COUNT(start_date)
+MIN(start_date)
+
+
+3.The PRODUCT table contains these columns: PRODUCT_ID NUMBER(9) PRODUCT_NAME VARCHAR2(25) COST NUMBER(5,2) LIST_PRICE NUMBER(5,2) SUPPLIER_ID NUMBER(9) You need to display product names, costs, supplier ids, and average list prices for all the produ
+
+Actual Answer:
+SELECT product_name, cost, p.supplier_id, AVG(list_price) FROM product p, (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) a WHERE p.supplier_id = a.supplier_id AND p.cost > a.avg_cost GROUP BY product_name, cost, p.supplier
+
+
+4.The ITEM table contains these columns: ITEM_ID NUMBER(9) COST NUMBER(7,2) RETAIL NUMBER(7,2) You need to create a report that displays the cost, the retail price, and the profit for item number 783920. To calculate the profit, subtract the cost of
+
+Actual Answer:
+SELECT cost, retail, (retail - cost) - ((retail - cost) * .25) "Profit" FROM item WHERE item_id = 783920
+
+5.It is mandatory to create log file while creating materialized view with this option:
+Actual Answer:
+Refresh fast
+
+
+6.Refresh fast performs:
+Answer:
+Incremental refresh
+
+7.We can create materialized view on the table without primary key with this optionWith Answer:
+With rowid
+
+8.Parsing involves
+ Answer:
+syntax check
+semantic check
+
+10.Types of optimizer
+Answer:
+Rule based optimizer
+Cost based optimizer
+
+11.To find the number of partitioned tables, the data dictionary is
+Answer:
+user_part_tables
+
+12.1st normal form rule:
+Answer:
+No repeating groups of data
+should be scalar
+should be atomic
+
+13.3rd NF rule is:
+Answer:
+it should be in 2nd NF
+non key column should not depend on another non key column
+there should be no transitive dependency
+
+14.Soft parse does not require:
+Answer:
+loading into shared pool
+
+16.After creating and inserting records in global temp tables, once we close the session
+Answer:
+The data is lost
+The table still exist
+
+17.Temp tables can have:
+Answer:
+Indexes
+Views can be created on it
+Synonyms can be created
