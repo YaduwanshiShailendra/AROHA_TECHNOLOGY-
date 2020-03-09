@@ -1,0 +1,54 @@
+
+--###########################################################################--
+--                       	DAY14_09-MARCH-2020
+--                             ----------------------
+--                               MATERIALIZED VIEW
+--###########################################################################--
+
+-- GRANTING PERMISSION TO SCOTT FOR CREATE MATERIALIZED VIEW
+conn sys as sysdba;
+grant create materialized view to scott;
+
+--CONNECTING TO SCOTT USER
+conn scott/tiger;
+
+--creating materialized view with default values
+create materialized view mv_1 
+as(select empno,ename, sal*12 from emp);
+
+----------CREATING M-VIEW MANUALLY----------------------
+
+--creating materialized view with default values
+create materialized view mv_2 
+build immediate
+refresh force
+on demand
+start with sysdate next sysdate+2
+with primary key
+as select empno,ename, sal*12 from emp;
+
+SAVEPOINT VIEW;
+
+-- for refresh manually
+select * from dbms_mview.refresh('mv_1');
+
+--Data dictionary for materialized view
+select * from user_mviews;
+
+insert into emp values(1965,SHAILI,MANAGER,7839,09-03-20,2975,20,38.93);
+
+select * from mv_1;
+
+select * from mv_2;
+
+
+-----------------ON DEMAND REFRESH-----------------------
+EXEC DBMS_MVIEW.REFRESH('mv_v2');
+
+
+SELECT * FROM USER_MVIEWS;
+
+
+ROLLBACK VIEW;
+
+
