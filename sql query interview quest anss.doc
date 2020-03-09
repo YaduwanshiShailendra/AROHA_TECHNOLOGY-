@@ -1,0 +1,1066 @@
+{\rtf1\adeflang1081\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi31507\deflang16393\deflangfe16393\themelang16393\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f2\fbidi \fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f10\fbidi \fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}{\f24\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050203030202}Mangal;}
+{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\f43\fbidi \fswiss\fcharset0\fprq2{\*\panose 020b0606030504020204}Open Sans;}
+{\f44\fbidi \froman\fcharset0\fprq0{\*\panose 00000000000000000000}inherit{\*\falt Cambria};}{\f45\fbidi \fswiss\fcharset0\fprq2{\*\panose 020b0603020202020204}Trebuchet MS;}
+{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fdbmajor\f31501\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fhimajor\f31502\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0302020204030204}Calibri Light;}{\fbimajor\f31503\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050203030202}Mangal;}
+{\flominor\f31504\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fdbminor\f31505\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fhiminor\f31506\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\fbiminor\f31507\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050203030202}Mangal;}{\f402\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\f403\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\f405\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\f406\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\f407\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\f408\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f409\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\f410\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f422\fbidi \fmodern\fcharset238\fprq1 Courier New CE;}
+{\f423\fbidi \fmodern\fcharset204\fprq1 Courier New Cyr;}{\f425\fbidi \fmodern\fcharset161\fprq1 Courier New Greek;}{\f426\fbidi \fmodern\fcharset162\fprq1 Courier New Tur;}{\f427\fbidi \fmodern\fcharset177\fprq1 Courier New (Hebrew);}
+{\f428\fbidi \fmodern\fcharset178\fprq1 Courier New (Arabic);}{\f429\fbidi \fmodern\fcharset186\fprq1 Courier New Baltic;}{\f430\fbidi \fmodern\fcharset163\fprq1 Courier New (Vietnamese);}{\f742\fbidi \froman\fcharset238\fprq2 Cambria Math CE;}
+{\f743\fbidi \froman\fcharset204\fprq2 Cambria Math Cyr;}{\f745\fbidi \froman\fcharset161\fprq2 Cambria Math Greek;}{\f746\fbidi \froman\fcharset162\fprq2 Cambria Math Tur;}{\f749\fbidi \froman\fcharset186\fprq2 Cambria Math Baltic;}
+{\f750\fbidi \froman\fcharset163\fprq2 Cambria Math (Vietnamese);}{\f772\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}{\f773\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}{\f775\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}
+{\f776\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}{\f777\fbidi \fswiss\fcharset177\fprq2 Calibri (Hebrew);}{\f778\fbidi \fswiss\fcharset178\fprq2 Calibri (Arabic);}{\f779\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}
+{\f780\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}{\f832\fbidi \fswiss\fcharset238\fprq2 Open Sans CE;}{\f833\fbidi \fswiss\fcharset204\fprq2 Open Sans Cyr;}{\f835\fbidi \fswiss\fcharset161\fprq2 Open Sans Greek;}
+{\f836\fbidi \fswiss\fcharset162\fprq2 Open Sans Tur;}{\f839\fbidi \fswiss\fcharset186\fprq2 Open Sans Baltic;}{\f840\fbidi \fswiss\fcharset163\fprq2 Open Sans (Vietnamese);}{\f852\fbidi \fswiss\fcharset238\fprq2 Trebuchet MS CE;}
+{\f853\fbidi \fswiss\fcharset204\fprq2 Trebuchet MS Cyr;}{\f855\fbidi \fswiss\fcharset161\fprq2 Trebuchet MS Greek;}{\f856\fbidi \fswiss\fcharset162\fprq2 Trebuchet MS Tur;}{\f859\fbidi \fswiss\fcharset186\fprq2 Trebuchet MS Baltic;}
+{\flomajor\f31508\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flomajor\f31509\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\flomajor\f31511\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\flomajor\f31512\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flomajor\f31513\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\flomajor\f31514\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\flomajor\f31515\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flomajor\f31516\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fdbmajor\f31518\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fdbmajor\f31519\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbmajor\f31521\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fdbmajor\f31522\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fdbmajor\f31523\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbmajor\f31524\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fdbmajor\f31525\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fdbmajor\f31526\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhimajor\f31528\fbidi \fswiss\fcharset238\fprq2 Calibri Light CE;}{\fhimajor\f31529\fbidi \fswiss\fcharset204\fprq2 Calibri Light Cyr;}
+{\fhimajor\f31531\fbidi \fswiss\fcharset161\fprq2 Calibri Light Greek;}{\fhimajor\f31532\fbidi \fswiss\fcharset162\fprq2 Calibri Light Tur;}{\fhimajor\f31533\fbidi \fswiss\fcharset177\fprq2 Calibri Light (Hebrew);}
+{\fhimajor\f31534\fbidi \fswiss\fcharset178\fprq2 Calibri Light (Arabic);}{\fhimajor\f31535\fbidi \fswiss\fcharset186\fprq2 Calibri Light Baltic;}{\fhimajor\f31536\fbidi \fswiss\fcharset163\fprq2 Calibri Light (Vietnamese);}
+{\flominor\f31548\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flominor\f31549\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\flominor\f31551\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\flominor\f31552\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flominor\f31553\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\flominor\f31554\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\flominor\f31555\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flominor\f31556\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fdbminor\f31558\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fdbminor\f31559\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbminor\f31561\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fdbminor\f31562\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fdbminor\f31563\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbminor\f31564\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fdbminor\f31565\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fdbminor\f31566\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhiminor\f31568\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}{\fhiminor\f31569\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}
+{\fhiminor\f31571\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\fhiminor\f31572\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}{\fhiminor\f31573\fbidi \fswiss\fcharset177\fprq2 Calibri (Hebrew);}
+{\fhiminor\f31574\fbidi \fswiss\fcharset178\fprq2 Calibri (Arabic);}{\fhiminor\f31575\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}{\fhiminor\f31576\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green0\blue0;\red0\green0\blue0;\red68\green68\blue68;\red61\green99\blue146;\red255\green255\blue255;\red233\green233\blue233;\red77\green77\blue77;}
+{\*\defchp \fs22\loch\af31506\hich\af31506\dbch\af31505 }{\*\defpap \ql \li0\ri0\sa160\sl259\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 }\noqfpromote {\stylesheet{\ql \li0\ri0\sa160\sl259\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs20\alang1081 \ltrch\fcs0 \fs22\lang16393\langfe16393\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp16393\langfenp16393 \snext0 \sqformat \spriority0 
+Normal;}{\s3\ql \li0\ri0\sb100\sa100\sbauto1\saauto1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \ab\af0\afs27\alang1081 \ltrch\fcs0 \b\fs27\lang16393\langfe16393\cgrid\langnp16393\langfenp16393 
+\sbasedon0 \snext3 \slink15 \sqformat \spriority9 \styrsid9656530 heading 3;}{\s4\ql \li0\ri0\sb100\sa100\sbauto1\saauto1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\outlinelevel3\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \ab\af0\afs24\alang1081 
+\ltrch\fcs0 \b\fs24\lang16393\langfe16393\cgrid\langnp16393\langfenp16393 \sbasedon0 \snext4 \slink16 \sqformat \spriority9 \styrsid9656530 heading 4;}{\*\cs10 \additive \ssemihidden \sunhideused \spriority1 Default Paragraph Font;}{\*
+\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblind0\tblindtype3\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv \ql \li0\ri0\sa160\sl259\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs20\alang1081 \ltrch\fcs0 \fs22\lang16393\langfe16393\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp16393\langfenp16393 
+\snext11 \ssemihidden \sunhideused Normal Table;}{\*\cs15 \additive \rtlch\fcs1 \ab\af0\afs27 \ltrch\fcs0 \b\f0\fs27 \sbasedon10 \slink3 \slocked \spriority9 \styrsid9656530 Heading 3 Char;}{\*\cs16 \additive \rtlch\fcs1 \ab\af0\afs24 \ltrch\fcs0 
+\b\f0\fs24 \sbasedon10 \slink4 \slocked \spriority9 \styrsid9656530 Heading 4 Char;}{\*\cs17 \additive \b \sqformat \spriority22 \styrsid9656530 Strong;}{
+\s18\ql \li0\ri0\sb100\sa100\sbauto1\saauto1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs24\alang1081 \ltrch\fcs0 \fs24\lang16393\langfe16393\cgrid\langnp16393\langfenp16393 
+\sbasedon0 \snext18 \ssemihidden \sunhideused \styrsid9656530 Normal (Web);}{\s19\ql \li0\ri0\widctlpar
+\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af2\afs20\alang1081 \ltrch\fcs0 
+\f2\fs20\lang16393\langfe16393\cgrid\langnp16393\langfenp16393 \sbasedon0 \snext19 \slink20 \ssemihidden \sunhideused \styrsid9656530 HTML Preformatted;}{\*\cs20 \additive \rtlch\fcs1 \af2 \ltrch\fcs0 \f2\fs20 
+\sbasedon10 \slink19 \slocked \ssemihidden \styrsid9656530 HTML Preformatted Char;}}{\*\listtable{\list\listtemplateid-867657910{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext
+\'01\u-3913 ?;}{\levelnumbers;}\f3\fs20\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fs20\fbias0 
+\fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li2160
+\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23
+\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative
+\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\lvltentative\levelspace0\levelindent0{\leveltext
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fs20\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid359211596}}{\*\listoverridetable{\listoverride\listid359211596\listoverridecount0\ls1}}{\*\pgptbl {\pgp\ipgp0\itap0\li0\ri0\sb0\sa0}}
+{\*\rsidtbl \rsid7224172\rsid9656530}{\mmathPr\mmathFont34\mbrkBin0\mbrkBinSub0\msmallFrac0\mdispDef1\mlMargin0\mrMargin0\mdefJc1\mwrapIndent1440\mintLim0\mnaryLim1}{\info{\operator DELL_XPS}{\creatim\yr2020\mo3\dy9\hr6\min8}
+{\revtim\yr2020\mo3\dy9\hr6\min8}{\version2}{\edmins0}{\nofpages24}{\nofwords2240}{\nofchars12773}{\nofcharsws14984}{\vern123}}{\*\xmlnstbl {\xmlns1 http://schemas.microsoft.com/office/word/2003/wordml}}
+\paperw12240\paperh15840\margl1440\margr1440\margt1440\margb1440\gutter0\ltrsect 
+\widowctrl\ftnbj\aenddoc\trackmoves0\trackformatting1\donotembedsysfont0\relyonvml0\donotembedlingdata1\grfdocevents0\validatexml0\showplaceholdtext0\ignoremixedcontent0\saveinvalidxml0\showxmlerrors0\horzdoc\dghspace120\dgvspace120\dghorigin1701
+\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind1\viewscale100\viewnobound1\rsidroot9656530 \fet0{\*\wgrffmtfilter 2450}\ilfomacatclnup0\ltrpar \sectd \ltrsect\linex0\sectdefaultcl\sftnbj {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}
+{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}
+{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9
+\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 \rtlch\fcs1 \af31507\afs20\alang1081 
+\ltrch\fcs0 \fs22\lang16393\langfe16393\loch\af31506\hich\af31506\dbch\af31505\cgrid\langnp16393\langfenp16393 {\rtlch\fcs1 \ab\af43\afs27 \ltrch\fcs0 \b\f43\fs27\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 Prepare Sample Data\~
+To Practice SQL Skill.
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Sample Table \endash  Worker
+\par \ltrrow}\trowd \irow0\irowband0\ltrrow\ts11\trrh150\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx10050\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 WORKER_ID}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 FIRST_NAME}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 LAST_NAME}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 SALARY}{\rtlch\fcs1 
+\af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 JOINING_DATE}{\rtlch\fcs1 
+\af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 DEPARTMENT}{\rtlch\fcs1 
+\af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow0\irowband0\ltrrow\ts11\trrh150\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1355\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx2746\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx4222\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx5549\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx8342\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx10050\row \ltrrow
+}\trowd \irow1\irowband1\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 001\cell Monika\cell Arora\cell 100000\cell 
+2014-02-20 09:00:00\cell HR\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow1\irowband1\ltrrow
+\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 002\cell Niharika\cell Verma\cell 80000\cell 
+2014-06-11 09:00:00\cell Admin\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow2\irowband2\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 003\cell Vishal\cell Singhal\cell 300000\cell 
+2014-02-20 09:00:00\cell HR\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow3\irowband3\ltrrow
+\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 004\cell Amitabh\cell Singh\cell 500000\cell 
+2014-02-20 09:00:00\cell Admin\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow4\irowband4\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 005\cell Vivek\cell Bhati\cell 500000\cell 
+2014-06-11 09:00:00\cell Admin\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow5\irowband5\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 006\cell Vipul\cell Diwan\cell 200000\cell 
+2014-06-11 09:00:00\cell Account\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow6\irowband6\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 007\cell Satish\cell Kumar\cell 75000\cell 
+2014-01-20 09:00:00\cell Account\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow7\irowband7\ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 008\cell Geetika\cell Chauhan\cell 90000\cell 
+2014-04-11 09:00:00\cell Admin\cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 
+\trowd \irow8\irowband8\lastrow \ltrrow\ts11\trleft0\trftsWidth3\trwWidth10050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone 
+\clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1355\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1395\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx2746\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1485\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4222\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1335\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx5549\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2835\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx8342\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1725\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx10050\row }\pard \ltrpar
+\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 Sample Table 
+\endash  Bonus
+\par \ltrrow}\trowd \irow0\irowband0\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx6195\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 WORKER_REF_ID}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 BONUS_DATE}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 BONUS_AMOUNT}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow0\irowband0\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1446\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx4764\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx6195\row \ltrrow
+}\trowd \irow1\irowband1\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone 
+\clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 1\cell 2016-02-20 00:00:00\cell 5000\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow1\irowband1\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 2\cell 2016-06-11 00:00:00\cell 3000\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow2\irowband2\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 3\cell 2016-02-20 00:00:00\cell 4000\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow3\irowband3\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 1\cell 2016-02-20 00:00:00\cell 4500\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow4\irowband4\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 2\cell 2016-06-11 00:00:00\cell 3500\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow5\irowband5\lastrow \ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth6195\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4425\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx4764\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1365\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx6195\row }\pard \ltrpar
+\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 Sample Table 
+\endash  Title
+\par \ltrrow}\trowd \irow0\irowband0\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl
+\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx7050\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 WORKER_REF_ID}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 WORKER_TITLE}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }{\rtlch\fcs1 \ab\af43\afs16 \ltrch\fcs0 \b\f45\fs16\expnd0\expndtw3\cf8\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 AFFECTED_FROM}{
+\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf8\insrsid9656530\charrsid9656530 \cell }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow0\irowband0\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx1446\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx3793\clvertalt
+\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat20\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw20\clhidemark \cellx7050\row \ltrrow
+}\trowd \irow1\irowband1\ltrrow\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone 
+\clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb
+\brdrs\brdrw15\brdrcf22 \clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 1\cell Manager\cell 2016-02-20 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow1\irowband1\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 2\cell Executive\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow2\irowband2\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 8\cell Executive\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow3\irowband3\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 5\cell Manager\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow4\irowband4\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 4\cell Asst. Manager\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow5\irowband5\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 7\cell Executive\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow6\irowband6\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 6\cell Lead\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow7\irowband7\ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row \ltrrow}\pard \ltrpar
+\qc \li0\ri0\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\pararsid9656530 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 3\cell Lead\cell 2016-06-11 00:00:00\cell 
+}\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\intbl\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \f0\fs20\insrsid9656530\charrsid9656530 \trowd \irow8\irowband8\lastrow \ltrrow
+\ts11\trrh360\trleft0\trftsWidth3\trwWidth7050\trautofit1\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblrsid9656530\tbllkhdrrows\tbllkhdrcols\tbllknocolband\tblind0\tblindtype3 \clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 
+\clbrdrr\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth1230\clpadl150\clpadt0\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx1446\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth2715\clpadl150\clpadt150\clpadb150\clpadr150\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx3793\clvertalt\clbrdrt\brdrnone \clbrdrl\brdrnone \clbrdrb\brdrs\brdrw15\brdrcf22 \clbrdrr
+\brdrnone \clcbpat8\cltxlrtb\clftsWidth3\clwWidth4020\clpadl150\clpadt150\clpadb150\clpadr0\clpadfl3\clpadft3\clpadfb3\clpadfr3\clcbpatraw8\clhidemark \cellx7050\row }\pard \ltrpar
+\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+To prepare the sample data, you can run the following queries in your database query executor or on the SQL command line. We\rquote 
+ve tested them with MySQL Server 5.7 and MySQL Workbench 6.3.8 query browser. You can also download these Softwares and install them to carry on the SQL exercise.
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+SQL Script to Seed Sample Data.
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 CREATE DATABASE ORG;
+\par SHOW DATABASES;
+\par USE ORG;
+\par 
+\par CREATE TABLE Worker (
+\par \tab WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+\par \tab FIRST_NAME CHAR(25),
+\par \tab LAST_NAME CHAR(25),
+\par \tab SALARY INT(15),
+\par \tab JOINING_DATE DATETIME,
+\par \tab DEPARTMENT CHAR(25)
+\par );
+\par 
+\par INSERT INTO Worker 
+\par \tab (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+\par \tab \tab (001, 'Monika', 'Arora', 100000, '14-02-20 09.00.00', 'HR'),
+\par \tab \tab (002, 'Niharika', 'Verma', 80000, '14-06-11 09.00.00', 'Admin'),
+\par \tab \tab (003, 'Vishal', 'Singhal', 300000, '14-02-20 09.00.00', 'HR'),
+\par \tab \tab (004, 'Amitabh', 'Singh', 500000, '14-02-20 09.00.00', 'Admin'),
+\par \tab \tab (005, 'Vivek', 'Bhati', 500000, '14-06-11 09.00.00', 'Admin'),
+\par \tab \tab (006, 'Vipul', 'Diwan', 200000, '14-06-11 09.00.00', 'Account'),
+\par \tab \tab (007, 'Satish', 'Kumar', 75000, '14-01-20 09.00.00', 'Account'),
+\par \tab \tab (008, 'Geetika', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin');
+\par 
+\par CREATE TABLE Bonus (
+\par \tab WORKER_REF_ID INT,
+\par \tab BONUS_AMOUNT INT(10),
+\par \tab BONUS_DATE DATETIME,
+\par \tab FOREIGN KEY (WORKER_REF_ID)
+\par \tab \tab REFERENCES Worker(WORKER_ID)
+\par         ON DELETE CASCADE
+\par );
+\par 
+\par INSERT INTO Bonus 
+\par \tab (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
+\par \tab \tab (001, 5000, '16-02-20'),
+\par \tab \tab (002, 3000, '16-06-11'),
+\par \tab \tab (003, 4000, '16-02-20'),
+\par \tab \tab (001, 4500, '16-02-20'),
+\par \tab \tab (002, 3500, '16-06-11');
+\par CREATE TABLE Title (
+\par \tab WORKER_REF_ID INT,
+\par \tab WORKER_TITLE CHAR(25),
+\par \tab AFFECTED_FROM DATETIME,
+\par \tab FOREIGN KEY (WORKER_REF_ID)
+\par \tab \tab REFERENCES Worker(WORKER_ID)
+\par         ON DELETE CASCADE
+\par );
+\par 
+\par INSERT INTO Title 
+\par \tab (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
+\par  (001, 'Manager', '2016-02-20 00:00:00'),
+\par  (002, 'Executive', '2016-06-11 00:00:00'),
+\par  (008, 'Executive', '2016-06-11 00:00:00'),
+\par  (005, 'Manager', '2016-06-11 00:00:00'),
+\par  (004, 'Asst. Manager', '2016-06-11 00:00:00'),
+\par  (007, 'Executive', '2016-06-11 00:00:00'),
+\par  (006, 'Lead', '2016-06-11 00:00:00'),
+\par  (003, 'Lead', '2016-06-11 00:00:00');
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Once above SQL would run, you\rquote ll see a result similar to the one attached below.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid9656530 {\field\fldedit{\*\fldinst {\rtlch\fcs1 \af0\afs24 \ltrch\fcs0 \f0\fs24\insrsid9656530\charrsid9656530  
+INCLUDEPICTURE "https://cdn.techbeamers.com/wp-content/uploads/2016/11/SQL-Query-Questions-Creating-Sample-Data.png" \\* MERGEFORMATINET }}{\fldrslt {\rtlch\fcs1 \af0\afs24 \ltrch\fcs0 \f0\fs24\insrsid9656530\charrsid9656530 
+{\pict{\*\picprop\shplid1025{\sp{\sn shapeType}{\sv 75}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn pibFlags}{\sv 2}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn wzDescription}{\sv SQL Query Questions - Creating Sample
+ Data}}{\sp{\sn fLayoutInCell}{\sv 1}}}\picscalex269\picscaley76\piccropl0\piccropr0\piccropt0\piccropb0\picw7620\pich7620\picwgoal4320\pichgoal4320\wmetafile8\bliptag824333242\blipupi147{\*\blipuid 312253ba97fdefa2893f04b814025feb}
+010009000003d500000002001c00000000000400000003010800050000000b0200000000050000000c026605f312040000002e0118001c000000fb0210000000
+00000000bc02000000000102022253797374656d0000000000000000000000000000000000000000000000000000040000002d0100001c000000fb0210000700
+00000000bc02000000000102022253797374656d00f028020000b96f9092310000007c6f90923100000020000000040000002d01010004000000f00100001c00
+0000fb021000000000000000bc02000000000102022253797374656d0000000000000000000000000000000000000000000000000000040000002d0100000400
+00002d01010004000000f00100001c000000fb02a4ff0000000000009001000000000440002243616c6962726900000000000000000000000000000000000000
+000000000000040000002d010000040000002d010000040000002d0100000400000002010100050000000902000000020d000000320a570000000100040000000000f21265052000360005000000090200000002040000002d010100040000002d010100030000000000}}}}\sectd \ltrsect
+\linex0\sectdefaultcl\sftnbj \sectd \ltrsect\linex0\sectdefaultcl\sftnbj {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang 
+{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7
+\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\rtlch\fcs1 \ab\af0\afs16 \ltrch\fcs0 \b\f45\fs16
+\chbrdr\brdrnone\brdrframe1 \insrsid9656530\charrsid9656530 Creating Sample Data to Practice SQL Skill.}{\rtlch\fcs1 \af0\afs24 \ltrch\fcs0 \f0\fs24\insrsid9656530\charrsid9656530 
+\par }\pard\plain \ltrpar\qc \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 \rtlch\fcs1 \af31507\afs20\alang1081 \ltrch\fcs0 
+\fs22\lang16393\langfe16393\loch\af31506\hich\af31506\dbch\af31505\cgrid\langnp16393\langfenp16393 {\rtlch\fcs1 \ab\af43\afs27 \ltrch\fcs0 \b\f43\fs27\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 50 SQL Query Questions and Answers for Practice.
+
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-1. Write an SQL query to fetch \'93FIRST_NAME\'94 from Worker table using the alias name as <WORKER_NAME>.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select FIRST_NAME AS WORKER_NAME from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-2. Write an SQL query to fetch \'93FIRST_NAME\'94 from Worker table in upper case.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select upper(FIRST_NAME) from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-3. Write an SQL query to fetch unique values of DEPARTMENT from Worker table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select distinct DEPARTMENT from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-4. Write an SQL query to print the first three characters of\~ FIRST_NAME from Worker table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select substring(FIRST_NAME,1,3) from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-5. Write an SQL query to find the position of the alphabet (\lquote a\rquote ) in the first name column \lquote Amitabh\rquote  from Worker table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select INSTR(FIRST_NAME, BINARY'a') from Worker where FIRST_NAME = 'Amitabh';
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Notes.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par {\listtext\pard\plain\ltrpar \rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f3\fs20\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \loch\af3\dbch\af0\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-360\li300\ri0\widctlpar
+\jclisttab\tx720\wrapdefault\aspalpha\aspnum\faroman\ls1\adjustright\rin0\lin300\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f44\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The INSTR method is in case-sensitive by default.
+\par {\listtext\pard\plain\ltrpar \rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f3\fs20\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \loch\af3\dbch\af0\hich\f3 \'b7\tab}Using Binary operator will make INSTR work as the\~case-sensitive function.
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-6. Write an SQL query to print the FIRST_NAME from Worker table after removing white spaces from the right side.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select RTRIM(FIRST_NAME) from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-7. Write an SQL query to print the DEPARTMENT from Worker table after removing white spaces from the left side.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select LTRIM(DEPARTMENT) from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-8. Write an SQL query that fetches the unique values of DEPARTMENT from Worker table and prints its length.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select distinct length(DEPARTMENT) from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-9. Write an SQL query to print the FIRST_NAME from Worker table after replacing \lquote a\rquote  with \lquote A\rquote .
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select REPLACE(FIRST_NAME,'a','A') from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-10. Write an SQL query to print the FIRST_NAME and LAST_NAME from Worker table into a single column COMPLETE_NAME. A space char should separate them.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'COMPLETE_NAME' from Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-11. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker order by FIRST_NAME asc;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker order by FIRST_NAME asc,DEPARTMENT desc;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-13. Write an SQL query to print details for Workers with the first name as \'93Vipul\'94 and \'93Satish\'94 from Worker table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where FIRST_NAME in ('Vipul','Satish');
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-14. Write an SQL query to print details of workers excluding first names, \'93Vipul\'94 and \'93Satish\'94 from Worker table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where FIRST_NAME not in ('Vipul','Satish');
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-15. Write an SQL query to print details of Workers with DEPARTMENT name as \'93Admin\'94.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where DEPARTMENT like 'Admin%';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-16. Write an SQL query to print details of the Workers whose FIRST_NAME contains \lquote a\rquote .
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where FIRST_NAME like '%a%';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-17. Write an SQL query to print details of the Workers whose FIRST_NAME ends with \lquote a\rquote .
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where FIRST_NAME like '%a';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-18. Write an SQL query to print details of the Workers whose FIRST_NAME ends with \lquote h\rquote  and contains six alphabets.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where FIRST_NAME like '_____h';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-19. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where SALARY between 100000 and 500000;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-20. Write an SQL query to print details of the Workers who have joined in Feb\rquote 2014.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-21. Write an SQL query to fetch the count of employees working in the department \lquote Admin\rquote .
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT COUNT(*) FROM worker WHERE DEPARTMENT = 'Admin';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-22. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) As Worker_Name, Salary
+\par FROM worker 
+\par WHERE WORKER_ID IN 
+\par (SELECT WORKER_ID FROM worker 
+\par WHERE Salary BETWEEN 50000 AND 100000);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-23. Write an SQL query to fetch the no. of workers for each department in the descending order.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers 
+\par FROM worker 
+\par GROUP BY DEPARTMENT 
+\par ORDER BY No_Of_Workers DESC;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-24. Write an SQL query to print details of the Workers who are also Managers.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE
+\par FROM Worker W
+\par INNER JOIN Title T
+\par ON W.WORKER_ID = T.WORKER_REF_ID
+\par AND T.WORKER_TITLE in ('Manager');
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-25. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*)
+\par FROM Title
+\par GROUP BY WORKER_TITLE, AFFECTED_FROM
+\par HAVING COUNT(*) > 1;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-26. Write an SQL query to show only odd rows from a\~table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM Worker WHERE MOD (WORKER_ID, 2) <> 0;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-27. Write an SQL query to show only even rows from a\~table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM Worker WHERE MOD (WORKER_ID, 2) = 0;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-28. Write an SQL query to clone a new table from another table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The general query to clone a table with data is:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * INTO WorkerClone FROM Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The general way to clone a table without information is:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * INTO WorkerClone FROM Worker WHERE 1 = 0;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+An alternate way to clone a table (for MySQL) without is:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 CREATE TABLE WorkerClone LIKE Worker;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-29. Write an SQL query to fetch intersecting records of two tables.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 (SELECT * FROM Worker)
+\par INTERSECT
+\par (SELECT * FROM WorkerClone);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-30. Write an SQL query to show records from one table that another table does not have.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM Worker
+\par MINUS
+\par SELECT * FROM Title;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-31. Write an SQL query to show the current date and time.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following MySQL query returns the current date:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT CURDATE();
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following MySQL query returns the current date and time:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT NOW();
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following SQL Server query returns the current date and time:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT getdate();
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following Oracle query returns the current date and time:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT SYSDATE FROM DUAL;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-32. Write an SQL query to show the top n (say 10) records of a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following MySQL query will return the top n records using the LIMIT method:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM Worker ORDER BY Salary DESC LIMIT 10;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following SQL Server query will return the top n records using the TOP command:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT TOP 10 * FROM Worker ORDER BY Salary DESC;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Following Oracle query will return the top n records with the help of ROWNUM:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM (SELECT * FROM Worker ORDER BY Salary DESC)
+\par WHERE ROWNUM <= 10;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-33. Write an SQL query to determine the nth (say n=5) highest salary from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The following MySQL query returns the nth highest salary:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT Salary FROM Worker ORDER BY Salary DESC LIMIT n-1,1;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The following SQL Server query returns the nth highest salary:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT TOP 1 Salary
+\par FROM (
+\par  SELECT DISTINCT TOP n Salary
+\par  FROM Worker 
+\par  ORDER BY Salary DESC
+\par  )
+\par ORDER BY Salary ASC;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-34. Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The following query i
+s using the correlated subquery to return the 5th highest salary:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT Salary
+\par FROM Worker W1
+\par WHERE 4 = (
+\par  SELECT COUNT( DISTINCT ( W2.Salary ) )
+\par  FROM Worker W2
+\par  WHERE W2.Salary >= W1.Salary
+\par  );
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+Use the following generic method to find nth\~highest salary without using TOP or limit.
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT Salary
+\par FROM Worker W1
+\par WHERE n-1 = (
+\par  SELECT COUNT( DISTINCT ( W2.Salary ) )
+\par  FROM Worker W2
+\par  WHERE W2.Salary >= W1.Salary
+\par  );
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-35. Write an SQL query to fetch the list of employees with the same salary.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select distinct W.WORKER_ID, W.FIRST_NAME, W.Salary 
+\par from Worker W, Worker W1 
+\par where W.Salary = W1.Salary 
+\par and W.WORKER_ID != W1.WORKER_ID;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-36. Write an SQL query to show the second highest salary from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select max(Salary) from Worker 
+\par where Salary not in (Select max(Salary) from Worker);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-37. Write an SQL query to show one row twice in results from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 select FIRST_NAME, DEPARTMENT from worker W where W.DEPARTMENT='HR' 
+\par union all 
+\par select FIRST_NAME, DEPARTMENT from Worker W1 where W1.DEPARTMENT='HR';
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 Q-3
+8. Write an SQL query to fetch intersecting records of two tables.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 (SELECT * FROM Worker)
+\par INTERSECT
+\par (SELECT * FROM WorkerClone);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-39. Write an SQL query to fetch the first 50% records from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT *
+\par FROM WORKER
+\par WHERE WORKER_ID <= (SELECT count(WORKER_ID)/2 from Worker);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-40. Write an SQL query to fetch the departments that have less than five people in it.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT DEPARTMENT, COUNT(WORKER_ID) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID) < 5;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-41. Write an SQL query to show all departments along with the number of people in there.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The following query returns the expected result:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT DEPARTMENT, COUNT(DEPARTMENT) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-42. Write an SQL query to show the last record from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+The following query will return the last record from the Worker table:
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where WORKER_ID = (SELECT max(WORKER_ID) from Worker);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-43. Write an SQL query to fetch the first row of a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 Select * from Worker where WORKER_ID = (SELECT min(WORKER_ID) from Worker);
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-44. Write an SQL query to fetch the last five records from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT * FROM Worker WHERE WORKER_ID <=5
+\par UNION
+\par SELECT * FROM (SELECT * FROM Worker W order by W.WORKER_ID DESC) AS W1 WHERE W1.WORKER_ID <=5;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-45. Write an SQL query to print the name of employees having the highest salary in each department.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT t.DEPARTMENT,t.FIRST_NAME,t.Salary from(SELECT max(Salary) as TotalSalary,DEPARTMENT from Worker group by DEPARTMENT) as TempNew 
+\par Inner Join Worker t on TempNew.DEPARTMENT=t.DEPARTMENT 
+\par  and TempNew.TotalSalary=t.Salary;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-46. Write an SQL query to fetch three max salaries from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT distinct Salary from worker a WHERE 3 >= (SELECT count(distinct Salary) from worker b WHERE a.Salary <= b.Salary) order by a.Salary desc;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-47. Write an SQL query to fetch three min salaries from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT distinct Salary from worker a WHERE 3 >= (SELECT count(distinct Salary) from worker b WHERE a.Salary >= b.Salary) order by a.Salary desc;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-48. Write an SQL query to fetch nth max salaries from a table.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT distinct Salary from worker a WHERE n >= (SELECT count(distinct Salary) from worker b WHERE a.Salary <= b.Salary) order by a.Salary desc;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-49. Write an SQL query to fetch departments along with the total salaries paid for each of them.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 \~SELECT DEPARTMENT, sum(Salary) from worker group by DEPARTMENT;
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 \~
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\outlinelevel3\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs26 \ltrch\fcs0 \b\f43\fs26\expnd0\expndtw3\cf19\insrsid9656530\charrsid9656530 
+Q-50. Write an SQL query to fetch the names of workers who earn the highest salary.
+\par }\pard \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \ab\af43\afs23 \ltrch\fcs0 \b\f44\fs23\expnd0\expndtw3\cf23\chbrdr\brdrnone\brdrframe1 
+\insrsid9656530\charrsid9656530 Ans.}{\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 
+\par }\pard \ltrpar\ql \li0\ri0\sa300\widctlpar\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 \cbpat8 {\rtlch\fcs1 \af43\afs23 \ltrch\fcs0 \f43\fs23\expnd0\expndtw3\cf23\insrsid9656530\charrsid9656530 The required query is:
+
+\par }\pard \ltrpar\ql \li0\ri0\sb300\sa300\widctlpar\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\wrapdefault\aspalpha\aspnum\faroman\adjustright\rin0\lin0\itap0\pararsid9656530 {
+\rtlch\fcs1 \af2\afs24 \ltrch\fcs0 \f2\fs24\expnd0\expndtw3\insrsid9656530\charrsid9656530 SELECT FIRST_NAME, SALARY from Worker WHERE SALARY=(SELECT max(SALARY) from Worker);
+\par }\pard \ltrpar\ql \li0\ri0\sa160\sl259\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid7224172 
+\par }{\*\themedata 504b030414000600080000002100e9de0fbfff0000001c020000130000005b436f6e74656e745f54797065735d2e786d6cac91cb4ec3301045f748fc83e52d4a
+9cb2400825e982c78ec7a27cc0c8992416c9d8b2a755fbf74cd25442a820166c2cd933f79e3be372bd1f07b5c3989ca74aaff2422b24eb1b475da5df374fd9ad
+5689811a183c61a50f98f4babebc2837878049899a52a57be670674cb23d8e90721f90a4d2fa3802cb35762680fd800ecd7551dc18eb899138e3c943d7e503b6
+b01d583deee5f99824e290b4ba3f364eac4a430883b3c092d4eca8f946c916422ecab927f52ea42b89a1cd59c254f919b0e85e6535d135a8de20f20b8c12c3b0
+0c895fcf6720192de6bf3b9e89ecdbd6596cbcdd8eb28e7c365ecc4ec1ff1460f53fe813d3cc7f5b7f020000ffff0300504b030414000600080000002100a5d6
+a7e7c0000000360100000b0000005f72656c732f2e72656c73848fcf6ac3300c87ef85bd83d17d51d2c31825762fa590432fa37d00e1287f68221bdb1bebdb4f
+c7060abb0884a4eff7a93dfeae8bf9e194e720169aaa06c3e2433fcb68e1763dbf7f82c985a4a725085b787086a37bdbb55fbc50d1a33ccd311ba548b6309512
+0f88d94fbc52ae4264d1c910d24a45db3462247fa791715fd71f989e19e0364cd3f51652d73760ae8fa8c9ffb3c330cc9e4fc17faf2ce545046e37944c69e462
+a1a82fe353bd90a865aad41ed0b5b8f9d6fd010000ffff0300504b0304140006000800000021006b799616830000008a0000001c0000007468656d652f746865
+6d652f7468656d654d616e616765722e786d6c0ccc4d0ac3201040e17da17790d93763bb284562b2cbaebbf600439c1a41c7a0d29fdbd7e5e38337cedf14d59b
+4b0d592c9c070d8a65cd2e88b7f07c2ca71ba8da481cc52c6ce1c715e6e97818c9b48d13df49c873517d23d59085adb5dd20d6b52bd521ef2cdd5eb9246a3d8b
+4757e8d3f729e245eb2b260a0238fd010000ffff0300504b030414000600080000002100b6f4679893070000c9200000160000007468656d652f7468656d652f
+7468656d65312e786d6cec59cd8b1bc915bf07f23f347d97f5d5ad8fc1f2a24fcfda33b6b164873dd648a5eef2547789aad28cc56208de532e81c026e49085bd
+ed21842cecc22eb9e48f31d8249b3f22afaa5bdd5552c99e191c3061463074977eefd5afde7bf5de53d5ddcf5e26d4bbc05c1096f6fcfa9d9aefe174ce16248d
+7afeb3d9a4d2f13d2151ba4094a5b8e76fb0f03fbbf7eb5fdd454732c609f6403e1547a8e7c752ae8eaa5531876124eeb0154ee1bb25e30992f0caa3ea82a34b
+d09bd06aa3566b55134452df4b51026a1f2f97648ebd9952e9dfdb2a1f53784da5500373caa74a35b6243476715e5708b11143cabd0b447b3eccb3609733fc52
+fa1e4542c2173dbfa6fffceabdbb5574940b517940d6909be8bf5c2e17589c37f49c3c3a2b260d823068f50bfd1a40e53e6edc1eb7c6ad429f06a0f91c569a71
+b175b61bc320c71aa0ecd1a17bd41e35eb16ded0dfdce3dc0fd5c7c26b50a63fd8c34f2643b0a285d7a00c1feee1c3417730b2f56b50866fede1dbb5fe28685b
+fa3528a6243ddf43d7c25673b85d6d0159327aec8477c360d26ee4ca4b144443115d6a8a254be5a1584bd00bc6270050408a24493db959e1259a43140f112567
+9c7827248a21f056286502866b8ddaa4d684ffea13e827ed5174849121ad780113b137a4f87862cec94af6fc07a0d537206f7ffef9cdeb1fdfbcfee9cd575fbd
+79fdf77c6eadca923b466964cafdf2dd1ffef3cd6fbd7ffff0ed2f5fff319b7a172f4cfcbbbffdeedd3ffef93ef5b0e2d2146ffff4fdbb1fbf7ffbe7dfffebaf
+5f3bb4f7393a33e1339260e13dc297de5396c0021dfcf119bf9ec42c46c494e8a791402952b338f48f656ca11f6d10450edc00db767cce21d5b880f7d72f2cc2
+d398af2571687c182716f094313a60dc6985876a2ec3ccb3751ab927e76b13f714a10bd7dc43945a5e1eaf579063894be530c616cd2714a5124538c5d253dfb1
+738c1dabfb8210cbaea764ce99604be97d41bc01224e93ccc899154da5d03149c02f1b1741f0b7659bd3e7de8051d7aa47f8c246c2de40d4417e86a965c6fb68
+2d51e252394309350d7e8264ec2239ddf0b9891b0b099e8e3065de78818570c93ce6b05ec3e90f21cdb8dd7e4a37898de4929cbb749e20c64ce4889d0f6394ac
+5cd829496313fbb938871045de13265df05366ef10f50e7e40e941773f27d872f787b3c133c8b026a53240d4376beef0e57dccacf89d6ee8126157aae9f3c44a
+b17d4e9cd131584756689f604cd1255a60ec3dfbdcc160c05696cd4bd20f62c82ac7d815580f901dabea3dc5027a25d5dcece7c91322ac909de2881de073bad9
+493c1b9426881fd2fc08bc6eda7c0ca52e7105c0633a3f37818f08f480102f4ea33c16a0c308ee835a9fc4c82a60ea5db8e375c32dff5d658fc1be7c61d1b8c2
+be04197c6d1948eca6cc7b6d3343d49aa00c9819822ec3956e41c4727f29a28aab165b3be596f6a62ddd00dd91d5f42424fd6007b4d3fb84ffbbde073a8cb77f
+f9c6b10f3e4ebfe3566c25ab6b763a8792c9f14e7f7308b7dbd50c195f904fbfa919a175fa04431dd9cf58b73dcd6d4fe3ffdff73487f6f36d2773a8dfb8ed64
+7ce8306e3b99fc70e5e3743265f3027d8d3af0c80e7af4b14f72f0d46749289dca0dc527421ffc08f83db398c0a092d3279eb838055cc5f0a8ca1c4c60e1228e
+b48cc799fc0d91f134462b381daafb4a492472d591f0564cc0a1911e76ea5678ba4e4ed9223becacd7d5c16656590592e5782d2cc6e1a04a66e856bb3cc02bd4
+6bb6913e68dd1250b2d721614c6693683a48b4b783ca48fa58178ce620a157f65158741d2c3a4afdd6557b2c805ae115f8c1edc1cff49e1f06200242701e07cd
+f942f92973f5d6bbda991fd3d3878c69450034d8db08283ddd555c0f2e4fad2e0bb52b78da2261849b4d425b46377822869fc17974aad1abd0b8aeafbba54b2d
+7aca147a3e08ad9246bbf33e1637f535c8ede6069a9a9982a6de65cf6f35430899395af5fc251c1ac363b282d811ea3717a211dcbccc25cf36fc4d32cb8a0b39
+4222ce0cae934e960d122231f728497abe5a7ee1069aea1ca2b9d51b90103e59725d482b9f1a3970baed64bc5ce2b934dd6e8c284b67af90e1b35ce1fc568bdf
+1cac24d91adc3d8d1797de195df3a708422c6cd795011744c0dd413db3e682c0655891c8caf8db294c79da356fa3740c65e388ae62945714339967709dca0b3a
+faadb081f196af190c6a98242f8467912ab0a651ad6a5a548d8cc3c1aafb6121653923699635d3ca2aaa6abab39835c3b60cecd8f26645de60b53531e434b3c2
+67a97b37e576b7b96ea74f28aa0418bcb09fa3ea5ea12018d4cac92c6a8af17e1a56393b1fb56bc776811fa07695226164fdd656ed8edd8a1ae19c0e066f54f9
+416e376a6168b9ed2bb5a5f5adb979b1cdce5e40f2184197bba6526857c2c92e47d0104d754f92a50dd8222f65be35e0c95b73d2f3bfac85fd60d80887955a27
+1c57826650ab74c27eb3d20fc3667d1cd66ba341e31514161927f530bbb19fc00506dde4f7f67a7cefee3ed9ded1dc99b3a4caf4dd7c5513d777f7f5c6e1bb7b
+8f40d2f9b2d598749bdd41abd26df627956034e854bac3d6a0326a0ddba3c9681876ba9357be77a1c141bf390c5ae34ea5551f0e2b41aba6e877ba9576d068f4
+8376bf330efaaff23606569ea58fdc16605ecdebde7f010000ffff0300504b0304140006000800000021000dd1909fb60000001b010000270000007468656d65
+2f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73848f4d0ac2301484f78277086f6fd3ba109126dd88d0add40384e4350d36
+3f2451eced0dae2c082e8761be9969bb979dc9136332de3168aa1a083ae995719ac16db8ec8e4052164e89d93b64b060828e6f37ed1567914b284d262452282e
+3198720e274a939cd08a54f980ae38a38f56e422a3a641c8bbd048f7757da0f19b017cc524bd62107bd5001996509affb3fd381a89672f1f165dfe514173d985
+0528a2c6cce0239baa4c04ca5bbabac4df000000ffff0300504b01022d0014000600080000002100e9de0fbfff0000001c020000130000000000000000000000
+0000000000005b436f6e74656e745f54797065735d2e786d6c504b01022d0014000600080000002100a5d6a7e7c0000000360100000b00000000000000000000
+000000300100005f72656c732f2e72656c73504b01022d00140006000800000021006b799616830000008a0000001c0000000000000000000000000019020000
+7468656d652f7468656d652f7468656d654d616e616765722e786d6c504b01022d0014000600080000002100b6f4679893070000c92000001600000000000000
+000000000000d60200007468656d652f7468656d652f7468656d65312e786d6c504b01022d00140006000800000021000dd1909fb60000001b01000027000000
+000000000000000000009d0a00007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73504b050600000000050005005d010000980b00000000}
+{\*\colorschememapping 3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d3822207374616e64616c6f6e653d22796573223f3e0d0a3c613a636c724d
+617020786d6c6e733a613d22687474703a2f2f736368656d61732e6f70656e786d6c666f726d6174732e6f72672f64726177696e676d6c2f323030362f6d6169
+6e22206267313d226c743122207478313d22646b3122206267323d226c743222207478323d22646b322220616363656e74313d22616363656e74312220616363
+656e74323d22616363656e74322220616363656e74333d22616363656e74332220616363656e74343d22616363656e74342220616363656e74353d22616363656e74352220616363656e74363d22616363656e74362220686c696e6b3d22686c696e6b2220666f6c486c696e6b3d22666f6c486c696e6b222f3e}
+{\*\latentstyles\lsdstimax376\lsdlockeddef0\lsdsemihiddendef0\lsdunhideuseddef0\lsdqformatdef0\lsdprioritydef99{\lsdlockedexcept \lsdqformat1 \lsdpriority0 \lsdlocked0 Normal;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 1;
+\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 2;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 3;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 4;
+\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 5;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 6;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 7;
+\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 8;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 9;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 1;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 5;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 6;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 7;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 8;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index 9;
+\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 1;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 2;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 4;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 5;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 6;
+\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 7;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 8;\lsdsemihidden1 \lsdunhideused1 \lsdpriority39 \lsdlocked0 toc 9;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Normal Indent;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 footnote text;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 annotation text;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 header;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 footer;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 index heading;\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority35 \lsdlocked0 caption;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 table of figures;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 envelope address;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 envelope return;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 footnote reference;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 annotation reference;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 line number;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 page number;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 endnote reference;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 endnote text;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 table of authorities;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 macro;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 toa heading;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Bullet;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Number;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Bullet 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Bullet 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Bullet 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Bullet 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Number 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Number 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Number 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Number 5;\lsdqformat1 \lsdpriority10 \lsdlocked0 Title;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Closing;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Signature;\lsdsemihidden1 \lsdunhideused1 \lsdpriority1 \lsdlocked0 Default Paragraph Font;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text Indent;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Continue;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Continue 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Continue 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Continue 4;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 List Continue 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Message Header;\lsdqformat1 \lsdpriority11 \lsdlocked0 Subtitle;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Salutation;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Date;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text First Indent;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text First Indent 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Note Heading;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text Indent 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Body Text Indent 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Block Text;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Hyperlink;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 FollowedHyperlink;\lsdqformat1 \lsdpriority22 \lsdlocked0 Strong;
+\lsdqformat1 \lsdpriority20 \lsdlocked0 Emphasis;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Document Map;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Plain Text;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 E-mail Signature;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Top of Form;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Bottom of Form;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Normal (Web);\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Acronym;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Address;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Cite;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Code;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Definition;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Keyboard;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Preformatted;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Sample;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Typewriter;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 HTML Variable;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Normal Table;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 annotation subject;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 No List;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Outline List 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Outline List 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Outline List 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Simple 1;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Simple 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Simple 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Classic 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Classic 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Classic 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Classic 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Colorful 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Colorful 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Colorful 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Columns 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Columns 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Columns 3;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Columns 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Columns 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 6;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 7;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Grid 8;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 4;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 5;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 6;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 7;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table List 8;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table 3D effects 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table 3D effects 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table 3D effects 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Contemporary;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Elegant;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Professional;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Subtle 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Subtle 2;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Web 1;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Web 2;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Web 3;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Balloon Text;\lsdpriority39 \lsdlocked0 Table Grid;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Table Theme;\lsdsemihidden1 \lsdlocked0 Placeholder Text;
+\lsdqformat1 \lsdpriority1 \lsdlocked0 No Spacing;\lsdpriority60 \lsdlocked0 Light Shading;\lsdpriority61 \lsdlocked0 Light List;\lsdpriority62 \lsdlocked0 Light Grid;\lsdpriority63 \lsdlocked0 Medium Shading 1;\lsdpriority64 \lsdlocked0 Medium Shading 2;
+\lsdpriority65 \lsdlocked0 Medium List 1;\lsdpriority66 \lsdlocked0 Medium List 2;\lsdpriority67 \lsdlocked0 Medium Grid 1;\lsdpriority68 \lsdlocked0 Medium Grid 2;\lsdpriority69 \lsdlocked0 Medium Grid 3;\lsdpriority70 \lsdlocked0 Dark List;
+\lsdpriority71 \lsdlocked0 Colorful Shading;\lsdpriority72 \lsdlocked0 Colorful List;\lsdpriority73 \lsdlocked0 Colorful Grid;\lsdpriority60 \lsdlocked0 Light Shading Accent 1;\lsdpriority61 \lsdlocked0 Light List Accent 1;
+\lsdpriority62 \lsdlocked0 Light Grid Accent 1;\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 1;\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 1;\lsdpriority65 \lsdlocked0 Medium List 1 Accent 1;\lsdsemihidden1 \lsdlocked0 Revision;
+\lsdqformat1 \lsdpriority34 \lsdlocked0 List Paragraph;\lsdqformat1 \lsdpriority29 \lsdlocked0 Quote;\lsdqformat1 \lsdpriority30 \lsdlocked0 Intense Quote;\lsdpriority66 \lsdlocked0 Medium List 2 Accent 1;\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 1;
+\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 1;\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 1;\lsdpriority70 \lsdlocked0 Dark List Accent 1;\lsdpriority71 \lsdlocked0 Colorful Shading Accent 1;\lsdpriority72 \lsdlocked0 Colorful List Accent 1;
+\lsdpriority73 \lsdlocked0 Colorful Grid Accent 1;\lsdpriority60 \lsdlocked0 Light Shading Accent 2;\lsdpriority61 \lsdlocked0 Light List Accent 2;\lsdpriority62 \lsdlocked0 Light Grid Accent 2;\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 2;
+\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 2;\lsdpriority65 \lsdlocked0 Medium List 1 Accent 2;\lsdpriority66 \lsdlocked0 Medium List 2 Accent 2;\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 2;\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 2;
+\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 2;\lsdpriority70 \lsdlocked0 Dark List Accent 2;\lsdpriority71 \lsdlocked0 Colorful Shading Accent 2;\lsdpriority72 \lsdlocked0 Colorful List Accent 2;\lsdpriority73 \lsdlocked0 Colorful Grid Accent 2;
+\lsdpriority60 \lsdlocked0 Light Shading Accent 3;\lsdpriority61 \lsdlocked0 Light List Accent 3;\lsdpriority62 \lsdlocked0 Light Grid Accent 3;\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 3;\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 3;
+\lsdpriority65 \lsdlocked0 Medium List 1 Accent 3;\lsdpriority66 \lsdlocked0 Medium List 2 Accent 3;\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 3;\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 3;\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 3;
+\lsdpriority70 \lsdlocked0 Dark List Accent 3;\lsdpriority71 \lsdlocked0 Colorful Shading Accent 3;\lsdpriority72 \lsdlocked0 Colorful List Accent 3;\lsdpriority73 \lsdlocked0 Colorful Grid Accent 3;\lsdpriority60 \lsdlocked0 Light Shading Accent 4;
+\lsdpriority61 \lsdlocked0 Light List Accent 4;\lsdpriority62 \lsdlocked0 Light Grid Accent 4;\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 4;\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 4;\lsdpriority65 \lsdlocked0 Medium List 1 Accent 4;
+\lsdpriority66 \lsdlocked0 Medium List 2 Accent 4;\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 4;\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 4;\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 4;\lsdpriority70 \lsdlocked0 Dark List Accent 4;
+\lsdpriority71 \lsdlocked0 Colorful Shading Accent 4;\lsdpriority72 \lsdlocked0 Colorful List Accent 4;\lsdpriority73 \lsdlocked0 Colorful Grid Accent 4;\lsdpriority60 \lsdlocked0 Light Shading Accent 5;\lsdpriority61 \lsdlocked0 Light List Accent 5;
+\lsdpriority62 \lsdlocked0 Light Grid Accent 5;\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 5;\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 5;\lsdpriority65 \lsdlocked0 Medium List 1 Accent 5;\lsdpriority66 \lsdlocked0 Medium List 2 Accent 5;
+\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 5;\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 5;\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 5;\lsdpriority70 \lsdlocked0 Dark List Accent 5;\lsdpriority71 \lsdlocked0 Colorful Shading Accent 5;
+\lsdpriority72 \lsdlocked0 Colorful List Accent 5;\lsdpriority73 \lsdlocked0 Colorful Grid Accent 5;\lsdpriority60 \lsdlocked0 Light Shading Accent 6;\lsdpriority61 \lsdlocked0 Light List Accent 6;\lsdpriority62 \lsdlocked0 Light Grid Accent 6;
+\lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 6;\lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 6;\lsdpriority65 \lsdlocked0 Medium List 1 Accent 6;\lsdpriority66 \lsdlocked0 Medium List 2 Accent 6;
+\lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 6;\lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 6;\lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 6;\lsdpriority70 \lsdlocked0 Dark List Accent 6;\lsdpriority71 \lsdlocked0 Colorful Shading Accent 6;
+\lsdpriority72 \lsdlocked0 Colorful List Accent 6;\lsdpriority73 \lsdlocked0 Colorful Grid Accent 6;\lsdqformat1 \lsdpriority19 \lsdlocked0 Subtle Emphasis;\lsdqformat1 \lsdpriority21 \lsdlocked0 Intense Emphasis;
+\lsdqformat1 \lsdpriority31 \lsdlocked0 Subtle Reference;\lsdqformat1 \lsdpriority32 \lsdlocked0 Intense Reference;\lsdqformat1 \lsdpriority33 \lsdlocked0 Book Title;\lsdsemihidden1 \lsdunhideused1 \lsdpriority37 \lsdlocked0 Bibliography;
+\lsdsemihidden1 \lsdunhideused1 \lsdqformat1 \lsdpriority39 \lsdlocked0 TOC Heading;\lsdpriority41 \lsdlocked0 Plain Table 1;\lsdpriority42 \lsdlocked0 Plain Table 2;\lsdpriority43 \lsdlocked0 Plain Table 3;\lsdpriority44 \lsdlocked0 Plain Table 4;
+\lsdpriority45 \lsdlocked0 Plain Table 5;\lsdpriority40 \lsdlocked0 Grid Table Light;\lsdpriority46 \lsdlocked0 Grid Table 1 Light;\lsdpriority47 \lsdlocked0 Grid Table 2;\lsdpriority48 \lsdlocked0 Grid Table 3;\lsdpriority49 \lsdlocked0 Grid Table 4;
+\lsdpriority50 \lsdlocked0 Grid Table 5 Dark;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful;\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful;\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 1;\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 1;
+\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 1;\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 1;\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 1;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 1;
+\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 1;\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 2;\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 2;\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 2;
+\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 2;\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 2;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 2;\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 2;
+\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 3;\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 3;\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 3;\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 3;
+\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 3;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 3;\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 3;\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 4;
+\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 4;\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 4;\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 4;\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 4;
+\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 4;\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 4;\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 5;\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 5;
+\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 5;\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 5;\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 5;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 5;
+\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 5;\lsdpriority46 \lsdlocked0 Grid Table 1 Light Accent 6;\lsdpriority47 \lsdlocked0 Grid Table 2 Accent 6;\lsdpriority48 \lsdlocked0 Grid Table 3 Accent 6;
+\lsdpriority49 \lsdlocked0 Grid Table 4 Accent 6;\lsdpriority50 \lsdlocked0 Grid Table 5 Dark Accent 6;\lsdpriority51 \lsdlocked0 Grid Table 6 Colorful Accent 6;\lsdpriority52 \lsdlocked0 Grid Table 7 Colorful Accent 6;
+\lsdpriority46 \lsdlocked0 List Table 1 Light;\lsdpriority47 \lsdlocked0 List Table 2;\lsdpriority48 \lsdlocked0 List Table 3;\lsdpriority49 \lsdlocked0 List Table 4;\lsdpriority50 \lsdlocked0 List Table 5 Dark;
+\lsdpriority51 \lsdlocked0 List Table 6 Colorful;\lsdpriority52 \lsdlocked0 List Table 7 Colorful;\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 1;\lsdpriority47 \lsdlocked0 List Table 2 Accent 1;\lsdpriority48 \lsdlocked0 List Table 3 Accent 1;
+\lsdpriority49 \lsdlocked0 List Table 4 Accent 1;\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 1;\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 1;\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 1;
+\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 2;\lsdpriority47 \lsdlocked0 List Table 2 Accent 2;\lsdpriority48 \lsdlocked0 List Table 3 Accent 2;\lsdpriority49 \lsdlocked0 List Table 4 Accent 2;
+\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 2;\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 2;\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 2;\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 3;
+\lsdpriority47 \lsdlocked0 List Table 2 Accent 3;\lsdpriority48 \lsdlocked0 List Table 3 Accent 3;\lsdpriority49 \lsdlocked0 List Table 4 Accent 3;\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 3;
+\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 3;\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 3;\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 4;\lsdpriority47 \lsdlocked0 List Table 2 Accent 4;
+\lsdpriority48 \lsdlocked0 List Table 3 Accent 4;\lsdpriority49 \lsdlocked0 List Table 4 Accent 4;\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 4;\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 4;
+\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 4;\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 5;\lsdpriority47 \lsdlocked0 List Table 2 Accent 5;\lsdpriority48 \lsdlocked0 List Table 3 Accent 5;
+\lsdpriority49 \lsdlocked0 List Table 4 Accent 5;\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 5;\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 5;\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 5;
+\lsdpriority46 \lsdlocked0 List Table 1 Light Accent 6;\lsdpriority47 \lsdlocked0 List Table 2 Accent 6;\lsdpriority48 \lsdlocked0 List Table 3 Accent 6;\lsdpriority49 \lsdlocked0 List Table 4 Accent 6;
+\lsdpriority50 \lsdlocked0 List Table 5 Dark Accent 6;\lsdpriority51 \lsdlocked0 List Table 6 Colorful Accent 6;\lsdpriority52 \lsdlocked0 List Table 7 Colorful Accent 6;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Mention;
+\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Smart Hyperlink;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Hashtag;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Unresolved Mention;\lsdsemihidden1 \lsdunhideused1 \lsdlocked0 Smart Link;}}{\*\datastore 01050000
+02000000180000004d73786d6c322e534158584d4c5265616465722e362e3000000000000000000000060000
+d0cf11e0a1b11ae1000000000000000000000000000000003e000300feff090006000000000000000000000001000000010000000000000000100000feffffff00000000feffffff0000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffdfffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffff52006f006f007400200045006e00740072007900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016000500ffffffffffffffffffffffff0c6ad98892f1d411a65f0040963251e50000000000000000000000008057
+c116abf5d501feffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000105000000000000}}
