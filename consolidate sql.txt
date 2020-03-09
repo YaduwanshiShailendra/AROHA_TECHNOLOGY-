@@ -1,0 +1,2307 @@
+	
+		--JOINS EXERCISE--
+
+1.WRITE A QUERRY TO DISPLAY WHO DID NOT MAKE ANY PURCHASE TODAY.
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER 
+	WHERE  CUST_ID NOT IN (SELECT CUST_ID 
+			       FROM SALES
+			       WHERE TRUNC(SAL_DATE)=TRUNC(SYSDATE));
+
+2.WQTD CITY'S WHICH HAVE CUSTOMER BUT NO STORE.
+
+ANS-       SELECTCITY_NAME
+	   FROM CITY2 
+	   WHERE CITY_ID IN(SELECT CITY_ID
+			    FROM SALES)
+	   AND
+
+           CITY_ID NOT IN(SELECT CT_ID
+			  FROM STORES);
+
+3. WQTD  CUSTOMERS WHO MADE SALES IN THE CURRENT MONTH.
+
+ANS-	 SELECT CUST_NAME
+     	 FROM CUSTOMER
+	 WHERE CUST_ID IN ( SELECT CUST_ID 
+		      	    FROM SALES
+                            WHERE TO_CHAR(SAL_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY'));
+
+
+4.WQTD CUSTOMER WHO PURCHASED PEN ON FRIDAY THIS MONTH.
+
+ANS-	SELECT C.CUST_NAME
+	FROM CUSTOMER C INNER JOIN SALES S
+	ON C.CUST_ID=S.CUST_ID INNER JOIN PRODUCT P
+	ON S.P_ID=P.P_ID 
+	WHERE P.P_NAME='pen' 
+	AND
+        TO_CHAR(SAL_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY')
+	AND
+	TO_CHAR(SAL_DATE,'DAY')='FRI';
+
+		--OR USING SUB QUERRY
+
+        SELECT CUST_NAME
+	FROM CUSTOMER
+	WHERE CUST_ID IN (SELECT CUST_ID 
+			  FROM SALES )
+	AND
+	TO_CHAR(SAL_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY')
+	AND
+ 	TO_CHAR(SAL_DATE,'DY')='FRI'
+	AND
+	P_ID=(SELECT P_ID
+	      FROM PRODUCT	
+    	      WHERE P_NAME='PEN');
+
+5. WQTD STORES WHICH DOES NOT MAKE ANY SALES IN THE PREVIOUS MONTH.
+
+ANS-	SELECT ST_NAME 
+	FROM STORE 
+	WHERE ST_ID NOT IN( SELECT ST_ID
+		            FROM SALES
+			    WHERE TO_CHAR(SAL_DATE,'MM-YY')=
+			    TO_CHAR(ADD_MONTHS(SYSDATE,-1),'MM-YY'));
+
+
+
+         
+		TODAYS EXERCISE
+
+1. DISPLAY THE CITY NAME WISE NO OF CUSTOMER.
+
+ANS-	SELECT C.CT_NAME,COUNT(CUS.CT_ID)
+        FROM CITY C LEFT JOIN CUSTOMER_detail CUS
+        ON C.CT_ID=CUS.CT_ID
+        GROUP BY C.CT_NAME;
+
+2. DISPLAY ALL THE PRODUCT NAME WHICH WAS LAUCHED IN THE PERVIOUS YEAR.
+
+ANS-  	SELECT P_NAME
+     	FROM PRODUCT
+	WHERE TO_CHAR(LAUNCH_DATE,'YYYY')=TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE),-1),'YYYY');
+
+3.   DISPLAY THE NAME OF THE PRODUCT WHICH WERE LAUNCHED ON SUNDAY.
+
+ANS-	SELECT P_NAME
+	FROM PRODUCT
+	WHERE TO_CHAR(LAUNCH_DATE,'DY')='SUN';
+
+4. DISPLAY THE CUSTOMER WHO ARE FROM BANGALORE AND THERE AGE IS MORE MIKE.
+
+ANS-	SELECT CUST_NAME
+        FROM CUSTOMER_DETAIL
+        WHERE CUST_DOB<(SELECT CUST_DOB
+                   FROM CUSTOMER_DETAIL
+                  WHERE CUST_NAME='RACHEL')
+        AND
+        CT_ID =(SELECT CT_ID
+               FROM CITY
+                WHERE CT_NAME ='BANGALORE');
+        	
+5. DISPLAY THE CUSTOMER WHO ONBAORDED ON LAST MONTH.
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER_DETAIL
+	WHERE TO_CHAR(ONBOARD_DATE,'MM-YYYY')=TO_CHAR(ADD_MONTHS(SYSDATE,-1),'MM-YYYY');
+
+6.DISPLAY THE NAME OF THE CUSTOMER AND NO OS SALES.
+
+ANS-	SELECT C.CUST_NAME,COUNT(S.SL_ID)
+        FROM CUSTOMER_DETAIL C LEFT JOIN SALES S
+        ON C.CUST_ID=S.CUST_ID
+        GROUP BY C.CUST_NAME;	
+
+7.DISPLAY THE CUSTOMER NAME WHO HAS BIRTHDAY IN CURRENT MONTH.
+
+ANS-	SELECT CUST_NAME 
+        FROM CUSTOMER_DETAIL
+        WHERE TO_CHAR(CUST_DOB,'MM')=TO_CHAR(SYSDATE,'MM');
+
+8. DISPLAY THE CITY NAME WHICH HAVE  MORE THAN 10 CUSTOMER.
+
+ANS-	SELECT C.CT_NAME,COUNT(CUS.CUST_ID) AS NO_OF_CUSTOMER 
+        FROM CITY C INNER JOIN CUSTOMER_DETAIL CUS
+        ON C.CT_ID=CUS.CT_ID
+        GROUP BY C.CT_NAME
+        HAVING COUNT(CUS.CUST_ID)>10;
+
+9. DISPLAY THE CITY NAME WHICH HAS MORE CUSTOMER THAN PUNE.
+
+ANS-	SELECT CT_NAME,COUNT(CUS.CUST_ID)
+	FROM CITY C INNER JOIN CUSTOMER_DETAIL CUS
+	ON C.CT_ID=CUS.CT_ID
+	GROUP BY C.CT_ID,CT_NAME
+	HAVING COUNT(CUS.CUST_ID) >( SELECT COUNT(CUS.CUST_ID)
+					    FROM CITY C INNER JOIN CUSTOMER_DETAIL CUS
+					    ON C.CT_ID=CUS.CT_ID	
+					    WHERE CT_NAME='PUNE');
+
+10.DISPLAY TH CITY THAT HAVE MORE THAN 5 CUSTOMERS AND WHOSE AGE IS BEYOND 60
+
+ANS-	SELECT C.CT_NAME
+        FROM CITY C INNER JOIN CUSTOMER_DETAIL CUS
+    	ON C.CT_ID=CUS.CT_ID
+    	WHERE MONTHS_BETWEEN(SYSDATE,CUST_DOB)/12>60
+        GROUP BY C.CT_ID,C.CT_NAME
+        HAVING COUNT(CUS.CUST_ID)>5;
+
+11.DISPLAY THE YOUGEST CUSTOMER NAME
+
+ANS-	SELECT CUST_NAME AS YOUNGEST_CUST
+	FROM CUSTOMER		
+	WHERE DOB IN (SELECT MAX(DOB)
+		   FROM CUSTOMER);
+
+
+
+	
+		CUSTOMER SALES MODEL
+
+CUSTOMER	SALES		PRODUCT
+____________    ___________    __________
+|CUST_ID   |	|CUST_ID  |    |PROD_ID	|
+|CUST_NAME |	|PROD_ID  |    |P_NAME  |
+|ADDRESS   |	|QTY	  |    |PRICE	|
+|PHONE	   |	|AMOUNT	  |    |COST    |
+|CITY	   |	|SAL_DATE |    |P_FAMILY|
+|STATE     |    -----------    ----------
+------------
+
+
+1.DISPLAY ALL THE CUSTOMER WO DO NOT HAVE PHONE NUMBER.
+
+ANS-	SELECT CUST_NAME
+	FROM  CUSTOMER
+	WHERE PHONE IS NULL;
+
+2.DISPLAY THE CUSTOMER NAME WHO ARE FROM BANGLORE OR CHENNAI
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER
+	WHERE CITY IN('BANGALORE','CHENNAI');
+
+3.DISPLAY THE PRODUCT WHOSE PRICE IS MORE THAN 3000 AND LESS THAN 5000.
+
+ANS-	SELECT P_NAME
+	FROM PRODUCT
+	WHERE PRICE BETWEEN 3001 AND 4999;
+
+4. QTD CUSTOMER WHO ARE FROM SAME CITY AS ANJALI.
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER
+	WHERE CITY=(SELECT CITY 
+		    FROM CUSTOMER
+		    WHERE CUST_NAME='ANJALI');
+
+5. QTD THE PRODUCTS THAT WERE NOT SOLD IN THE PREVIOUS YEAR.
+
+ANS-	SELECT P_NAME
+    	FROM PRODUCT	
+    	WHERE P_ID NOT IN(SELECT PD_ID
+                		     FROM SALES
+                             WHERE TO_CHAR(TXN_DATE,'YY')=TO_CHAR(TRUNC(SYSDATE)-1,'YY'));
+
+				OR
+	SELECT P_NAME
+	FROM PRODUCT	
+	WHERE P_ID NOT IN(SELECT PD_ID
+			     FROM SALES
+		 	     WHERE TO_CHAR(TXN_DATE,'YY')=
+			     TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE),-1),'YY')); 
+
+6.QTD CUSTOMER WHO HAVE NOT PURCHASED AND PRODUCT FROM PRODUCT FAMILY 'STATIONARY'.
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER
+	WHERE CUST_ID IN(SELECT CUST_ID
+			  FROM SALES S,PRODUCT P 
+			  WHERE P.P_ID=S.PD_ID AND
+			  P.P_FAMILY <> 'STATIONARY');
+
+				OR
+			    USING JOIN
+
+	SELECT CUST_NAME
+	FROM CUSTOMER C, SALES S,PRODUCT P
+	WHERE C.CUST_ID=S.CUST_ID AND P.P_ID=S.PD_ID
+	AND P.P_FAMILY<>'STATIONARY';
+
+7.QTD THE CUSTOMER WHO HAVE DONE MORE THAN 2 SALES IN THE CURRENT MONTH.
+
+ANS-	SELECT CUST_NAME
+	FROM CUSTOMER C,SALES S
+	WHERE C.CUST_ID=S.CUST_ID
+	AND TO_CHAR(TXN_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY')
+	GROUP BY C.CUST_NAME,S.CUST_ID
+	HAVING COUNT(SL_ID)>2;
+
+
+	USING SUB QUERRY.
+
+	SELECT CUST_NAME
+	FROM CUSTOMER
+	WHERE CUST_ID IN (SELECT CUST_ID
+			  FROM SALES
+			  WHERE TO_CHAR(TXN_DATE,'MM-YY')=TO_CHAR(SYSDATE,'MM-YY')
+			  GROUP BY CUST_ID
+			   HAVING COUNT(SL_ID)>2);
+8.QTD THE PRODUCT THAT ARE SOLD IN THE CURRENT YEAR AND NOT IN PREVIOUS YEAR.
+
+ANS-	SELECT P_NAME
+    	FROM PRODUCT	
+        WHERE P_ID IN(SELECT PD_ID
+                       FROM SALES
+                        WHERE TO_CHAR(TXN_DATE,'YY')=TO_CHAR(SYSDATE,'YY'))
+        AND
+	
+        P_ID NOT IN(SELECT PD_ID
+                       FROM SALES
+                        WHERE TO_CHAR(TXN_DATE,'YY')=
+			TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE),-1),'YY'));
+
+9. QTD STATEWISE TOTAL SALES AMOUNT.
+X	
+ANS- 	SELECT STATE,SUM(S.AMOUNT)
+	FROM CUSTOMER C,SALE S
+	WHERE C.CUST_ID=S.CUST_ID
+	GROUP BY STATE;
+
+10. DISPLAY THE CITIES THAT HAVE MORE THAN 10 CUSTOMERS
+
+ANS.	SELECT CUST_NAME
+	FROM CUSTOMER
+	GROUP BY CITY
+	HAVING COUNT(CUST_ID)>10;
+
+
+
+
+
+CREATE TABLE T1
+AS
+SELECT * FROM T2;
+	
+ 
+
+			todays question 
+1. to extract username, domain and extension from email id of user.
+
+eg- aroha@gmail.com
+
+username-	aroha
+domain-		gmail
+extension-	.com
+
+ans-	select substr(email_id,1,instr(email_id,'@'-1)) as username,
+	       substr(email_id,instr(email_id,'@")+1,instr(email_id,'.')-instr(email_id,'@')-1) as domain
+	       substr(email_id,'.') as extension
+	from customer_detail;
+	
+
+
+
+
+1.display the customer name who are from bangalore.
+
+ans- 	select cust_name
+     	from customer
+    	where c_id=(select c_id
+			from city
+			where c_name='bangalore');
+
+2. display the state wise count of city and count of customer.
+
+ans-	select s_name,count(ct_id),count(cust_id)
+	from state s,city c,customer cm
+	where s.st_id=c.st_id
+	and c.ci_id=cm.ct_id
+	group by s_name;
+
+3. display the no of customer name wise sales.
+
+as- select cust_name,count(sale_id)
+	from customer c left join sales s
+	on c.cust_id=s.cust_id
+	group by cust_name,cust_id;
+
+
+	or
+		
+	select c.cust_name,(select count(s.sl_id)
+                        	from sales s
+                            	where s.cust_id=c.cust_id)as no_of_sales
+	from customer_detail c;	
+
+4.display the product that were never sold.
+
+ans-	select p_name
+	from product
+	where p_id not in(select p_id
+			  from sales);
+
+
+5.display the city that have more than 10 customer.
+
+ans-	select ct_name
+	from city c,customer ct
+	where c.ct_id=ct.ct_id
+	group by ct_id
+	having count(cust_id)>10;
+
+6.display the yougest customer name
+
+ans-	select cust_name
+	from customer	 	
+	where dob=(select max(dob)
+	           from customer);
+
+7.display the product am whos prices is more than 4000 and than 6000.
+
+ans-	select p_name
+	from product
+	where price>4000 and price<6000;
+
+8.display the oldest customer in each city.
+
+ans-	select ct_name,(select cust_name
+			from customer ct
+			where ct.ct_id=c.ct_id
+			and dob=(select min(dob)
+				 from customer c1
+				 where c1.ct_id=c.ct_id))
+	from city c;
+
+9.display the statewise no of males and females.
+
+ans-select s.st_name,count(case when gender='m'then 1 end) count_of_f,
+				count(case when gender='f')as count_of_f
+	from state s,city c,customer cm
+	where s.st_id=c.st_id
+	and c.ct_id=cm.ct_id
+	group by s.st_name;
+
+10.display the state name that has more than 5 cities and more than 30 customers.
+
+ans-
+SELECT S.STATE_NAME,COUNT(CT.CITY_ID),COUNT(C.CUST_ID)
+FROM STATE S,CITY CT,CUSTOMER_DETAIL C
+WHERE S.STATE_ID = CT.STATE_ID
+AND CT.CITY_ID = C.CITY_ID
+GROUP BY S.STATE_NAME
+HAVING COUNT(S.STATE_ID)>2
+AND COUNT(C.CUST_ID)>3;
+
+
+11. Display the products that were not sold in the previous year.
+
+SELECT P.PRODUCT_NAME
+FROM PRODUCT
+WHERE PRODUCT_ID NOT IN (SELECT PRODUCT_ID
+                    FROM SALES
+                    WHERE TO_CHAR(S.TX_DATE,'YYYY')=TO_CHAR(SYSDATE,'YYYY')-1); 
+
+USING CORELATED
+
+SELECT P.PRODUCT_NAME
+FROM PRODUCT P
+WHERE PRODUCT_ID NOT IN (SELECT PRODUCT_ID
+                    FROM SALES S
+                    WHERE S.PRODUCT_ID=P.PRODUCT_ID
+                    AND TO_CHAR(S.TX_DATE,'YYYY')=TO_CHAR(SYSDATE,'YYYY')-1); 
+
+
+12.
+
+ans-		select city_name 
+		from city c
+		where count(select cust_id
+			     from customer c1
+			     where c1.ct_id=c.ct_id
+			     and gender='M')>  count(select cust_id
+	     						from customer c1
+					               where c1.ct_id=c.ct_id
+							and gender='M');
+
+
+	
+
+
+1.waqtd the prodcut name, sales qty,no of calls and duration of call.
+
+ans-	select a.pname,a.sal_qty as no of sales,b.no_calls,b.call_duration
+	
+	from	
+		( select p.p_name pname,count(p.sl_id)as sal_qty ,sum(s.qty)
+		  from product p, sales s
+		  where p.p_id=s.p_id
+		  group by p.p_name)a,
+	
+
+		( select p.p_name pname,count(c.cl_id)as no_of_call,sum(c.cal_dur) as call_duration
+		  from product p, sales s,calls c
+		  where p.p_id=s.p_id 
+		  and s.sl_id=c.sl_id
+		  group by p.p_name)b
+
+	where a.pname=b.pname;
+
+
+--------------QUERIES USING SET-OPERATORS----------------
+
+SELECT E.ENAME,D.DNAME 
+FROM EMP E,DEPT D
+WHERE E.DEPTNO=D.DEPTNO(+)
+
+UNION
+
+SELECT E.ENAME,D.DNAME
+FROM EMP E,DEPT D
+WHERE E.DEPTNO(+)=D.DEPTNO;
+
+
+--OR--
+
+SELECT E.ENAME, D.DNAME
+FROM EMP E FULL OUTER JOIN DEPT D
+ON E.DEPTNO=D.DEPTNO;
+
+
+--------------------
+SELECT DISTINCT SAL FROM EMP
+WHERE DEPTNO=10
+
+UNION ALL
+
+SELECT DISTINCT SAL FROM EMP
+WHERE DEPTNO=20;
+
+INTERSECT
+
+SELECT SAL FROM EMP
+WHERE DEPTNO=30;
+
+---------------------------------------
+
+SELECT ENAME 
+FROM EMP
+WHERE DEPTNO=10
+
+UNION ALL
+
+SELECT ENAME 
+FROM EMP
+WHERE DEPTNO=20;
+
+---------------------------------------
+
+
+SELECT SUBSTR('STATE',1) || SUBSTR('KARNATAKA',1)
+FROM DUAL
+UNION ALL
+ SELECT SUBSTR('CAPITAL',1) || SUBSTR('BANGALORE',1)
+FROM DUAL;
+
+
+
+
+SELECT 'state',SUBSTR('Karnataka,Bangalore',1,INSTR('Karnataka,Bangalore',',')-1) FROM DUAL
+UNION
+
+SELECT 'capital',SUBSTR('Karnataka,Bangalore',INSTR('Karnataka,Bangalore',',')+1) FROM DUAL;
+
+--
+--------------------------------------------------------------------------------
+CREATE TABLE CALL(
+CALL_ID NUMBER PRIMARY KEY,
+CALL_DUR TIMESTAMP,
+SALE_ID NUMBER REFERENCES SALE(SALE_ID));
+
+INSERT INTO CALL VALUES(111,CURRENT_TIMESTAMP,101);
+INSERT INTO CALL VALUES(112,CURRENT_TIMESTAMP,109);
+INSERT INTO CALL VALUES(113,CURRENT_TIMESTAMP,102);
+INSERT INTO CALL VALUES(114,CURRENT_TIMESTAMP,107);
+INSERT INTO CALL VALUES(115,CURRENT_TIMESTAMP,101);
+INSERT INTO CALL VALUES(116,CURRENT_TIMESTAMP,102);
+
+SELECT A.PRODUCT_NAME,A.SAL_COUNT,A.SAL_QTY,B.CALL_COUNT,B.CALL_DURA
+FROM(SELECT P.PRODUCT_NAME,COUNT(S.SALE_ID) AS SAL_COUNT,SUM(S.QTY) AS SAL_QTY
+     FROM PRODUCT_DETAIL P,SALE S
+     WHERE P.PRODUCT_ID=S.PRODUCT_ID
+     GROUP BY P.PRODUCT_NAME)A,
+     (SELECT P.PRODUCT_NAME,COUNT(C.CALL_ID) AS CALL_COUNT,SUM(CALL_TIME) AS CALL_DURA
+     FROM PRODUCT_DETAIL P,SALE S,CALL C
+     WHERE P.PRODUCT_ID=S.PRODUCT_ID AND S.SALE_ID=C.SALE_ID
+     GROUP BY P.PRODUCT_NAME)B
+ WHERE A.PRODUCT_NAME=B.PRODUCT_NAME;    
+ 
+
+
+			
+			--country resort management system.
+
+create table country3
+(country_id number(2) primary key,
+country_name varchar(20) );
+
+insert all
+into country3 values(1,'india')
+into country3 values(2,'us')
+into country3 values(3,'maldives')
+into country3 values(4,'srilanka')
+select * from dual;
+
+
+create table resort
+(
+resort_id number(2) primary key,
+resort_name varchar(20),
+country_id number(2) references country3(country_id))
+;
+
+
+
+insert all
+into resort values(11,'beach front','1')
+into resort values(12,'oberai,goa','1')
+into resort values(13,'taj maldives','3')
+into resort values(14,'taj chennai','1')
+into resort values(15,'beach house','3')
+into resort values(16,'radison blue','1')
+into resort values(17,'ibis','2')
+select * from dual;
+
+
+
+create table customer3
+(cust_id number(5) primary key,
+cust_name varchar2(20),
+phone number(10),
+country_id number(2) references country3(country_id));
+
+
+insert all
+into customer3 values(1001,'tim downey',345231458,1)
+into customer3 values(1002,'ramesh k',89327648,2)
+into customer3 values(1003,'bill price',78326753,1)
+into customer3 values(1004,'malinga',98564231,3)
+into customer3 values(1005,'farooq',45893121,2)
+into customer3 values(1006,'siddesh',45893521,1)
+select * from dual;
+
+--q1.Query to find out country wise resort count.
+
+
+    select country_name ,count(r.country_id)
+    from country3 c,resort r
+    where c.country_id=r.country_id(+)
+    group by country_name;
+
+
+--2.Query to display country wise customer count.
+
+    select country_name ,count(cus.country_id)
+    from country3 c,customer3 cus
+    where c.country_id=cus.country_id(+)
+    group by country_name;
+    
+    
+--3.Query to display country, resort count and customer count.
+
+    select c.country_name,r.resort_count,c.cust_count
+    from
+        (select c.country_name ,count(r.country_id)as resort_count
+        from country3 c,resort r
+        where c.country_id=r.country_id(+)
+        group by country_name)r,
+        
+         (select c.country_name ,count(cus.country_id) as cust_count
+         from country3 c,customer3 cus
+         where c.country_id=cus.country_id(+)
+         group by country_name)c
+         
+         
+    where r.country_name=c.country_name;
+    
+    
+    
+--4.Display Resort country name, resort name, customer name and customer country name.
+         select res.country_name,res.resort_name,
+         c.country_name ,c.cust_name
+          
+          from
+              (select rownum r, c.country_name country_name,r.resort_name
+               from country3 c,resort r
+               where c.country_id=r.country_id(+))res,  
+     
+                (select rownum c,c.country_name country_name ,cus.cust_name as cust_name
+                from country3 c,customer3 cus
+                where c.country_id=cus.country_id(+))c
+
+        where res.r=c.c;  
+        
+        
+--5.Display countries in which we don’t have any resorts.
+
+        select country_name
+        from country3
+        where country_id not in(select distinct country_id
+                                from resort);
+                                
+--6.Display countries in which we have minimum of 100 customers.
+        
+        select country_name,count(cust_id)
+        from country3 c,customer3 cus
+        where c.country_id=cus.country_id
+        group by country_name
+        having count(cust_id)>=100;
+        
+        
+--7.  Display how many resorts we have in the country where resort ‘Beach front’ is
+        
+        select country_name,count(resort_id)
+        from country3 c,resort r
+        where c.country_id=r.country_id
+        and resort_name='beach front'
+        
+        group by country_name;
+        
+        
+--8. Display customers whose name starts with F or R and who are either from India or Srilanka.
+    
+        select cust_name
+        from customer3 cus,country3 c
+        where cus.country_id=c.country_id 
+        and substr(cust_name,1,1)in('f','r') and country_name in('india','srilanka');
+        
+        
+--9. Display customer names who are from US and do not have any phone numbers.
+
+        select cust_name 
+        from customer3
+        where phone is null and country_id in (select country_id
+                                            from country3
+                                            where country_name='us');
+                                            
+                                            
+--10.   Display Country name, resort name. Display all the countries in the list whether we have resorts or not.
+       
+       
+            select  c.country_name country_name,r.resort_name
+               from country3 c,resort r
+               where c.country_id=r.country_id(+);
+               
+               
+               --using case to display status
+               
+               select  c.country_name country_name,
+               resort_name,case when r.resort_name is null then 'no resort' 
+               else 'have result' end
+               from country3 c,resort r
+               where c.country_id=r.country_id(+);
+
+
+
+       
+--1.Query to get the number of books by each publisher.        
+
+    select p.pub_nm,count(b.book_id)
+    from publisher p,book b
+    where p.pub_id=b.pub_id 
+    group by p.pub_nm;
+        
+--2.Write a query which gives book_name, author_name for publisher ‘XYZ’
+
+    select book_nm
+    from book
+    where pub_id=(select pub_id
+                    from publisher
+                    where pub_nm='xyz publications');
+                    
+--3.Which book was written by more than 3 authors?
+
+    select book_nm
+    from book where book_id in(select book_id
+                                from book_author
+                                group by book_id
+                                having count(au_id)>3);
+                                
+                                
+--4.Want to include city and state information of author as well in the model.
+--So, modifiy the model and show us the new model what you come up with.
+
+
+    alter table author
+        add city varchar(20) ;
+        
+        alter table author
+        add au_state varchar(20);
+        
+--5.Display publisher name, pub_city and metro flag of the city.
+--If city is CHN or MUM or DEL or CAL then display the flag as ‘Y’ otherwise ‘N’
+
+
+    select pub_nm,pub_city,case when pub_city in('chn','mum','del','cal') then 'y' else 'n' end as metro_flag
+    from publisher;
+
+--6.Display the authors whose age is greater than the author ‘RAM KUMAR’
+
+            select au_f_name || ' ' || au_l_name 
+            from author
+            where au_dob<(select au_dob 
+                          from author
+                            where (au_f_name ||' '|| au_l_name)='RAM KUMAR');
+
+
+--7.  Display the publisher name, author_name and no of books they wrote.
+
+    select p.pub_nm,p.author_name,a.book_count
+
+    from
+    (select p.pub_nm,a.au_f_name||' '||a.au_l_name as author_name
+        from publisher p,book b,book_author bu ,author a
+        where p.pub_id=b.pub_id and b.book_id=bu.book_id and bu.au_id=a.au_id)p,
+        
+        (select a.au_f_name ||' '||a.au_l_name as author_name,count(bk.bk_au_id) book_count
+            from author a,book_author bk
+            where a.au_id=bk.au_id(+)
+            group by a.au_f_name||' '||a.au_l_name)a
+            
+            where p.author_name=a.author_name;
+
+
+	select p.pub_nm,a.au_f_name,a.au_l_name,count(bk_au_id)
+	from publisher p,book b,book_author ba,author a
+	where p.pub_id=b.pub_id and b.book_id=ba.book_id
+	and ba.
+            
+--8 .Which author wrote the maximum number of books?
+  
+    select   a.au_f_name ||' '||a.au_l_name as author_name
+    from author a
+    
+    where au_id in (select au_id
+                    from book_author
+                    group by au_id
+                    having count(book_id)=(select max(count(book_id))
+                                        from book_author
+                                        group by au_id));
+        
+        
+        
+        
+9.Create a stored procedure which returns book_name, author_full_name by taking publisher name as the input.
+
+    
+    select b.book_nm,a.au_f_name||' '|| a.au_l_name
+    from book b,book_author bu,author a
+    where b.book_id=bu.book_id(+) and bu.au_id=a.au_id(+) 
+    and pub_id in (select pub_id
+                from publisher
+                    where pub_nm='xyz publications');
+
+
+
+
+--10.Take the publisher name as input and give the number of books which that publisher published where there are only one author.
+
+    select count(b.book_id)
+    from book b,book_author ba,publisher p
+    where b.book_id=ba.book_id 
+    and b.pub_id=p.pub_id
+    and pub_nm='&n'
+    
+    and b.book_id in (select book_id    
+                    from book_author
+                    group by book_id
+                    having count(au_id)=1);
+
+
+
+--Q1.Select the names of all the products in the store.
+
+	SELECT p_NAME
+	FROM PRODUCTs;
+
+--Q2.Select the names and the prices of all the products in the store.
+
+	SELECT p_NAME,PRICE
+	FROM PRODUCTs;
+
+--Q3.Select the name of the products with a price less than or equal to $200.
+	
+	SELECT p_NAME,PRICE
+	FROM PRODUCTs
+	WHERE PRICE<=200;
+
+--Q4.Select all the products with a price between $60 and $120.
+
+	SELECT *
+	FROM PRODUCTs
+	WHERE PRICE BETWEEN 60 AND 120;		
+
+--Q5.Select the name and price in cents (i.e., the price must be multiplied by 100).
+
+	SELECT  P_NAME,PRICE*100  PRICE_CENT
+	FROM PRODUCTS;
+
+--Q6.Compute the average price of all the products.
+
+	SELECT AVG(PRICE)
+	FROM PRODUCTS;
+
+--Q7.Compute the average price of all products with manufacturer name is Unilever.
+
+	SELECT AVG(PRICE)
+	FROM PRODUCTS
+	WHERE M_CODE=(SELECT M_CODE	
+			     FROM MANUFACTURERS
+				WHERE M_NAME='UNILIVER');
+
+--Q8.Compute the number of products with a price larger than or equal to $180.
+
+	SELECT COUNT(P_NAME)
+	FROM PRODUCTS
+	WHERE PRICE>=180;
+
+--Q9.Select the name and price of all products with a price larger than or equal to $180,
+ --and sort first by price (in descending order), and then by name (in ascending order).
+
+	SELECT P_NAME,PRICE
+	FROM PRODUCTS
+	WHERE PRICE>=180
+	ORDER BY P_NAME ASC,PRICE ASC;
+
+
+--Q10.Select all the data from the products, 
+	--including all the data for each product's manufacturer.
+
+	SELECT P.*,M.M_NAME
+	FROM PRODUCTS P,MANUFACTURERS M
+	WHERE P.M_CODE=M.M_CODE;
+
+--Q11.Select the product name, price, and manufacturer name of all the products.
+
+	SELECT P.P_NAME,P.PRICE,M.M_NAME
+	FROM PRODUCTS P,MANUFACTURERS M
+	WHERE P.M_CODE=M.M_CODE;	
+
+--Q12.Q12.Select the average price of each manufacturer's products,
+	 --showing only the manufacturer's code.
+
+	SELECT M_CODE,AVG(PRICE)
+	FROM PRODUCTS
+	GROUP BY M_CODE
+    ORDER BY M_CODE;
+    
+--Q13.Select the average price of each manufacturer's products, showing the manufacturer's name.
+
+    SELECT M.M_NAME,AVG(PRICE)
+	FROM PRODUCTS P,MANUFACTURERS M
+	WHERE P.M_CODE=M.M_CODE
+    GROUP BY M.M_NAME;
+    
+--Q14.Select the names of manufacturer whose products have an average price larger than or equal to $150.
+
+    SELECT M_NAME
+    FROM manufacturers
+    WHERE M_CODE IN(SELECT M_CODE
+                    FROM PRODUCTS
+                    GROUP BY M_CODE
+                        HAVING AVG(PRICE)>=150);
+
+
+--Q15.Select the name and price of the cheapest product.
+
+     SELECT P_NAME  
+     FROM PRODUCTS
+     WHERE PRICE=(SELECT MIN(PRICE)
+                  FROM PRODUCTS);
+
+
+--Q16.Select the name of each manufacturer along with the name and price of its most expensive product.                    
+
+     SELECT M.M_NAME,P.P_NAME,P.PRICE
+        FROM MANUFACTURERS M,PRODUCTS P
+        WHERE M.M_CODE=P.M_CODE
+        AND P.PRICE = (SELECT MAX(PRICE)
+                      FROM PRODUCTS PP
+                      WHERE M.M_CODE=PP.M_CODE);
+                      
+--    17. Add a new product: Loudspeakers, $70, PHILIPS 
+    
+    INSERT INTO MANUFACTURERS VALUES((SELECT MAX(M_CODE) FROM MANUFACTURERS)+10,'PHILIPS');
+
+    INSERT INTO PRODUCTS VALUES((SELECT MAX(P_CODE) FROM PRODUCTS)+1,'LOUDSPEAKERS',70,(SELECT M_CODE FROM MANUFACTURERS
+    WHERE M_NAME='PHILIPS'));
+    
+    --    18. Update the name of product code 8 to "Laser Printer".
+        
+        UPDATE PRODUCTS
+        SET P_NAME='Laser Printer'
+        where p_code=8;
+
+
+--    19. Apply a 10% discount to all products.
+    
+    SELECT P_NAME,PRICE*.90 AS PRICE_AFTER_DISCOUNT
+    FROM PRODUCTS; 
+    
+--    20. Apply a 10% discount to all products with a price larger than or equal to $120
+    
+    SELECT P_NAME,PRICE*.90 AS PRICE_AFTER_DISCOUNT
+    FROM PRODUCTS
+    WHERE PRICE>=120;
+
+
+select trunc(sysdate,'mon')+level-1
+from dual connect by  level<31;
+
+select to_char(sysdate,'dy')
+from dual;
+
+--waqtd the months of the year
+select to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'mon')
+from dual
+connect by level<12;
+
+--waqtd whether it is weekday or weekend by taking date from user.
+
+select case when to_char(to_date('&n','dd-mm-yyyy'),'dy')IN ('mon','tue','wed','thu','fri') then 'weekday' else 'weekend' end as day
+from dual;
+
+
+--q to get the nth highest sal.
+select distinct sal rn  from
+    
+    ( select sal,DENSE_RANK() over(order by sal desc)rn
+    from emp)
+    
+where rn=&nth_highest_sal;
+
+--q to get the data from user and display
+select  to_char(to_date('&n','dd-mm-yyyy'),'dy') dn from dual;
+
+
+SQL Questions_Test1(1-31)
+
+--1.Display the employees who joined the company in the last year.
+SELECT ENAME
+FROM EMP
+WHERE TO_CHAR(HIREDATE,'YYYY')=TO_CHAR(SYSDATE,'YYYY')-1;
+
+--2.Display the employees whose age >30.Assume there is a DOB column in employee table.
+SELECT ENAME
+FROM EMP
+WHERE MONTHS_BETWEEN(SYSDATE,DOB)/12 >30;
+
+--3.Display the employees whose salary is greater than John’s salary.
+    SELECT ename
+    FROM EMP
+    WHERE SAL>(SELECT SAL
+    FROM EMP
+        WHERE ENAME='JOHN');
+
+
+--4.Display the oldest employee based on experience in each department.
+      
+      SELECT DEPTNO,ENAME
+      FROM EMP E1
+      WHERE HIREDATE=(SELECT MIN(HIREDATE)
+                        FROM EMP E1
+                        WHERE E1.DEPTNO=E2.DEPTNO);
+
+--5.Display the latest 3 employees who joined the company very recently.
+
+    SELECT ENAME 
+        FROM (SELECT ROWNUM SLNO,HIREDATE
+                    FROM (SELECT DISTINCT HIREDATE
+                        FROM EMP
+                            ORDER BY HIREDATE DESC))
+    WHERE SLNO<4;
+
+--6.Display the dname which has highest no. of employees.
+
+            SELECT DNAME,COUNT(EMPNO) 
+            FROM DEPT D,EMP E
+            WHERE E.DEPTNO=D.DEPTNO
+            GROUP BY DNAME
+            HAVING COUNT(EMPNO)=(SELECT MAX(COUNT(EMPNO))
+                             FROM EMP
+                             GROUP BY DEPTNO);
+--7.Display the dname whose having atleast 5 employees.
+            SELECT DNAME,COUNT(EMPNO)
+                FROM DEPT D,EMP E
+                WHERE D.DEPTNO=E.DEPTNO
+                GROUP BY DNAME
+                HAVING COUNT(EMPNO)>=5;
+
+--8.Display the top 3 employees based on their salary.
+                
+            SELECT ENAME 
+           FROM (  SELECT ENAME,DENSE_RANK() OVER(ORDER BY SAL DESC)RN
+          FROM EMP)
+          WHERE RN<4;
+--9.Display Nth highest salary.
+        SELECT sal
+        FROM(
+        SELECT ROWNUM RN,SAL
+           FROM (  SELECT DISTINCT SAL
+          FROM EMP
+          ORDER BY SAL DESC))
+          WHERE RN=&Nth_HIGHEST_SAL;
+    
+--10.Display the employees whose salary is greater than the average salary in its department.
+        
+            SELECT ENAME
+            FROM EMP E
+            WHERE SAL>(SELECT AVG(SAL)
+                        FROM EMP R
+                        WHERE E.DEPTNO=R.DEPTNO);
+
+--11.Display the employees whose getting the highest salary in each dept.
+
+                 SELECT ENAME
+                    FROM EMP E
+                    WHERE SAL=(SELECT MAX(SAL)
+                                FROM EMP R
+                                WHERE E.DEPTNO=R.DEPTNO);
+--12.Display deptwise no. of employees without using group by.
+            select  d.dname,(select count(empno)
+            from emp e1
+            where e1.deptno=d.deptno) as count
+            from dept d;
+
+--13.Display the employees whose joined the company from last 2 years.
+
+                FROM EMP 
+                WHERE TO_CHAR(HIREDATE,'YY')=TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE,'YY'),-24),'YY'));
+--14.Display the employees who joined the company in the 3rd quarter of last year.
+            
+            SELECT ENAME 
+            FROM EMP
+            WHERE TO_CHAR(HIREDATE,'Q')=3
+            AND TO_CHAR(HIREDATE,'YY')=TO_CHAR(ADD_MONTHS(SYSDATE,-12),'YY');
+
+--15.Display the employees who joined the company this week in this month.
+            
+             SELECT ENAME 
+             FROM EMP
+             WHERE 
+              TO_CHAR(HIREDATE,'WMMYY')=TO_CHAR(SYSDATE,'WMMYY');
+--16.Display the employees who joined the company in the first quarter of 1 to 10 days.
+                 SELECT ENAME 
+                 FROM EMP
+                 WHERE 
+                 TO_CHAR(HIREDATE,'Q')=1
+                 AND TO_CHAR(HIREDATE,'D') BETWEEN '1' AND '10';
+
+--17.Display the employees who joined the company in the Friday date of last 2 years.
+    SELECT ENAME
+    FROM EMP
+    WHERE TO_CHAR(ADD_MONTHS (HIREDATE, -24), 'FMDAY')='FRIDAY';
+
+--18.Display the employees whose salary is greater than manager’s salary.
+SELECT ENAME, SAL
+FROM EMP E
+WHERE SAL > (SELECT SAL
+            FROM EMP E2
+            WHERE E2.EMPNO=E.MGR);
+           
+
+--19.Display the youngest employee in each department.
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO=D.DEPTNO
+AND (EMPNO, DOB)= (SELECT EMPNO, MAX(DOB)
+                    FROM EMP
+                    GROUP BY DEPTNO);
+
+
+
+--20.Display the department whose number of employees is more than the number of employees in a department ‘HR’.
+
+        select dname
+        from dept d, emp e
+        where d.deptno=e.deptno
+        group by dname
+        having count(e.empno)>(select count(empno)
+                                from emp natural join dept 
+                                where dname='ACCOUNTING');
+                                
+                                
+                                select deptno ,count(empno)
+                                from emp
+                                group by deptno;
+
+--21.Display the departments whose average salary is more than the average sal of department ‘sales’.
+
+         select dname
+        from dept d, emp e
+        where d.deptno=e.deptno
+        group by dname
+        having avg(e.sal)>(select avg(e.sal)
+                                from emp e,dept d
+                                where e.deptno=d.deptno
+                                and dname='sales');
+        
+                        
+                        
+--22.Display the number of employees present in a department of ‘Peter’.
+
+        select count(*)
+        from emp
+            where deptno=(select deptno
+                          from emp
+                            where ename='peter');
+                            
+--23.Display the departments whose total salary is more than 50000.
+
+        select dname
+        from dept d natural join emp e
+        group by dname
+        having sum(sal)>10000;
+        
+/*24.Display output as:
+Using Case or Derived table.
+O/P
+Deptno	 emp_count	emp_clerk_count*/
+    
+        select deptno,count(empno),count(case when job='CLERK' then 1 else null end)
+        from emp
+        group by deptno;
+        
+        
+        
+--25. Display gradewise No of employeesby joining emp and salgrade table.
+            
+            
+            SELECT GRADE,count(empno)
+            FROM EMP E , SALGRADE S
+            WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL
+            GROUP BY GRADE;
+            
+           
+            
+--27.Display the employees whose salary between 3000 and 4000.;
+SELECT ENAME
+FROM EMP
+WHERE SAL>3000 AND SAL<4000;
+
+--28.Display the year where maximum number of employees hired.
+SELECT TO_CHAR(HIREDATE, 'YYYY') AS YEAR, COUNT(*) AS COUNT
+FROM EMP
+GROUP BY TO_CHAR(HIREDATE, 'YYYY')
+HAVING COUNT(*)=(SELECT MAX(COUNT(*))
+FROM EMP
+GROUP BY TO_CHAR(HIREDATE, 'YYYY'));
+                
+    
+
+--Q29.Display the job which has highest number of employees.
+
+        SELECT JOB, COUNT(EMPNO)
+        FROM EMP
+        GROUP BY JOB
+        HAVING COUNT(EMPNO)=(SELECT MAX(COUNT(EMPNO))
+                            FROM EMP
+                            GROUP BY JOB );
+-30. Alter table emp by adding exp column with number datatype.
+--Write a query to update the exp column in years by using hiredate column. (Use correlated Update.)
+ALTER TABLE EMP ADD EXP NUMBER;
+UPDATE EMP E
+SET EXP = (SELECT ROUND(MONTHS_BETWEEN(SYSDATE,HIREDATE)/12,2)
+            FROM EMP E1
+            WHERE E1.EMPNO=E.EMPNO);
+
+
+--31.Display employees who are not managers.
+SELECT ENAME
+FROM EMP
+WHERE EMPNO NOT IN (SELECT MGR
+                FROM EMP);
+                
+
+
+
+
+
+--      Q1.display no od emp count month wise of current year
+        
+       
+       savepoint a;
+       
+       select * from tab;
+       
+       conn
+       
+--1.Display the monthwise no of employees in the current year.
+              select b.month,b.months,  nvl(a.count,0)
+        from (  select to_char(hiredate,'mm') as month ,count(empno) as count
+                            from emp
+                            where to_char(hiredate,'yy')='81'
+                            group by to_char(hiredate,'mm'))a,
+                            
+                             ( select to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'mm') as month,
+                                to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'Month') as months
+                            from dual
+                            connect by level<=12 )b
+        where a.month(+)=b.month order by 1;
+  
+--2.Display Top 2 department names based on the no. of employees.
+        
+            select dname
+            from
+                (select rownum rn,dname
+                    from (select dname,count(empno)
+                            from dept  natural join emp
+                            group by dname
+                            order by count(empno) desc))
+                            
+            where rn<=2;
+--3.Display the employees which contains % in the ename.
+
+        select ename
+        from emp
+        where instr(ename,'%')>0;
+--4.Display the grades based on the employees salaries.
+  --   If sal>20000 print ‘A’, sal>15000 print ‘B’ else ‘C’.
+        select ename,sal,case when sal>3000 then 3  when sal<=3000 and sal>=2000 then 2 when  sal<2000 then 1 end as grade
+        from emp;
+        
+--5.Display the given date is weekday or weekend.
+
+            select case when (to_char(to_date('&n','dd-mm-yy'),'fmday'))in('sun','sat') then 'WEEKEND' ELSE 'WEEKDAY' END AS WHICHDAY
+            FROM DUAL;
+--6.Update the names of employees Smith, John and Clark to Sm,Jo,Cl.
+        
+            UPDATE EMP
+            SET ENAME='SM'
+            WHERE ENAME='SMITH';
+            
+            UPDATE EMP
+            SET ENAME='JO'
+            WHERE ENAME='JOHN';
+            
+            UPDATE EMP
+            SET ENAME='CL'
+            WHERE ENAME='CLARK';
+
+--7.Display the departments where employees are present.
+
+        SELECT DNAME
+        FROM DEPT
+        WHERE DEPTNO IN (SELECT DISTINCT DEPTNO
+                     FROM EMP);
+--8.Display the departments where employees are not present.
+        
+            SELECT DNAME
+            FROM DEPT
+            WHERE DEPTNO NOT IN(SELECT DISTINCT DEPTNO
+                         FROM EMP);    
+ --9.Delete the 10th record from employee table      
+   SAVEPOINT B;
+    delete 
+       from emp
+                
+                where empno=(select empno from (select empno,rownum rn
+                                                 from(select * from emp) e)
+                                                 where rn=10) ;                                    
+                                                rollback TO  B;
+        
+  --10.Display unique records from the table
+    /*  Tbl1
+    Col1	col2
+      1      1
+      1      1
+      2      4
+      2      4
+      3      9*/
+      
+      SELECT DISTICNT COL1,COL2
+      FROM TB1;
+      
+CREATE TABLE TB1
+(COL1 NUMBER,
+COL2 NUMBER);
+INSERT INTO TB1 VALUES(1,1);
+INSERT INTO TB1 VALUES(1,1);
+INSERT INTO TB1 VALUES(2,4);
+INSERT INTO TB1 VALUES(2,4);
+INSERT INTO TB1 VALUES(3,9);
+SELECT DISTINCT * FROM TB1;
+
+
+--11.Delete duplicate records from the above table.
+ savepoint q;
+        delete from tb1 t
+        where rowid>(select min(rowid)
+                    from tb1 q
+                        where q.col1=t.col1);
+                        
+                        
+                        
+                        select * from tb1;
+                        
+--12.Display the first day of current year.
+
+        select trunc(sysdate,'yyyy') from dual;
+        
+--13.Display the last day of current year.
+
+        select last_day(add_months(trunc(sysdate,'yyyy'),11)) from dual;
+        
+--14.Display the first day of next year.
+    
+         select last_day(add_months(trunc(sysdate,'yyyy'),11))+1 from dual;
+        
+--15.Display the last day of next year.
+
+    select add_months(trunc(sysdate,'yyyy'),24)-1 from dual;
+    
+--16.Display the first day of current quarter.
+
+        select trunc(sysdate,'q') from dual;
+        
+--17.Display the first day of next quarter.
+
+        select add_months(trunc(sysdate,'q'),3) from dual;
+
+/*18 Display the Output as
+Using case
+	Dname		existence
+	Sales		emp’s exist
+	Hr			emp’s exist
+	Accounts		No emp’s */
+    
+        select dname,case when deptno in(select deptno from emp e
+        where e.deptno=d.deptno) then 'emp exist' else 'no emp' end as empstatus
+        from dept d;
+
+/*19. Display the output as
+Emps with comm.		 Emps without comm.
+Using inline query or Case*/
+        
+        select case when comm is null then ename end as emp_without_comm,case when comm is not null then ename end as emp_with_comm
+        from emp;
+
+
+--20. Display the employees whose name starts and ends in a vowel.
+
+        select ename
+        from emp 
+        where substr(lower(ename),1,1)in('a','e','i','o','u') 
+                and substr(lower(ename),-1)in('a','e','i','o','u');
+    
+--21.Display the employees whose name starts and ends with the same character.
+
+        select ename
+        from emp 
+        where substr(ename,1,1)=substr(ename,-1);
+        
+--22. There are 2 tables one is parent and the other is child table,
+--I want to delete the parent table records and I don’t want to see the error
+--as child record found. How will you do it?
+        
+        select 'we can modify the forein key constraint of the child table as set  null on delete.' from dual;
+            
+--23.Write a SQL command which will display all the emp names and their dept names for
+--those employees whose salary is more than the avg salary of their dept.
+        
+            select dname,ename
+            from dept d,emp e
+            where d.deptno=e.deptno
+            and sal>(select avg(sal)
+                     from emp e1
+                     where e1.deptno=d.deptno);
+--24.Display the emp names whose salary is more than the avg salary of all the depts..
+                
+            select ename
+            from emp e
+            where  sal>all(select avg(sal)
+                           from emp e1
+                           group by deptno);
+
+/*25.Display output as---Using case
+Deptno and no of employees
+10		20		30		40
+5		8		6		noemps*/
+/
+                select count(case when deptno=10 then 1 else null end) "10",
+                count(case when deptno=20 then 1 else null end) "20",
+                count(case when deptno=30 then 1 else null end) "30",
+                case when  count(case when deptno=40 then 1 else null end) =0 then 'no_emp'  
+                else count(case when deptno=40 then 1 else null end)||'' end "40"
+                from emp;
+                select count(empno);
+                
+            /    
+                  select count(case when deptno=10 then 1 else null end) "10",
+                count(case when deptno=20 then 1 else null end) "20",
+                count(case when deptno=30 then 1 else null end) "30",
+                count(case when deptno=40 then 1 else null end) "40"
+                from emp;
+
+/*25. Display the output as---Using Case
+Class			No.of emps
+Class1			5
+Class2			8
+Class1 are the employees who belongs to the job Manager and Analyst
+Class2 are the employees who belongs to the job Salesman and Clerk.
+*/
+    
+            select case when lower(job) in('manager','analyst') then 'class1' else 'class2' end as class
+            ,count(case when lower(job) in('manager','analyst') then 1  else 2 end )
+            from emp
+            where JOB IN('CLERK','SALESMAN','MANAGER','ANALYST')
+            group by case when lower(job) in('manager','analyst') then 'class1' else 'class2' end ;
+
+
+                                -- VERIFICATION --
+        select count(empno)
+        from emp
+        where lower(job) in('manager','analyst');
+        
+        select count(empno)
+        from emp
+        where lower(job) in('salesman','clerk');
+
+/*26.Table
+Col1		Col2		Col3
+1		Null		3
+2		Null		6
+Null		5		Null
+Write a query to display the Count of number of Nulls in the table.
+O/p:4
+-*/
+/
+
+            create table t1
+            (col1 number,
+            col2 number,
+            col3 number);
+            
+                    insert into t1 values(1,null,3);
+                    insert into t1 values(2,null,6);
+                    insert into t1 values(null,5,null);
+                    select * from t1;
+                    
+            select count(case when col1 is  null then 1 else null end)+
+            count(case when col2 is null  then 1 else null end)+
+            count(case when col3 is null  then 1 else null end) as no_of_null
+            from t1;
+
+        
+/*27. Write a Query to get the output as: 
+I/p
+Col1					O/p
+1234567				0001234567
+-1234.678			-01234.678
+-345.678				-00345.678
+9689.378				009689.378*/
+
+        create table t3
+        ( col1 number);
+
+        insert into t3 values(-1234.678);
+        insert into t3 values(1234567);
+        insert into t3 values(-345.678);
+        insert into t3 values(9689.378);
+
+
+             select case when sign(col1) =-1 then  lpad(lpad(abs(col1),9,'0'),10,'-')
+             else lpad(col1,10,'0') end from t3; 
+                    
+
+
+
+/*28. Write a query to replace all the characters and print only numbers in a given string.
+‘ax12fn45z678lo7fg’
+o/p:12456787*/
+
+            select regexp_replace('ax65a7s575c75as7657d','[^0-9]','') numns
+            from dual;
+
+        
+/*29.Write a query to count the number of spaces in a given string.
+‘hello world Namaste’.*/
+       / 
+                SELECT length('hello world namaste')-length(replace('hello world namaste',' ','')) as no_of_spaces from dual; 
+        
+/*30.Write a query to print the first letter in a given string is alphabet,number or special character.
+‘A1234567’*/
+
+/
+            SELECT CASE WHEN ASCII(str) between 97 and 122 THEN 'ALPHABET' 
+            WHEN  ASCII(str) between 48 and 59 THEN 'NUMBER'
+            else 'SPECIAL_CHARACTER' END 
+            FROM (  
+            SELECT SUBSTR(lower('&ENTER_THE_STRING'),1,1) AS str
+            FROM DUAL);
+            /
+            
+            SELECT ASCII('''') FROM DUAL;
+                   
+
+--1.Display the first day of current week.
+            
+        select trunc(sysdate,'w') from dual;
+        
+--2.Write a query to print the given string as ‘Oracle’s’.(Oracle with apostrophe)
+        
+        select 'oracle'||''''||'s' as oracles from dual;
+        
+        --or
+        select 'oracle''s' as oracles from dual;
+        
+--3.Display syadate in the format ‘1st-jan-18’ and also first-feb-twenty eighteen.
+/   
+       SELECT TO_CHAR(SYSDATE,'DDsp-MON-YEAR'),to_char(SYSDATE,'DDth-MON-Yy')
+        FROM dual;
+
+
+--4.Display the next year first Tuesday date.
+        
+        select next_day(add_months(trunc(sysdate,'yy'),12)-1,'tuesday') from dual;
+                        
+--5.Display all the month names using level and CTE
+/
+        select to_char(add_months(trunc(sysdate,'yyyy'),level-1)) from dual connect by level<=12;
+           
+--6.Display all the weekday names using level and CTE
+/
+        select to_char(trunc(sysdate,'w') +level-1,'DAY') from dual connect by level<=7;
+        
+--7. Display the Quarterwise number of employees.
+
+    select b.quater,a.count
+    from
+
+            (select to_char(hiredate,'q') as quater ,count(empno) as count
+            from emp 
+            where to_char(hiredate,'yy')='81'
+            group by to_char(hiredate,'q'))a,
+            
+            
+            (select to_char(add_months(trunc(sysdate,'yyyy'),level-1),'q') as quater
+            from dual
+            group by to_char(add_months(trunc(sysdate,'yyyy'),level-1),'q')
+            connect by level<=12)b
+        
+        where a.quater(+)=b.quater;    
+            --verification
+            
+            select count(empno)
+            from emp where to_char(hiredate,'yy')='81';
+            
+--8. Display the numbers which r multiples of 5 using level and CTE
+
+        select level*5 as multiple_of_5
+        from dual
+        connect by level<=&enter_no_of_multiple;
+       
+--9. To display the string ‘Aroha’ vertically using level and CTE
+
+        select substr('aroha',level,1) as letters from dual
+        connect by level<=length('aroha');
+        
+--10. To display the dates of december month...
+        /
+        select to_char(trunc(to_date('12','mm'))+level-1,'dd-mm-yy')
+        from dual
+        connect by level<=31;
+        
+        select to_char(trunc(to_date('&entermotnh','mon')),'dd-mm-yy')
+        from dual;
+        select last_day(to_date('&month','mon'))-trunc(to_date('&entermotnh','mon'))+1 as no_of_days
+        from dual;
+        
+--11. To display the dates from 2012 to present date using level and CTE
+            
+                    select to_char(trunc(to_date('dd','yyyy'),'yy'),'dd-mm-yy')+level -1
+                    from (select to_date('&enter_the_year_in_yy')as dd from dual)
+                    connect by level<=sysdate-dd;
+                     --or
+               /     
+                                        
+                    SELECT TO_DATE('01-jan-2018')+LEVEL-1
+                    FROM DUAL CONNECT BY LEVEL<=(SYSDATE-TO_DATE('01-jan-2018')+1);
+
+/
+
+select to_char(trunc(to_date('&enteryear','yyyy'),'yy'),'dd-mm-yy') from dual;
+/
+
+--12. To display the dates of particular month using level and CTE
+
+--mm-yy is used to tell the year as well otherwise the current year will be taken
+            
+            select to_date(month)+level-1 
+           from     (select to_date('&month','mon-yy')as month from dual) 
+           
+           connect by level<=last_day(month)-trunc(month)+1;
+           
+
+             select to_char(trunc(to_date('&enter_month','mon'))+level-1,'dd-mon-yy')
+             from dual
+             connect by level<=last_day(to_date('&month','mon'))-trunc(to_date('&entermotnh','mon'))+1;
+--13. To Display all the Friday dates of this year
+
+            select to_char(trunc(sysdate,'yy')+level-1,'dd-mm-yy') 
+            from dual
+            where to_char(trunc(sysdate,'yy')+level-1,'fmday')='friday'
+            connect by level<=last_day(add_months(trunc(sysdate,'yy'),11))-trunc(sysdate,'yy')+1;
+            
+--14. Display string 'AROHA' as 'AARAROAROHAROHA'.
+            select replace(wm_concat(substr('aroha',1,level)),',','') as output
+            from dual
+            connect by level<=length('aroha');
+
+--15.Pass the empno, if the employee exist in the table print ‘Exist’ else ‘Not Exist’.
+
+            select case when (select empno from emp where empno=&enter_no) is not null  then 'exist' else 'no' end
+            from dual;
+           
+           -- or
+            
+            select case when count(empno)=1 then 'exist' else 'not exist' end
+            from emp
+            where empno=&emp_no;
+            
+            
+            
+/*16. If the exp>20years print ‘old employees’
+                Exp>10years print ‘mid employees’
+                 Else ‘new employees’*/
+                 select * from emp;
+                 alter table emp 
+                 add exp number(20);
+                 
+                 update emp e1
+                 set exp=(select months_between(sysdate,hiredate)/12
+                         from emp e2
+                         where e2.empno=e1.empno);
+                         
+        select case when exp>38 then 'old emp'  when exp<=38 and exp>=35 then 'mid emp' else 'new emp' end
+        from emp;
+
+17.  tbl1			tbl2
+       Col1	col2		col1	col2
+       1		2		1	9
+       2		5		1	5
+       1		7		3	8
+       4		8		4	3 
+      Null 		5		null	null
+How many records for inner join.
+Left outer join, right outer join, full outer join and cross join by joining col1 of table1 and col1 of table2.
+
+                insert into t1 values(1,2);
+                insert into t1 values(1,7); 
+                insert into t1 values(2,5);
+                insert into t1 values(4,8);
+                insert into t1 values(null,5);
+                insert into t2 values(1,9);
+                insert into t2 values(1,5);
+                insert into t2 values(3,8);
+                insert into t2 values(4,3);
+                insert into t2 values(null,null);
+                
+/*                ans=inner join -5
+                ans=left outer  join -7
+                ans=right outer join -7
+                ans=inner join -9    */
+
+
+
+18. Display the monthwise no. of employees, if any employee is not hired in any month, display ‘no emp in this month’.
+  select b.month,b.months,  case when nvl(a.count,0)> 0 then nvl(a.count,0)||'' else 'no_emp' end
+        from (  select to_char(hiredate,'mm') as month ,count(empno) as count
+                            from emp
+                            where to_char(hiredate,'yy')='81'
+                            group by to_char(hiredate,'mm'))a,
+                            
+                             ( select to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'mm') as month,
+                                to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'Month') as months
+                            from dual
+                            connect by level<=12 )b
+        where a.month(+)=b.month order by 1;
+        
+        
+        
+--19.Write a query to extract ‘gmail’  and ‘yahoo’from email column (abc@gmail.com,abcd@yahoo.co.in) in a table.
+
+            select substr(email,instr(email,'@',1)+1,instr(email,'.',1)-instr(email,'@',1)-1)
+            from (select substr('&email',1) as email
+                 from dual);
+--20. Display the monthwise no. of employees and the order of month should be jan, feb,mar,apr…
+            
+             select b.month,b.months,  case when nvl(a.count,0)> 0 then nvl(a.count,0)||'' else 'no_emp' end
+                
+                from     (  select to_char(hiredate,'mm') as month ,count(empno) as count
+                            from emp
+                            where to_char(hiredate,'yy')='81'
+                            group by to_char(hiredate,'mm'))a,
+                            
+                          ( select to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'mm') as month,
+                            to_char( add_months(trunc(sysdate,'yyyy'),  level-1),'Month') as months
+                            from dual
+                            connect by level<=12 )b
+               where a.month(+)=b.month order by 1;
+               
+               
+--21.Display the enames and managers whom atleast 3 employees are reporting to him.
+                        
+               SELECT M.M_NAME,M.EMP_NAME     
+               FROM
+                        (SELECT E1.ENAME AS M_NAME,E2.ENAME EMP_NAME
+                        FROM EMP E1,EMP E2
+                        WHERE E1.EMPNO=E2.MGR)M,
+                        
+                        (SELECT E1.ENAME AS M_NAME
+                        FROM EMP E1,EMP E2
+                        WHERE E1.EMPNO=E2.MGR
+                        GROUP BY E1.ENAME
+                        HAVING COUNT(E2.EMPNO)>2)E
+        WHERE M.M_NAME(+)=E.M_NAME;
+
+
+                        --                or
+                        /
+                select b.ename ,a.ename "mgr name" from emp a,emp b
+            where a.empno=b.mgr and b.mgr in(select distinct mgr from emp 
+                                             group by mgr
+                                             having count(empno)>=3);
+ 
+
+
+    
+/*22.Display the deptwise no. of employees in each job using case or decode or inline view.
+DEPTNO      CLERK   SALESMAN    MANAGER
+------ ---------- ---------- ----------
+    10          1          0          1
+    20          2          0          1
+    30          1          4          1
+*/
+
+     /          select deptno ,
+                count(case when  job='CLERK' THEN 1 ELSE NULL END) AS CLERK,
+                count(case when  job='SALESMAN' THEN 1 ELSE NULL END) AS SALEMAN,
+                count(case when job='MANAGER' THEN 1 ELSE NULL END) AS MANAGERS
+                FROM EMP
+                GROUP BY DEPTNO
+                order by 1;
+                    
+                        
+                      
+                
+/*23.
+T1			T2
+Id	nm		Id	nm
+1	A		null	A
+2	B		null	B
+3	C		null	C
+4	D		null	D
+Update the id’s of T2 table to the Id of T1 table.(Use Correlated update)*/
+            
+            update t2
+            set id=(select nm from t1 where t2.nm=t1.nm);
+            
+ 
+/*24.
+T1		      T1_history
+Id	nm		Id	nm
+1	A		1	A
+2	B		2	B
+3	C		5	G
+4	D		6	F
+
+Delete the records from T1 table which are already there in t1_history table(Use Correlated delete).*/
+
+            DELETE FROM T1 T
+            WHERE T.ID=(SELECT ID
+                        FROM T1_HISTORY q
+                        WHERE q.ID=T.ID);
+
+/*
+25. create table source_data_feb14(st_id number,st_name varchar(20),marks number);*/
+
+/*st_id	st_namemarks
+100	RAM	45
+101	TIM	85
+102	BALA	95*/
+            select * from source_data_feb14;
+            INSERT ALL
+            INTO source_data_feb14 VALUES(100	,'RAM',	     45)
+            INTO source_data_feb14 VALUES(101	,'TIM',	     85)
+            INTO source_data_feb14 VALUES(102	,'BALA',	 95)
+            SELECT * FROM DUAL; 
+
+        
+        create table tgt_data_feb14(st_id number,st_name varchar(20),marks number,
+        TOP_MARKS NUMBER,LEAST_MARKS NUMBER,VAR_F_LOWEST NUMBER,VAR_F_HIGHEST NUMBER);
+
+O/P:Display the output as:
+st_id   st_name marks   	top_marks	 least_marks 	varience_first_lowest 	varience_first_highest
+100	    RAM	    45	            95	       		45	                0				-50
+101	    TIM	    85	            95	      		45	                40				-10
+102	    BALA	95	            95	       		45	                50				  0
+
+
+
+
+drop table top_marks;
+commit;
+/
+
+select * from top_marks;
+
+
+/
+                create table top_marks as
+                (select a.*,
+                (marks-min_marks) var_f_lowest ,
+                (marks-top_marks) var_l_lowest
+                
+                from
+                
+                (select e.*,
+                (select max(marks) from source_data_feb14 )  top_marks ,
+                (select min(marks) from source_data_feb14 ) min_marks
+                from source_data_feb14 e )a );
+
+/
+--26.Find the hours and minutes of current date and time.
+        
+            SELECT TO_CHAR(sysdate,'HH24:Mi') FROM DUAL;
+ /       
+/*27. Update the order completion date in Orders table.
+Condition:If order_date is between Monday to Thursday then completion_date is Friday.
+If order_date is Friday,Saturday then completion_date is next Monday date.
+
+Orders
+Order_date		Order_completion_date
+1-Feb-19			4-Feb-19
+5-Feb-19			8-Feb-19
+7-feb-19			8-Feb-19
+9-Feb-19			11-Feb-19*/
+
+/
+            CREATE TABLE ORDERS (ORDERS DATE);
+            INSERT ALL
+            INTO ORDERS VALUES('1-Feb-19')
+            INTO ORDERS VALUES('5-Feb-19')
+            INTO ORDERS VALUES('7-feb-19')
+            INTO ORDERS VALUES('9-Feb-19')
+            SELECT * FROM DUAL;
+
+
+/
+
+            select case when to_char(orders,'dy')in('fri','sat') then next_day(orders,'monday')
+            else next_day(orders,'friday') end
+            from orders;
+
+
+
+                  --CITY AND BRANCH MODEL--
+--   1.	write a query to list the cities which have more population than bangalore.
+     
+         select city_name 
+    from city2
+    where city_population>(select city_population 
+    from city2
+    where city_name='Bangalore') ;
+
+-- 2.Display all the branch names from Chennai.
+
+    select b_name  
+    from branch 
+    where city_id=(select city_id
+    from city2
+    where city_name='Chennai');
+
+-- 3.DISPLAY a CITY name WHICH DOES not HAVE any BRANCHES
+    
+    select city_name
+    from city2
+    where city_id not in(select city_id 
+    from branch);
+
+/* 4.Display branch name, address and phone number of all the branches
+  where the name starts with either B or M and the city name 
+  starts with either B or C. 
+
+ ans- */   select b_name,b_address,b_phone 
+        from branch
+        where  substr(b_name,1,1) in('B','M') or city_id in(select city_id
+        from city2 
+        where substr(city_name,1,1) in('B','C')) ;
+
+--5.How many branches we have in Bangalore?
+	
+        Select count(city_id)as branch_count
+        from branch 
+        where city_id=(select city_id from city2 where city_name='Bangalore');
+-- removed  group clauses which was present as its not needed.   
+
+
+--6.	Display the branches which are in the Ring road of any city.
+         
+/*ans-*/	select B_Name
+            from branch 
+            where  instr(b_address,'ring road')>0;
+            
+            --or we can use like operator also 
+            select *
+            from branch 
+            where  B_address like '%ring road%';
+
+sle
+--7.	Display the city name, branch name. Order the data based on the city name.
+
+ /*Ans-*/	select c.city_name ,b.b_name 
+            from city2 c LEFT JOIN branch b
+            on c.city_id=b.city_id
+            order by c.city_name;  
+            
+            --changed inner join to left join so that we can get the data of mumbai also..... 
+            
+--8.	Display the city name and the number of branches in each city.
+
+/*Ans- */   select c.city_name,c.city_id,count(b.city_id) tot_branch
+            from city2 c left JOIN branch b
+            on c.city_id=b.city_id
+            group by c.city_id,c.city_name; 
+            
+            select * from city2;
+            
+            
+9.	Display the city name which has most number of branches.
+
+   select *
+   from (select rownum slno,ct_name,no
+                from(  select C.city_name ct_name,COUNT(b.city_id)as no
+                            FROM CITY2 C INNER JOIN BRANCH B
+                            ON c.CITY_ID = b.CITY_ID
+                            GROUP BY B.CITY_ID,C.CITY_NAME
+                            order by count(b.city_id) desc))
+          where slno=1;
+          
+          
+          --The above querry will only work if only one mtable has the max branch but incase of same no of branches
+          --from to city it will give only one value whereas expected output will be all the city having max no of branches.
+          
+                        --or
+                           
+                           select city_name
+                           from city2
+                           where city_id IN ( select city_id
+                                              from branch
+                                                group by city_id
+                                                having count(b_name) in (select max(count(b_name))
+                                                                          from branch
+                                                                           group by city_id));
+                                                                           
+          
+                            
+--10.	Display the city name,city population and the number of branches in each city.
+
+/*Ans- */   
+         SELECT C.city_name,C.city_population,COUNT(b.city_id) branch_count
+         FROM CITY2 C left JOIN BRANCH B
+         ON b.CITY_ID in c.CITY_ID
+         GROUP BY B.CITY_ID,C.CITY_NAME,c.city_population
+         order by c.city_name;
+
+   -- added alias name to count column for better understanding of theird party user.
+   --added order by clause to ity_name column for more good representaion
+                      
+                            /*PRODUCT MODEL*/
+
+
+
+-- 1.	WRITE THE SELECT STATEMENT WHICH GIVES ALL THE PRODUCTS WHICH COSTS MORE THAN RS 250.
+        
+/*ANS-*/	SELECT P_NAME 
+            FROM PRODUCT 
+            WHERE COST>250;
+    
+/*2.	Write the select statement which gives product name, cost, 
+	price and profit. (profit formula is price – cost)*/
+
+/*ANS-*/    SELECT P_NAME ,COST,PRICE,PRICE-COST PROFIT/LOSS
+            FROM PRODUCT;
+            --this display both profit and loss so for only profit added sub querry to it.
+            
+            select *
+            from (SELECT P_NAME ,COST,PRICE,PRICE-COST PROFIT
+            FROM PRODUCT)
+            where profit>0;
+            
+            
+            
+            
+--3.	Find the products which give more profit than product Mouse.
+
+/*ans-*/    select p_name 
+            from product
+            where price-cost>(select price-cost
+                              from product
+                              where p_name='mouse');
+                              
+--4.	Display the products which give the profit greater than 100 Rs.
+
+/*ans-*/    select p_name 
+        	from product
+        	where price-cost>100;
+
+--5.	Display the products which are not from Stationary and Computer family.
+
+/*ANS-*/	SELECT P_NAME 
+        	FROM PRODUCT
+            WHERE P_FAMILY NOT IN('stationary','computer');
+            
+            --learned that it is case sensitve and have to take care of it.
+            select * from product;
+            
+--6.	Display the products which give more profit than the p_id 102.
+
+/*ans-*/   	SELECT p_name 
+            FROM product
+            WHERE price-COST>(SELECT price-COST  profit	
+                              FROM product WHERE p_id=102);
+            
+--7.	Display products which are launched in the year of 2010.
+
+/*ans- */	select p_name
+            from product
+            where to_char(launch_date,'yyyy')='2010';
+            
+--8.	Display the products which name starts with either ‘S’ or ‘W’
+	--  and which belongs to Stationary and cost more than 300 Rs	
+
+/*ans-*/	select p_name
+            from product
+            where p_family='stationary' and cost>100 and substr(p_name,1,1)
+            in('S','W');
+            
+            select * from product;
+            
+--9.	Display the products which are launching next month.
+
+/*ans-*/	select p_name
+            from product
+           where to_char(launch_date,'mon-yy')=to_char(Add_Months(sysdate,1),'mon-yy');
+           -- first considered only month but year was not taken which maywill lead to previous year data in result set.
+            
+           
+            
+           insert into product values(105,'ipad','computer',50000,40000,'15-mar-2020');
+           select * from product;
+            
+--10.	Display product name which has the maximum price in the entire product table.
+
+/*ans- */ 	select p_name
+            from product
+            where price=(select max(price)
+                         from product);
+                         --selected all dta instead of name now selecting only product name.
+                         
+/*11.	List the product name, cost, price,
+        profit and percentage of profit we get in each product.
+
+ans-*/	select p_name,cost,price,price-cost profit, (price-cost)/cost*100 profit_per
+        from product;
+        
+/*12.	Display how many products we have in Computer family which has the
+        price range between 2000 and 50000.
+
+ans-*/	select count(p_name)
+        from product
+        where p_family='computer' and 
+        price between 2000 and 50000;
+        
+        
+        
+                -- HEALTH CARE MODEL
+               
+
+/*1.	Find all the patients who are treated in the first week of this month.
+
+ans-*/
+            Select fname
+            from patient
+                where pat_id in(select pat_id
+                                from case
+                    			where to_char(admission_date,'mm-yy')=to_char(sysdate,'mm-yy')
+                                and to_char(admission_date,'w')='1');
+                                
+          --using 1 as no i to_char comparision.                      
+            Select fname
+            from patient
+                where pat_id in(select pat_id
+                                from case
+                    			where to_char(admission_date,'mm-yy')=to_char(sysdate,'mm-yy')
+                                and to_char(admission_date,'w')=1);
+                               
+                               
+                                insert into case values('01-feb-2020','p5','d3','heart attack');
+                                  insert into case values('24-feb-2020','p2','d3','bp');
+                                    insert into case values('24-feb-2020','p3','d3','breath problem');
+ insert into case values('24-feb-2020','p4','d3','head ache');                                                                        
+  insert into case values('01-jan-2020','p3','d2','fever');
+                                    
+                                select * from doctor;
+                                
+                                
+                                --CHANGED BETWEEN OPERATOR TO TO+CHAR AND PROCESEED USING TWO STEPS .
+                                --MORE GENERIC VERSION
+            
+/*2.	Find all the doctors who have more than 3 admissions today
+
+ans-*/       select fname
+             from doctor
+             where doc_id in(select doc_id
+                             from case
+                                where to_char(admission_date)=to_char(sysdate)
+                                group by doc_id
+                                having count(pat_id)>2);
+
+--added to_char function without it it throws to many value error 
+--and usinf to_char the date it simplified and time is rounded off to 12 o clock
+
+/*3.	Find the patient name (first,last) who got admitted today where the doctor is ‘TIM’
+     
+ans-*/          select p.fname
+                from patient p,case c
+                where p.pat_id=c.pat_id and to_char(admission_date)=to_char(sysdate) 
+                and doc_id=(select doc_id 
+                            from doctor
+                            where fname='tim');
+                            --using one join and one sub querry   cost of this is 12
+                select p.fname
+                from patient p,case c,doctor d
+                where p.pat_id=c.pat_id and c.doc_id=d.doc_id
+                and to_char(admission_date)=to_char(sysdate)
+                and d.fname='tim'
+                            --using two join condition. copst of this 15
+                            
+select fname 
+from patient 
+where pat_id in ( select pat_id 
+                from case 
+                where to_char(admission_date)=to_char(sysdate) and doc_id in ( select doc_id from doctor where fname='tim' ));
+                
+                --using nested sub querry same question. cost of this 21.
+                
+                
+                
+          select * from case;
+          select * from patient;
+          
+          insert into case values (sysdate,'p1','d2','fever');
+          
+          
+          commit;
+
+/* 4.	Find the Doctors whose phone numbers were not update .
+
+ans-*/	    select * 
+            from doctor
+            where phone is null;
+            
+
+/*5.      Display the doctors whose specialty is same as Doctor ‘TIM’
+
+ans- */    select *
+           from doctor
+           where specialty=(select specialty
+                            from doctor
+                            where fname='tim') and fname !='tim';
+                        
+                        --using <> for name comperation.   
+                            
+         select *
+           from doctor
+           where specialty=(select specialty
+                            from doctor
+                            where fname='tim') and fname <>'tim';
+                            --using != instead of not in operator.
+                            
+/*6.	Find out the number of cases monthly wise for the current year.
+
+ans-*/	 select count(pat_id),to_char(admission_date,'mon')
+		 from case
+         where to_char(admission_date,'yyyy')=to_char(sysdate,'yyyy') 
+		 group by to_char(admission_date,'mon');
+         
+         
+         
+
+7.	Display the doctors who don’t have any cases registered this week
+
+ans- 	    select fname
+            from doctor
+            where doc_id not in(select doc_id
+                                from case
+                                where to_char(admission_date,'mm-yy')=to_char(sysdate,'mm-yy')
+                                and to_char(admission_date,'w')=to_char(sysdate,'w'));
+
+/* 8.	Display Doctor Name, Patient Name, Diagnosis for 
+	all the admissions which happened on 1st of Jan this year.
+
+ans- */	 select d.fname as doc_name,p.fname as pat_name,c.diagnosis,c.admission_date
+         from case c inner join patient p
+         on p.pat_id=c.pat_id join doctor d
+         on d.doc_id=c.doc_id
+         where trunc( admission_date)=trunc(sysdate,'yyyy');
+        
+        -- was using trunc with yyy with admission date which alter the whole data
+        --now only using simple trun with admission date so that it can change the time to 1200 so that we can compare .
+         
+         
+         select * from case;
+         select trunc(sysdate,'yyyy') from dual;
+         
+9.	Display Doctor Name, patient count based on the cases registered in the hospital.
+
+ans-    Select d.fname,count(c.pat_id)
+        from doctor d inner join case c
+        on d.doc_id=c.doc_id
+        group by d.fname
+        order by d.fname desc;
+        
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+
+
+
+
+
+								
+
+ 
+
+ 
