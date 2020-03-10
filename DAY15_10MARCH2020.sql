@@ -1,11 +1,15 @@
 
 --###########################################################################--
---                       	DAY14_09-MARCH-2020
+--                       	DAY15_10-MARCH-2020
 --###########################################################################--
 
 --SQL Questions_Test4(1-26)
 --
 --1. Display the count of ‘L’ in ‘Fintellix’ string.
+
+select Regexp_count('Fintellix','l') as space_count from dual;
+
+--or
 
 select count(case when count>0 
                   then 1 end)-1
@@ -22,22 +26,29 @@ select length('Fintellix')-length(replace('Fintellix','l','')) from dual;
 --Else sal
 --Using case.
 --
+SELECT * FROM EMP;
+UPDATE EMP
+SET SAL =  CASE WHEN SAL>10000 THEN SAL+1000 
+                WHEN SAL BETWEEN 5000 AND 10000 THEN SAL+500
+                ELSE SAL
+                END ;
 
-
-(select case when sal>10000 then sal+1000 
-            when sal>5000  then sal+500
-            else sal end
-from emp)
-;
-
+ROLLBACK;
 
 --3.Display  Dnames and no of employees in it. 
 --      ACCOUNTING            RESEARCH              SALES           OPERATIONS
 ---------------------       ------------         ----------        ----------
 --         3                      5                   6                  1
 
+SELECT * FROM DEPT;
+SELECT COUNT(CASE WHEN DNAME='ACCOUNTING' THEN 1 END) AS ACCOUNTING,
+       COUNT(CASE WHEN DNAME='RESEARCH' THEN 1 END ) AS RESEARCH,
+       COUNT(CASE WHEN DNAME='SALES' THEN 1 END) AS SALES,
+       COUNT(CASE WHEN DNAME='OPERATIONS' THEN 1 END) AS OPERATIONS
+FROM DEPT D, EMP E(+) 
+WHERE D.DEPTNO=E.DEPTNO;
 
---4.Display positive and negative nos using case.
+--4. Display positive and negative nos using case.
 --
 --  I/p		O/p
 --
@@ -47,63 +58,173 @@ from emp)
 --   2		3	
 --  -2
 --   3									
---
 
+CREATE TABLE SIGNNO(NO NUMBER);
 
+INSERT ALL
+INTO SIGNNO VALUES(1)
+INTO SIGNNO VALUES(-1)
+INTO SIGNNO VALUES(2)
+INTO SIGNNO VALUES(-2)
+INTO SIGNNO VALUES(3)
+SELECT * FROM DUAL;
 
+SELECT NEG, POS
+FROM (SELECT CASE WHEN SIGN(NO) <0 THEN NO||'' ELSE ' ' END NEG,
+             CASE WHEN SIGN(NO)>=0 THEN NO||'' ELSE ' ' END  POS
+                  FROM SIGNNO)
+ORDER BY NEG ASC, POS ASC;
+
+SELECT decode( signno - Abs(signno), 0, signno * 10, abs(money_return) ) FROM cash_t;
 
 --5. Waq to display the date and time of sysdate in 24hr format.
+SELECT TO_CHAR(SYSDATE,'hh24:mi:ss') AS TIMES FROM DUAL;
+
 --6. Waq to display alternate records.
+SELECT * FROM EMP
+WHERE MOD(EMPNO,2)=1;
+
+
 --7.  Find the highest runs scored by each criketer from following table:
 --name 	score1	score2	score3	score4
---sachin	70	50	100	150
---Doni	25	55	60	66
---Rahul	10	200	15	76
---koli	  0	 0	 0	1
---
+--sachin	70	 50	    100	    150
+--Doni	    25	 55	     60	     66
+--Rahul	    10	200	     15	     76
+--koli	     0	  0	      0	      1
+
+CREATE TABLE CRICKET (NAMES VARCHAR2(50), SCORE1 INT, SCORE2 INT, SCORE3 INT, SCORE4 INT);
+INSERT ALL
+INTO CRICKET VALUES ('Doni',25,55,60,66)
+INTO CRICKET VALUES ('Koli',0,0,0,1)
+INTO CRICKET VALUES ('Rahul',10,200,15,76)
+INTO CRICKET VALUES ('sachin',70,50,100,150)
+SELECT * FROM DUAL;
+
+SELECT NAMES,GREATEST(SCORE1,SCORE2,SCORE3,SCORE4) FROM CRICKET;
+
+
 --8. I have a table A and B with single column in both tables. Show result for a union and union all.
---A	B
---1	2
---2	10
---3	7
---NULL	NULL
---4	5
---	6
---	9
---
+--  A	    B
+--  1	    2
+--  2	    10
+--  3	    7
+--  NULL	NULL
+--  4	    5
+--	        6
+--	        9
+ CREATE TABLE A ( ids INT);
+ CREATE TABLE b ( ids INT);
+ 
+ INSERT ALL
+ INTO A VALUES (1)
+ INTO A VALUES (2)
+ INTO A VALUES (3)
+ INTO A VALUES (NULL)
+ INTO A VALUES (4)
+ 
+ INTO b VALUES (2)
+ INTO b VALUES (10)
+ INTO b VALUES (7)
+ INTO b VALUES (NULL)
+ INTO b VALUES (5)
+ INTO b VALUES (6)
+ INTO b VALUES (9)
+ SELECT * FROM dual;
+ 
+--without duplicate value
+SELECT * FROM A
+UNION 
+SELECT * FROM b;
+ 
+ 
+--with duplicates value
+SELECT * FROM A
+UNION ALL
+SELECT * FROM b;
+
+
+
 --9.   We have a sequence for id column with increment 1.
--- Input: 1000
---            1001
---            1002
---            1004
---            1005
---            1006
---            1009
---            1010
---
+--    Input:     
+--    1000
+--    1001
+--    1002
+--    1004
+--    1005
+--    1006
+--    1009
+--    1010
+
 -- I want to select the missing numbers in the sequence.
 -- Output should be 
 --                1003
 --                1007
 --                1008
---
---
+
+CREATE TABLE INC_TAB(ID INT);
+
+INSERT ALL
+INTO INC_TAB VALUES (1000)
+INTO INC_TAB VALUES (1001)
+INTO INC_TAB VALUES (1002)
+INTO INC_TAB VALUES (1004)
+INTO INC_TAB VALUES (1005)
+INTO INC_TAB VALUES (1006)
+INTO INC_TAB VALUES (1009)
+INTO INC_TAB VALUES (1010)
+SELECT * FROM DUAL;
+
+SELECT  * FROM INC_TAB; 
+
+
+SELECT (MINI+LEVEL-1) AS ID FROM
+(SELECT MIN(ID) AS MINI,MAX(ID) AS MAXM FROM INC_TAB)
+CONNECT BY LEVEL<=(MAXM-MINI)
+ MINUS
+SELECT ID FROM INC_TAB; 
+
 
 --10.   t1	   	t2
 --   
 --   empid                empid
 --   date                 empname
 --   hour_of_work
--- 
+
 --1.find which emp worked more than 30 hours in last seven days
 --2.find the emp details of today
---
+CREATE TABLE t2
+(empid INT,
+emp_name VARCHAR2(25)
+);
+
+INSERT INTO t2  VALUES (1,'shailendra');
+INSERT INTO t2  VALUES (2,'sridhar');
+INSERT INTO t2  VALUES (3,'ila');
+INSERT INTO t2  VALUES (4,'siddesh');
+CREATE TABLE t1;
+
+(empid INT,
+dates DATE,
+hours_of_worked NUMBER(2,1)
+);
+
+INSERT INTO t1 VALUES (1,'02-mar-2020',7);
+INSERT INTO t1 VALUES (1,'03-mar-2020',8);
+INSERT INTO t1 VALUES (1,'04-mar-2020',4);
+INSERT INTO t1 VALUES (1,'05-mar-2020',6);
+INSERT INTO t1 VALUES (1,'06-mar-2020',7);
+INSERT INTO t1 VALUES (1,'07-mar-2020',8);
+INSERT INTO t1 VALUES (1,'08-mar-2020',8);
+INSERT INTO t1 VALUES (1,'09-mar-2020',8);
+SELECT empid,SUM(hours_of_worked) FROM t1
+WHERE dates>=sysdate-7
+GROUP BY empid
+HAVING SUM(hours_of_worked)>30;
 
 --11. How to print ‘oracle’s’ in the screen.(Oracle with apostrophe s)
-SELECT 'ORACLE''S' FROM DUAL;
+SELECT 'ORACLE''S' FROM dual;
 COMMIT;
 --12. Suppose I inserted 2 records, deleted one record, alter the table and issued rollback. How many records will be there in the table.
-
 --Answer:- IT WILL DISPLAY ONLY ONE RECORD IN THE TABLE.
 
 CREATE TABLE TT1(ID INT, NAME VARCHAR(20));
@@ -175,14 +296,20 @@ SELECT * FROM DUAL;
 --        Delhi		    M
 --        Delhi		    M
 --        Mum		    F
---
 
 --  o/p
 --City		Males	  Females
 --Bang		1		    2
 --Delhi		3		    0
 --Mum		0		    2
---
+SELECT * FROM CUSTOMER1;
+
+SELECT CUST_CITY_NAME, 
+       COUNT(CASE WHEN CUST_GENDER='M' THEN 1 END) MALES ,
+       COUNT(CASE WHEN CUST_GENDER='F' THEN 1 END ) FEMALE 
+FROM CUSTOMER1
+GROUP BY CUST_CITY_NAME;
+
 
 
 --17.
@@ -201,7 +328,22 @@ SELECT * FROM DUAL;
 --50		Chn
 --
 --Waq to display customer name, birth city and work city.
---
+
+create table cust_city(city_id number(2) primary key, city_name varchar(10));
+
+create table cust_BW(cust_name varchar(15), bid number(2), wid number(2));
+
+alter table cust_BW add constraint f_city_id foreign key (city_id) references cust_city(city_id);
+
+ALTER TABLE cust_bw
+ADD FOREIGN KEY (city_id) REFERENCES cust_city(city_id);
+desc cust_city;
+select customer_name,birth_city,work_city 
+from customer c,city ct 
+where c.city_id=ct.city_id;
+
+select * from customer_detail;
+
 --18. Display the result set as
 --
 --id	marks	subjects
@@ -221,6 +363,7 @@ SELECT * FROM DUAL;
 --2	35		45		55
 --3	60		70		80
 --
+
 --
 --19.
 --
@@ -231,7 +374,9 @@ SELECT * FROM DUAL;
 --      3   c                    null     12
 --      4   d                    d        13
 --Display the nm not present in t2(nm) column.
---
+
+
+
 --20. Write a query to get the output as:
 --Table A
 --Col1			Output
@@ -240,13 +385,29 @@ SELECT * FROM DUAL;
 --3
 ---5
 --6
---
+CREATE TABLE TABLE3(COL1 NUMBER(3));
+
+INSERT INTO TABLE3 VALUES(1);
+INSERT INTO TABLE3 VALUES(-2);
+INSERT INTO TABLE3 VALUES(3);
+INSERT INTO TABLE3 VALUES(-5);
+INSERT INTO TABLE3 VALUES(6);
+
+SELECT * FROM TABLE3;
+
+SELECT CASE WHEN SIGN(COL1)=1 THEN SUM(COUNT FROM TABLE3;
+
+
 --21.Display the employees who are not playing manager roles.
 select ename
-from emp 
-where mgr is null;
+from emp
+where job <> 'MANAGER';
 
 --22.Display emp’s whose interview date and joining date is more than a week.
+
+select ename
+from emp
+where j_date-i_date>7;
 
 --23. What is count(*),count(null), count(empno), count(1).
 count(*)
@@ -257,15 +418,53 @@ count(null)
 
 count(empno) 
 count(1)
+
 --24. Display salaries as
 --5000:4000:3000:2000:1000 in this format as well as in descending order.
+
+CREATE VIEW V1 
+AS SELECT DISTINCT SAL 
+FROM EMP 
+ORDER BY SAL DESC;
+
+select listagg(sal,':') within group (order by sal desc) as salary
+from V1;
+
 --25. Display the top 2 salaries in each dept
 --O/p
 --       Deptno		sal
---	10		5000, 3000
---	20		10000, 8000
---	30		3000, 2000
---
+--	    10		5000, 3000
+--	    20		10000, 8000
+--	    30		3000, 2000
+DROP VIEW VSAL;
+SELECT DEPTNO,SAL FROM EMP
+GROUP BY DEPTNO,SAL
+ORDER BY DEPTNO ASC,SAL DESC;
+
+--creating view
+CREATE VIEW VSAL 
+AS 
+(select deptno, max(sal) as SECOND_MAX from emp d
+where sal < (select max(sal) from emp e
+where e.deptno=d.deptno)
+group by deptno);
+
+--main answer
+select d.deptno, max(e.sal) AS FIRST_MAX, SECOND_MAX
+from dept d, emp e,VSAL V
+where d.deptno=e.deptno
+AND E.DEPTNO=V.DEPTNO
+group by d.deptno, V.SECOND_MAX;
+
+
+
+select deptno,  max(sal) from emp d
+where sal < (select max(sal) as max1 from emp e
+where e.deptno=d.deptno)
+group by deptno;
+
+
+
 --26.
 --
 --EMP							JOB
@@ -274,7 +473,10 @@ count(1)
 --	1102		Bharat		12000			B	    5000		10000		
 --	1103		Charan		3000			C	    1000		5000
 --	Display the grades of employees based on their salary.
-
+SELECT EMPNO,ENAME,SAL,CASE WHEN SAL BETWEEN 2000 AND 3500 THEN 'A' 
+                            WHEN SAL BETWEEN 5000 AND 1000 THEN 'B' 
+                            WHEN SAL BETWEEN 1000 AND 5000 THEN 'C' END
+FROM EMP;
 
 
 --##########################################################################################
@@ -346,7 +548,7 @@ SELECT * FROM USER_MVIEWS;
 
 SAVEPOINT VIEW;
 
-----------creating m-view manually----------------------
+----------CREATING M-VIEW MANUALLY----------------------
 
 CREATE MATERIALIZED VIEW MV_V2
 BUILD IMMEDIATE
@@ -368,7 +570,7 @@ INSERT INTO CUSTOMER VALUES(1012,'SHVNARSH',34567887,101,'','');
 
 
 
------------------on demand refresh-----------------------
+-----------------ON DEMAND REFRESH-----------------------
 EXEC DBMS_MVIEW.REFRESH('mv_v2');
 
 

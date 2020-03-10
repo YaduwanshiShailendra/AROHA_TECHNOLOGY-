@@ -1,0 +1,728 @@
+Aroha Technologies
+Menu
+Name : AROHA AROHA
+Email : 4mailping@gmail.com
+Date : 09/03/2020
+Phone Number : 9074540573
+Result :0 / 19
+Test ID : ORASQL-Complex-2
+Filter by Answer result : 
+Save this report as PDF
+1.Pipeline function in oracle is used to 
+Wrong
+1. return a single value as normal function
+2. in from clause of a select statement
+3. as the column in the select statement
+4. none of the above
+Actual Answer:
+in from clause of a select statement
+User Answer:
+Not attempted
+
+2.The PRODUCT table contains these columns: PRODUCT_ID NUMBER(9) PRODUCT_NAME VARCHAR2(25) COST NUMBER(5,2) LIST_PRICE NUMBER(5,2) SUPPLIER_ID NUMBER(9) You need to display product names, costs, supplier ids, and average list prices for all the produ
+Wrong
+1. SELECT product_name, cost, supplier_id, AVG(list_price) FROM product p, product a WHERE p.supplier_id = a.supplier_id GROUP BY product_name, cost, supplier_id;
+2. SELECT product_name, cost, p.supplier_id, AVG(list_price) FROM product p, (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) a WHERE p.cost > a.avg_cost GROUP BY product_name, cost, p.supplier_id;
+3. SELECT product_name, cost, supplier_id, AVG(list_price) FROM product WHERE supplier_id IN (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) GROUP BY product_name, cost, supplier_id;
+4. SELECT product_name, cost, p.supplier_id, AVG(list_price) FROM product p, (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) a WHERE p.supplier_id = a.supplier_id AND p.cost > a.avg_cost GROUP BY product_name, cost, p.supplier
+Actual Answer:
+SELECT product_name, cost, p.supplier_id, AVG(list_price) FROM product p, (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) a WHERE p.supplier_id = a.supplier_id AND p.cost > a.avg_cost GROUP BY product_name, cost, p.supplier
+User Answer:
+SELECT product_name, cost, supplier_id, AVG(list_price) FROM product WHERE supplier_id IN (SELECT supplier_id, AVG(cost) avg_cost FROM product GROUP BY supplier_id) GROUP BY product_name, cost, supplier_id;
+
+3.The EVENT table contains these columns: EVENT_ID NUMBER EVENT_NAME VARCHAR2(30) EVENT_DESC VARCHAR2(100) EVENT_TYPE NUMBER LOCATION_ID NUMBER You have been asked to provide a report of the number of different event types at each location. Which SEL
+Wrong
+1. SELECT UNIQUE(location_id), COUNT(event_type) FROM event GROUP BY location_id;
+2. SELECT COUNT(*), DISTINCT(location_id) FROM event;
+3. SELECT DISTINCT (event_type) FROM event GROUP BY location_id;
+4. SELECT location_id, COUNT(DISTINCT event_type) FROM event GROUP BY location_id;
+Actual Answer:
+SELECT location_id, COUNT(DISTINCT event_type) FROM event GROUP BY location_id;
+User Answer:
+Not attempted
+
+4.The EMP table has these columns: ENAME VARCHAR2(35) SALARY NUMBER(8,2) HIRE_DATE DATE Management wants a list of names of employees who have been with the company for more than five years. Which SQL statement displays the required results? 
+Wrong
+1. SELECT ENAME FROM EMP WHERE SYSDATE-HIRE_DATE > 5;
+2. SELECT ENAME FROM EMP WHERE HIRE_DATE-SYSDATE > 5;
+3. SELECT ENAME FROM EMP WHERE (SYSDATE-HIRE_DATE)/365 > 5;
+4. SELECT ENAME FROM EMP WHERE (SYSDATE-HIRE_DATE)* 365 > 5;
+Actual Answer:
+SELECT ENAME FROM EMP WHERE (SYSDATE-HIRE_DATE)/365 > 5;
+User Answer:
+Not attempted
+
+5.The ITEM table contains these columns: ITEM_ID NUMBER(9) COST NUMBER(7,2) RETAIL NUMBER(7,2) You need to create a report that displays the cost, the retail price, and the profit for item number 783920. To calculate the profit, subtract the cost of 
+Wrong
+1. SELECT cost, retail, (retail - cost) - ((retail - cost) * .25) "Profit" FROM item WHERE item_id = 783920
+2. SELECT cost, retail, (retail - cost) - retail - (cost * .25) "Profit" FROM item WHERE item_id = 783920;
+3. SELECT cost, retail, (retail - cost - retail - cost) * .25 "Profit" FROM item WHERE item_id = 783920;
+4. SELECT cost, retail, retail - cost - retail - cost * .25 "Profit" FROM item WHERE item_id = 783920;
+Actual Answer:
+SELECT cost, retail, (retail - cost) - ((retail - cost) * .25) "Profit" FROM item WHERE item_id = 783920
+User Answer:
+Not attempted
+
+6.We can create materialized view on the table without primary key with this option
+Wrong
+1. On commit
+2. On demand
+3. With primary key
+4. With rowid
+Actual Answer:
+With rowid
+User Answer:
+Not attempted
+
+7.Indexes are used in
+Wrong
+1. a query
+2. a query with column having index in where condition
+3. a query with group by
+4. a query with from clause
+Actual Answer:
+a query with column having index in where condition
+User Answer:
+Not attempted
+
+8.Which of these is Oracle hints:
+Wrong
+1. All_Rows 
+2. Choose 
+3. First_rows
+4. rule
+Actual Answer:
+All_Rows 
+Choose 
+First_rows
+rule
+User Answer:
+Not attempted
+
+9.Scripts that need to be executed to create dbms_profiler package
+Wrong
+1. utlxplan.sql 
+2. utlxplp.sql 
+3. proftab.sql 
+4. profload.sql
+Actual Answer:
+proftab.sql 
+profload.sql
+User Answer:
+Not attempted
+
+10.To view the execution plan
+Wrong
+1. select * from dbms_xplan.display() 
+2. select * from dbms_display() 
+3. select * from table(dbms_xplan.display()) 
+4. none of the above
+Actual Answer:
+select * from table(dbms_xplan.display()) 
+User Answer:
+Not attempted
+
+11.1st normal form rule:
+Wrong
+1. No repeating groups of data 
+2. should be scalar 
+3. should be atomic 
+4. should be independent
+Actual Answer:
+No repeating groups of data 
+should be scalar 
+should be atomic 
+User Answer:
+Not attempted
+
+12.2nd Normal form rule is
+Wrong
+1. It should be in 1st NF
+2. it should be functionally dependent 
+3. the non key column should depend on entire primary key column 
+4. the non key column should depend on another non key column
+Actual Answer:
+It should be in 1st NF
+it should be functionally dependent 
+the non key column should depend on entire primary key column 
+User Answer:
+Not attempted
+
+13.Parsing involves:
+Wrong
+1. syntactical errors 
+2. semantical errors 
+3. shared pool check 
+4. java pool check
+Actual Answer:
+syntactical errors 
+semantical errors 
+shared pool check 
+User Answer:
+Not attempted
+
+14.We cannot perform these operations on external tables
+Wrong
+1. DDL 
+2. DML 
+3. None of the above 
+4. All of the above
+Actual Answer:
+DML 
+User Answer:
+None of the above 
+
+15.On commit delete rows while creating temp tables are
+Wrong
+1. Session Specific 
+2. Transaction Specific 
+3. Workflow specific 
+4. None of the above
+Actual Answer:
+Transaction Specific 
+User Answer:
+Not attempted
+
+16.After creating and inserting records in global temp tables, once we close the session
+Wrong
+1. The table is dropped 
+2. The data is lost 
+3. The table still exist 
+4. None of the above
+Actual Answer:
+The data is lost 
+The table still exist 
+User Answer:
+Not attempted
+
+17.Temp tables can have:
+Wrong
+1. Indexes 
+2. Views can be created on it 
+3. Synonyms can be created 
+4. none of the above
+Actual Answer:
+Indexes 
+Views can be created on it 
+Synonyms can be created 
+User Answer:
+Not attempted
+
+18.A table can have
+Wrong
+1. Many non clustered indexes 
+2. one and only one clustered indexes 
+3. Many clustered indexes 
+4. none of the above
+Actual Answer:
+Many non clustered indexes 
+one and only one clustered indexes 
+User Answer:
+Not attempted
+
+19.Creating clustered indexes involves
+Wrong
+1. Creating a cluster 
+2. creating index on a cluster 
+3. Adding tables to a cluster 
+4. Adding views to a cluster
+Actual Answer:
+Creating a cluster 
+creating index on a cluster 
+Adding tables to a cluster 
+User Answer:
+Not attempted
+
+Save this report as PDF
+
+
+
+Aroha Technologies
+Menu
+Name : AROHA AROHA
+Email : 4mailping@gmail.com
+Date : 09/03/2020
+Phone Number : 9074540573
+Result :0 / 18
+Test ID : ORASQL-Complex-3
+Filter by Answer result : 
+Save this report as PDF
+1.Choose the table types you know in oracle
+Wrong
+1. Local Temp Tables
+2. Tables
+3. Global Temp Tables
+4. All the above
+Actual Answer:
+Tables
+Global Temp Tables
+User Answer:
+Not attempted
+
+2.EMPLOYEES EMPLOYEE_ID NUMBER NOT NULL, Primary Key EMP_NAME VARCHAR2 (30) JOB_ID VARCHAR2 (20) SALARY NUMBER MGR_ID NUMBER References EMPLOYEE_ID column DEPARTMENT_ID NUMBER Foreign key to DEPARTMENT_ID column of the DEPARTMENTS table TAX MIN_SALARY
+Wrong
+1. SELECT employee_id, salary, tax_percent FROM employees e, tax t WHERE e.salary BETWEEN t.min_salary AND t.max_salary;
+2. SELECT employee_id, salary, tax_percent FROM employees e, tax t. WHERE e.salary > t.min_salary, tax_percent
+3. SELECT employee_id, salary, tax_percent FROM employees e, tax t WHERE MIN(e.salary) = t.min_salary AND MAX(e.salary) = t.max_salary
+4. You cannot find the information because there is no common column between the two tables.
+Actual Answer:
+SELECT employee_id, salary, tax_percent FROM employees e, tax t WHERE e.salary BETWEEN t.min_salary AND t.max_salary;
+User Answer:
+Not attempted
+
+3.The EVENT table contains these columns: EVENT_ID NUMBER EVENT_NAME VARCHAR2(30) EVENT_DESC VARCHAR2(100) EVENT_TYPE NUMBER LOCATION_ID NUMBER You have been asked to provide a report of the number of different event types at each location. Which SEL
+Wrong
+1. SELECT UNIQUE(location_id), COUNT(event_type) FROM event GROUP BY location_id;
+2. SELECT COUNT(*), DISTINCT(location_id) FROM event;
+3. SELECT DISTINCT (event_type) FROM event GROUP BY location_id;
+4. SELECT location_id, COUNT(DISTINCT event_type) FROM event GROUP BY location_id;
+Actual Answer:
+SELECT location_id, COUNT(DISTINCT event_type) FROM event GROUP BY location_id;
+User Answer:
+Not attempted
+
+4.Which two tasks can you perform by using the TO_CHAR function? 
+Wrong
+1. Convert a date to a character expression
+2. Convert '10' to 10
+3. Convert '10' to '10'
+4. Convert 'TEN' to 10
+Actual Answer:
+Convert a date to a character expression
+Convert '10' to '10'
+User Answer:
+Not attempted
+
+5.You issue this statement: CREATE PUBLIC SYNONYM part FOR john.product; Which task was accomplished by this statement? 
+Wrong
+1. A new segment object was created.
+2. A new object privilege was assigned.
+3. A new system privilege was assigned.
+4. The need to qualify an object name with its schema was eliminated.
+Actual Answer:
+The need to qualify an object name with its schema was eliminated.
+User Answer:
+Not attempted
+
+6.It is mandatory to create log file while creating materialized view with this option:
+Wrong
+1. Refresh force
+2. Refresh complete
+3. Refresh fast
+4. None of the above
+Actual Answer:
+Refresh fast
+User Answer:
+Not attempted
+
+7.We can create materialized view on the table without primary key with this option
+Wrong
+1. On commit
+2. On demand
+3. With primary key
+4. With rowid
+Actual Answer:
+With rowid
+User Answer:
+Not attempted
+
+8.Set autotrace on will display
+Wrong
+1. Execution plan 
+2. statistics 
+3. hints 
+4. the rows fetched from the query
+Actual Answer:
+Execution plan 
+statistics 
+the rows fetched from the query
+User Answer:
+Not attempted
+
+9.TKPROF generates
+Wrong
+1. Non readable report from data file
+2. readable report from data file
+3. readable report from trace file
+4. non readable report from trace file
+Actual Answer:
+readable report from trace file
+User Answer:
+Not attempted
+
+10.Scripts that need to be executed to create dbms_profiler package
+Wrong
+1. utlxplan.sql 
+2. utlxplp.sql 
+3. proftab.sql 
+4. profload.sql
+Actual Answer:
+proftab.sql 
+profload.sql
+User Answer:
+Not attempted
+
+11.Table Partitioning is one of the method to:
+Wrong
+1. improve query execution 
+2. increase performance 
+3. increase response time 
+4. None of the above
+Actual Answer:
+improve query execution 
+increase performance 
+increase response time 
+User Answer:
+Not attempted
+
+12.1st normal form rule:
+Wrong
+1. No repeating groups of data 
+2. should be scalar 
+3. should be atomic 
+4. should be independent
+Actual Answer:
+No repeating groups of data 
+should be scalar 
+should be atomic 
+User Answer:
+Not attempted
+
+13.Parsing involves:
+Wrong
+1. syntactical errors 
+2. semantical errors 
+3. shared pool check 
+4. java pool check
+Actual Answer:
+syntactical errors 
+semantical errors 
+shared pool check 
+User Answer:
+Not attempted
+
+14.UTL_File procedures are
+Wrong
+1. FCLOSE
+2. FOPEN
+3. FCOPY
+4. All of the above
+Actual Answer:
+All of the above
+User Answer:
+Not attempted
+
+15.After creating and inserting records in global temp tables, once we close the session
+Wrong
+1. The table is dropped 
+2. The data is lost 
+3. The table still exist 
+4. None of the above
+Actual Answer:
+The data is lost 
+The table still exist 
+User Answer:
+Not attempted
+
+16.In global temp tables the data is cleaned, once we issue
+Wrong
+1. commit
+2. rollback 
+3. session ends 
+4. session starts
+Actual Answer:
+session ends 
+User Answer:
+Not attempted
+
+17.Data in temp tables are stored in
+Wrong
+1. undo segments
+2. redo segments 
+3. temp segments 
+4. all of the above
+Actual Answer:
+temp segments 
+User Answer:
+Not attempted
+
+18.A table can have
+Wrong
+1. Many non clustered indexes 
+2. one and only one clustered indexes 
+3. Many clustered indexes 
+4. none of the above
+Actual Answer:
+Many non clustered indexes 
+one and only one clustered indexes 
+User Answer:
+Not attempted
+
+Save this report as PDF
+
+
+Aroha Technologies
+Menu
+Name : AROHA AROHA
+Email : 4mailping@gmail.com
+Date : 09/03/2020
+Phone Number : 9074540573
+Result :0 / 20
+Test ID : ORASQL-Complex-4
+Filter by Answer result : 
+Save this report as PDF
+1.Pipeline function in oracle is used to 
+Wrong
+1. return a single value as normal function
+2. in from clause of a select statement
+3. as the column in the select statement
+4. none of the above
+Actual Answer:
+in from clause of a select statement
+User Answer:
+Not attempted
+
+2.Choose the table types you know in oracle
+Wrong
+1. Local Temp Tables
+2. Tables
+3. Global Temp Tables
+4. All the above
+Actual Answer:
+Tables
+Global Temp Tables
+User Answer:
+Not attempted
+
+3.Refresh fast performs:
+Wrong
+1. Full refresh
+2. Full extract
+3. Incremental refresh
+4. Incremental extract
+Actual Answer:
+Incremental refresh
+User Answer:
+Not attempted
+
+4.We can create materialized view on the table without primary key with this option
+Wrong
+1. On commit
+2. On demand
+3. With primary key
+4. With rowid
+Actual Answer:
+With rowid
+User Answer:
+Not attempted
+
+5.Which will improve performance in query execution
+Wrong
+1. Oracle hints
+2. Indexes
+3. Mat views 
+4. All of the above
+Actual Answer:
+All of the above
+User Answer:
+Not attempted
+
+6.Sql Tracing by default is
+Wrong
+1. enabled
+2. disabled
+3. does not exist 
+4. none of the above
+Actual Answer:
+disabled
+User Answer:
+Not attempted
+
+7.Types of optimizer
+Wrong
+1. Rule based optimizer 
+2. Cost based optimizer 
+3. plan based optimizer
+4. all of the above
+Actual Answer:
+Rule based optimizer 
+Cost based optimizer 
+User Answer:
+Not attempted
+
+8.The built in package which helps to capture performance information in PLSQL programs is:
+Wrong
+1. DBMS_XPLAN
+2. DBMS_JOB 
+3. DBMS_SCHEDULER 
+4. DBMS_PROFILER
+Actual Answer:
+DBMS_PROFILER
+User Answer:
+Not attempted
+
+9.Scripts that need to be executed to create dbms_profiler package
+Wrong
+1. utlxplan.sql 
+2. utlxplp.sql 
+3. proftab.sql 
+4. profload.sql
+Actual Answer:
+proftab.sql 
+profload.sql
+User Answer:
+Not attempted
+
+10.Table Partitioning is one of the method to:
+Wrong
+1. improve query execution 
+2. increase performance 
+3. increase response time 
+4. None of the above
+Actual Answer:
+improve query execution 
+increase performance 
+increase response time 
+User Answer:
+Not attempted
+
+11.To find the number of partitioned tables, the data dictionary is
+Wrong
+1. user_partitions 
+2. user_tables 
+3. user_part_tables 
+4. user_tab_partitions
+Actual Answer:
+user_part_tables 
+User Answer:
+Not attempted
+
+12.The view which is used to display the execution plan of sql statement
+Wrong
+1. V$SQL_PLAN 
+2. V$SQL_SESSION 
+3. V$SQL_OUTPUT 
+4. none of the above
+Actual Answer:
+V$SQL_PLAN 
+User Answer:
+Not attempted
+
+13.1st normal form rule:
+Wrong
+1. No repeating groups of data 
+2. should be scalar 
+3. should be atomic 
+4. should be independent
+Actual Answer:
+No repeating groups of data 
+should be scalar 
+should be atomic 
+User Answer:
+Not attempted
+
+14.Parsing involves:
+Wrong
+1. syntactical errors 
+2. semantical errors 
+3. shared pool check 
+4. java pool check
+Actual Answer:
+syntactical errors 
+semantical errors 
+shared pool check 
+User Answer:
+Not attempted
+
+15.UTL_FILE exceptions are:
+Wrong
+1. Invalid_Mode
+2. Invalid_Path 
+3. Read_Error 
+4. File_Open
+Actual Answer:
+Invalid_Mode
+Invalid_Path 
+Read_Error 
+File_Open
+User Answer:
+Not attempted
+
+16.Which statement is false about temporary tables
+Wrong
+1. It holds intermediate results 
+2. Increases SQL performance 
+3. Improves the execution speed 
+4. generates redo or rollback information
+Actual Answer:
+generates redo or rollback information
+User Answer:
+Not attempted
+
+17.Temp tables can have:
+Wrong
+1. Indexes 
+2. Views can be created on it 
+3. Synonyms can be created 
+4. none of the above
+Actual Answer:
+Indexes 
+Views can be created on it 
+Synonyms can be created 
+User Answer:
+Not attempted
+
+18.For the global temp tables in the data dictionary user_tables
+Wrong
+1. the column Temporary will be set to Y 
+2. The column duration will be sys$session 
+3. The column duration will be sys$transaction 
+4. the column secondary will be set to Y
+Actual Answer:
+the column Temporary will be set to Y 
+The column duration will be sys$session 
+User Answer:
+Not attempted
+
+19.The data dictionary to view cluster columns:
+Wrong
+1. User_columns 
+2. user_tab_columns 
+3. user_clu_columns 
+4. user_clu_tabs
+Actual Answer:
+user_clu_columns 
+User Answer:
+Not attempted
+
+20.Creating clustered indexes involves
+Wrong
+1. Creating a cluster 
+2. creating index on a cluster 
+3. Adding tables to a cluster 
+4. Adding views to a cluster
+Actual Answer:
+Creating a cluster 
+creating index on a cluster 
+Adding tables to a cluster 
+User Answer:
+Not attempted
+
+Save this report as PDF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

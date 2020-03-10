@@ -282,6 +282,17 @@ into orders values('09-Feb-19','11-Feb-19')
 select * from dual;
 
 
+SELECT ORDERS,
+CASE WHEN TO_CHAR(ORDERS,'DY') IN ('FRI','SAT') THEN NEXT_DAY(ORDERS,'MONDAY') 
+ELSE NEXT_DAY(ORDERS,'FRIDAY') END
+FROM ORDERS;
+
+select ename from emp
+order by sal;
+
+
+
+
 select to_char(order_date,'fmDay') from orders;
 
 Monday to Thursday
