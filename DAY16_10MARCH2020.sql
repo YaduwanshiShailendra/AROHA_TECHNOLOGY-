@@ -136,54 +136,151 @@ SELECT * FROM USER_MVIEWS;
 SHOW USER;
     
 --20. How to check the given query is normal view or materialized View?
-select * from user_objects ;
+SELECT OBJECT_NAME,OBJECT_TYPE FROM USER_OBJECTS WHERE OBJECT_NAME IN (SELECT TRIM(SUBSTR('SELECT * FROM EMP',INSTR('SELECT * FROM EMP','FROM')+LENGTH('FROM'))) FROM DUAL);
 
-select * from v1;
-select * from mv_1;
-select
-VIEW
-MATERIALIZED VIEW
+
 
 ##############################################################################################################
 
 Database Objects
---    1. Suppose we created a synonym for Customer table, if we drop a synonym a table is dropped or not?
+--1. Suppose we created a synonym for Customer table, if we drop a synonym a table is dropped or not?
+No it doesnt effect the TABLE
 
---    2. Suppose we created a complex view by joining 2 tables named Customer and Sales. Can we perform DML on complex view. Will it affect the base tables?
+--2. Suppose we created a complex view by joining 2 tables named Customer and Sales. Can we perform DML on complex view. Will it affect the base tables?
+No it doesnt effect the base TABLES.
+--3. What are the restrictions for the non updatable views?
+Read only.
 
---    3. What are the restrictions for the non updatable views?
+--4.  Suppose if we drop a table, the view created on that table will be dropped or not?
+That time we cannot use view table, because base table is not there.
+Hence it become unavailable.
 
---    4.  Suppose if we drop a table, the view created on that table will be dropped or not?
+--5. Can we create index on Views?
+No we cannot create index on views.
+ 
+--6. Write an example for check option view.
+CREATE VIEW V1
+AS
+    SELECT ENAME,SAL
+    FROM EMP
+    WHERE SAL<5000
+    WITH CHECK OPTION CONSTRAINT SAL.
 
---    5. Can we create index on Views?
+--7. Can we create index on Materialized Views?
+Yes we can create index on Materialized Views.
 
---    6. Write an example for check option view.
+--8. Create a public synonym and Display all the public synonyms which you have created in the database?
+CREATE PUBLIC SYNONYM SYN1 FOR EMP;
 
---    7. Can we create index on Materialized Views?
+CREATE PUBLIC SYNONYM SYNPB FOR ILAVARASU@CLOUDB
 
---    8. Create a public synonym and Display all the public synonyms which you have created in the database?
+--9. We created a sequence and the current sequence is 5. Suppose if we log off and log in again will the sequence continue Or it will be lost?
+It will be present.
 
---    9. We created a sequence and the current sequence is 5. Suppose if we log off and log in again will the sequence continue Or it will be lost?
+--10. What is the difference between Currval and Nextval?
+curval gives the curretn value of the sequence
+whereas
+nextval gives the next value of the sequence.
 
---    10. What is the difference between Currval and Nextval?
+--11. Difference between Rownum and rowid?
+ROWNUM is sequenc of no reffering to that record in te TABLE.
+ROWID reffers to the physical address of the TABLE in database.
 
---    11. Difference between Rownum and rowid?
+--12. Why rownum will not work for Rownum=2 and Rownum>=2? Please tell the reason.
+Because it will start executing and checking the rownum,
+Every time it will start with 1 and will be in infinite loop hence you will not get output.
 
---    12. Why rownum will not work for Rownum=2 and Rownum>=2? Please tell the reason.
+--13. Can we delete the record from parent table. If it is not, what kind of error you will get? How to overcome that error?
+No we cannot delete the record from parent table, it will throw error child record exist.
+We can over come this by using either 'on delete set null' or 'on delet set cascade' in the child table foreign key while creating the table.
+
+--14. What is Cache and Cycle in Sequence?
+CYCLE: 
+        It use to generate values after reaching either its maximum or minimum value and continues the sequence.
+        It generates its minimum value after ascending sequence reaches its maximum value, 
+        It generates its maximum value after descending sequence reaches its minimum value.
+
+CACHE: 
+        It specify how many values of the sequence the database preallocates and keeps in memory for faster access. 
+        This integer value can have 28 or fewer digits. 
+        The minimum value for this parameter is 2. 
+        For sequences that cycle, this value must be less than the number of values in the cycle. 
+        You cannot cache more values than will fit in a given cycle of sequence numbers. 
+        Therefore, the maximum value allowed for CACHE must be less than the value determined by the following formula:
+            (CEIL (MAXVALUE - MINVALUE)) / ABS (INCREMENT)
+
+        If a system failure occurs, all cached sequence values that have not been used in committed DML statements are lost. 
+        The potential number of lost values is equal to the value of the CACHE parameter.
 
 
---    13. Can we delete the record from parent table. If it is not, what kind of error you will get? How to overcome that error?
+--15. Diffrence between Start with and Minvalue in Sequence?
+START WITH:
+        We use this clause to start an ascending sequence at a value greater than its minimum or to start a descending sequence at a value less than its maximum.
+        For ascending sequences, the default value is the minimum value of the sequence.
+        For descending sequences,the default value is the maximum value of the sequence.
+        This integer value can have 28 or fewer digits.
 
---    14. What is Cache and Cycle in Sequence?
+MINVALUE: 
+        Specify the minimum value of the sequence. This integer value can have 28 or fewer digits.
+        MINVALUE must be less than or equal to "START WITH" and must be less than "MAXCALUE".
 
---    15. Diffrence between Start with and Minvalue in Sequence?
 
 --    16. What is the difference between Union and Union all in Set operators?
+UNION: 
+        Union Operator combines the result of 2 or more tables and fetches the results of two select statements.
+        Union operator eliminates the duplicates from the table and fetches the result.
+        For each duplicate row in table only one row is displayed in the result.
+        By considering the performance of SQL using union is not preferable option but if there is situation where user wants to remove the duplicate data from two or more table the use of Union is preferable.
+ 
+Syntax Of Union:
+        SELECT COLUMN1…COLUMN N FROM TABLE1;
+        UNION
+        SELECT COLUMN1…COLUMN N FROM TABLE2;
+
+UNION ALL OPERATOR:
+        Union ALL Operator combines the result of 2 or more tables and fetches the results of two or more select statements.
+        Union all operator does not eliminate duplicate values.
+        It shows duplicate records also.
+        By considering the performance of SQL using union all is preferable option because it does not check the duplicate values so no sorting required at the time of fetching the records.
+        Union all operator is most 
+        widely used operator in reporting purpose where user needs to fetch the records from different tables.
+
+Syntax:
+        SELECT COLUMN1…COLUMN N FROM TABLE1;
+        UNION ALL
+        SELECT COLUMN1…COLUMN N FROM TABLE2;
+
 
 --    17. Difference between Joins and Set operators?
+_____________________________________________________________________________________________________________________
+            JOINS                               |                                          SET
+_____________________________________________________________________________________________________________________
+IN JOINS WE CAN HAVE N NUMBER OF COLUMNS        |         IN SET OPERATOR THE NO OF COLUMN OF BOTH TABLES ARE SAME.
+FROM ONE TABLE ND ONE COLUMN FROM ANOTHER.      |
+                                                |
+WE CAN HAVE DIFFERENT ALIAS NAME                |         THE ALIAS NAME OF FIRST TABLE IS TAKEN ALWAYS.
+FROM DIFFERENT TABLE.                           |
+_____________________________________________________________________________________________________________________
 
 
 --    18. Difference between Subquery and Co-related query ?
+SUBQUERY
+1. The inner query is executed only once.
+2. The inner query will get executed first and the outer of the inner query used by the outer query. 
+3. The inner query is not dependent on outer query.
+example-
+        select Ename, deptno
+        from emp
+        where ename in (select ename from cust);
+
+CORRELATED SUBQUERY
+1. The outer query will get executed first and for every row of outer query, inner query will get executed.
+2. So the inner query will get executed as many times as number of rows in result of the outer query.
+3. The outer query output can use the inner query output for comparison. This means inner query and outer query dependent on each other.
+example-
+        select ename, deptno
+        from emp
+        where ename in (select ename from dept where emp.deptno=dept.deptno);
 
 --    19. Difference between User_ and All_ in data dictionary?
 User_tables data dictionary contains all the tables created by the users under that schema.
@@ -193,9 +290,15 @@ If any user id have the Grants for access table of different schema then he can 
 
 --20. What is Private and Public Synonym? What is the data dictionary for public synonym? Display all the public synonyms which you have created in the database?
 PUBLIC SYNONYM:
-A public synonym is owned by the special user group named PUBLIC and is accessible to every user in a database. 
+        A public synonym is owned by the special user group named PUBLIC and is accessible to every user in a database. 
+        Public synonym are the sysnoym which can be used by all the user.
 PRIVATE SYNONYM:
-A private synonym is contained in the schema of a specific user and available only to the user and to grantees for the underlying object.
+        A private synonym is contained in the schema of a specific user and available only to the user and to grantees for the underlying object.
+        Private synonym is only valid for the user who created it and not to anyone else
 
-The data dictionary for public synonym is ALL_SYNONYM
-select * from all_synonyms;
+The data dictionary for public synonym is ALL_SYNONYMS
+        select * from all_synonyms;
+        
+
+           
+            
