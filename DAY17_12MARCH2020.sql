@@ -58,4 +58,30 @@ group by dname, d.deptno;
 
 ---------------------------------------------------------------------------
 
-collect statistics 
+collect statistics on emp; 
+
+
+
+show user;
+
+set autotrace on;
+set autotrace on explain;
+set autotrace on statistics;
+set autotrace traceonly;
+
+
+select * from emp;
+
+--------------------------------------------------------------------------
+
+create role aroha_dev_level1;
+
+drop role aroha_dev_level;
+
+grant create view, create session, create sequence to aroha_dev_level1;
+
+create role aroha_dev_level2;
+
+grant aroha_dev_level1 to aroha_dev_level2;
+
+conn;
