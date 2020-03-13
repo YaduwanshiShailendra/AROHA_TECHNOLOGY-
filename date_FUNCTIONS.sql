@@ -14,10 +14,13 @@ SELECT ADD_MONTHS (TRUNC (SYSDATE,'YEAR'), -12) FROM DUAL;
 
 SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), -1 ) +30 FROM DUAL;
 
+-->last day of current month
+SELECT last_day(TRUNC(SYSDATE, 'mon')) FROM DUAL;
+
+SELECT to_char(SYSDATE, 'mm') FROM DUAL;
 
 
-
-
+select to_char(last_day(trunc(to_date(03,'mm'),'mm')), 'dd') from dual;
 
 -----------------------------------------------------------------------------------------------------
 
