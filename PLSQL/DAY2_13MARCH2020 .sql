@@ -1,10 +1,8 @@
-
 --###########################################################################--
 --                        	   DAY2_13-MARCH-2020
 --                            ----------------------
 --                         PL/SQL Loops..(24 Questions)
 --###########################################################################--
-
 SET SERVEROUTPUT ON;
 
 --PLSQL
@@ -13,34 +11,36 @@ SET SERVEROUTPUT ON;
 --
 --1. Write a Plsql block to print numbers from 1 …10.
 --
+
 BEGIN
-    FOR I IN 1..10 LOOP
-    DBMS_OUTPUT.PUT_LINE(I);
+    FOR i IN 1..10 LOOP
+        dbms_output.put_line(i);
     END LOOP;
 END;
 
 --2. Write a Plsql block to find the circumference and area of a circle.(2*pi*r, pi*r*r).
+
 DECLARE
-    V_R NUMBER :='&R';
-    V_PI NUMBER :=22/7;
+    v_r    NUMBER := '&R';
+    v_pi   NUMBER := 22 / 7;
 BEGIN
-    DBMS_OUTPUT.PUT_LINE('The circumference of a circle is : ' ||2*V_PI*V_R);
-    DBMS_OUTPUT.PUT_LINE('The circumference of a circle is : ' ||V_PI*V_R*V_R);
+    dbms_output.put_line('The circumference of a circle is : ' || 2 * v_pi * v_r);
+    dbms_output.put_line('The circumference of a circle is : ' || v_pi * v_r * v_r);
 END;
 
-
 --3. Write a plsql block by passing 3 numbers and find the largest no. in that 3 numbers.
-DECLARE 
-    V_A INT :=10;
-    V_B INT :=20;
-    V_C INT :=30;
+
+DECLARE
+    v_a   INT := 10;
+    v_b   INT := 20;
+    v_c   INT := 30;
 BEGIN
-    IF
-    (V_A > V_B) AND (V_A > V_C) THEN DBMS_OUTPUT.PUT_LINE(V_A||' is the largest one');
-    ELSIF
-    (V_B > V_A) AND (V_B > V_C) THEN DBMS_OUTPUT.PUT_LINE(V_B||' is the largest one');
+    IF ( v_a > v_b ) AND ( v_a > v_c ) THEN
+        dbms_output.put_line(v_a || ' is the largest one');
+    ELSIF ( v_b > v_a ) AND ( v_b > v_c ) THEN
+        dbms_output.put_line(v_b || ' is the largest one');
     ELSE
-    DBMS_OUTPUT.PUT_LINE(V_C||' is the largest one');
+        dbms_output.put_line(v_c || ' is the largest one');
     END IF;
 END;
 
@@ -51,45 +51,46 @@ END;
 --   **                                                                           
 --   *
 
-declare
-    n number := '&n'; 
-    i number; 
-    j number; 
-    
-begin
-    for i in 1..n loop 
-    for j in reverse i..n loop 
-    dbms_output.put('*'); 
-    end loop; 
-    dbms_output.new_line; 
-    end loop; 
-end;
-
---5. Write a plsql block to print all the dates from first date till last date by passing year at run time.
---
 DECLARE
-v_date date :='01-07-1990';
-v_start date := trunc(v_date, 'yy');
-v_end date := add_months(v_start,12)-1; 
+    n   NUMBER := '&n';
+    i   NUMBER;
+    j   NUMBER;
 BEGIN
-while v_start <= v_end loop
-dbms_output.put_line(v_start);
-v_start := v_start+1;
-end loop;
+    FOR i IN 1..n LOOP
+        FOR j IN REVERSE i..n LOOP dbms_output.put('*');
+        END LOOP;
+
+        dbms_output.new_line;
+    END LOOP;
 END;
 
 
+--5. Write a plsql block to print all the dates from first date till last date by passing year at run time.
+
+DECLARE
+    v_date    DATE := '01-07-1990';
+    v_start   DATE := trunc(v_date, 'yy');
+    v_end     DATE := add_months(v_start, 12) - 1;
+BEGIN
+    WHILE v_start <= v_end LOOP
+        dbms_output.put_line(v_start);
+        v_start := v_start + 1;
+    END LOOP;
+END;
+
+SET SERVEROUTPUT ON;
+
 --6. Write a plsql block by passing empno and ename, insert the passed empno and ename to the table but before inserting validate it whether it is already present or not.
 --
+
 DECLARE
-ENO INT:=7499;
-ENM VARCHAR(20):='EMP_NAME';
-VALIDATIONS INT:=  MAX(SAL) FROM EMP
+    eno   INT := 7499;
+    enm   VARCHAR(20) := 'EMP_NAME';
+validations INT := max(sal) FROM EMP
 WHERE EMPNO=ENO;
 BEGIN
 DBMS_OUTPUT.PUT_LINE(VALIDATIONS);
 END;
-
 
 
 create table emp_temp1( empno number, name varchar(20));
@@ -120,7 +121,6 @@ DBMS_OUTPUT.PUT_LINE(
 select * from emp where substr(ename,1,1) in ('S','T','J','C');
 );
 END;
-
 
 --9. Write a plsql block to update the salary of an employee by giving an increment of 1000 and passing the empno at runtime.
 
@@ -176,7 +176,6 @@ END;
 
 
 
-
 set serveroutput on;
 --12. Write a block by passing a string and return the no. of vowels and consonants in that string.
 --Eg:stationary  no.of vowels:4 no.of consonents:6
@@ -193,7 +192,6 @@ DBMS_OUTPUT.PUT_LINE('NO OF CONSONENTS '||c);
 end;
 
 --or
-
 
 declare
 str varchar(20) :='stationary';
@@ -267,7 +265,6 @@ BEGIN
     END IF;
 END;
 
-
 --14.Write a procedure to pass a string separated by comma like ab,abc,abcd,x,y and print the o/p as
 --ab
 --abc
@@ -319,7 +316,6 @@ loop
 end loop;
 end ;
 
-
 --16. Write a plsql block to print the Fibonacci series from 1 to 50. v_a=0,v_b=1
 
 declare
@@ -336,7 +332,6 @@ loop
     v_second:=v_sum;
 end loop;
 end;
-
 
 --17. Write a plsql block by passing month-yy and display the no. of Saturdays in that month and year.
 
@@ -367,7 +362,6 @@ end;
 select NEXT_DAY(trunc(ADD_MONTHS(TRUNC (SYSDATE ,'YEAR'),12)-1), 'saturday')-7 from dual;
 
 --18. Write a plsql block by passing a empno so that the salary of the prior employee should incremented by 1000 and next employee salary should be decremented by 1000.
-
 
 savepoint a;
 declare
@@ -466,7 +460,6 @@ END IF;
 END LOOP;
 END;
 
-
 --or
 
 BEGIN
@@ -476,7 +469,6 @@ DBMS_OUTPUT.PUT_LINE(I);
 END IF;
 END LOOP;
 END;
-
 
 
 
@@ -510,7 +502,6 @@ begin
     dbms_output.put_line(v_c||' is the maximum number.');
     end if;
 end;
-
 
 --3. write a code to check whether a number is negative, possitive or not
 declare
@@ -585,7 +576,6 @@ dbms_output.put_line('Number of days in '|| to_char(to_date(no,'mm'),'fmMonth') 
 end if;
 end;
 
-
 --9. Input angles of a triangle and check whether triangle is valid or not
 declare
 a number:='&a';
@@ -599,14 +589,32 @@ dbms_output.put_line('It is not a triangle.');
 end if;
 end;
 
-
 --10. Input all sides of a triangle and check whether triangle is valid or not
+
 declare
 a number :='&s1';
 b number :='&s2';
 c number :='&s3';
 begin
-if a+b>c or a+c>b or b+c>a then
+if a+b+c=180 then 
+    if a+b>c and a+c>b and b+c>a then
+    dbms_output.put_line('It is a triangle.');
+    else
+    dbms_output.put_line('It is not a triangle.');
+    end if;
+
+else
+dbms_output.put_line('It is not a triangle.');
+end if;
+end;
+
+
+declare
+a number :='&s1';
+b number :='&s2';
+c number :='&s3';
+begin
+if a+b>c and a+c>b and b+c>a then
 dbms_output.put_line('It is a triangle.');
 else
 dbms_output.put_line('It is not a triangle.');
@@ -644,25 +652,26 @@ begin
     else
         r1 := (-b+sqrt(d));
         r2 := -b-sqrt(d);
-    end if
-        dbms_output.put_line('The roots of quadratic equation are '|| r1 ||'   '||r2);
-end;
-
+    end if dbms_output.put_line('The roots of quadratic equation are '
+|| r1
+|| '   '
+|| r2);
+END;
 
 --13. calculating profit or loss after inputting the CP and SP of the item
-declare
-    cp number :='&cp';
-    sp number :='&sp';
-    pl number ;
-begin
-    if sp>cp then
-    pl := sp-cp;
-    dbms_output.put_line('Profit is :'|| pl);
-    else
-    pl := cp-sp;
-    dbms_output.put_line('Loss is :'|| pl);
-    end if;
-end;
+DECLARE
+    cp   NUMBER := '&cp';
+    sp   NUMBER := '&sp';
+    pl   NUMBER;
+BEGIN
+    IF sp > cp THEN
+        pl := sp - cp;
+        dbms_output.put_line('Profit is :' || pl);
+    ELSE
+        pl := cp - sp;
+        dbms_output.put_line('Loss is :' || pl);
+    END IF;
+END;
 
 --14. input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer
 --If percentage >= 90% : Grade A
@@ -672,52 +681,55 @@ end;
 --If percentage >= 40% : Grade E
 --If percentage < 40% : Grade F   */
 --
-declare
-    v_phy number:='80';
-    v_che number:='50';
-    v_bio number:='90';
-    v_mat number:='70';
-    v_com number:='88';
-    v_perc number;
-begin
-    v_perc :=(v_phy+v_che+v_bio+v_mat+v_com)*100/5;
-    if v_perc >=90 then 
-    dbms_output.put_line('Grade A');
-    elsif v_perc >=80 then 
-    dbms_output.put_line('Grade B');
-    elsif v_perc >=70 then 
-    dbms_output.put_line('Grade C');
-    elsif v_perc >=60 then 
-    dbms_output.put_line('Grade D');
-    elsif v_perc >=40 then 
-    dbms_output.put_line('Grade E');
-    else 
-    dbms_output.put_line('Grade F');
-    end if; 
-end;
+
+DECLARE
+    v_phy    NUMBER := '80';
+    v_che    NUMBER := '50';
+    v_bio    NUMBER := '90';
+    v_mat    NUMBER := '70';
+    v_com    NUMBER := '88';
+    v_perc   NUMBER;
+BEGIN
+    v_perc := ( v_phy + v_che + v_bio + v_mat + v_com ) * 100 / 5;
+
+    IF v_perc >= 90 THEN
+        dbms_output.put_line('Grade A');
+    ELSIF v_perc >= 80 THEN
+        dbms_output.put_line('Grade B');
+    ELSIF v_perc >= 70 THEN
+        dbms_output.put_line('Grade C');
+    ELSIF v_perc >= 60 THEN
+        dbms_output.put_line('Grade D');
+    ELSIF v_perc >= 40 THEN
+        dbms_output.put_line('Grade E');
+    ELSE
+        dbms_output.put_line('Grade F');
+    END IF;
+
+END;
 
 --15. input basic salary of an employee and calculate gross salary according to given follwing.
 --Basic Salary <= 10000 : HRA = 20%, DA = 80%
 --Basic Salary <=20000 : HRA = 25%, DA = 90%
 --Basic Salary >= 20001 : HRA = 30%, DA = 95% */
 --
-declare
-    v_sal number(10) :='&sal';
-begin
-    if v_sal <=10000 then
-        v_sal := v_sal+v_sal*.2+v_sal*.8;
-        dbms_output.put_line('Gross salary is '|| v_sal);
-    elsif v_sal <=20000 then
-        v_sal := v_sal+v_sal*.25+v_sal*.9;
-        dbms_output.put_line('Gross salary is '|| v_sal);
-    else
-        v_sal := v_sal+v_sal*.3+v_sal*.95;
-        dbms_output.put_line('############################');
-        dbms_output.put_line('#  Gross salary is '|| v_sal );
-        dbms_output.put_line('############################');
-    end if;
-end;
 
+DECLARE
+    v_sal NUMBER(10) := '&sal';
+BEGIN
+    IF v_sal <= 10000 THEN
+        v_sal := v_sal + v_sal *.2 + v_sal *.8;
+        dbms_output.put_line('Gross salary is ' || v_sal);
+    ELSIF v_sal <= 20000 THEN
+        v_sal := v_sal + v_sal *.25 + v_sal *.9;
+        dbms_output.put_line('Gross salary is ' || v_sal);
+    ELSE
+        v_sal := v_sal + v_sal *.3 + v_sal *.95;
+        dbms_output.put_line('############################');
+        dbms_output.put_line('#  Gross salary is ' || v_sal);
+        dbms_output.put_line('############################');
+    END IF;
+END;
 
 --16.input electricity unit charge and calculate the total electricity bill according to the given following:
 --For first 50 units Rs. 0.50/unit
@@ -726,24 +738,25 @@ end;
 --For unit above 250 Rs. 1.50/unit
 --An additional surcharge of 20% is added to the bill.
 
-declare
-        unit number :='&n';
-        amt number :=0;
-begin
-    if unit <=50 then
-        amt := unit*.5;
-    elsif unit <=150 then
-        unit:= unit-50;
-        amt := amt + unit*.75;
-    elsif unit <=250 then
-        unit:= unit-100;
-        amt := amt + unit*1.2;
-    elsif unit >250 then
-        unit:= unit-100;
-        amt := amt + unit*1.5;
-    end if;
-        amt := amt + amt*.2;
-        dbms_output.put_line('Total amount electricity bill : '||amt);
-end;
+DECLARE
+    unit   NUMBER := '&n';
+    amt    NUMBER := 0;
+BEGIN
+    IF unit <= 50 THEN
+        amt := unit *.5;
+    ELSIF unit <= 150 THEN
+        unit   := unit - 50;
+        amt    := amt + unit *.75;
+    ELSIF unit <= 250 THEN
+        unit   := unit - 100;
+        amt    := amt + unit * 1.2;
+    ELSIF unit > 250 THEN
+        unit   := unit - 100;
+        amt    := amt + unit * 1.5;
+    END IF;
 
-set serveroutput on;
+    amt := amt + amt *.2;
+    dbms_output.put_line('Total amount electricity bill : ' || amt);
+END;
+
+SET SERVEROUTPUT ON;
