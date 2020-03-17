@@ -107,20 +107,17 @@ COMMIT;
 
 --7. Write a plsql block to display the odd numbers from 1 to 50.
 BEGIN
-FOR I IN 1..50 LOOP
-IF MOD(I,2)=1 THEN
-DBMS_OUTPUT.PUT_LINE(I);
-END IF;
-END LOOP;
+    FOR i IN 1..50 LOOP
+        IF MOD(i, 2) = 1 THEN
+            dbms_output.put_line(i);
+        END IF;
+    END LOOP;
 END;
 
 --8. Write a plsql block to print the employee details whose name starts with s or t or j or c.
 --
-BEGIN
-DBMS_OUTPUT.PUT_LINE(
-select * from emp where substr(ename,1,1) in ('S','T','J','C');
-);
-END;
+BEGIN dbms_output.put_line (
+select * from emp where substr(ename,1,1) in ('S','T','J','C'); );END;
 
 --9. Write a plsql block to update the salary of an employee by giving an increment of 1000 and passing the empno at runtime.
 

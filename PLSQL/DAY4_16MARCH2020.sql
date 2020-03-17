@@ -109,4 +109,49 @@ BEGIN
                          || v_sal);
 END;
 
-shailendra
+
+
+
+
+
+
+--##############################################################
+
+DECLARE
+v_sid int;
+v_cid NUMBER :=&cid;
+v_pid NUMBER :=&pid;
+v_qty NUMBER :=&qty;
+v_amt NUMBER :=&amt;
+BEGIN
+SELECT max(sid)+1 INTO v_sid
+from sales;
+if v_qty>6
+THEN
+rais invalid_qty
+ELSE
+insert into sales VALUES(v_sid, v_cid, v_pid, v_qty, v_amt, sysdate);
+endif;
+
+exception
+when invalid_qty THEN
+dbms_output.put_line('Qty to be less then 6.');
+when invalid_qty THEN
+dbms_output.put_line('Try later.');
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
