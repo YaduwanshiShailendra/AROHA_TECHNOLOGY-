@@ -178,20 +178,17 @@ BEGIN
     FROM
         acc
     WHERE
-        v_ac_no NOT LIKE '%s'
-        OR v_ac_no NOT LIKE '%u'
-           OR v_ac_no NOT LIKE '%p';
-
-    IF v_ac_no NOT LIKE '%s' OR v_ac_no NOT LIKE '%u'
-                                OR v_ac_no NOT LIKE '%p' THEN
+        substr(v_ac_no,1) not in ('s','u','p');
+    
+    IF substr(v_ac_no,1) not in ('s','u','p') THEN
         RAISE invalid_accno;
     END IF;
 
 EXCEPTION
     WHEN invalid_accno THEN
-        dbms_output.put_line('accno doesnot exist');
+        dbms_output.put_line('Account number does not exist');
     WHEN OTHERS THEN
-        dbms_output.put_line('try later');
+        dbms_output.put_line('Please try later');
 END;
 
 
@@ -214,24 +211,42 @@ END;
 --4.   Write a procedure to print ename and dname by passing empno and deptno. If u pass invalid empno and valid deptno, it has to print 'Invalid empno' and print dname. If u pass valid empno and invalid deptno, it has to print ename and  'invalid deptno'. If u pass both valid then it has to print ename and dname. If u pass both invalid then print 'invalid empno' and 'invalid deptno', also include when others then exception.
 
 DECLARE
-v_eno emp.empno%TYPE :=&empno;
-v_dno emp.deptno%TYPE :=&deptno;
-v_ename emp.ename%TYPE;
-v_dname dept.dname%TYPE;
-
+    v_eno     emp.empno%TYPE := &empno;
+    v_dno     emp.deptno%TYPE := &deptno;
+    v_ename   emp.ename%TYPE;
+    v_dname   dept.dname%TYPE;
 BEGIN
-SELECT e.ename, d.dname INTO v_ename, v_dname
-FROM emp e, dept d
-WHERE e.deptno=d.deptno
-AND e.deptno =v_dno
-AND e.empno =v_eno
+    BEGIN
+        SELECT
+            ename
+        INTO v_ename
+        FROM
+            emp
+        WHERE
+            empno = v_eno;
 
-if v_ename is not null AND v_dname is not null
-THEN
+        dbms_output.put_line(v_ename);
+    EXCEPTION
+        WHEN no_data_found THEN
+            dbms_output.put_line('Invalid empno');
+        WHEN OTHERS THEN
+            dbms_output.put_line('Please try later');
+    END;
 
+    SELECT
+        dname
+    INTO v_dname
+    FROM
+        dept
+    WHERE
+        deptno = v_dno;
 
-
-
+    dbms_output.put_line(v_dname);
+EXCEPTION
+    WHEN no_data_found THEN
+        dbms_output.put_line('Invalid deptno');
+    WHEN OTHERS THEN
+        dbms_output.put_line('Please try later');
 END;
 
 
@@ -241,10 +256,49 @@ END;
 
 --7.   Pass the empno and update the job of that employee to SSE. If the empno passed does not exist, and the update did not happen handle the no data found exception by raising it and print the error number and err message using SQLCODE and SQLERRM, also include when others then exception.
 
+DECLARE
+    v_eno     emp.empno%TYPE := &empno;
+    v_ename   emp.ename%TYPE;
+    --user_exp  exception;
+BEGIN
+    SELECT
+        ename
+    INTO v_ename
+    FROM
+        emp
+    WHERE
+        empno = v_eno;
+
+    dbms_output.put_line('update done');
+EXCEPTION
+    WHEN no_data_found THEN
+        dbms_output.put_line(sqlcode
+                             || ' '
+                             || sqlerrm);
+    WHEN OTHERS THEN
+        dbms_output.put_line('Please try later');
+END;
+
+
 --8.   Pass a string of numbers as 10,20,80,70,60 and display the number which is maximum in it.
 
 --9.   Pass a empno and display the grade of the salary of passed employee. If sal>30000 print 'Grade A', salary>20000 then 'Grade B' Sal>10000 then 'Grade C' else 'no grade' using case in PLSQL, also include when others then exception.
 
 --10.  Pass a string, if the string contains 2 words display each word in new line else raise the error and handle the exception
 
+DECLARE
+    v_str       VARCHAR(400) := '&str';
+    v_space     INT;
+    user_error  EXCEPTION;
+BEGIN
+    v_space := regexp_count(v_str, ' ');
+    IF v_space > 1 THEN
+        RAISE user_error;
+    END IF;
+    dbms_output.put_line(substr(v_str, 1, instr(v_str, ' ', 1)));
+    dbms_output.put_line(substr(v_str, instr(v_str, ' ', 1) + 1));
+EXCEPTION
+    WHEN user_error THEN
+        dbms_output.put_line('String contains more than two words');
+END;
 
