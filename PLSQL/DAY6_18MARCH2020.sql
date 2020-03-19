@@ -91,6 +91,8 @@ END;
 --c.       'Value error'
 
 
+
+
 --d.      'Dup val on index'
 
 -- Write a code to insert deptno,dname and loc into dept table.
@@ -391,32 +393,55 @@ END;
 
 --8.   Pass a string of numbers as 10,20,80,70,60 and display the number which is maximum in it.
 
---9.   Pass a empno and display the grade of the salary of passed employee. If sal>30000 print 'Grade A', salary>20000 then 'Grade B' Sal>10000 then 'Grade C' else 'no grade' using case in PLSQL, also include when others then exception.
+DECLARE
+    v_str    VARCHAR(35) := '&str';
+    v_a      INT;
+    v_max    INT;
+    v_temp   INT;
+BEGIN
+    v_max := to_number(substr(v_str, instr(v_str, ',', 1, 1) - 2, 2));
 
-declare
-    v_eno emp.empno%type :='&empno';
-    v_sal emp.sal%type ;
-begin
-    SELECT 
-        sal 
-    into v_sal
-    FROM 
-        emp
-    WHERE 
-        empno = v_eno;
-    IF v_sal > 4000 THEN
-    dbms_output.put_line('GRADE A');
-    ELSIF v_sal > 3000 THEN
-    dbms_output.put_line('GRADE B');
-    ELSIF v_sal > 2000 THEN
-    dbms_output.put_line('GRADE C');
-    ELSE 
-    dbms_output.put_line('NO GRADE');
-EXCEPTION
-    WHEN others THEN
-        dbms_output.put_line('TRY AGAIN LATER');
+    FOR i IN 1..regexp_count(v_str, ',') LOOP
+        v_a      := to_number(substr(v_str, instr(v_str, ',', 1, i) - 2, 2));
+
+        v_temp   := to_number(substr(v_str, instr(v_str, ',', 1, i) + 1, 2));
+
+        IF v_temp > v_max THEN
+            v_max := v_temp;
+        END IF;
+    END LOOP;
+
+    dbms_output.put_line('Max value is : ' || v_max);
 END;
 
+--9.   Pass a empno and display the grade of the salary of passed employee. If sal>30000 print 'Grade A', salary>20000 then 'Grade B' Sal>10000 then 'Grade C' else 'no grade' using case in PLSQL, also include when others then exception.
+
+DECLARE
+    v_eno   emp.empno%TYPE := '&empno';
+    v_sal   emp.sal%TYPE;
+BEGIN
+    SELECT
+        sal
+    INTO v_sal
+    FROM
+        emp
+    WHERE
+        empno = v_eno;
+
+    IF v_sal > 4000 THEN
+        dbms_output.put_line('GRADE A');
+    ELSIF v_sal > 3000 THEN
+        dbms_output.put_line('GRADE B');
+    ELSIF v_sal > 2000 THEN
+        dbms_output.put_line('GRADE C');
+    ELSE
+        dbms_output.put_line('NO GRADE');
+    END IF;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('TRY AGAIN LATER');
+END;
 
 
 --10.  Pass a string, if the string contains 2 words display each word in new line else raise the error and handle the exception
