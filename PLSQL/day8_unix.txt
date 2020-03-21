@@ -1,0 +1,133 @@
+what is commant descirbe about the command itself.
+
+like;
+what is w.
+whoami display the current user.
+
+w
+whoami
+what
+cal 12 2020 to display the day on decemnber of thisyear.
+pwd current directory.
+cal -3
+date
+FILE IN THREE WAYS....
+
+
+TOUCH F1
+TOUCH F1,F2 -- CREATE A EMPTY FILE
+
+
+LS COMNNANT
+ LIST THE FILES CREATED IN THE SESSION.
+
+
+
+-L LONG LISTIN..
+
+
+CAT - USED TO CONCATINATION
+CAT > F3 
+
+HI HELLO 
+
+NOW PRESS CNTRL +D TO SAVE THE DATA;
+
+
+
+NOW  CAT F3
+WILL SHOW THE DATA
+
+
+CAT >F3 TO INSERT DATA BUT REPLACES THE DATA.
+
+
+
+
+TO ADDD
+CAT>> FILENAME
+THWN WE CAN ADD.
+
+
+HISTORY COMMAND IT WILL SHOW ALL TH EXCUTED COMMANDS OF THE SESSION 
+
+vi is a file editor
+press exp in vi mode to come out..
+
+
+press y to copy one character
+press yy to cpoy the sentence.
+
+
+to paste use p
+
+to undo u
+
+i to insert in that place
+I will go to insert and start of the file
+
+
+r to replace ''ateer===
+
+to save ad exit vi editor..
+
+rm filename to delete thee fiel;;
+
+rm* to delete too the records
+
+
+
+
+
+cp f1 f3..
+
+to create a directory
+mkdir directory name..
+
+to swith to the dir 1
+ls-1 dir1
+
+
+
+to cpoy files.
+
+cp f1 f2 dir1
+cd dir1
+pwd
+ls-1
+f1
+f2
+
+
+
+
+to go back to one directory back..
+
+
+use commad        cd
+
+to move the files to one place..
+
+
+right not we are in ec2 usermv
+mv f1 dir1  fro moving f1 to dir1.
+
+
+
+moving and changing the name...
+
+mv f1 file1 dir1...
+
+
+
+
+creating two directory in on go.
+mkdir dir1 dir2
+
+
+comand to delete file rm.
+-r recursive
+rm is remove forcefully.
+
+to check all options of rm 
+man rm----gets option of rm....

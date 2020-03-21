@@ -1,0 +1,116 @@
+/*
+################################################₹
+Objective                : Cursor and Exception
+Author(Creator) Name     : Shailendra Yadav
+Developed / Created Date : 19-March-2020
+################################################
+*/
+
+
+SET SERVEROUTPUT ON;
+
+What is a cursor in Oracle Databasse?
+
+1. Cursor is a pointer to a memory area called context area.
+2. This context area is a memory region inside the Process Global Area or PGA.
+3. Assigned to hold the information about the processing of a SELECT statement or DML Statement
+
+
+What is a Context area?
+
+Context area is a memory region inside the PGA which help oracle server in procession an SQL statement by holding the important information about that statemtnt.
+
+These information includes
+1. Rows returned by a query.
+2. Number or rows processed by a query.
+3. A pointer to the parsed query in the shared pool.
+
+Using coursor you can control the context area as it is a pointer to the same.
+
+
+Types of cursors in Oracle Database-
+1. Implicit Cursors
+2. Explicit Cursors
+
+
+Implicit Cursors in Oracle Database-
+
+1. As the name suggest these are the cursors which are 'Automatically created by the oracle server' every time and SQL DML statement is executed.
+2. User cannot control the behavior of these cursors.
+
+Oracle server creates an implicit cursor for any PL/SQL block which executes an SQL statement.
+As long as an explicit cursor does not exists for the SQL statement.
+
+
+
+Explicit Cursors in Oracle Database-
+
+1. In contrast implicit cursors we have Explicit cursors.
+2. 'Explicit cursors are user defined cursors' (which means user has to create these cursors for any statement which return more than one row of data)
+3. Unlike implicit cursor 'User has full control of explicit cursor'.
+
+
+
+Steps for creating an Explicit Cursor--
+To create an Explicit Cursor we need to follow four steps. These four steps are-
+1. Declare
+2. Open
+3. Fetch
+4. Close
+
+In case of implicit cursors, oracle performs all these steps automatically for us.
+
+
+Declare-
+1. Declaring a cursor means initializing a cursor into memory.
+2. You define explicit cursor in declaration section of your PL/SQL block.
+
+Syntax of Declaring a cursor-
+
+CURSOR cursor_name IS select_statement;
+
+Declaration starts with keyword CURSOR followed by the cursor_name which could be anything we want, then we have another keyword IS which is followed by a valid select_statement.
+
+After the select statement we have to Opent the cursor.
+
+
+Open-
+1. In order to put that cursor to work we have to open it first.
+2. When you open a cursor the memory will be allotted to it.
+  
+
+
+
+
+
+
+
+
+
+
+
+declare
+cursor c is select deptno, dname from dept;
+cursor c1(v_no number) is select name from emp where deptno=v_dno;
+begin 
+open c;
+loop
+fetch c into v_dno, v_dname;
+exit when c%notfound;
+dbms_output.put_line(v_dno||','||v_name);
+open c1(v_dno);
+loop
+fetch c1 into
+
+
+
+
+
+
+
+
+
+
+
+
+
