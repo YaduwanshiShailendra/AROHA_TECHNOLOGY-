@@ -1,0 +1,88 @@
+/*
+##################################################
+ Objective                : DATA WAREHOUSE SESSION
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 23-March-2020
+##################################################
+*/
+
+What is a Data Warehourse?
+
+A single, complete and consistent store of data obtained from a variety of different sources made available to end users in what theycan understand and use in a business context
+
+
+What is a transaction?
+Capturing the data
+payment transaction
+procduct transation
+
+
+Any system which help you capture transaction is known as OLTP (Online Transaction Processing), (many OLTP simultaniously runs in MNC).
+
+In data layer we capture all the information
+
+
+Data ---------------- > Information
+
+
+A Process of transforming data into information and making it available to users in a timely enough manner to make a difference
+
+
+A data warehouse is a 
+1. Object-oriented
+2. Integrated
+3. Time varing
+4. non-volotile
+collection of data that is used primarily in organization decision making.
+
+Who are called end users-----
+
+
+What you mean by end user?
+1. For an OLTP application end user is who is entering data or reading a particular report from the system.
+2. For a Bank teller he/she should enter the account number see the balance or deposit the scheck etc.
+3. For a customer representative job he/she must see the cust inofrmation to be more effective.
+4. So end users are the ones who actually utilize the application we develop.
+5. What kind of information managemnt wants to know...
+
+
+Management wants to know...
+
+
+IT Department
+	|
+	|
+	|
+	V		
+
+1. Which are our lowest/ highest margin customers?
+2. What is the most effective distribution channel?
+3. What product promotion have the biggest impact on revenue?
+4. Which customers are most likely to go to the competition?
+5. Who are my customers and what products are they buying?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
