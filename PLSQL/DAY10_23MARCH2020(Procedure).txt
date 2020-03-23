@@ -1,0 +1,157 @@
+/*
+##################################################
+ Objective                : Procecure
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 23-March-2020
+##################################################
+*/
+
+
+--1. Write a procedure by passing the date and display the whether the year is leap year or not.
+--
+
+CREATE OR REPLACE PROCEDURE leap_year (
+    in_year DATE
+) AS
+    v_year INT;
+BEGIN
+    SELECT
+        to_number(to_char(in_year, 'YYYY'))
+    INTO v_year
+    FROM
+        dual;
+
+    IF MOD(v_year, 4) = 0 AND MOD(v_year, 100) != 0 OR MOD(v_year, 400) = 0 THEN
+        dbms_output.put_line(v_year || ' is a leap year ');
+    ELSE
+        dbms_output.put_line(v_year || ' is not a leap year.');
+    END IF;
+
+END;
+
+
+EXEC LEAP_YEAR(SYSDATE);
+
+BEGIN
+LEAP_YEAR('&ENTER_DATE');
+END;
+
+
+--OR
+
+
+CREATE OR REPLACE PROCEDURE leap_year (
+    in_year DATE
+) AS
+    v_year INT;
+BEGIN
+    v_year := to_number(to_char(in_year, 'YYYY'));
+    IF add_months(trunc(in_year, 'yyyy'), 12) - trunc(in_year, 'yyyy') > 365 THEN
+        dbms_output.put_line('THE GIVEN YEAR '
+                             || v_year
+                             || ' IS LEAP YEAR');
+    ELSE
+        dbms_output.put_line('IT YEAR '
+                             || v_year
+                             || ' IS NOT LEAP YEAR');
+    END IF;
+
+END;
+
+EXEC leap_year(sysdate);
+
+
+
+
+
+--2. Write a procedure which takes product name and print a message if it made sales today or not?
+--
+CREATE OR REPLACE PROCEDURE SOLD_OR_NOT (
+    PRODNAME VARCHAR
+) AS
+    P_INT INT;
+BEGIN
+    SELECT
+        COUNT(1)
+    INTO P_INT
+    FROM
+        SALES
+    WHERE
+        PRODUCT_ID = (SELECT PRODUCT_ID
+                      FROM PRODUCT 
+                      WHERE PRODUCT_NAME=PRODNAME)
+        AND TO_CHAR(TX_DATE) = TO_CHAR(SYSDATE);
+
+    IF P_INT > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Product is sold today');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Product '
+                             || PRODNAME
+                             || ' not sold today');
+    END IF;
+
+END;
+
+EXEC SOLD_OR_NOT('SHOES');
+
+--3. Write a procedure which takes product name and print the no. of sales it made in the current year and in previous year.
+--
+
+CREATE OR REPLACE PROCEDURE COUNT_OF_SALES (
+    PRODNAME VARCHAR
+) AS
+    P_INT INT;
+BEGIN
+    SELECT
+        SUM(SALES_QTY)
+    INTO P_INT
+    FROM
+        SALES
+    WHERE
+        PRODUCT_ID IN (SELECT PRODUCT_ID
+                      FROM PRODUCT 
+                      WHERE PRODUCT_NAME=PRODNAME)
+        AND TX_DATE >= ADD_MONTHS(TRUNC(SYSDATE, 'YY'), - 12)
+        AND TX_DATE <= ADD_MONTHS(TRUNC(SYSDATE, 'YY'), + 12) - 1;
+    --PRINT THE QTY SOLD IN TWO YEARS
+    DBMS_OUTPUT.PUT_LINE('NO OF QTY SOLD OF PRODUCT'
+                         || PRODNAME
+                         || ' ='
+                         || P_INT);
+END;
+
+EXEC COUNT_OF_SALES('SHOES');
+
+
+--OR
+
+CREATE OR REPLACE PROCEDURE COUNT_OF_SALES (
+    PRODNAME VARCHAR
+) AS
+P_INT INT;
+BEGIN
+    SELECT
+        COUNT(1)
+    INTO P_INT
+    FROM
+        SALES
+    WHERE
+        PRODUCT_ID IN (SELECT PRODUCT_ID
+                      FROM PRODUCT 
+                      WHERE PRODUCT_NAME=PRODNAME)
+        AND TX_DATE >= ADD_MONTHS(TRUNC(SYSDATE, 'YY'), - 12)
+        AND TX_DATE <= ADD_MONTHS(TRUNC(SYSDATE, 'YY'), + 12) - 1;
+
+    DBMS_OUTPUT.PUT_LINE('NO OF QTY SOLD OF PRODUCT'
+                         || PRODNAME
+                         || ' ='
+                         || P_INT);
+END;
+
+EXEC COUNT_OF_SALES('SHOES');
+
+
+--13. Can we write return statement inside procedure, If no what type of error will you get?
+Yes, You can give “Return” keyword inside procedure, however this cannot be used to return a value to calling unit, Instead this can be used to return out of the execution.
+
+If you try to use return with an expression or value inside procedure, you will get compilation error.
