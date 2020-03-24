@@ -1,0 +1,53 @@
+/*
+##################################################
+ Objective                : DATA WAREHOUSE SESSION
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 24-March-2020
+##################################################
+*/
+
+
+1970 sombody wrote 
+
+
+What is DSS?
+
+Decision Support System, it not a product its an environment which is a blend of technologies.
+
+Mainly used by business to take some
+
+
+Organization:-
+
+executives (5%)
+
+management (25%)
+
+operations (70%)
+
+
+Typical Problem with out a DataWarehouse-
+
+1. I can't find the data I need
+	* data is scattered over the network
+	* many versions, subtle differences.
+2. I can't get the data I need
+	* need an expert to get the data.
+3. I can't understand the data I found
+	* available data poorly documented
+4. I can't use the data I found
+	* results are unexpected
+	* data needs to be transformend from one form to other
+
+
+
+
+
+
+
+
+
+
+
+
+
