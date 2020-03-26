@@ -1,0 +1,263 @@
+/*
+##################################################
+ Objective                : PLSQL Procedures, functions doubt and packages
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 26-March-2020
+##################################################
+*/
+
+
+Procedures and functions
+1. it is use to impliment a business logoc
+2. DML , DDL
+3. Does not return a value.
+4. Exce (to call a procedure)
+5. has exceptions
+6. 
+
+
+Functions-
+1. it is use for calculation
+2. No DML, DDL
+3. Return a value
+4. DML or Select statement ( to call)
+5. No exceptions
+6. 
+
+
+
+procedure
+email value check
+if valid
+	insert into tgt
+else
+	insert into reject
+end
+
+
+fucntion for check
+if value check
+	reutn = 'VALID'
+else
+	retun = 'INVALID'
+end;
+
+
+Procedure
+email value check
+if call function = 'VALID'
+	insert into tgt
+else
+	insert into reject
+end
+
+
+
+begin 
+select monts_between(sysdate,dob)/12 inot v_age form emp where empno= v_empno;
+end
+
+-----------------------
+PLSQL packages
+-----------------------
+Package is a collection of object which are logically realted in a business.
+
+
+Module 
+MOdule is a set of logically related objects of a software application
+
+
+
+
+example
+
+pkg
+sp1 new customer -- insert rec into cust
+sp2 new act	     -- insert rec into act
+sp3 new txn      -- insert rec into txn and update balance in act
+
+Advantages of packages---
+1. Modularity ()
+2. Performance
+
+
+
+package 
+	Application
+	     ^
+	     |
+	     |
+	     V
+-----------------------------
+1.package spec (Declarations)
+2. Package body (Code)
+-----------------------------
+	     ^
+	     |
+	     |
+	     V
+	  Databse
+
+
+create or replace package <package_name>
+as
+-- contains_declarations of the objects in the package
+end;
+
+Package Body syntax:
+
+create or replace package body <package_name>
+as 
+--
+-- contains_declarations of the objects in the package
+end;
+------------------------------------------
+
+Write a procedure to populate the date dimension table by passing the date from procedure.
+All the records of that year should be populated means from the first day till the last day of the year. Before inserting check whether the records of that year is already populated or not.
+
+
+Name                Null Type         
+------------------- ---- ------------ 
+DATE_KEY                 number(10)
+ACCURATE_DATE            DATE         
+DAY_NUMBER_OF_WEEK       NUMBER(10)   
+DAY_NUMBER_OF_MONTH      NUMBER(10)   
+DAY_NUMBER_OF_YEAR       NUMBER(10)   
+WEEK_NO_OF_MONTH         NUMBER(10)   
+WEEK_NO_YEAR             NUMBER(10)   
+MONTH_NO                 NUMBER(10)   
+MONTH_SHORT_NAME         VARCHAR2(40) 
+MONTH_FULL_NAME          VARCHAR2(40) 
+QTR_NO                   NUMBER(10)   
+SEMESTER_NO              NUMBER(10)   
+CALENDER_YEAR            NUMBER(10)   
+FISCAL_MONTH             NUMBER(10)   
+FISCAL_WEEK              NUMBER(10)   
+FISCAL_QTR               NUMBER(10)   
+FISCAL_YEAR              VARCHAR2(20) 
+WEEK_DAY_FLAG            VARCHAR2(20) 
+
+
+
+
+create table date_dimension
+(DATE_KEY int identity(1,1),
+ACCURATE_DATE date,
+DAY_NUMBER_OF_WEEK int,
+DAY_NUMBER_OF_MONTH int,
+DAY_NUMBER_OF_YEAR int,
+WEEK_NO_OF_MONTH int,
+WEEK_NO_YEAR int,
+MONTH_NO int,
+MONTH_SHORT_NAME varchar(20),
+MONTH_FULL_NAME varchar(20),
+QTR_NO int,
+SEMESTER_NO int,
+CALENDER_YEAR int,
+FISCAL_MONTH int,
+FISCAL_WEEK int,
+FISCAL_QTR int,
+FISCAL_YEAR varchar(20),
+WEEK_DAY_FLAG varchar(10));
+
+
+------------------------------------------
+create or replace packagge pkg_bank_txn
+as
+	procedure usp_cust(v_cname varchar, v)addr varchar, v_city varchar);
+	procedure usp_act(v_cit number, v_a_type varchar, v_balance number);
+	procedure usp_txn(v_aid number, v_amount number, v_t_type varchar, v_b_type varchar);
+	v_var1 number;
+	v_var2 number;
+	v_var3 number;
+	v_var4 number;
+end;
+
+
+create or replace package body pkg_bank_txn
+as
+procedure usp_cust (v_cname varchar, v_addr varchar, v_city varchar)
+as 
+begin 
+select max(cust_id)+1 into v_var1 form customer;
+insert into customer values (v_var1, v_cname, v)addr, v_city);
+end;
+
+procedure usp_act(v_cit number, v_a_type varchar, v_balance number)
+as begin 
+select max(a_id)+1 into v_var2 form account;
+insert into acount values (v_var2, v_cid, v_a_type, v_valance, sysdate);
+end;
+
+function udf_comm (v_amount number, v_b_type varchar)
+return number
+as
+v_comm number (10,2);
+begin 
+if v_b_type= 'HOME' then
+	v_comm := 0;
+else 
+	v_comm:= 0.01*v_amount;
+end if;
+return v_comm;
+end;
+procedure usp_txn( v_aid number, v_amount number, v_t_type varcharm v_b_type varchar)
+as
+v_balance (10,2);
+begin
+select max(txnid)+1 into v_var3 from txn;
+if v_t_type = 'DEPOSIT' then
+	v_var4 := udf_comm(v_amount,v_btype);
+	insert into txn values (v_var3,v_aid, v_amount,v_t_type, v_b_type,sysdate);
+	update accounts set balance = balance + v_amount -v_var4 where aid =v_aid;
+else
+	v_var4:= udf_comm(v_amount, v_b_type);
+	select balance into v_balance form accounts where aid - v_aid;
+	if v_balance -v_amount <= 1000 then
+	raise_application_error(-20001, 'Insufficient Funds');
+	else
+	insert into txn values (v_var3, v_aid, v_amount,v_t_type,sysdate);
+	update acounts set balance -v_amount - v_var4 where aid= v_aid;
+	end if;
+end if;
+end;
+end;
+
+exec pkg_bank_txn.usp_cust ('John','23,4th Main','Bangalore');
+
+
+usp -- user defined stored  procedure
+
+udf-- user defined function
+
+
+
+user_source
+
+
+create or repace procedure  usp_test
+as
+begin
+dbms_output.put_line('Hello World');
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

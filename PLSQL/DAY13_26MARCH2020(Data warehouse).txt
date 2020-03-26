@@ -1,0 +1,101 @@
+/*
+##################################################
+ Objective                : DATA WAREHOUSE SESSION
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 26-March-2020
+##################################################
+*/
+
+What top level business wants...
+
+1. Data should be integrated across the enterprise
+2. Summary data has a real value to the organization
+3. Historical data holds the key to understanding data over time
+4. What-if capabilities are required
+5. What will happen? (Predective Analytics-Machine Learning)
+
+
+Evolution of reporting 
+
+1. 60's Batch reports
+* hard to find and analyze information
+* inflexible and expensive, reprogram every new request
+
+2. 70's Terminal-based DSS and EIS (executive information systems)
+
+3. 80's Desktop data access and analysis tools 
+* query tools, spreadsheets, GUIs
+* easier to use, but only access operational databases
+
+4. 90's Data warehousing with integrated OLAP engines and tools 
+
+5. Now.... safe way example (Retail chain in US)
+
+
+Architecture 
+
+
+General DSS Architecture
+
+
+
+OLTP 
+1. More DML operations (Upadte, Delete, Inserts)
+2. Point Queries
+3. Very specific while issuing queries
+4. Less history (approximately 6 months to 1 year)
+5. Used for day today activities (must to run the business)
+
+
+DSS
+
+1. No change in the data (No updates and deletes)
+2. Range Queries
+3. Queries based on time period, set of products, set of customers etc
+4. Maintains the history.
+5. Used mainly for analytics (trend analysis, customer behaviour etc)
+
+
+Application_orientation vs Subject
+
+Application_orientation
+1. Loans
+2. Credit card
+3. Savings
+4. Trust
+
+Subject_orientation
+(Data Warehouse)
+
+1. Customer
+2. Product
+3. Vendor
+4.  Activity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
