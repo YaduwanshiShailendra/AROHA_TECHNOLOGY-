@@ -1,0 +1,134 @@
+/*
+##################################################
+ Objective                : PLSQL Procedures
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 27-March-2020
+##################################################
+*/
+
+
+CREATE OR REPLACE PROCEDURE USP_INS_DATE (
+    INDATE DATE
+) AS
+
+    VDATE_KEY              INT;
+    VACCURATE_DATE         DATE := TRUNC(INDATE, 'yy');
+    VDAY_NUMBER_OF_WEEK    INT;
+    VDAY_NUMBER_OF_MONTH   INT;
+    VDAY_NUMBER_OF_YEAR    INT;
+    VWEEK_NO_OF_MONTH      INT;
+    VWEEK_NO_YEAR          INT;
+    VMONTH_NO              INT;
+    VMONTH_SHORT_NAME      VARCHAR(3);
+    VMONTH_FULL_NAME       VARCHAR(20);
+    VQTR_NO                INT;
+    VSEMESTER_NO           INT;
+    VCALENDER_YEAR         INT;
+    VFISCAL_MONTH          INT;
+    VFISCAL_WEEK           INT;
+    VFISCAL_QTR            INT;
+    VFISCAL_YEAR           VARCHAR(20);
+    VWEEK_DAY_FLAG         VARCHAR(10);
+    VDATE_VALIDATION       INT;
+    VSTR_DATE              DATE := TRUNC(INDATE, 'yy');
+    VEND_DATE              DATE := LAST_DAY(ADD_MONTHS(TRUNC(INDATE, 'yy'), 11));
+BEGIN
+    SELECT
+        COUNT(1)
+    INTO VDATE_VALIDATION
+    FROM
+        DATE_DIMENSION
+    WHERE
+        TO_CHAR(ACCURATE_DATE) = TO_CHAR(INDATE);
+
+    IF VDATE_VALIDATION < 1 THEN
+        WHILE VACCURATE_DATE BETWEEN VSTR_DATE AND VEND_DATE LOOP
+            SELECT
+                NVL(MAX(DATE_KEY), 0) + 1
+            INTO VDATE_KEY
+            FROM
+                DATE_DIMENSION;
+
+            VDAY_NUMBER_OF_WEEK    := TO_CHAR(VACCURATE_DATE, 'D');
+            VDAY_NUMBER_OF_MONTH   := TO_CHAR(VACCURATE_DATE, 'DD');
+            VDAY_NUMBER_OF_YEAR    := TO_CHAR(VACCURATE_DATE, 'DDD');
+            VWEEK_NO_OF_MONTH      := TO_CHAR(VACCURATE_DATE, 'W');
+            VWEEK_NO_YEAR          := TO_CHAR(VACCURATE_DATE, 'WW');
+            VMONTH_NO              := TO_CHAR(VACCURATE_DATE, 'MM');
+            VMONTH_SHORT_NAME      := TO_CHAR(VACCURATE_DATE, 'MON');
+            VMONTH_FULL_NAME       := TO_CHAR(VACCURATE_DATE, 'MONTH');
+            VQTR_NO                := TO_CHAR(VACCURATE_DATE, 'Q');
+            IF VQTR_NO IN (
+                1,
+                2
+            ) THEN
+                VSEMESTER_NO := 1;
+            ELSE
+                VSEMESTER_NO := 2;
+            END IF;
+
+            VCALENDER_YEAR         := TO_CHAR(VACCURATE_DATE, 'YYYY');
+            VFISCAL_MONTH          := TO_CHAR(ADD_MONTHS(VACCURATE_DATE, 6), 'MM');
+            VFISCAL_YEAR           := TO_CHAR(ADD_MONTHS(VACCURATE_DATE, 6), 'YYYY');
+            VFISCAL_QTR            := TO_CHAR(ADD_MONTHS(VACCURATE_DATE, 6), 'Q');
+            VFISCAL_WEEK           := TO_CHAR(ADD_MONTHS(VACCURATE_DATE, 6), 'WW');
+            IF TO_CHAR(VACCURATE_DATE, 'FMDY') IN (
+                'SAT',
+                'SUN'
+            ) THEN
+                VWEEK_DAY_FLAG := 'WEEKEND';
+            ELSE
+                VWEEK_DAY_FLAG := 'WEEKDAY';
+            END IF;
+
+            IF VACCURATE_DATE <= VEND_DATE THEN
+                INSERT INTO DATE_DIMENSION VALUES (
+                    VDATE_KEY,
+                    VACCURATE_DATE,
+                    VDAY_NUMBER_OF_WEEK,
+                    VDAY_NUMBER_OF_MONTH,
+                    VDAY_NUMBER_OF_YEAR,
+                    VWEEK_NO_OF_MONTH,
+                    VWEEK_NO_YEAR,
+                    VMONTH_NO,
+                    VMONTH_SHORT_NAME,
+                    VMONTH_FULL_NAME,
+                    VQTR_NO,
+                    VSEMESTER_NO,
+                    VCALENDER_YEAR,
+                    VFISCAL_MONTH,
+                    VFISCAL_WEEK,
+                    VFISCAL_QTR,
+                    VFISCAL_YEAR,
+                    VWEEK_DAY_FLAG
+                );
+
+            END IF;
+
+            VACCURATE_DATE         := VACCURATE_DATE + 1;
+        END LOOP;
+
+    ELSE
+        RAISE_APPLICATION_ERROR(20121, 'date already present');
+    END IF;
+
+END;
+
+BEGIN
+    USP_INS_DATE(SYSDATE);
+END;
+
+SELECT
+    *
+FROM
+    DATE_DIMENSION;
+
+
+
+
+
+
+
+
+
+
