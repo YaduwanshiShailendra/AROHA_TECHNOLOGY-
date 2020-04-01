@@ -8,6 +8,8 @@
 
 
 Procedures and functions
+
+Procedures
 1. it is use to impliment a business logoc
 2. DML , DDL
 3. Does not return a value.

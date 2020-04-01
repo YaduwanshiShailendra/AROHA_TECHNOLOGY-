@@ -1,0 +1,124 @@
+/*
+##################################################
+ Objective                : PL/SQL Trigger
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 31-March-2020
+##################################################
+*/
+
+Data Dictionary to find the trigger related information 
+
+select * from user_trigggers
+
+
+create or replace procedure sp_trig as
+begin dbms_output.put_line('hello');
+end;
+
+
+alter table dept disable all triggers;
+alter trigger trg_emp disable;
+
+
+create or replace trigger trg_sp
+before insert or update or delete on dept 
+begin 
+sp_trig;
+--commit;
+end;
+
+
+delete form dept where deptno=10;
+select * from dept;
+rollback
+
+insert into dept values (10,'Accounts', 'US');
+
+--------------------------------------
+
+create table ex(col1 int, col2 varcahr(2), col3 varcahr(2));
+
+create or replace procedure sp_pragma1 as 
+
+begin 
+insert into ex values(1,'a','aa')';
+commit;
+end;
+
+
+create or replace procedure sp_pragma2 as 
+begin 
+insert into ex values(1,'b','bb')';
+sp_pragma1;
+rollback;
+end;
+
+exec sp_pragama2;
+
+select * form ex;
+
+truncate table ex;
+-------------------------------
+
+procedure on tri
+
+--disables all the trigger name
+alter table disable all triggers;
+
+---disabling the specifing trigger.
+alter trigger trg_emp disable;
+
+we cannot write commit inside a trigger.
+
+if u want to use commit then use pragma ..
+
+create table ex
+	( col1 int,
+	col2 varchar(3),
+	col3 varchar(2)
+		);
+
+	insert into ex values(1,'a','bb');
+
+q4
+
+
+
+insTead of OF TRIGGER IS BY DEFAULT ROW LEVEL TRIGGER..
+
+create OR REPLACE TRIGGER TRG_INSTEAD_TRIG
+	insTEAD OF INSERT OR UPDATE ON VW_EMP_DEPT
+	BEGIN
+	IF INSERTING 
+	INSERT into (
+    empno,
+    ename,
+    deptno
+) VALUES
+    ( :new.empno,
+    :new.ename,
+    :new.deptno );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

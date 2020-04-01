@@ -1,0 +1,262 @@
+/*
+##################################################
+ Objective                : PL/SQL (De duplication problem)
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 30-March-2020
+##################################################
+*/
+
+
+------Customer De Duplication------
+
+/*
+   The business has customers coming in from three different business mediums. The details of the same are held in three different
+   tables as shown below.
+
+  The concern of business here is that a customer can come into business in one or two or all mediums which means a customer name 
+  can exist only in one table or two tables or all the tables. The customer ID for the same customer will be different in these 
+  tables if he exists in more than one table. To have a better customer analysis, the business needs to identify the golden record
+  for every customers (Distinct record) and hence has another table as mentioned below.
+
+    The need here is to design a solution which takes in data from all of the three tables as a source and load the distinct value
+    or the golden record for the customer into the Customer master table.
+    
+Requirements:
+    • Mapping Sheet
+    • Code
+    • Test Document
+    
+*/    
+    
+
+-- creating cust_store table
+CREATE TABLE cust_store (
+    cust_id     NUMBER PRIMARY KEY,
+    cust_name   VARCHAR2(20) NOT NULL,
+    addr        VARCHAR2(50),
+    phone       NUMBER(12),
+    dob         DATE,
+    email       VARCHAR(50),
+    city        VARCHAR2(20),
+    state       VARCHAR2(20),
+    country     VARCHAR2(20)
+);
+/
+
+-- creating cust_phone table
+CREATE TABLE cust_phone (
+    cust_id     NUMBER PRIMARY KEY,
+    cust_name   VARCHAR2(20) NOT NULL,
+    addr        VARCHAR2(50),
+    phone       NUMBER(12),
+    dob         DATE,
+    email       VARCHAR(50),
+    city        VARCHAR2(20),
+    state       VARCHAR2(20)
+);
+/
+
+-- creating cust_online table
+CREATE TABLE cust_online
+(
+    cust_id      NUMBER PRIMARY KEY,
+    cust_fname   VARCHAR2(20) NOT NULL,
+    cust_mname VARCHAR2(20), 
+    cust_lname VARCHAR2(20) NOT NULL, 
+    addr VARCHAR2(50), 
+    phone NUMBER(12), 
+    dob DATE, 
+    email VARCHAR(50),
+    city VARCHAR2(20) 
+);
+/
+
+
+-- creating cust_master table
+CREATE TABLE cust_master
+(
+    cust_id      NUMBER PRIMARY KEY,
+    cust_fname   VARCHAR2(20) NOT NULL,
+    cust_mname VARCHAR2(20), 
+    cust_lname VARCHAR2(20) NOT NULL, 
+    addr VARCHAR2(50), 
+    phone NUMBER(12), 
+    dob DATE, 
+    email VARCHAR(50), 
+    city VARCHAR2(20), 
+    state VARCHAR2(20), 
+    country VARCHAR2(20),
+    inserted_date DATE 
+);
+/
+
+--We are useing 'merge' DML command here for this scenario:
+
+--we create sequence for customer master table
+
+CREATE SEQUENCE seq_cust_master START WITH 1 INCREMENT BY 1;
+/
+
+
+---OBJ1 : Merge Store customer to Master table
+CREATE OR REPLACE PROCEDURE usp_cust_store AS
+BEGIN
+    MERGE INTO cust_master m
+    USING (
+              SELECT
+                  cust_id,
+                  cust_name,
+                  addr,
+                  phone,
+                  dob,
+                  email,
+                  city,
+                  state,
+                  country
+              FROM
+                  cust_store
+          )
+    a ON ( m.phone = a.phone
+           AND m.dob = a.dob
+           AND m.email = a.email )
+    WHEN NOT MATCHED THEN
+    INSERT (
+        m.cust_id,
+        m.cust_first_name,
+        m.adds,
+        m.phone,
+        m.dob,
+        m.email,
+        m.city,
+        m.state,
+        m.country,
+        m.inserted_date )
+    VALUES
+        ( seq_cust_master.NEXTVAL,
+        a.cust_name,
+        a.adds,
+        a.phone,
+        a.dob,
+        a.email,
+        a.city,
+        a.state,
+        a.country,
+        sysdate );
+
+END;
+/
+
+--obj 2 : Merge phone customer to master table 
+CREATE OR REPLACE PROCEDURE usp_cust_phone AS
+BEGIN
+    MERGE INTO cust_master m
+    USING (
+              SELECT
+                  cust_id,
+                  cust_name,
+                  addr,
+                  phone,
+                  dob,
+                  email,
+                  city,
+                  state
+              FROM
+                  cust_phone
+          )
+    b ON ( m.phone = b.phone
+           AND m.dob = b.dob
+           AND m.email = b.email )
+    WHEN NOT MATCHED THEN
+    INSERT (
+        m.cust_id,
+        m.cust_first_name,
+        m.addr,
+        m.phone,
+        m.dob,
+        m.email,
+        m.city,
+        m.state,
+        m.inserted_date )
+    VALUES
+        ( seq_cust_master.NEXTVAL,
+        b.cust_name,
+        b.addr,
+        b.phone,
+        b.dob,
+        b.email,
+        b.city,
+        b.state,
+        sysdate );
+
+END;
+/
+
+--obj 3:Merge online customer to master table
+
+CREATE OR REPLACE PROCEDURE usp_cust_online AS
+BEGIN
+    MERGE INTO cust_master m
+    USING (
+              SELECT
+                  cust_id,
+                  cust_first_name,
+                  cust_middle_name,
+                  cust_last_name,
+                  phone,
+                  dob,
+                  adds,
+                  email,
+                  city
+              FROM
+                  cust_online
+          )
+    c ON ( m.phone = c.phone
+           AND m.dob = c.dob
+           AND m.email = c.email )
+    WHEN NOT MATCHED THEN
+    INSERT (
+        m.cust_id,
+        m.cust_first_name,
+        m.cust_middle_name,
+        m.cust_last_name,
+        m.addr,
+        m.phone,
+        m.dob,
+        m.email,
+        m.city,
+        m.inserted_date )
+    VALUES
+        ( seq_cust_master.NEXTVAL,
+        c.cust_first_name,
+        c.cust_middle_name,
+        c.cust_last_name,
+        c.addr,
+        c.phone,
+        c.dob,
+        c.email,
+        c.city,
+        sysdate );
+
+END;
+/
+--exec
+EXEC usp_cust_online;
+
+EXEC usp_cust_store;
+
+EXEC usp_cust_phone;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

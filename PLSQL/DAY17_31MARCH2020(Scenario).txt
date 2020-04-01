@@ -1,0 +1,181 @@
+/*
+##################################################
+ Objective                : PL/SQL Scenario
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 31-March-2020
+##################################################
+*/
+
+
+
+--1.Display vehicle type description wise no of vehicle that are active and the no of routes in the current year
+SELECT DISTINCT
+    a.vehicle_desc,
+    a.vehicle_count,
+    b.route_count
+FROM
+    (
+        SELECT
+            vehicle_type_desc,
+            COUNT(vehicle_no) AS vehicle_count
+     --GETTING THE NO OF VEHICLES
+        FROM
+            vehicle        v,
+            vehicle_type   vt
+        WHERE
+            v.vehicle_type_id = vt.vehicle_type_id
+            AND active_status               = 'yes'
+            AND to_char(start_date, 'yyyy')  = to_char(sysdate, 'yyyy')
+        GROUP BY
+            vehicle_type_desc
+    ) a,
+    (
+        SELECT
+            vt.vehicle_type_desc,
+            COUNT(route_id) AS route_count
+      --NO OF ROUTES..
+        FROM
+            vehicle        v,
+            route          r,
+            vehicle_type   vt
+        WHERE
+            v.vehicle_type_id = vt.vehicle_type_id
+            AND v.vehicle_no                 = r.vehicle_no
+            AND v.active_status               = 'yes'
+            AND to_char(v.start_date, 'yyyy')  = to_char(sysdate, 'yyyy')
+        GROUP BY
+            vt.vehicle__type_desc
+    ) b
+WHERE
+    a.vehicle_type_desc = b.vehicle_type_desc (+);
+
+--2.Display vehicle numbers which operate routes on interstate services
+		--SELECTING ONLY THE ROUTES WHICH ARE INTERSTARTE BY COMPARING THE END AND START CITY ND CHECKING IF THEY ARE IN SAME --STATE OR DIFFERNET CITY
+
+SELECT
+    vehicle no
+FROM
+    route
+WHERE
+    (
+        SELECT
+            state_id
+        FROM
+            city
+        WHERE
+            city_id = start_city_id
+    ) <> (
+        SELECT
+            state_id
+        FROM
+            city
+        WHERE
+            city_id = dest_city_id
+    );
+
+--3.Display passenger names who have booked their seats from the starting city to end city of the complete route in the next one week. Please assume the start of week as Monday.
+
+SELECT
+    p.name AS p_name
+FROM
+    passenger         p,
+    seat_allocation   s,
+    route             r
+WHERE
+    p.passenger_id = s.passenger_id
+    AND s.route_id      = r.route_id
+    AND s.from_city_id  = r.start_city_id
+        --FOR FULL BUS DESTINATIONS BOTH START AND END POINT OF PERSON SHOULD BE SAME.
+    AND s.to_city_id    = r.dest_city_id
+    AND travel_date BETWEEN trunc(sysdate, 'w') + 1 AND next_day(trunc(sysdate, 'w') + 1, 'monday');
+     --STARTING WEEK WITH MONDAY.
+
+--4.Display the vehicle numbers who are running below 50% occupancy tomorrow.
+
+SELECT
+    v.vehicle_no
+FROM
+    vehicle v
+	where no_of_seats / 2 <( SELECT
+    COUNT(seat_number) - no_of_seats gives THE OCCUPANCY 50 AND NOW CHECKING THE COUNT..
+							from seat_allocation s,route r
+			  				where r.route_id=s.route_id and r.vehicle_no=v.vehicle_no 
+			   				and to_char(travel_date)=to_char(sysdate+1));
+			or
+	select vehicle_no
+	from route r,seat_allocation s
+	where r.route_id=s.route_id and to_char(travel_date)=to_char(sysdate+1)
+	group by vehicle_no
+	having count(allocation_id)<(select no_of_seats/2 from vehicle vs
+									where vs.vehicle_id=r.vehicle_id)
+			  
+--5.Display the user name who booked maximum number of seats in the last month
+
+		select user_name    --STEP 3.NOW GETTIG THE USERNAME FINALLY
+		from t_user
+		where user_id in (select user_id --EXCTRACTING THE USER_ID 
+						from seat_allocation
+						where to_char(booking_date,'mm-yy')=to_char(add_months(trunc(sysdate,'mm-yy'),-1),'mm-yy')
+		  				group by user_id 
+		  				--STEP 2 USING HAVING GETTING THE USER ID WHO HAS DONE THE MAX NO OF BOOKING
+						having count(seat_number)=(select max(count(seat_number))   --STEP 1 TAKING THE MAX NO OF BOOKING DONE BY USERS
+														from seat_allocation
+														where 
+														to_char(booking_date,'mm-yy')=to_char(add_months(trunc(sysdate,'mm-yy'),-1),'mm-yy')
+														group by user_id));
+
+--6.Display route ids which have less than 50% seats on full distance booking.
+				
+				select  a.route as route_id
+				from
+
+				(select count(s.seat_number) as seat_occ,s.route_id as route
+				from seat_allocation s,route r
+				where s.route_id=r.route_id 
+				and s.from_city_id=r.start_city_id
+				 and s.to_city_id = r.dest_city_id
+				group by s.route_id)a,
+
+				(select s.route_id as route,no_of_seats
+				from seat_allocation s,route r,vehicle v
+				where s.route_id=r.route_id  and r.vehicle_no=v.vehicle_no
+				and s.from_city_id=r.start_city_id 
+				and s.to_city_id = r.dest_city_id)b
+
+				where a.rout=b.route 
+				and a.seat_occ< b.no_of_seats/2;
+
+				or
+SELECT
+    route_id
+FROM
+    seat_allocation   sa,
+    route             r
+WHERE
+    s.route_id = r.route_id
+    AND sa.from_city_id = r.start_city_id
+        AND sa.to_city_id = r.dest_city_id
+GROUP BY
+    route_id
+HAVING
+    COUNT(allocation_id) < (
+        SELECT
+            no_of_seats / 2
+        FROM
+            vehicle   v
+            JOIN route     r ON v.vehicle_no = r.vehicle_no
+        WHERE
+            r.route_id = s.route_id
+);
+
+
+
+
+
+
+
+
+
+
+
+

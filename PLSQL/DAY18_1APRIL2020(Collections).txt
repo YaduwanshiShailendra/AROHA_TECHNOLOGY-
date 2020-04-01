@@ -1,0 +1,120 @@
+/*
+##################################################
+ Objective                : PL/SQL collection
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 1-April-2020
+##################################################
+*/
+
+
+--1. Write a procedure to display all the details of employees and all the records in department table using ref cursor.
+CREATE OR REPLACE PROCEDURE sp_ref AS
+    v_ref    SYS_REFCURSOR;
+    v_rec    emp%rowtype;
+    v_rec1   dept%rowtype;
+BEGIN
+    OPEN v_ref FOR SELECT
+                       *
+                   FROM
+                       emp;
+
+    LOOP
+        FETCH v_ref INTO v_rec;
+        EXIT WHEN v_ref%notfound;
+        dbms_output.put_line(v_rec.empno
+                             || ','
+                             || v_rec.ename
+                             || ','
+                             || v_rec.sal
+                             || ','
+                             || v_rec.job
+                             || ','
+                             || v_rec.hiredate);
+
+    END LOOP;
+
+    CLOSE v_ref;
+    OPEN v_ref FOR SELECT
+                       *
+                   FROM
+                       dept;
+
+    LOOP
+        FETCH v_ref INTO v_rec1;
+        EXIT WHEN v_ref%notfound;
+        dbms_output.put_line(v_rec1.deptno
+                             || ','
+                             || v_rec1.dname
+                             || ','
+                             || v_rec1.loc);
+
+    END LOOP;
+
+    CLOSE v_ref;
+END;
+/
+
+EXEC sp_ref;
+
+--3. Write a procedure by passing the select statement as string and print its output using ref cursor.
+
+CREATE OR REPLACE PROCEDURE sp_ref_select (
+    p_str   VARCHAR,
+    p_ref   OUT SYS_REFCURSOR
+) AS
+BEGIN
+    OPEN p_ref FOR p_str;
+
+END;
+
+VARIABLE b_ref_1 refcursor
+
+EXEC sp_ref_select('select * from dept', :b_ref_1);
+
+PRINT b_ref_1;
+
+
+--4. Write a function to return all the empnames whose experience is greater than 20 yrs using ref cursor .
+
+CREATE OR REPLACE FUNCTION fn_ref_exp RETURN SYS_REFCURSOR AS
+    v_ref SYS_REFCURSOR;
+BEGIN
+    OPEN v_ref FOR SELECT
+                       ename
+                   FROM
+                       emp
+                   WHERE
+                       months_between(sysdate, hiredate) / 12 > 20;
+
+    RETURN v_ref;
+END;
+
+VARIABLE b_ref_1 refcursor
+
+EXEC :b_ref_1 := fn_ref_exp;
+
+print :b_ref_1
+
+
+--5.Write a function by passing deptno and return all the details of the employees who belongs to that dept using ref cursor.
+
+CREATE OR REPLACE FUNCTION fn_ref_emp1 (
+    v_deptno IN NUMBER
+) RETURN SYS_REFCURSOR AS
+    v_ref SYS_REFCURSOR;
+BEGIN
+    OPEN v_ref FOR SELECT
+                       *
+                   FROM
+                       emp
+                   WHERE
+                       deptno = v_deptno;
+
+    RETURN v_ref;
+END;
+
+VARIABLE b_ref_2 refcursor
+
+EXEC :b_ref_2 := fn_ref_emp1(20);
+
+print :b_ref_2
