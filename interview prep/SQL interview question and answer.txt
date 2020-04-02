@@ -1,0 +1,75 @@
+Accenture Interview question
+
+Tell me about yourself?
+
+1. Do you know about trim function?
+
+2. What is LTRIM and RTRIM?
+3. Do you know about Padding then what is LPAD and RPAD?
+4. What is INSTR function?
+5. What is SUBSTR function?
+6. What is differrence between UNION and UNION ALL?
+7. What is difference between ROWID and ROWNUM?
+8. What is ROW_NUMBER() function then what is the use of OVER() clause?
+9. Do you know about joins in SQL?
+10. What is Full outer Join?
+11. What is the GROUP BY clause?
+12. What is the use of HAVING clause with GROUP BY?
+13. What is PSEDO COLUMNS?
+
+
+PL/SQL Question---
+1. What is PL/SQL?
+PL/SQL is a procedural language that has both interactive SQL and procedural programming language constructs such as iteration conditional branching.
+
+2. What is the basic stracture of PL/SQL?
+PL/SQL uses block structure as its basic structure. Anonymous blocks or nested blocks can be used in PL/SQL.
+
+3. What are the components of a PL/SQL block?
+A set of related declarations and procedural statements is called block.
+
+4. What are the components of a PL/SQL block?
+Declarative part, Executable part and Exception part.
+
+5. What are the data types a available in PL/SQL?
+Some scalar data types such as NUMBER, VARCHAR2, DATE, CHAR, LONG, BOOLEAN. Some composite data type such as RECORD & TABLE.
+
+6. What are % TYPE and % ROWTYPE? What are the advantage of using these over data types?
+% TYPE provides the data type of a varible or a database column to that variable.
+% ROWTYPE provides the record type that represents a entire row of a table or view or columns selected in the cursor.
+
+The advantages are: 
+1. need not know about variable's data type 
+2. If the database definition of a column in a table changes, the data type of a variable changes accordingly.
+
+7. What is difference between % ROWTYPE and TYPE RECORD?
+% ROWTYPE is to be used whenever query returns a entire row of a table or view.
+TYPE rec RECORD is to be used whernever query returns columns of different table or views and variables.
+
+E.g. TYPE r_emp is RECORD (eno emp.empno% type, ename emp ename % type);
+Cursor c1 is select empno, deptno form emp;
+e_rec c1 %ROWTYPE.
+
+8. What is PL/SQL table?
+Objects of type TABLE are called "PL/SQL tables", which are modelled as (but not the same as) database tables, PL/SQL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
