@@ -1,0 +1,35 @@
+/*
+##############################################################################
+ Objective                : Rewrite Cust-Sales query with better performance
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 04-April-2020
+##############################################################################
+*/
+
+SELECT
+    c.cust_name,
+    SUM(
+        CASE
+            WHEN to_char(s.sale_date, 'YYYY') = to_char(sysdate, 'YYYY') THEN
+                s.amount
+            ELSE
+                0
+        END
+    ) sales_amount_cy,
+    SUM(
+        CASE
+            WHEN(to_char(s.sale_date, 'YYYY') = to_char(sysdate, 'YYYY') - 1
+                 AND s.sale_date <= add_months(sysdate, - 12)) THEN
+                s.amount
+            ELSE
+                0
+        END
+    ) sales_amount_py
+FROM
+    customer2   c,
+    sales2      s
+WHERE
+    c.cust_id = s.cust_id
+GROUP BY
+    c.cust_name;
+

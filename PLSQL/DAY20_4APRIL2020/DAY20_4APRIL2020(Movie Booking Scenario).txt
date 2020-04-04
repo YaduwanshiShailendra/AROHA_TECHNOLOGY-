@@ -1,0 +1,249 @@
+/*
+##############################################################################
+ Objective                : Movie Booking Programming Scenario
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 04-April-2020
+##############################################################################
+*/
+CREATE OR REPLACE PACKAGE pkg_moviebook AS
+CREATE OR REPLACE PROCEDURE usp_adduser (
+    v_uname     VARCHAR2,
+    v_uaddr     VARCHAR2,
+    v_uphone    INT,
+    v_uemail    VARCHAR,
+    v_udob      DATE,
+    v_city_id   INT
+);
+CREATE OR REPLACE PROCEDURE usp_addscreen (
+    v_scr_name       VARCHAR2,
+    v_scr_loc        VARCHAR2,
+    v_city_id        INT,
+    v_scr_capacity   INT
+);
+CREATE OR REPLACE PROCEDURE usp_addmovie (
+    v_movie_name   VARCHAR2,
+    v_language     VARCHAR2,
+    v_genre        VARCHAR2
+);
+CREATE OR REPLACE PROCEDURE usp_addshow (
+    v_show_name    VARCHAR2,
+    v_scr_id       INT,
+    v_movie_id     INT,
+    v_start_date   DATE,
+    v_end_date     DATE
+);
+create or replace procedure usp_bookticket (
+    v_show_id,
+    v_uid,
+    v_no_of_seats INT
+);
+
+
+
+CREATE OR replace package body pkg_moviebook as
+    c
+    int;
+
+    PROCEDURE usp_adduser (
+        user_name   VARCHAR2,
+        phoneno     INT,
+        addr        VARCHAR2,
+        email       VARCHAR2,
+        city        VARCHAR2
+    ) AS
+    BEGIN
+        SELECT
+            COUNT(*)
+        INTO v_u
+        FROM
+            user2;
+
+        IF v_u = 0 THEN
+            v_u := v_u + 1;
+        ELSE
+            SELECT
+                MAX(user_id)
+            INTO v_user
+            FROM
+                user2;
+
+            v_u := v_u + 1;
+        END IF;
+
+        INSERT INTO user2 VALUES (
+            v_u,
+            user_name,
+            phoneno,
+            addr,
+            email,
+            city
+        );
+
+        dbms_output.put_line('user id is' || v_u);
+    EXCEPTION
+        WHEN OTHERS THEN
+            dbms_output.put_line('No Data Inserted');
+    END;
+
+/
+
+CREATE OR REPLACE PROCEDURE usp_addscreen (
+    v_scr_name       VARCHAR2,
+    v_scr_loc        VARCHAR2,
+    v_city_id        INT,
+    v_scr_capacity   INT
+);
+
+as
+BEGIN
+    SELECT
+        COUNT(*)
+    INTO v_c
+    FROM
+        screen;
+
+    IF v_c = 0 THEN
+        v_c := v_c + 1;
+    ELSE
+        SELECT
+            MAX(scn_id)
+        INTO v_c
+        FROM
+            screen;
+
+        v_c := v_c + 1;
+    END IF;
+
+    INSERT INTO screen VALUES (
+        v_c,
+        scr_name,
+        loc,
+        city_id,
+        scr_capacity
+    );
+
+    dbms_output.put_line('screen id is' || v_c);
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('No Data Inserted');
+END;
+/
+
+CREATE OR replace PROCEDURE usp_addmovie (
+    v_movie_name   VARCHAR2,
+    v_language     VARCHAR2,
+    v_genre        VARCHAR2
+)
+BEGIN
+    SELECT
+        COUNT(*)
+    INTO v_m
+    FROM
+        mov;
+
+    IF v_m = 0 THEN
+        v_m := v_m + 1;
+    ELSE
+        SELECT
+            MAX(mov_id)
+        INTO v_m
+        FROM
+            movie;
+
+        v_m := v_m + 1;
+    END IF;
+
+    INSERT INTO movie VALUES (
+        v_m,
+        mov_name,
+        language,
+        genre
+    );
+
+    dbms_output.put_line('movie id:' || v_m);
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('No Data Inserted');
+END;
+/
+
+
+CREATE OR REPLACE PROCEDURE usp_addshow (
+    v_show_name    VARCHAR2,
+    v_scr_id       INT,
+    v_movie_id     INT,
+    v_start_date   DATE,
+    v_end_date     DATE
+);
+
+as
+BEGIN
+    SELECT
+        COUNT(*)
+    INTO v_s
+    FROM
+        shows;
+
+    IF v_s = 0 THEN
+        v_s := v_s + 1;
+    ELSE
+        SELECT
+            MAX(show_id)
+        INTO v_s
+        FROM
+            shows;
+
+        v_s := v_s + 1;
+    END IF;
+
+    INSERT INTO shows VALUES (
+        v_s,
+        show_name,
+        scr_id,
+        mov_id,
+        start_date,
+        end_date
+    );
+
+    dbms_output.put_line('show id :' || v_s);
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('No Data Inserted');
+END;
+/
+
+CREATE OR REPLACE PROCEDURE usp_bookticket ( v_show_id, v_uid,
+v_no_of_seats INT ) AS
+    BEGIN
+        SELECT
+            COUNT(*)
+        INTO v_s
+        FROM
+            booking;
+
+        IF v_s = 0 THEN
+            v_s := v_s + 1;
+        ELSE
+            SELECT
+                MAX(b_id)
+            INTO m
+            FROM
+                booking;
+
+            v_s := v_s + 1;
+        END IF;
+
+        INSERT INTO booking VALUES (
+            v_s,
+            sw_id,
+            user_name,
+            no_ofseats
+        );
+
+        dbms_output.put_line('book id :' || v_s);
+    EXCEPTION
+        WHEN OTHERS THEN
+            dbms_output.put_line('No Data Inserted');
+    END;
+END;
+/
