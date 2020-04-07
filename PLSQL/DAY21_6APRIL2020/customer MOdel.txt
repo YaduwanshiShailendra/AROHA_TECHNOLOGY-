@@ -1,0 +1,75 @@
+SCD scenario to solve. Require the below mentioned tasks to be done.
+
+1.	Design customer table to hold customer SCD 1 data.
+
+2.	Write a code which loads your customer SCD 1 table considering all the tables mentioned in the attached pic as the source tables.
+  
+  Customer_name is only mentioned as name here but please ensure to split them as first, middle and last name in your target table.
+
+  Please send in the create table scripts as well along with your codes for testing. The same concept of what was discussed in SCD 1 is to be implemented here. Insert as an insert and update as an update. Would want to see this code by EOD today.
+
+
+CREATE TABLE country
+(
+ctry_id INT PRIMARY KEY,
+ctry_name VARCHAR(15) NOT NULL,
+);
+
+
+CREATE TABLE region
+(
+reg_id INT PRIMARY KEY,
+reg_name VARCHAR(15) NOT NULL,
+ctry_id REFERENCES country(ctry_id)
+);
+
+CREATE TABLE state
+(
+state_id INT PRIMARY KEY,
+state_name VARCHAR(15) NOT NULL,
+reg_id REFERENCES region(reg_id)
+);
+
+CREATE TABLE city
+(
+city_id INT PRIMARY KEY,
+city_name VARCHAR(15) NOT NULL,
+state_id REFERENCES sate(state_id)
+);
+
+
+CREATE TABLE customer
+(
+cust_id INT PRIMARY KEY,
+cust_name VARCHAR(15) NOT NULL,
+addr VARCHAR(25),
+dob DATE,
+phone NUMBER(10) CHECK(LENGTH(phone)=10),
+adhar_no NUMBER(12) CHECK(LENGTH(adhar_no)=12),
+passport_no VARCHAR,
+gen_id REFERENCES gender(gen_id),
+mar_status_id mar_status(mar_status_id),
+city_id REFERENCES city(city_id)
+);
+
+
+CREATE TABLE gender
+(
+gen_id VARCHAR2(1) CHECK (gen_id IN ('M','F')),
+gen_desc VARCHAR(6),
+);
+
+
+CREATE TABLE mar_status
+(
+mar_status_id VARCHAR2(1) CHECK (mar_status_id IN ('M','U')),
+mar_status_desc VARCHAR2(10)
+);
+
+
+INSERT ALL
+INTO country VALUES(1,'INDIA')
+INTO country VALUES(1,'INDIA')
+INTO country VALUES(1,'INDIA')
+INTO country VALUES(1,'INDIA')
+SELECT * FROM DUAL;

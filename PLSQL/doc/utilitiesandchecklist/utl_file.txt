@@ -1,0 +1,330 @@
+
+create directory in sys as sysdba
+
+conn sys as sysdba
+Connected.
+
+create directory test_db as 'E:\temp';
+Directory Created.
+
+In this path save the dept.txt file...
+deptno,dname
+10,ttttt
+20,kkkkk
+30,ooooo
+
+conn sys@oradb as sysdba
+admin
+Connected.
+
+Grant all privileges on directory test_db to shruthi;
+Grant Succeeded...
+
+--------------------------------------------------------------------------
+
+FF to DB...
+
+declare
+   f1 utl_file.file_type;
+    v_deptno number(10);
+    v_deptnm varchar(20);
+     v_str varchar(100);
+begin
+      f1 := utl_file.fopen('TEST_DB','data.txt','r');
+loop
+          begin
+        utl_file.get_line(f1,v_str);---get from file
+        v_deptno := substr(v_str,1,instr(v_str,',',1)-1);
+        v_deptnm := substr(v_str,instr(v_str,',',1)+1);
+    insert into dept_demo(dnum,dname) values(v_deptno,v_deptnm);
+   exception
+            when no_data_found then
+              exit;
+       end;
+     end loop;
+      utl_file.fclose_all;
+end;
+/
+
+Plsql procedure successfully completed...
+--------------------------------------------------------------------------
+
+DB to FF....
+
+Using cursor
+
+declare
+   f1 utl_file.file_type;
+ cursor d is select * from dept;
+ v_str dept%rowtype;
+ v_var varchar(100);
+ begin
+     f1 := utl_file.fopen('TEST_DB' ,
+      'dept.txt','w');
+   open d;
+      loop
+          fetch d into v_str;
+          exit when d%notfound;
+         v_var := v_str.DEPTNO ||','||v_str.DNAME||','
+         ||v_str.LOC;
+          utl_file.put_line(f1,v_var);---write to file
+ end loop;
+ close d;
+     utl_file.fclose(f1);
+ end;
+/
+-----------------------------------------------------------------------
+
+FF to FF
+
+declare
+   fl1 utl_file.file_type;
+   fl2 utl_file.file_type;
+   v_st varchar(100);
+begin
+  fl1 := utl_file.fopen('TEST_DB',
+                               'customer_src.txt','R');
+  fl2 := utl_file.fopen('TEST_DB',
+                             'customer_tgt.docs','W');
+ loop
+   begin
+       utl_file.get_line(fl1,v_st);
+       utl_file.put_line(fl2,v_st);
+      exception
+         when no_data_found then
+         exit;
+   end;
+ end loop;
+utl_file.fclose_all;
+end;
+/
+
+Plsql Procedure successfully Completed.
+----------------------------------------------------------------------
+
+create directory dir_utl as '\\Student-19\SharedDocs\arasu\';
+grant all on directory dir_utl to public;
+
+Using collection
+
+Db to FF
+
+declare 
+fs utl_file.file_type;
+type t1 is table of emp%rowtype;
+t t1;
+v_var varchar(400);
+begin
+select * bulk collect into t from emp;
+fs :=utl_file.fopen('DIR_UTL','emp_ff.txt','w');
+for i in 1..t.last loop
+v_var:=(t(i).empno||','||t(i).ename);
+utl_file.put_line(fs,v_var);
+end loop;
+utl_file.fclose_all;
+end;
+
+---------------------------------------------------------------------
+
+declare
+fs utl_file.file_type;
+fl utl_file.file_type;
+v_var varchar(400);
+begin
+fs:=utl_file.fopen('DIR_UTL','emp_ff.txt','r');
+fl:=utl_file.fopen('DIR_UTL','emp_ff_tgt.txt','w');
+loop
+begin
+utl_file.get_line(fs,v_var);(get is to read from file{fs to v_var} and put is to write to the file{v_var to f1})
+utl_file.put_line(fl,v_var);
+exception
+when no_data_found then
+exit;
+end;
+end loop;
+utl_file.fclose_all;
+end;
+
+--------------------------------------------------------
+
+declare 
+fs utl_file.file_type;
+type t1 is table of dept%rowtype;
+t t1;
+v_var varchar(400);
+begin
+select * bulk collect into t from dept;
+fs :=utl_file.fopen('DIR_UTL','dept_ff.txt','w');
+for i in 1..t.last loop
+v_var:=(t(i).deptno||','||t(i).dname);
+utl_file.put_line(fs,v_var);
+end loop;
+utl_file.fclose_all;
+end;
+
+------------------------------------
+
+DECLARE
+  fH UTL_FILE.FILE_TYPE;
+BEGIN
+  fH := UTL_FILE.FOPEN('TEST123', 'data.txt', 'W');
+  UTL_FILE.PUTF(fH, 'Writing TO a file\n');
+  UTL_FILE.FCLOSE(fH);
+EXCEPTION
+  WHEN utl_file.invalid_path THEN
+     raise_application_error(-20000, 'ERROR: Invalid PATH FOR file.');
+END;
+
+--------------------------------------------
+
+Watever is there in txt file can be printed in sql prompt
+
+
+create or replace procedure sp_utl_file_fetch(p_dir varchar2,p_file varchar2) is
+v_file utl_file.file_type;
+v_txt varchar2(250);
+begin
+v_file:=utl_file.fopen(p_dir,p_file,'r');
+loop
+utl_file.get_line(v_file,v_txt,250);
+dbms_output.put_line(v_txt);
+end loop;
+exception
+when no_data_found then
+utl_file.fclose(v_file);
+end;
+
+Procedure SP_UTL_FILE_FETCH compiled
+
+exec sp_utl_file_fetch('TEST_DB','emp_ff.txt');
+
+________________________________________________
+
+INVALID_PATH		File location is invalid.
+
+INVALID_MODE		The open_mode parameter in FOPEN is invalid.
+
+INVALID_FILEHANDLE	File handle is invalid.
+
+INVALID_OPERATION	File could not be opened or operated on as requested.
+
+READ_ERROR		Operating system error occurred during the read operation.
+
+WRITE_ERROR		Operating system error occurred during the write operation.
+
+INTERNAL_ERROR		Unspecified PL/SQL error
+
+CHARSETMISMATCH		A file is opened using FOPEN_NCHAR, but later I/O operations use nonchar functions such as PUTF or GET_LINE.
+
+FILE_OPEN		The requested operation failed because the file is open.
+
+INVALID_MAXLINESIZE	The MAX_LINESIZE value for FOPEN() is invalid; it should be within the range 1 to 32767.
+
+INVALID_FILENAME	The filename parameter is invalid.
+
+ACCESS_DENIED		Permission to access to the file location is denied.
+
+INVALID_OFFSET		Causes of the INVALID_OFFSET exception:ABSOLUTE_OFFSET = NULL and RELATIVE_OFFSET = NULL, or	ABSOLUTE_OFFSET < 0, or Either offset caused a seek past the end of the file
+
+DELETE_FAILED		The requested file delete operation failed.
+
+RENAME_FAILED		The requested file rename operation failed.
+
+
+Procedures in UTL_FILE can also raise predefined PL/SQL exceptions such as NO_DATA_FOUND or VALUE_ERROR.
+
+-----------------------------------------------------------------------------
+CREATE OR REPLACE Procedure data_export(file_name IN VARCHAR2) IS
+
+test_file utl_file.file_type;
+bufer_size VARCHAR2(1000);
+S_no NUMBER(10);
+s_first_name VARCHAR2(20);
+s_last_name VARCHAR2(20);
+s_date DATE;
+s_gender VARCHAR2(6);
+ 
+BEGIN
+test_file:=utl_file.fopen('E:\temps','emp.txt','r');
+ 
+LOOP
+ 
+BEGIN
+ 
+utl_file.get_line(test_file,bufer_size);
+dbms_output.put_line(bufer_size);
+s_no:=SUBSTR(bufer_size,1,11);
+s_first_name:=SUBSTR(bufer_size,12,20);
+s_last_name:=SUBSTR(bufer_size,34,20);
+s_date:=SUBSTR(bufer_size,55,10);
+s_gender:=SUBSTR(bufer_size,66,5);
+ 
+FOR i IN (SELECT e_no,e_first_name,e_last_name,e_join_date,e_gender FROM emp12
+WHERE e_no=s_no
+AND e_join_date=s_date) 
+ 
+LOOP
+ 
+INSERT INTO emp12 (e_no,e_first_name,e_last_name,e_join_date,e_gender) VALUES
+(s_no,s_first_name,s_last_name,s_date,s_gender);
+
+end loop;
+ 
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+EXIT;
+END;
+ 
+END LOOP;
+ 
+COMMIT;
+ 
+utl_file.fclose(test_file);
+ 
+END data_export;
+
+--------------------------------------------------------------------------------------
+
+
+declare
+  f1 utl_file.file_type;
+v1 varchar2(300);
+v2 varchar2(300);
+sqlstmnt varchar2(300);
+begin
+f1 := utl_file.fopen('TEST4_DB','cust.txt','r');
+loop
+          begin
+        utl_file.get_line(f1,v1);
+        dbms_output.put_line(v1);
+        select replace(v1,',',''',''') into v2 from dual;
+        sqlstmnt :='insert into cust_src4 values('''||v2||''')';
+        execute immediate sqlstmnt;
+        exception when no_data_found then
+        exit;
+        end;
+        end loop;
+        utl_file.fclose_all;
+end;
+/
+
+
+truncate table cust_src4; 
+select * from cust_src4;
+
+
+SELECT * FROM CUST_TGT4;
+TRUNCATE TABLE CUST_TGT4;
+
+
+MERGE into cust_tgt4 c1 using cust_srr4 c
+on (c1.cust_id=c.cust_id)
+when matched then
+update set c1.phone=c.phone, c1.email=c.email ,c1.city=c.city ,c1.updated_date=sysdate
+when not matched then
+insert  (cust_id,cname,addr,gender,phone,email,city,inserted_date) values(s1.nextval,c.cname,c.addr,c.gender,c.phone,c.email,c.city,sysdate);
+
+UPDATE CUST_SRC4 SET PHONE=838464935 WHERE PHONE=8992000384;
+COMMIT;
+
+--------------------------------------------------------------------

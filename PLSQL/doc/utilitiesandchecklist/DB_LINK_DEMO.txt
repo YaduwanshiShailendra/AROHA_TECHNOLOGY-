@@ -1,0 +1,82 @@
+
+19) What is the purpose of database links in Oracle?
+Database links are created to establish communication between different databases or different environments 
+such as development, test and production of the same database. The database links are usually designed to 
+be read-only to access other database information . They are also useful when you want to copy production 
+data into test environment for testing.
+
+
+	syntax
+		create database link <dblink_name>
+		connect to <user> identified by<password>
+		using<database_name>
+
+
+
+	create database link DB_demo
+	connect to VINAY identified by VINAY
+	USING 'oradb'
+
+A database link is a database object which helps to connect to the remote database.
+It helps to access datas from different databases.
+
+Advantages
+
+It helps to access data from different users of same database.
+It helps to access data between two users from 2 different database.
+
+A DB LINK is a one way communication channel
+
+select * from global_name;
+--Db name of the user who is logged in
+
+Db link=user/pwd@dbname
+
+Database link connects from ford to scott
+
+--from scott
+>create database link scott_link
+connect to scott identified by tiger
+using 'orcl'
+
+>select * from emp@scott_link;
+>insert into emp@scott_link values('------');
+
+@--remote descriptor[db link operator]
+
+>select a.ename,b,dname
+from emp@scott_link a,dept@scott_link b
+where a.deptno=b.deptno;
+
+Restrictions /Disadvantages of db links
+--------------------------------------------------
+
+cant perform ddl operations over db link
+cant access lob columns over db link
+
+types
+Private db link: Accessible by owner only
+Public db link: Accessible by all users in the database
+
+user_db_links: To see the db links information(private)
+all_db_links: To see the db links information(private and public)
+
+Real time scenario
+To provide access only for a particular object of other database
+
+create or replace public synonym xyz for emp@scott_link
+grant all on xyz to public
+select * from xyz;
+
+desc user_db_links
+----------------------------------------------------
+
+
+create database link db_miginf
+ connect to scott identified by tiger
+ using 'miginf';
+ 
+ select * from emp@db_miginf;
+
+----------------------------------------------------
+

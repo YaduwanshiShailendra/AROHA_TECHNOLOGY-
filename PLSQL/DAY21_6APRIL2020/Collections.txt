@@ -1,0 +1,238 @@
+Collections
+
+Index by table(Associative arrays)
+Nested Table
+Varray
+
+
+Index By Table            Nested Table                      Varray
+Unbounded                 Unbounded                        Bounded
+can be Sparse             Initially dense later sparse      Always dense
+Inside the block only       Inside/Outside                    Inside/Outside
+Cannot be used as object  Can be used as object             Can be used as object
+String or Integer         Integer                           Integer
+
+create or replace procedure sp_IBT as
+type t is table of number(5) index by binary_integer;
+v_tab t;
+begin
+v_tab(1):=10;
+v_tab(2):=20;
+v_tab(3):=100;
+end;
+
+exec sp_IBT
+
+create or replace procedure sp_IBT as
+type t is table of number(5) index by varchar(10);
+v_tab t;
+begin
+v_tab('A'):=10;
+v_tab('B'):=20;
+v_tab('C'):=100;
+end;
+
+
+create or replace type t1 is table of number(10);
+
+create or replace procedure sp_NT as
+type t1 is table of varchar(20);
+v_nt t1:=t1('A','B','C','D','E');
+begin
+v_nt.extend(3);
+v_nt(6):=60;
+v_nt(7):=70;
+v_nt(8):=80;
+v_nt.extend(1);
+v_nt(9):=90;
+--v_nt.delete(4);
+for i in 1..v_nt.last loop
+dbms_output.put_line(v_nt(i));
+end loop;
+end;
+
+exec sp_NT;
+set serveroutput on
+
+create or replace type t2 is varray(5) of number(5);
+
+create or replace procedure sp_Varray as
+--type t2 is varray(5) of number(5);
+v_va t2:=t2(10,20,30);
+begin
+v_va.extend(3);
+v_va(4):=40;
+v_va(5):=50;
+--v_va(6):=60;
+--v_va.delete(2);
+for i in 1..v_va.last loop
+dbms_output.put_line(v_va(i));
+end loop;
+end;
+
+exec sp_Varray
+
+create or replace type t11 is table of number(10);
+create table customer_NT
+(cust_id number(10),
+c_name varchar(20),
+c_ph t11)
+nested table c_ph store as phone_tab;
+
+insert into customer_NT values(1102,'Akul',t11(9567892311,9986090658));
+select * from customer_NT
+
+create or replace type t22 is varray(10) of varchar2(20);
+
+create table customer_Varray
+(c_id number(5),
+c_name t22)
+
+insert into customer_Varray values(2222,t22('Pankaj','Pk'))
+
+select * from customer_Varray
+
+Collection Methods
+
+create or replace procedure sp_coll_methods as
+type t is varray(20) of number(10);
+v_cm t:=t();
+begin
+v_cm.extend(4);
+v_cm:=t(10,20,30,40);
+dbms_output.put_line(v_cm.first);
+dbms_output.put_line(v_cm.last);
+dbms_output.put_line(v_cm.count);
+--v_cm.trim(2);
+--dbms_output.put_line(v_cm.count);
+dbms_output.put_line(v_cm.limit);
+--v_cm.delete(3);
+if v_cm.exists(3) then
+dbms_output.put_line(v_cm(3));
+end if;
+end;
+
+exec sp_coll_methods
+
+--------------------------------------------------------
+
+Collection exceptions
+
+Collection_is_null
+create or replace procedure sp_coll_exc as
+type t is table of number(5);
+v_nt t;
+begin
+v_nt(4):=40;
+exception
+when collection_is_null then
+dbms_output.put_line('coll is null');
+end;
+
+exec sp_coll_exc
+subscript_beyond_count
+
+create or replace procedure sp_coll_exc as
+type t is table of number(5);
+v_nt t:=t(10,20,30);
+begin
+v_nt(4):=40;
+exception
+when subscript_beyond_count then
+dbms_output.put_line('count exceeded the limit');
+end;
+
+exec sp_coll_exc
+
+subscript_outside_limit
+
+create or replace procedure sp_coll_exc as
+type t is varray(5) of number(5);
+v_arr t:=t(10,20,30,40,50);
+begin
+v_arr.extend(3);
+v_arr(6):=60;
+exception
+when subscript_outside_limit then
+dbms_output.put_line('limit is crossed');
+end;
+
+exec sp_coll_exc
+
+--------------------------------------------------------------------
+
+Dynamic SQl...
+
+Building the sql statements at run time
+Using DDL and DCL commands inside the block is not permitted.
+
+create or replace procedure sp_dyn(p_area varchar) as
+v_str varchar(500);
+begin
+v_str:='create table BB_'||p_area||'(store_id int, store_nm varchar(20))';
+--dbms_output.put_line(v_str);
+execute immediate v_str;
+end;
+
+exec sp_dyn('RRNagar');
+
+desc BB_RRNagar
+
+select table_name from user_tables;
+
+create or replace procedure sp_dyn_1(p_tbl_nm varchar) as
+v_str varchar(500);
+v_cnt int;
+begin
+v_str:='select count(*) from '||p_tbl_nm;
+--dbms_output.put_line(v_str);
+execute immediate v_str into v_cnt;
+dbms_output.put_line(v_cnt);
+end;
+
+exec sp_dyn_1('customer');
+
+select * from dept
+
+create or replace procedure sp_dyn_2(p_col_nm varchar,p_data_type varchar) as
+v_str varchar(500);
+begin
+v_str:='alter table dept add '||p_col_nm||' '||p_data_type;
+--v_str:='alter table dept add :1 :2';
+dbms_output.put_line(v_str);
+execute immediate v_str using p_col_nm,p_data_type;
+end;
+
+exec sp_dyn_2('col2','int')
+
+------------------------------------------------------------------------------
+Using Dynamic SQL
+
+WAP by passing the table name and print all the column names and the no of records in each column.
+
+create or replace procedure sp_columns_dyn(p_tbl_nm varchar) as
+v_str varchar(500);
+type t_tab is table of varchar(20);
+v_t t_tab;
+begin
+v_str:='select column_name from user_tab_columns where table_name='||'upper('||''''||p_tbl_nm||''''||')';
+dbms_output.put_line(v_str);
+execute immediate v_str bulk collect into v_t;
+--dbms_output.put_line(v_t(i));
+end loop;
+end;
+
+exec sp_columns('emp')
+---------------------------------------------------------------
+Using Collection
+
+create or replace procedure sp_columns_coll(p_tbl_nm varchar) as
+v_str varchar(500);
+type t_tab is table of varchar(20);
+v_t t_tab;
+begin
+select column_name bulk collect into v_t from user_tab_columns where table_name=upper(p_tbl_nm);
+for i in 1..v_t.last loop
+dbms_output.put_line(v_t(i));
+end loop;
+end;

@@ -1,0 +1,236 @@
+Collection Methods
+PL/SQL provides the built-in collection methods that make collections easier to use. The following table lists the methods and their purpose:
+
+S.N.	Method Name & Purpose
+
+1	EXISTS(n)
+	Returns TRUE if the nth element in a collection exists; otherwise returns FALSE.
+
+2	COUNT
+	Returns the number of elements that a collection currently contains.
+
+3	LIMIT
+	Checks the Maximum Size of a Collection.
+
+4	FIRST
+	Returns the first (smallest) index numbers in a collection that uses integer subscripts.
+
+5	LAST
+	Returns the last (largest) index numbers in a collection that uses integer subscripts.
+
+6	PRIOR(n)
+	Returns the index number that precedes index n in a collection.
+
+7	NEXT(n)
+	Returns the index number that succeeds index n.
+
+8	EXTEND
+	Appends one null element to a collection.
+
+9	EXTEND(n)
+	Appends n null elements to a collection.
+
+10	EXTEND(n,i)
+	Appends n copies of the ith element to a collection.
+
+11	TRIM
+	Removes one element from the end of a collection.
+
+12	TRIM(n)
+	Removes n elements from the end of a collection.
+
+13	DELETE
+	Removes all elements from a collection, setting COUNT to 0.
+
+14	DELETE(n)
+	Removes the nth element from an associative array with a numeric key or a nested table. 
+	If the associative array has a string key, the element corresponding to the key value is deleted. If n is null, DELETE(n) does nothing.
+
+15	DELETE(m,n)
+	Removes all elements in the range m..n from an associative array or nested table. 
+	If m is larger than n or if m or n is null, DELETE(m,n) does nothing.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Collection Exceptions
+The following table provides the collection exceptions and when they are raised:
+
+Collection Exception	Raised in Situations
+COLLECTION_IS_NULL	You try to operate on an atomically null collection.
+NO_DATA_FOUND		A subscript designates an element that was deleted, or a nonexistent element of an associative array.
+SUBSCRIPT_BEYOND_COUNT	A subscript exceeds the number of elements in a collection.
+SUBSCRIPT_OUTSIDE_LIMIT	A subscript is outside the allowed range.
+VALUE_ERROR		A subscript is null or not convertible to the key type. 
+			This exception might occur if the key is defined as a PLS_INTEGER range, and the subscript is outside this range.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Collection Differences
+
+
+Collection Type		Number of Elements	Subscript Type		Dense or Sparse				Where Created					Can Be Object Type 		Attribute
+
+Associative array	Unbounded		String or integer	Either					Only in PL/SQL block				No
+
+Nested table		Unbounded		Integer			Starts dense, can become sparse		Either in PL/SQL block or at schema level	Yes
+
+Variable-size array 	Bounded			Integer			Always dense				Either in PL/SQL block or at schema level	Yes
+
+
+Both types of PL/SQL tables, i.e., index-by tables and nested tables have the same structure and their rows are accessed using the subscript notation. 
+However, these two types of tables differ in one aspect; the nested tables can be stored in a database column and the index-by tables cannot.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Nested Tables
+A nested table is like a one-dimensional array with an arbitrary number of elements. However, a nested table differs from an array in the following aspects:
+
+An array has a declared number of elements, but a nested table does not. The size of a nested table can increase dynamically.
+
+An array is always dense, i.e., it always has consecutive subscripts. A nested array is dense initially, but it can become sparse when elements are deleted from it.
+
+A nested table is created using the following syntax:
+
+
+TYPE type_name IS TABLE OF element_type [NOT NULL];
+
+table_name type_name;
+
+This declaration is similar to declaration of an index-by table, but there is no INDEX BY clause.
+
+A nested table can be stored in a database column and so it could be used for simplifying SQL operations where you 
+join a single-column table with a larger table. An associative array cannot be stored in the database.
+
+Nested table:
+
+DECLARE
+   TYPE names_table IS TABLE OF VARCHAR2(10);
+   TYPE grades IS TABLE OF INTEGER;
+
+   names names_table;
+   marks grades;
+   total integer;
+   size integer;
+BEGIN
+   names := names_table('Kavita', 'Pritam', 'Ayan', 'Rishav', 'Aziz');
+   marks:= grades(98, 97, 78, 87, 92);
+   total := names.count;
+   size :=names.limit;
+   dbms_output.put_line('Total '|| total || ' Students');
+   dbms_output.put_line('Maximum '|| size || ' Students');
+   FOR i IN 1 .. total LOOP
+      dbms_output.put_line('Student:'||names(i)||', Marks:' || marks(i));
+   end loop;
+END;
+/
+
+Total 5 Students
+Student:Kavita, Marks:98
+Student:Pritam, Marks:97
+Student:Ayan, Marks:78
+Student:Rishav, Marks:87
+Student:Aziz, Marks:92
+
+PL/SQL procedure successfully completed.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1.
+CREATE TYPE V_PH IS TABLE OF NUMBER(20);
+
+
+
+2.
+CREATE TABLE NESTED_TBL_EMP
+   (
+    EMPNO NUMBER(4),
+    PH V_PH)
+    NESTED TABLE PH STORE AS PHONE_TAB ;
+	
+	 
+
+INSERT INTO NESTED_TBL_EMP VALUES(101, V_PH(12341,12342));
+INSERT INTO NESTED_TBL_EMP VALUES(102, V_PH(12343,12344,12345));
+INSERT INTO NESTED_TBL_EMP VALUES(103, V_PH(12346,12347));
+INSERT INTO NESTED_TBL_EMP VALUES(104, V_PH(12348,12349,12334,12354));
+
+
+SQL> SELECT *FROM NESTED_TBL_EMP;
+
+
+EMPNO                             PH
+--------------------------------------------------
+101 			 V_PH(12341, 12342)
+
+102                      V_PH(12343, 12344, 12345)
+       
+103  			 V_PH(12346, 12347)
+
+104   			 V_PH(12348, 12349, 12334, 12354)
+
+
+
+
+
+SQL> SELECT PH FROM NESTED_TBL_EMP;
+
+PH
+------------------------------------
+V_PH(12341, 12342)
+V_PH(12343, 12344, 12345)
+V_PH(12346, 12347)
+V_PH(12348, 12349, 12334, 12354)
+
+------------------------------------------------------------------------------------------------------------
+
+1.
+   CREATE TYPE VARR_PH is VARRAY(40) OF NUMBER(20);
+
+
+
+2.
+
+  CREATE TABLE VARR_EMP
+  (
+   EMPNO NUMBER(3),
+   ENAME VARCHAR(10),
+   PH VARR_PH
+   )
+   ;
+
+
+3.
+   INSERT INTO VARR_EMP VALUES(101, 'AMAR',VARR_PH(998761,998762)); 
+   INSERT INTO VARR_EMP VALUES(102, 'ANAND',VARR_PH(998763,998764));
+   INSERT INTO VARR_EMP VALUES(103, 'MANU',VARR_PH(998765,998766));
+   INSERT INTO VARR_EMP VALUES(104, 'MANJU',VARR_PH(998767,998768));
+
+
+
+
+
+
+SQL> SELECT *FROM VARR_EMP;
+
+EMPNO         ENAME       PH
+---------------------------------
+ 101          AMAR       VARR_PH(998761, 998762)
+ 102          ANAND      VARR_PH(998763, 998764)
+ 103          MANU       VARR_PH(998765, 998766)
+ 104          MANJU      VARR_PH(998767, 998768)
+
+
+       
+
+SQL> SELECT PH FROM VARR_EMP;
+
+PH
+----------------------------
+VARR_PH('998761', '998762')
+VARR_PH('998763', '998764')
+VARR_PH('998765', '998766')
+VARR_PH('998767', '998768')
+--------------------------------------------------------------------------------------
+
+
+

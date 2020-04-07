@@ -1,0 +1,148 @@
+create table test_schedule
+(time timestamp);
+
+begin
+dbms_scheduler.create_job(
+job_name =>'DEMO_AB',
+job_type=>'PLSQL_BLOCK',
+job_action=>'begin
+             insert into test_schedule values(sysdate);
+             commit;
+             end;',
+start_date=>systimestamp,
+repeat_interval=>'FREQ=SECONDLY; INTERVAL=3',
+enabled=>TRUE,
+COMMENTS=>'INSERTION INTO test_schedule table using ananymous block');
+end;
+--------------------------------------------------------------
+exec dbms_scheduler.disable('DEMO_AB');
+exec dbms_scheduler.enable('DEMO_AB');
+exec dbms_scheduler.drop_job('DEMO_AB');
+
+desc dbms_scheduler
+-----------------------------------------------------------------
+
+create procedure pro_insert_test is
+begin
+insert into test_schedule
+values(sysdate);
+commit;
+end;
+
+
+begin dbms_scheduler.create_job(job_name =>'DEMO_SP',
+                               job_type=>'STORED_PROCEDURE',
+                               job_action=>'PRO_INSERT_TEST',
+                               start_date=>systimestamp,
+                               repeat_interval=>'FREQ=SECONDLY;INTERVAL=3',
+                               enabled=>TRUE,
+                               COMMENTS=>'INSERTION INTO test_schedule table using stored procedure');
+end;
+
+-----------------------------------------------------------------
+
+begin dbms_scheduler.create_job(job_name =>'DEMO_SF',
+                               job_type=>'EXECUTABLE',
+                               job_action=>'D:\scheduler\insert_test.sql',
+                               start_date=>systimestamp,
+                               repeat_interval=>'FREQ=SECONDLY;INTERVAL=3',
+                               enabled=>TRUE,
+                               COMMENTS=>'INSERTION INTO test_schedule table using stored procedure')
+end;
+-------------------------------------------------------------------------------------
+
+
+Dbms_scheduler
+
+schedule   program    job
+
+schedule
+----------
+
+
+begin
+dbms_scheduler.create_schedule(schedule_name=>'s1',
+                               start_date=>sysdate,
+                               repeat_interval=>'FREQ=daily;byhour=18',
+                               comments=>'runs at 6PM every day');
+                               end;
+
+
+begin
+dbms_scheduler.create_schedule(schedule_name=>'s4',
+                               start_date=>sysdate,
+                               repeat_interval=>'FREQ=weekly;byday=wed;byhour=11;byminute=24',
+                               comments=>'runs on every wednesday at 11:24 a.m');
+                               end;
+
+exec dbms_scheduler.drop_schedule('s4');
+
+
+---------------------------------------------------------------------
+
+program
+----------
+
+begin
+dbms_scheduler.create_program(program_name=>'p1',
+                              program_type=>'PLSQL_BLOCK',
+                              program_action=>'Begin 
+                                               insert into test_schedule values(sysdate);
+                                               commit;
+                                               end;',
+                              enabled=>true,
+                              comments=>'inserting records to the table test_schedule using ananymous block');
+end;
+
+
+
+begin
+dbms_scheduler.create_program(program_name =>'p2',
+                               program_type=>'STORED_PROCEDURE',
+                               program_action=>'PRO_INSERT_TEST',
+                               enabled=>TRUE,
+                               COMMENTS=>'inserting records to the table test_schedule using stored procedure');
+end;
+
+exec dbms_scheduler.drop_program('p2');
+---------------------------------------------------------------------
+
+job
+------
+
+begin
+dbms_scheduler.create_job(job_name=>'j1',
+schedule_name=>'s4',
+program_name=>'p1',
+enabled=>TRUE,
+comments=>'combination of s4 and p1');
+end;
+
+
+begin
+dbms_scheduler.create_job(job_name=>'j2',
+schedule_name=>'s1',
+program_name=>'p2',
+enabled=>TRUE,
+comments=>'combination of s1 and p2');
+end;
+
+exec dbms_scheduler.enable('j2');
+
+--------------------------------------------------------------------
+
+exec dbms_scheduler.run_job('j2');
+
+exec dbms_scheduler.stop_job('j2');
+
+exec dbms_scheduler.drop_job('j2');
+
+---------------------------------------------------
+user_scheduler_schedules
+user_scheduler_programs
+user_scheduler_jobs
+
+-------------------------------------------------------
+
+
+
