@@ -1,0 +1,40 @@
+Topics Covered:
+
+Tableau	BI Tool	Olap Tool	
+Connecting to the Excel(Sample superstore)	
+Different types of connection	
+Live	tds	Tableau data source
+Extract	tde	Tableau data extract
+	twb	Tableau workbook
+	twbx	Tableau Packaged Workbook
+
+Data source	Excel	
+Workbook	
+Splitting the columns	
+Changing the datatypes	
+Deriving the columns using function	
+Hiding the columns	
+Viewing the data	
+Joining the sheets 	
+Different types of joins	Data source Filter	
+Filters	Datasource Filter	
+Report	
+Worksheet	
+Different types of chart	Bar	
+				Pie	
+				Cross Tab	
+				Tree Map	
+				Filled Map	
+				Line Chart	
+				Tabular	
+				Stacked Bar	
+				Scatter	
+Marks	Color	
+	Size	
+	Tool Tip	
+	Label	
+Sorting	
+User Filter(Quick Filter)	
+	Wildcard	
+	Condition	
+	Top/Bottom
