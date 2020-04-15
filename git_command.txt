@@ -9,6 +9,6 @@ git push -u origin master
 #####after first commit#######
 
 git add *
-git commit -m "adding/updating Tableau Day_1 files"
+git commit -m "adding/updating Tableau Day_2 files"
 git push -u origin master
 
