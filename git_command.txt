@@ -1,4 +1,12 @@
 echo "# AROHA_TECHNOLOGY-" >> README.md
+
+
+
+git config --global user.email "shailendran70@gmail.com"
+
+git config --global user.name "shailendra"
+
+
 git init
 git add *
 git commit -m "adding day2 files"
