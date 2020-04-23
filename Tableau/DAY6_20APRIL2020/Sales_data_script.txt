@@ -1,0 +1,365 @@
+
+create database sales_data
+
+create table Country
+(
+country_id int primary key,
+country_name varchar(20) not null 
+);
+
+create table Region
+(
+region_id varchar(10) primary key,
+region_name varchar(20),
+country_id int references country(country_id)
+);
+
+create table State
+(
+state_id varchar(10) primary key,
+state_name varchar(20) not null,
+region_id varchar(10) references Region(region_id)
+);
+
+create table city
+(
+city_id varchar(10) primary key,
+city_name varchar(20) not null,
+metro_flag varchar(10) check(metro_flag in('YES','NO')),
+state_id varchar(10) references State(state_id)
+);
+
+create table Customer
+(
+customer_id varchar(10) primary key,
+customer_f_name varchar(20),
+customer_m_name varchar(20),
+customer_l_name varchar(20),
+dob date not null,
+marital_status varchar(10) check(marital_status in('Single', 'Married')),
+email varchar(50),
+customer_since date not null,
+city_id varchar(10) references city(City_id)
+);
+
+create table Store
+(
+store_id varchar(10) primary key,
+store_name varchar(20),
+address varchar(100),
+phone bigint,
+email varchar(50),
+start_date date,
+city_id varchar(10) references city(City_id)
+);
+
+create table Product_family
+(
+product_family_id varchar(10) primary key,
+product_family_name varchar(20)
+);
+
+create table Product
+(
+product_id varchar(10) primary key,
+product_name varchar(20),
+price numeric,
+cost numeric,
+product_family_id varchar(10) references Product_family(product_family_id)
+);
+
+create table Sales
+(
+sale_id varchar(10) primary key,
+customer_id varchar(10) references Customer(customer_id),
+store_id varchar(10) references Store(store_id),
+amount numeric,
+quantity numeric,
+margin int,
+sale_date date
+);
+
+
+create table Sales_details
+(
+Sales_det_id varchar(10) primary key,
+sale_id varchar(10) references Sales(Sale_id),
+product_id varchar(10) references product(product_id),
+qty numeric,
+amount numeric,
+margin int
+);
+
+select * from information_schema.tables
+
+
+insert
+into Country values(1,'India') 
+,(2,'China')
+,(3,'United Kingdom')
+,(4,'Bangladesh')
+,(5,'United States')
+
+select * from region
+
+insert
+into Region values('R1','South India',1)
+,('R2','North India',1)
+,('R3','West India',1)
+,('R4','Central India',1)
+,('R5','Northeast India',1)
+
+
+insert
+into State values('S1','Karnataka','R1')
+,('S2','Andhra Pradesh','R1')
+,('S3', 'Tamil Nadu','R1')
+,('S4','Kerala','R1')
+,('S5','Punjab','R2')
+,('S6','Maharasthra','R3')
+
+
+
+insert
+into city values('Ct1','Chennai','YES','S3')
+,('Ct2','Bangalore','YES','S1')
+,('Ct3','Hyderabad','YES','S2')
+,('Ct4','Trivandrum','NO','S4')
+,('Ct5','Coimbatore','NO','S3')
+,('Ct6','Mumbai','YES','S6')
+,('Ct7','Hassan','NO','S1')
+,('Ct8','Pune','YES','S6')
+,('Ct9','Nagpur','YES','S6')
+,('Ct10','Mysore','NO','S1')
+
+insert
+into Customer values('C1','James',null,'Smith','12-Mar-50','Single','James@gmail.com','12-Aug-67','Ct1')
+,('C2','Michael',null,'Smith','24-Aug-48','Married','michaelsmith@yahoo.com','23-Mar-69','Ct3')
+,('C3','Robert',null,'Smith','15-Aug-58','Married','smith@yahoo.com','17-Jun-70','Ct4')
+,('C4','Maria','H','Garcia','9-Sep-55','Married','maria@gmail.com','28-Mar-75','Ct3')
+,('C5','David',null,'Smith','18-Jan-57','Single','david@yahoo.com','17-Jun-78','Ct6')
+,('C6','Maria',null,'Rodriguez','28-Mar-59','Single','Rodriguez@google.co.in','12-Feb-78','Ct9')
+,('C7','Mary',null,'Smith','26-May-49','Married','mari@rediff.com','28-Jul-68','Ct8')
+,('C8','Maria','M','Hernandez','18-Jun-54','Married','Hernandez@google.co.in','30-Mar-78','Ct10')
+,('C9','Maria',null,'Martinez','23-Jun-59','Married','mariaMartinez@gmail.com','19-Feb-80','Ct10')
+,('C10','James',null,'Johnson','28-Jul-54','Single','james@yahoo.com','20-May-82','Ct10')
+,('C11','Sarah',null,'Williams','23-Mar-55','Married','sarah@yahoo.com','28-Sep-83','Ct9')
+,('C12','Elizabeth','J','Wilson','14-Jul-60','Married','Elizabeth@google.org','26-Nov-81','Ct7')
+,('C13','Martha',null,'Clark','12-Mar-64','Married','Clark@rediff.com','24-Nov-83','Ct3')
+,('C14','Margaret',null,'Miller','24-Oct-63','Married','Margaret@yahoo.com','12-Dec-83','Ct3')
+,('C15','Nancy',null,'Taylor','27-Jul-58','Married','nancy@gmail.com','22-Nov-82','Ct4')
+,('C16','Ann',null,'Clark','28-Mar-69','Single','annclark@yahoo.com','18-Jan-84','Ct2')
+,('C17','Jane','S','Rodriguez','28-Jul-67','Married','jane@gmail.com','29-Apr-82','Ct2')
+,('C18','Eliza',null,'Jones','14-Jun-65','Married','eliza@yahoo.com','17-Jul-80','Ct1')
+,('C19','Catherine',null,'Miller','24-Apr-68','Single','Catherine@rediff.com','22-Mar-83','Ct1')
+,('C20','Susan',null,'Jones','30-Mar-68','Married','Susan@google.co.in','12-Jan-82','Ct4')
+
+
+
+insert
+into Store values('St1','Bigbazar','Jayanagar 45, Ward No - 57, 9Th Block Near Ragiguddu, Bengaluru',8844882222,'bigbazr@gmail.com','12-Mar-58','Ct2')
+,('St2','D-mart','Banneghatta Main Rd, Pai Layout, Hulimavu, Bengaluru',9944884422,'dmark@yahoo.com','24-Jun-60','Ct2')
+,('St3','Super Market','Outer Ring Rd, Vijaya Bank Colony, Banasawadi, Bengaluru',7826232332,'sm@yahoo.com','28-Nov-50','Ct2')
+,('St4','ShopperStop','JP Nagar 7th Phase, Bengaluru',8928988992,'ss@rediffmail.co.in','28-Feb-55','Ct2')
+,('St5','More','Bannerghatta Main Rd, Bengaluru',7766887788,'more@gmail.com','23-Jan-54','Ct2')
+,('St6','Village Hypermarket','Electronic City Phase 1, Bangalore',8577584833,'VH@gmail.com','23-Apr-89','Ct2')
+,('St7','The Big Market','Anekal Chandapura Main Road, Marsur, Bangalore',9564566666,null,'22-Mar-87','Ct2')
+,('St8','City Mart','Kathriguppe, Bangalore ',7777777777,null,'18-Mar-87','Ct2')
+,('St9','New Supermarket','Saunders Road, Frazer Town, Bangalore',7886675577,null,'22-Jul-89','Ct2')
+,('St10','Grace Hyper Mart','Horamavu Agara, Bangalore',9977575665,null,'13-Nov-88','Ct2')
+,('St11','Apna Super Market','Veera Desai Road, Andheri West, Mumbai ',null,'asm@rediffmail.com','11-Jan-93','Ct6')
+,('St12','Laxmi Super Market','New Link Road, Andheri West, Mumbai ',null,'lsm@gmail.com','19-Feb-94','Ct6')
+,('St13','Bigbazar','Mogul Lane, Matunga West, Mumbai',9969847474,null,'24-Mar-95','Ct6')
+,('St14','D-mart','Ghodbunder Road, Anand Nagar-Kasarvadavali,MUMBAI',8987776655,null,'23-Jan-87','Ct6')
+,('St15','J K Supermarkets','Tiruvottiyur, Chennai',null,null,'12-Jan-88','Ct1')
+,('St16','Indira Stores','Medavakkam Main Road, Keelakattalai, Chennai ',7874747474,null,'21-May-93','Ct1')
+,('St17','Grows Super Market' ,'Mugalivakkam Main Road, Mugalivakkam, Chennai',9955995599,null,'10-Jun-92','Ct1')
+,('St18','Elite Supermarket','Poonamalle High Road, Ayankulam, Paruthippattu, Chennai',8787743834,null,'17-Jun-91','Ct1')
+,('St19','Helice Supermarket','Elango Nagar Annex, Virugambakkam, Chennai',null,'hs@yahoo.com','23-Aug-89','Ct1')
+,('St20','Big Bazaar','Basement 1, Ellis Road, Royapettah, Chennai',9899899989,null,'07-Dec-94','Ct1')
+
+
+
+insert
+into Product_family values('PF1','Electronics')
+,('PF2','Home Appliances')
+,('PF3','Stationery')
+,('PF4','Travel Accessories')
+,('PF5','Musical Instruments')
+
+
+insert into Product values('P1','Laptop',20000,18000,'PF1');
+insert into Product values('P2','Computer',10000,9500,'PF1');
+insert into Product values('P3','Harddisk',7000,6800,'PF1');
+insert into Product values('P4','DLSR',5000,4500,'PF1');
+insert into Product values('P5','Watch',2000,2000,'PF1');
+insert into Product values('P6','Printer',5000,5000,'PF1');
+insert into Product values('P7','Table',12000,11500,'PF2');
+insert into Product values('P8','chairs',4000,4000,'PF2');
+insert into Product values('P9','Clock',1400,1400,'PF2');
+insert into Product values('P10','Dinner set',15000,14000,'PF2');
+insert into Product values('P11','Wall lamp',1500,1500,'PF2');
+insert into Product values('P12','Pens',50,50,'PF3');
+insert into Product values('P13','Dairies',100,80,'PF3');
+insert into Product values('P14','Calculators',500,450,'PF3');
+insert into Product values('P15','Card Holders',250,250,'PF3');
+insert into Product values('P16','Tablas',5000,4800,'PF5');
+insert into Product values('P17','Flutes',2000,2000,'PF5');
+insert into Product values('P18','Drumsticks',14000,14500,'PF5');
+insert into Product values('P19','musical stands',2500,2500,'PF5');
+insert into Product values('P20','Speakers',3000,2500,'PF1');
+
+
+insert into sales values('S1','C1','St1',20000,1,2000,'12-Mar-2008' ) ;
+insert into sales values('S2','C2','St2',40000,4,4000,'22-Apr-2015' ) ;
+insert into sales values('S3','C3','St3',25000,3,1400,'29-Mar-2019' ) ;
+insert into sales values('S4','C4','St4',50000,3,4000,'30-Jan-2019' ) ;
+insert into sales values('S5','C5','St5',40000,5,0,'23-Feb-2019' ) ;
+insert into sales values('S6','C6','St2',10000,6,200,'13-Jan-2014' ) ;
+insert into sales values('S7','C7','St2',45000,3,4500,'04-Sep-2019' ) ;
+insert into sales values('S8','C8','St2',12000,4,450,'31-Jan-2019' ) ;
+insert into sales values('S9','C9','St2',20000,1,2000,'02-Oct-2019' ) ;
+insert into sales values('S10','C10','St3',15200,3,1040,'15-Oct-2019' ) ;
+insert into sales values('S11','C11','St3',50000,3,4000,'04-Sep-2019' ) ;
+insert into sales values('S12','C3','St2',40000,2,4000,'29-Mar-2019' ) ;
+insert into sales values('S13','C3','St12',35000,5,1500,'12-Mar-2018' ) ;
+insert into sales values('S14','C3','St13',27000,3,2200,'24-Jan-2018') ;
+insert into sales values('S15','C3','St14',30000,10,5000,'04-Sep-2019') ;
+insert into sales values('S16','C14','St15',60000,3,6000,'13-Jan-2017') ;
+insert into sales values('S17','C15','St16',30000,2,2000,'29-Mar-2019') ;
+insert into sales values('S18','C16','St17',50000,4,3000,'21-Oct-2019') ;
+insert into sales values('S19','C17','St18',40000,4,4000,'23-Mar-2009') ;
+insert into sales values('S20','C18','St12',25000,2,1500,'05-Jun-2018') ;
+insert into sales values('S21','C19','St5',52000,4,4200,'02-Oct-2019') ;
+insert into sales values('S22','C20','St5',21000,3,2100,'04-Nov-2018') ;
+insert into sales values('S23','C12','St5',30000,2,2000,'12-Dec-2018') ;
+insert into sales values('S24','C12','St6',44000,3,3000,'04-Sep-2019') ;
+insert into sales values('S25','C12','St7',49000,4,4200,'13-Apr-2014') ;
+insert into sales values('S26','C12','St8',42000,5,2000,'29-Mar-2019') ;
+insert into sales values('S27','C14','St1',12000,1,500,'17-Mar-2019') ;
+insert into sales values('S28','C15','St1',28000,4,800,'01-Jan-2019') ;
+insert into sales values('S29','C16','St11',5000,2,0,'22-Mar-2019') ;
+insert into sales values('S30','C17','St12',24000,5,0,'14-Mar-2017') ;
+insert into sales values('S31','C18','St13',23000,6,800,'02-Oct-2019') ;
+insert into sales values('S32','C19','St14',34000,3,2000,'14-Aug-2008') ;
+insert into sales values('S33','C20','St15',67000,6,6000,'12-Jul-2013') ;
+insert into sales values('S34','C11','St14',50000,4,3500,'01-Jan-2019') ;
+insert into sales values('S35','C11','St14',34000,3,2000,'29-Mar-2019') ;
+insert into sales values('S36','C11','St14',40000,2,4000,'05-Jun-2018') ;
+insert into sales values('S37','C11','St14',43000,4,4000,'04-Sep-2019') ;
+insert into sales values('S38','C11','St5',45000,4,2500,'30-Jan-2019') ;
+insert into sales values('S39','C11','St2',32000,2,2500,'21-Oct-2019') ;
+insert into sales values('S40','C11','St3',35000,2,3000,'13-Apr-2014') ;
+insert into sales values('S41','C4','St4',46000,4,5000,'21-Oct-2019') ;
+insert into sales values('S42','C5','St4',13000,3,500,'04-Sep-2019') ;
+insert into sales values('S43','C6','St4',24000,3,900,'13-Apr-2014') ;
+insert into sales values('S44','C7','St4',30000,2,2000,'30-Jan-2019') ;
+insert into sales values('S45','C8','St4',21000,2,-300,'30-Jan-2019') ;
+insert into sales values('S46','C9','St4',32000,2,2500,'04-Sep-2019') ;
+insert into sales values('S47','C4','St4',3000,3,100,'23-Jan-2018') ;
+insert into sales values('S48','C4','St5',5000,2,0,'27-Mar-2018') ;
+insert into sales values('S49','C4','St5',40000,4,2000,'24-Dec-2017') ;
+insert into sales values('S50','C4','St5',20000,4,800,'29-Mar-2019') ;
+
+
+
+insert into Sales_details values('SD1','S1','P1',1,20000,2000);
+insert into Sales_details values('SD2','S2','P2',4,40000,4000);
+insert into Sales_details values('SD3','S3','P10',1,15000,1000);
+insert into Sales_details values('SD4','S3','P16',2,10000,400);
+insert into Sales_details values('SD5','S4','P10',2,30000,2000);
+insert into Sales_details values('SD6','S4','P1',1,20000,2000);
+insert into Sales_details values('SD7','S5','P8',5,40000,0);
+insert into Sales_details values('SD8','S6','P14',4,2000,200);
+insert into Sales_details values('SD9','S6','P8',2,8000,0);
+insert into Sales_details values('SD10','S7','P1',2,40000,4000);
+insert into Sales_details values('SD11','S7','P4',1,5000,500);
+insert into Sales_details values('SD12','S8','P16',2,10000,400);
+insert into Sales_details values('SD13','S8','P11',1,1500,0);
+insert into Sales_details values('SD14','S8','P14',1,500,50);
+insert into Sales_details values('SD15','S9','P1',1,20000,2000);
+insert into Sales_details values('SD16','S10','P10',1,15000,1000);
+insert into Sales_details values('SD17','S10','P13',2,200,40);
+insert into Sales_details values('SD18','S11','P1',1,20000,2000);
+insert into Sales_details values('SD19','S11','P10',2,30000,2000);
+insert into Sales_details values('SD20','S12','P1',2,40000,4000);
+insert into Sales_details values('SD21','S13','P19',2,5000,0);
+insert into Sales_details values('SD22','S13','P2',3,30000,1500);
+insert into Sales_details values('SD23','S14','P1',1,20000,2000);
+insert into Sales_details values('SD24','S14','P16',1,5000,200);
+insert into Sales_details values('SD25','S14','P17',1,2000,0);
+insert into Sales_details values('SD26','S15','P20',10,30000,5000);
+insert into Sales_details values('SD27','S16','P1',3,60000,6000);
+insert into Sales_details values('SD28','S17','P10',2,30000,2000);
+insert into Sales_details values('SD29','S18','P2',2,20000,1000);
+insert into Sales_details values('SD30','S18','P10',2,30000,2000);
+insert into Sales_details values('SD31','S19','P2',4,40000,4000);
+insert into Sales_details values('SD32','S20','P2',1,10000,500);
+insert into Sales_details values('SD33','S20','P10',1,15000,1000);
+insert into Sales_details values('SD34','S21','P1',1,20000,2000);
+insert into Sales_details values('SD35','S21','P10',2,3000,2000);
+insert into Sales_details values('SD36','S21','P16',1,5000,200);
+insert into Sales_details values('SD37','S22','P1',2,20000,2000);
+insert into Sales_details values('SD38','S22','P14',2,1000,100);
+insert into Sales_details values('SD39','S23','P10',2,30000,2000);
+insert into Sales_details values('SD40','S24','P7',2,24000,1000);
+insert into Sales_details values('SD41','S24','P1',1,20000,2000);
+insert into Sales_details values('SD42','S25','P1',2,40000,4000);
+insert into Sales_details values('SD43','S25','P3',1,7000,200);
+insert into Sales_details values('SD44','S25','P5',1,2000,0);
+insert into Sales_details values('SD45','S26','P2',4,40000,2000);
+insert into Sales_details values('SD46','S26','P17',1,2000,0);
+insert into Sales_details values('SD47','S27','P7',1,12000,500);
+insert into Sales_details values('SD48','S28','P3',4,28000,800);
+insert into Sales_details values('SD49','S29','P19',2,5000,0);
+insert into Sales_details values('SD50','S30','P4',4,20000,0);
+insert into Sales_details values('SD51','S30','P8',1,4000,0);
+insert into Sales_details values('SD52','S31','P16',4,20000,800);
+insert into Sales_details values('SD53','S31','P11',2,3000,0);
+insert into Sales_details values('SD54','S32','P10',2,30000,2000);
+insert into Sales_details values('SD55','S32','P8',1,4000,0);
+insert into Sales_details values('SD56','S33','P1',3,60000,6000);
+insert into Sales_details values('SD57','S33','P8',1,4000,0);
+insert into Sales_details values('SD58','S33','P11',2,3000,0);
+insert into Sales_details values('SD59','S34','P1',1,20000,2000);
+insert into Sales_details values('SD60','S34','P2',3,30000,1500);
+insert into Sales_details values('SD61','S35','P10',2,30000,2000);
+insert into Sales_details values('SD62','S35','P8',1,4000,0);
+insert into Sales_details values('SD63','S36','P1',2,40000,4000);
+insert into Sales_details values('SD64','S37','P1',2,40000,4000);
+insert into Sales_details values('SD65','s37','P11',2,3000,0);
+insert into Sales_details values('SD66','S38','P2',3,30000,1500);
+insert into Sales_details values('SD67','S38','P10',1,15000,1000);
+insert into Sales_details values('SD68','S39','P1',1,20000,2000);
+insert into Sales_details values('SD69','S39','P7',1,12000,500);
+insert into Sales_details values('SD70','S40','P1',1,20000,2000);
+insert into Sales_details values('SD71','S40','P10',1,15000,1000);
+insert into Sales_details values('SD72','S41','P1',2,20000,4000);
+insert into Sales_details values('SD73','S41','P20',2,6000,1000);
+insert into Sales_details values('SD74','S42','P6',2,10000,0);
+insert into Sales_details values('SD75','S42','P20',1,3000,500);
+insert into Sales_details values('SD76','S43','P2',1,10000,500);
+insert into Sales_details values('SD77','S43','P3',2,14000,400);
+insert into Sales_details values('SD78','S44','P10',2,30000,2000);
+insert into Sales_details values('SD79','S45','P18',1,14000,-500);
+insert into Sales_details values('SD80','S45','P3',1,7000,200);
+insert into Sales_details values('SD81','S46','P1',1,20000,2000);
+insert into Sales_details values('SD82','S46','P7',1,12000,500);
+insert into Sales_details values('SD83','S47','P5',1,2000,0);
+insert into Sales_details values('SD84','S47','P14',2,1000,100);
+insert into Sales_details values('SD85','S48','P19',2,5000,0);
+insert into Sales_details values('SD86','S49','P2',4,40000,2000);
+insert into Sales_details values('SD87','S50','P16',4,20000,800);
+
+select * from INFORMATION_SCHEMA.tables
+
+select * from Country
+select * from Region
+select * from State
+select * from city
+select * from Customer
+select * from Store
+select * from Product_family
+select * from Product
+select * from Sales
+select * from Sales_details
