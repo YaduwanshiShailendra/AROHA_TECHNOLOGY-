@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="09JUNE2020_ecommerce_physical_database_model" id="F16314F9-5E9A-E4FB-BEB9-DF3CC0BC3138" version="3.5">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 20:06:47 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F16314F9-5E9A-E4FB-BEB9-DF3CC0BC3138</designId>
+</OSDM_Design>

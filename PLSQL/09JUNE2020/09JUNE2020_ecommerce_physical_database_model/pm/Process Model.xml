@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="577CC882-326D-012E-15F6-EC149C7E19CA">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 20:06:49 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

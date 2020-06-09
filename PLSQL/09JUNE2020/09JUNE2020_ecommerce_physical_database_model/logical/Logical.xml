@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="EBC833DE-E636-7330-5643-661EB0B34391" mainViewID="BCE6FB45-FB89-9E63-398B-EFB42F391A80">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 20:06:48 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

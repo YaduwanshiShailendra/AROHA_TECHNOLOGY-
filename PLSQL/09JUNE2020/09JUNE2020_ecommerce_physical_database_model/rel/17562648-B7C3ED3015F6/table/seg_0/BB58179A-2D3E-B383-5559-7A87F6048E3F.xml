@@ -1,0 +1,236 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB58179A-2D3E-B383-5559-7A87F6048E3F" schemaObject="8377494B-EA5E-CC10-5CAF-E428F6B6934C" name="ORDERS">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:01 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_ID" id="2BD31B52-7082-AFA0-0CEF-A5C02D3DDA17">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_USER_ID" id="11B88839-8768-D336-9118-A682D31479CD">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_USER_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_AMOUNT" id="6C4B79D8-B05B-FC9E-9196-26F622EA69DF">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_AMOUNT</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_SHIP_NAME" id="F4A7F22D-7D36-3FE9-88AF-A95BC3384BBC">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_SHIP_NAME</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>38 BYTE</dataTypeSize>
+<ownDataTypeParameters>38 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_SHIP_ADDRESS" id="430A9517-9ED1-1800-1FE9-ED8E9BA055D4">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_SHIP_ADDRESS</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_CITY" id="2DA785FC-F1AB-C9BD-1544-571B100A68E3">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_CITY</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_STATE" id="AE292786-A9A6-0E2F-DFA9-F5295E56E50F">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_STATE</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_COUNTRY" id="68B60091-681D-7076-C85B-8C5D1AA07354">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_COUNTRY</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_PHONE" id="BDD8E264-9FC7-E47F-21C2-66DC62361EA2">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_PHONE</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_TAX" id="B3C74087-2F33-B0EF-C1FD-C34E6BAA7677">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_TAX</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_DATE" id="D3EA3F89-01B3-5917-ABFA-84E3EDAA0DC7">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_DATE</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_TRACKING_NO" id="66E60E85-74C8-AC29-C680-80AA5EB28FD5">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_TRACKING_NO</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERS_USER_ID" id="B25DCA25-075A-8BC6-88C6-4E8C0D732325">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:12:24 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="289828C6-6C27-325D-5C69-84539117EB76" referredColumn="9B83D575-4DD1-ACD8-C8EF-B835F4574D7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DC274B60-D4FE-1C91-A9EE-12F069B784A5" name="ORDERS_PK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:05:11 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BD31B52-7082-AFA0-0CEF-A5C02D3DDA17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F19E14B9-659F-24C0-E54A-A8E998F6C2A1" name="ORDERS_USERS_FK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:12:24 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B25DCA25-075A-8BC6-88C6-4E8C0D732325"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="590AE02A-FAFA-5AF1-C651-220CC4E37D65" containerWithKeyObject="5FA79112-E042-7E39-8F43-DC1B377D7DBF" localFKIndex="920DA0D5-C46C-7C75-6C72-63833A4EF4A5" name="PRODUCT_OPTIONS_PRODUCTS_FK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:13:49 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<referredTableLongName>SCOTT.PRODUCTS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>55D56D10-06C0-8118-F714-564A214FB83A</referredTableID>
+<keyObject>D6C2091F-9E81-841E-3890-56B13B93293F</keyObject>
+<referredKeyID>D6C2091F-9E81-841E-3890-56B13B93293F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>P_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

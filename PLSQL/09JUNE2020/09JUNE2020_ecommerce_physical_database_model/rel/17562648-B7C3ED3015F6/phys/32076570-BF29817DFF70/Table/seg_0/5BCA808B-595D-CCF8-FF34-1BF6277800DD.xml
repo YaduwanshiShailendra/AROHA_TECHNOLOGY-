@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="OPTIONS" directorySegmentName="seg_0" id="5BCA808B-595D-CCF8-FF34-1BF6277800DD">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:01 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<schemaObject>8377494B-EA5E-CC10-5CAF-E428F6B6934C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4E88E32B-936D-46F5-5C66-2690AB4830B9</segment>
+<tableSpace>48D7A7B5-E25D-F625-4BE6-AFF5FC77A780</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="OPTIONS_GROUP_ID" id="5B58CE26-972E-8961-C08C-0AC4604AB888">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPTION_ID" id="D11A8915-EE96-C2E4-DC1F-3AD87942EC7F">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPTION_NAME" id="E2ECF596-C429-E940-4384-13AB97D6492D">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="OPTIONS_PK" id="7FD0D4F5-4D34-0459-6152-D25A7DD096FB">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:05:34 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

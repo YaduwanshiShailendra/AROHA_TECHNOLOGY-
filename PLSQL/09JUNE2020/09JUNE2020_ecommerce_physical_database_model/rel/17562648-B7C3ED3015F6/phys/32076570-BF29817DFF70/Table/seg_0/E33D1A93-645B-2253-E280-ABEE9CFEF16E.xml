@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="USERS" directorySegmentName="seg_0" id="E33D1A93-645B-2253-E280-ABEE9CFEF16E">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:01 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<schemaObject>8377494B-EA5E-CC10-5CAF-E428F6B6934C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4E88E32B-936D-46F5-5C66-2690AB4830B9</segment>
+<tableSpace>48D7A7B5-E25D-F625-4BE6-AFF5FC77A780</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="USER_ADDRESS" id="012FEA05-EFA3-9EC5-1A25-D273D7EF2E22">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_FNAME" id="4131D129-CBDE-B081-6803-AFBF00AD4B7A">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_EMAIL" id="85E8C96D-C2D9-4DBE-A609-54EEE127DD61">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_STATE" id="911A7B4B-88CA-C473-81E6-6F7EC3BCD6D5">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_ID" id="9B83D575-4DD1-ACD8-C8EF-B835F4574D7E">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_PHONE" id="ACE99F84-EA14-CE42-58C6-77C62708F036">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_LNAME" id="BD0A8D03-511F-BA28-2AE6-825A3231FD40">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_CITY" id="C2F9FB68-510B-43F8-A7AA-0A2F86442B9D">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_PASSWORD" id="D0F12D1F-D32E-F688-126A-CEF82161B278">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_ZIP" id="F4CB0A1C-0418-B57B-69D5-238EEEAD01B3">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="USERS_PK" id="8741BCCD-76FF-D4C1-0102-E7750B41254A">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:05:22 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

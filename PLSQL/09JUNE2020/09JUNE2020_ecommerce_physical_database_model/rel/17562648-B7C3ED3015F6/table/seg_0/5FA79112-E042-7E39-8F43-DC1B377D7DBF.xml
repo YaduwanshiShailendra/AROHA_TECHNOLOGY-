@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5FA79112-E042-7E39-8F43-DC1B377D7DBF" schemaObject="8377494B-EA5E-CC10-5CAF-E428F6B6934C" name="PRODUCT_OPTIONS">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>PRODUCT_OPTIONS</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:01 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="P_OPTION_ID" id="9ECFA827-A683-1932-BB83-270626D1B723">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>PRODUCT_OPTIONS</sourceObjSchema>
+<sourceObjName>P_OPTION_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_ID" id="CF289CD9-8211-1515-A52C-3C9A70C91E5A">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>PRODUCT_OPTIONS</sourceObjSchema>
+<sourceObjName>P_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPTION_ID" id="8369A69A-38BE-63C4-6FD1-341351E48750">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>PRODUCT_OPTIONS</sourceObjSchema>
+<sourceObjName>OPTION_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPTION_GROUP_ID" id="177AA1D3-0655-B7D8-4717-D7A6D35BC4D5">
+<sourceConnName>SCOTT</sourceConnName>
+<sourceObjSchema>PRODUCT_OPTIONS</sourceObjSchema>
+<sourceObjName>OPTION_GROUP_ID</sourceObjName>
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,38,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPTION_GROUPS_OPTION_GROUP_ID" id="90E58430-F676-D995-D04B-60752D485593">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:10:40 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>26</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3EBB6A11-D497-AA7E-2F10-239CB47EBA7F" referredColumn="B9B9B4CC-142E-1DED-548F-A97868975EB0"/>
+</associations>
+</Column>
+<Column name="OPTIONS_OPTION_ID" id="E46604D3-BA4A-DA60-7A40-7C0E62ABD01C">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:10:54 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>26</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8568D15-5511-CCC1-1FDF-40CD8098D441" referredColumn="D11A8915-EE96-C2E4-DC1F-3AD87942EC7F"/>
+</associations>
+</Column>
+<Column name="PRODUCTS_P_ID" id="551DC74D-606A-45EF-3ED5-792F3D8D555D">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:13:49 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="590AE02A-FAFA-5AF1-C651-220CC4E37D65" referredColumn="05640E9E-7737-F385-9174-612123F7E89E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="679E6B95-422F-EA64-DEA6-452AF97451EA" name="PRODUCT_OPTIONS_PK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:04:44 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9ECFA827-A683-1932-BB83-270626D1B723"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="852EC14B-1FBA-80B3-2881-7AAEF142190D" name="PRODUCT_OPTIONS_OPTION_GROUPS_FK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:10:40 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90E58430-F676-D995-D04B-60752D485593"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA7922A0-4ACB-C75B-78E5-369161C7E902" name="PRODUCT_OPTIONS_OPTIONS_FK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:10:54 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E46604D3-BA4A-DA60-7A40-7C0E62ABD01C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="920DA0D5-C46C-7C75-6C72-63833A4EF4A5" name="PRODUCT_OPTIONS_PRODUCTS_FK">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:13:49 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="551DC74D-606A-45EF-3ED5-792F3D8D555D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

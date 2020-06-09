@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ORDER_DETAILS" directorySegmentName="seg_0" id="8DAE03A2-D607-450F-69A9-A6C4FE0D8657">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:01 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<schemaObject>8377494B-EA5E-CC10-5CAF-E428F6B6934C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4E88E32B-936D-46F5-5C66-2690AB4830B9</segment>
+<tableSpace>48D7A7B5-E25D-F625-4BE6-AFF5FC77A780</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DETAIL_ORDER_ID" id="090E8F75-FB07-67B5-B395-D46BD1D4680E">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DETAIL_QUANTITY" id="3A86D14E-E34E-FA3D-FA07-6947A7ADFDF3">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DETAIL_PRICE" id="4E6FB41F-4CDE-C31E-A797-D5F8207EC7D0">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDERS_ORDER_ID" id="93B8AF4A-DF80-18D8-47CB-034E49174572">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:12:48 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCTS_P_ID" id="B375B28C-4539-C43E-2937-82A87891C05F">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:13:38 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DETAIL_ID" id="BDD9295F-ADDF-D5A7-9DFD-86546106A08D">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DETAIL_PRODUCT_ID" id="FF678BB3-9438-370E-6B54-FB7EE233DEB6">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:01:02 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDER_DETAILS_ORDERS_FK" id="0A4E00B4-FF3A-70EB-7AF8-BA1CA1886C65">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:12:48 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDER_DETAILS_PRODUCTS_FK" id="67F2AC3C-E0FF-96D3-FD79-911B12D39474">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:13:38 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ORDER_DETAILS_PK" id="8B9FEE0D-EE34-3649-D99B-82F1C59427B6">
+<createdBy>DELL_XPS</createdBy>
+<createdTime>2020-06-09 21:05:04 UTC</createdTime>
+<ownerDesignName>09JUNE2020_ecommerce_physical_database_model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
