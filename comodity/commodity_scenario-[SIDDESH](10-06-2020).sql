@@ -1,0 +1,58 @@
+ create or replace procedure comm_exchange
+as
+      
+    
+       f1 utl_file.file_type;
+       f2 utl_file.file_type;
+        v_str varchar(100);
+        v_str2 varchar(100);
+        v_Investor_id number(10);
+        V_F_name varchar(20);
+        V_L_name varchar(20);
+        V_M_name varchar(20);
+        V_ADDR varchar(20);
+        V_PAN varchar(10);
+        V_email varchar(40);
+        V_phone_no number(10);
+        V_Txns_id int;
+        V_fund_type varchar(10);
+        V_Txn_type varchar(10);
+        V_units number(10);
+       V_txn_date date;
+       v_record int;
+    begin
+          f1 := utl_file.fopen('XYZ','Investor_info.csv','r');
+          f2:= utl_file.fopen('XYZ','Investor_info.csv','r');
+    loop
+              begin
+            utl_file.get_line(f1,v_str); ---get from file
+            utl_file.get_line(f2,v_str2);
+            v_Investor_id := regexp_substr(v_str, '[^,]+', 1,1);
+            V_F_name:=regexp_substr(v_str, '[^,]+', 1,2);
+            V_L_name:=regexp_substr(v_str, '[^,]+', 1,3);
+            V_M_name:=regexp_substr(v_str, '[^,]+', 1,4);
+            V_ADDR :=regexp_substr(v_str, '[^,]+', 1,5);
+            V_PAN:=regexp_substr(v_str, '[^,]+', 1,6);
+            V_email:=regexp_substr(v_str, '[^,]+', 1,7);
+            V_phone_no:=regexp_substr(v_str, '[^,]+', 1,8);
+         
+            V_fund_type :=regexp_substr(v_str, '[^,]+', 1,9);
+            V_Txn_type :=regexp_substr(v_str, '[^,]+', 1,10);
+            V_units :=regexp_substr(v_str, '[^,]+', 1,11);
+            V_txn_date :=regexp_substr(v_str, '[^,]+', 1,12);
+                select count(*) into v_record from investor_info where invert_pan = V_PAN;
+
+         if v_record=0 then
+        insert into Investor values( v_Investor_id ,V_F_name ,V_L_name ,V_M_name , V_ADDR , V_PAN ,
+        V_email , V_phone_no );
+     
+       insert into  Transactions values( inestor_seq.nextval , V_fund_type , V_Txn_type , V_units , V_txn_date  );
+       end if;
+       exception
+                when no_data_found then
+                  exit;
+           end;
+         end loop;
+          utl_file.fclose_all;
+    end;
+    

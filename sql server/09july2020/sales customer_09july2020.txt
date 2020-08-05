@@ -1,0 +1,291 @@
+/*
+##################################################
+ Objective                : sql server exercise (sales customer model)
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 09-July-2020
+##################################################
+*/
+
+
+--1 Find all the customers who did not make any sales from last two months. 
+SELECT
+    cust_name
+FROM
+    customer
+WHERE
+    cust_id NOT IN (
+        SELECT
+            cust_id
+        FROM
+            sales
+        WHERE
+            sales_date BETWEEN dateadd(mm, - 2, getdate()) AND getdate()
+    );
+    
+--2 Find top 10 customers in terms of sales in the current year
+
+SELECT
+    top
+10 cust_name,
+RANK() OVER(
+    ORDER BY
+        SUM(amount) DESC
+)
+FROM
+    customer   a,
+    sales      b
+WHERE
+    a.cust_id = b.cust_id
+    AND datepart(yy, sales_date) = datepart(yy, getdate())
+GROUP BY
+    cust_name;
+
+		 
+--3.	How many different cities from which we have our customers
+
+SELECT DISTINCT
+    cust_city
+FROM
+    customer;
+
+
+--4 Find customers who are from the same city as Customer ‘TIM’
+
+SELECT
+    cust_name
+FROM
+    customer a
+WHERE
+    cust_city = (
+        SELECT
+            cust_city
+        FROM
+            customer
+        WHERE
+            cust_name = 'tim'
+    );
+
+
+--5.	Find how many different customers we got yesterday
+
+SELECT DISTINCT
+    COUNT(b.cust_id)
+FROM
+    customer   a,
+    sales      b
+WHERE
+    a.cust_id = b.cust_id
+    AND sales_date = dateadd(dd, - 2, getdate())
+    AND datepart(year, sales_date) = datepart(year, getdate());
+
+
+--6.	Find the date in the current month which gave the least 
+--total sales amount. For example on 1-Jan-13 we sold for 3000 Rs, 
+--and on 2-Jan-13 we sold total of 8000 (In this case the answer should be 1-Jan-13);
+
+
+SELECT
+    datepart(dd, sales_date)
+FROM
+    sales
+WHERE
+    datepart(mm, sales_date) = datepart(mm, sales_date)
+    AND datepart(year, sales_date) = datepart(year, sales_date)
+GROUP BY
+    datepart(dd, sales_date)
+HAVING
+    SUM(amount) = (
+        SELECT
+            MIN(amounts)
+        FROM
+            (
+                SELECT
+                    SUM(amount) amounts
+                FROM
+                    sales
+            ) a
+    );
+
+--7 Create a view which gives Customer_Name, Month and total revenue we got_
+
+SELECT
+    datepart(dd, sales_date)
+FROM
+    sales
+WHERE
+    datepart(mm, sales_date) = datepart(mm, getdate())
+    AND datepart(year, sales_date) = datepart(year, getdate())
+GROUP BY
+    datepart(dd, sales_date)
+HAVING
+    SUM(amount) = (
+        SELECT
+            MIN(a.amounts)
+        FROM
+            (
+                SELECT
+                    SUM(amount) amounts
+                FROM
+                    sales
+                WHERE
+                    datepart(mm, sales_date) = datepart(mm, getdate())
+                    AND datepart(year, sales_date) = datepart(year, getdate())
+                GROUP BY
+                    datepart(dd, sales_date)
+            ) a
+    );
+
+SELECT * FROM v_cust_revenue;
+
+--8.	Find the customer who has most number of transactions.
+
+SELECT
+    cust_name
+FROM
+    customer   c,
+    sales      s
+WHERE
+    c.cust_id = s.cust_id
+GROUP BY
+    c.cust_id,
+    c.cust_name
+HAVING
+    COUNT(c.cust_id) = (
+        SELECT
+            MAX(c)
+        FROM
+            (
+                SELECT
+                    COUNT(c.cust_id) c
+                FROM
+                    customer c
+                GROUP BY
+                    c.cust_id
+            ) a
+    );
+
+--9.	Display the citywise current year YTD 
+
+SELECT
+    cust_city,
+    SUM(amount) OVER(
+        PARTITION BY cust_city, year(sales_date)
+        ORDER BY
+            sales_date
+    ) AS ytd_sales
+FROM
+    customer   a,
+    sales      b
+WHERE
+    a.cust_id = b.cust_id;
+
+--10.	Display cities that have more number of customers than the city ‘HYD’.
+SELECT
+    cust_city
+FROM
+    customer
+GROUP BY
+    cust_city
+HAVING
+    COUNT(cust_id) > (
+        SELECT
+            COUNT(cust_id)
+        FROM
+            customer
+        WHERE
+            cust_city = 'hyd'
+    );										
+
+--11.	Display citywise number of customers and number of transactions in the current year.
+SELECT
+    cust_city,
+    COUNT(a.cust_id),
+    COUNT(b.sales_id)
+FROM
+    customer   a,
+    sales      b
+WHERE
+    a.cust_id = b.cust_id
+GROUP BY
+    cust_city;
+
+--12.	Display the customers who made sales yesterday and today.
+
+SELECT
+    cust_name
+FROM
+    customer   a,
+    sales      b
+WHERE
+    a.cust_id = b.cust_id
+    AND datepart(dd, sales_date) = datepart(dd, dateadd(dy, - 1, getdate()));
+
+
+
+--13.	Display the cities whose number of customers ids more than the number of customers in city ‘Chennai’.
+
+SELECT
+    cust_city
+FROM
+    customer
+GROUP BY
+    cust_city
+HAVING
+    COUNT(cust_id) > (
+        SELECT
+            COUNT(cust_id)
+        FROM
+            customer
+        WHERE
+            cust_city = 'chennai'
+    );
+
+--14.	Write a query to get the output
+--Display the customers and their status as ‘Made sales’ or ‘No sales’ in the current year.
+--Cust_name	Status
+A		Made sales
+B		Made sales
+C		Nosales
+
+
+SELECT
+    c.cust_name,
+    CASE
+        WHEN COUNT(c.cust_id) = 0 THEN
+            ' NO sales '
+        ELSE
+            'Made sales'
+    END status
+FROM
+    sales      s
+    RIGHT JOIN customer   c ON c.cust_id = + s.cust_id
+GROUP BY
+    c.cust_name,
+    c.cust_id;
+
+--17. Display the top 1 customer based on sales in every year.
+
+
+SELECT
+    cust_name
+FROM
+    (
+        SELECT
+            c.cust_name,
+            RANK() OVER(
+                ORDER BY
+                    COUNT(c.cust_id) DESC
+            ) ra
+        FROM
+            sales      s,
+            customer   c
+        WHERE
+            c.cust_id = s.cust_id
+        GROUP BY
+            c.cust_id,
+            c.cust_name
+    ) a
+WHERE
+    ra = 1;
+
+

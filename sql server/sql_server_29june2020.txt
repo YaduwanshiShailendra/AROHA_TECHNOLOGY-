@@ -1,0 +1,820 @@
+/*
+##################################################
+ Objective                : sql server exercise
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 29-June-2020
+##################################################
+*/
+
+CREATE TABLE doctor (
+    doc_id      VARCHAR(4) PRIMARY KEY,
+    fname       VARCHAR(20),
+    lname       VARCHAR(20),
+    specialty   VARCHAR(20),
+    phone       NUMERIC(10)
+)
+/
+
+CREATE TABLE patient (
+    pat_id     VARCHAR(4) PRIMARY KEY,
+    fname      VARCHAR(20),
+    lname      VARCHAR(20),
+    ins_comp   VARCHAR(20),
+    phone      NUMERIC(10)
+)
+/
+
+CREATE TABLE cases (
+    admission_date   DATE,
+    pat_id           VARCHAR(4),
+    doc_id           VARCHAR(4),
+    diagnosis        VARCHAR(20),
+    CONSTRAINT con_cpk PRIMARY KEY ( admission_date,
+                                     pat_id )
+)
+/
+
+insert 
+into doctor values
+('d1','arun','patel','ortho',9675093453),
+('d2','tim','patil','general',9675093453),
+('d3','abhay','sharma','heart',9675093453);
+
+
+insert 
+into patient values
+('p1','akul','shankar','y',9148752347),
+('p2','aman','shetty','y',9512896317),
+('p3','ajay','shetty','n',9987321564),
+('p4','akshay','pandit','y',9112255889),
+('p5','adi','shankar','n',9177788821);
+
+
+
+insert 
+into cases values
+('10-jun-16','p1','d1','fracture'),
+('03-may-16','p2','d1','bone cancer'),
+('17-apr-16','p2','d2','fever'),
+('28-oct-15','p3','d2','cough'),
+('10-jun-16','p3','d1','fracture'),
+('1-jan-16','p3','d1','bone marrow'),
+('11-sep-15','p3','d3','heart attack'),
+('30-nov-15','p4','d3','heart hole'),
+('10-nov-15','p4','d3','angioplasty'),
+('1-jan-16','p5','d3','heart_attack');
+
+--1.	Find all the patients who are treated in the first week of this month.
+SELECT
+    fname + ' ' + lname
+FROM
+    patient   a,
+    cases     b
+WHERE
+    a.pat_id = b.pat_id
+    AND datepart(dd, admission_date) BETWEEN 1 AND 7;
+
+--2.	Find all the doctors who have more than 3 admissions today
+
+SELECT
+    fname + ' ' + lname,
+    COUNT(pat_id)
+FROM
+    doctor   a,
+    cases    b
+WHERE
+    a.doc_id = b.doc_id
+    AND datepart(dd, admission_date) = datepart(dd, getdate())
+GROUP BY
+    fname + ' ' + lname
+HAVING
+    COUNT(pat_id) > 3;
+
+SELECT
+    fname + ' ' + lname
+FROM
+    doctor d
+WHERE
+    doc_id IN (
+        SELECT
+            doc_id,
+            COUNT(pat_id)
+        FROM
+            cases b
+        WHERE
+            datepart(dd, admission_date) = datepart(dd, getdate())
+        GROUP BY
+            doc_id
+        HAVING
+            COUNT(pat_id) > 3
+    )
+
+select * 
+from doctor
+where doc_id in (select doc_id 
+		from cases a
+		where datepart(dd,admission_date)=datepart(dd,getdate()) 
+		group by a.doc_id 
+		HAVING count(a.pat_id)>3);
+
+
+
+
+--3.	Find the patient name (first,last) who got admitted today where the doctor is ‘TIM’
+
+SELECT
+    fname + ' ' + lname
+FROM
+    patient a
+WHERE
+    pat_id IN (
+        SELECT
+            pat_id
+        FROM
+            cases    a,
+            doctor   b
+        WHERE
+            a.doc_id = b.doc_id
+            AND datepart(dd, admission_date) = datepart(dd, getdate())
+            AND b.fname = 'TIM'
+    );
+
+--4.	Find the Doctors whose phone numbers were not update (phone number is null)
+
+SELECT
+    fname
+FROM
+    doctor
+WHERE
+    phone IS NULL;
+
+--5.	Display the doctors whose specialty is same as Doctor ‘TIM’
+
+SELECT
+    fname
+FROM
+    doctor
+WHERE
+    specialty = (
+        SELECT
+            specialty
+        FROM
+            doctor
+        WHERE
+            fname = 'Tim'
+            AND fname != 'tim'
+    );
+
+--6.	Find out the number of cases monthly wise for the current year
+SELECT
+    datepart(month, admission_date) month,
+    COUNT(pat_id) counts
+FROM
+    cases
+WHERE
+    datepart(year, admission_date) = datepart(year, getdate())
+GROUP BY
+    datepart(month, admission_date);
+
+--7.	Display the doctors who don’t have any cases registered this week
+SELECT
+    fname
+FROM
+    doctor
+WHERE
+    doc_id NOT IN (
+        SELECT
+            doc_id
+        FROM
+            cases
+        WHERE
+            datepart(week, admission_date) = datepart(week, getdate())
+            AND datepart(year, admission_date) = datepart(year, getdate())
+    );
+
+--8.	Display Doctor Name, Patient Name, Diagnosis for all the admissions which happened on 1st of Jan this year
+
+SELECT
+    doctor.fname    AS doc_name,
+    patient.fname   AS pat_name,
+    cases.diagnosis
+FROM
+    doctor
+    JOIN cases ON doctor.doc_id = cases.doc_id
+    JOIN patient ON cases.pat_id = patient.pat_id
+WHERE
+    datepart(dd, admission_date) = dateadd(dd, 1 - datepart(dd, getdate()), getdate())
+    AND datepart(year, admission_date) = datepart(year, getdate());
+
+--9.	Display Doctor Name, patient count based on the cases registered in the hospital.
+
+SELECT
+    a.fname,
+    COUNT(pat_id) patient_count
+FROM
+    doctor   a
+    JOIN cases    b ON a.doc_id = b.doc_id
+GROUP BY
+    a.fname;
+
+--10.	Create a view which gives the doctors whose specialty is ‘ORTHO’ and call it as ortho_doctors
+
+CREATE VIEW ortho_doctors AS
+    SELECT
+        fname
+    FROM
+        doctor
+    WHERE
+        specialty = 'ortho';
+
+__________________________________________________________
+############################################################
+
+
+CREATE TABLE emp1 (
+    empno      INT,
+    ename      VARCHAR(10),
+    job        VARCHAR(9),
+    mgr        INT,
+    hiredate   datetime,
+    sal        INT,
+    comm       INT,
+    deptno     INT
+);
+/
+
+INSERT INTO EMP1 VALUES(7369,'SMITH','CLERK',7902,'2018-12-17',800, NULL, 20)
+INSERT INTO EMP1 VALUES(7499,'ALLEN','SALESMAN',7698,'2019-02-20',1600,300,30)
+INSERT INTO EMP1 VALUES(7521,'WARD','SALESMAN',7698,'2019-02-22',1250,500,30)
+INSERT INTO EMP1 VALUES(7566,'JONES','MANAGER',7839,'2017-04-02',2975,NULL,20)
+INSERT INTO EMP1 VALUES(7654,'MARTIN','SALESMAN',7698,'2017-09-28',1250,1400,30)
+INSERT INTO EMP1 VALUES(7698,'BLAKE','MANAGER',7839,'2019-05-01',2850,NULL,30)
+INSERT INTO EMP1 VALUES(7782,'CLARK','MANAGER',7839,'2016-06-09',2450,NULL,10)
+INSERT INTO EMP1 VALUES(7788,'SCOTT','ANALYST',7566,'2018-12-09',3000,NULL,20)
+INSERT INTO EMP1 VALUES(7839,'KING','PRESIDENT',NULL,'2019-11-17',5000,NULL,10)
+INSERT INTO EMP1 VALUES(7844,'TURNER','SALESMAN',7698,'2017-09-08',1500,0,30)
+INSERT INTO EMP1 VALUES(7876,'ADAMS','CLERK',7788,'2016-01-12',1100, NULL,20)
+INSERT INTO EMP1 VALUES(7900,'JAMES','CLERK',7698,'2016-12-03',950,NULL,30)
+INSERT INTO EMP1 VALUES(7902,'FORD','ANALYST',7566,'2018-12-03',3000,NULL,20)
+INSERT INTO EMP1 VALUES(7934,'MILLER','CLERK',7782,'2018-01-23',1300,NULL,10)
+
+
+CREATE TABLE dept1 (
+    deptno   INT,
+    dname    VARCHAR(14),
+    loc      VARCHAR(13)
+)
+/
+
+INSERT INTO DEPT1 VALUES (10,'ACCOUNTING','NEW YORK')
+INSERT INTO DEPT1 VALUES (20,'RESEARCH','DALLAS')
+INSERT INTO DEPT1 VALUES (30,'SALES','CHICAGO')
+INSERT INTO DEPT1 VALUES (40,'OPERATIONS','BOSTON')
+
+
+CREATE TABLE salgrade1 (
+    grade   INT,
+    losal   INT,
+    hisal   INT
+)
+/
+
+INSERT INTO SALGRADE1 VALUES (1, 700, 1200)
+INSERT INTO SALGRADE1 VALUES (2, 1201, 1400)
+INSERT INTO SALGRADE1 VALUES (3, 1401, 2000)
+INSERT INTO SALGRADE1 VALUES (4, 2001, 3000)
+INSERT INTO SALGRADE1 VALUES (5, 3001, 9999)
+
+
+
+--1.Display the employees who joined the company in the last year.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(year, hiredate) = datepart(year, getdate()) - 1;
+
+--2.Display the employees whose age >30.Assume there is a DOB column in employee table.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datediff(yy, dob, getdate()) > 30;
+
+---3.Display the employees whose salary is greater than John’s salary.
+
+select ename from emp1 
+				where sal>(select sal from emp1 where ename='jones');
+
+--4.Display the oldest employee based on experience in each department.
+
+SELECT
+    ename,
+    deptno
+FROM
+    emp1 a
+WHERE
+    hiredate = (
+        SELECT
+            MIN(hiredate)
+        FROM
+            emp1 b
+        WHERE
+            a.deptno = b.deptno
+    );
+
+--5.Display the latest 3 employees who joined the company very recently.
+
+SELECT
+    top
+3 ename,
+hiredate FROM emp1 order by hiredate desc; 
+
+--or--
+
+SELECT
+    ename
+FROM
+    (
+        SELECT
+            ename,
+            hiredate,
+            RANK() OVER(
+                ORDER BY
+                    hiredate DESC
+            ) rk
+        FROM
+            emp1
+    ) k
+WHERE
+    rk < 4;
+
+--.Display the dname which has highest no. of employees.
+
+SELECT
+    dname
+FROM
+    dept1
+WHERE
+    deptno IN (
+        SELECT
+            deptno
+        FROM
+            emp1
+        GROUP BY
+            deptno
+        HAVING
+            COUNT(empno) = (
+                SELECT
+                    MAX(counts)
+                FROM
+                    (
+                        SELECT
+                            COUNT(empno) counts
+                        FROM
+                            emp1
+                        GROUP BY
+                            deptno
+                    ) d
+            )
+    );
+									
+
+--Display the dname whose having atleast 5 employees.
+
+SELECT
+    dname
+FROM
+    dept1
+WHERE
+    deptno IN (
+        SELECT
+            deptno
+        FROM
+            emp1
+        GROUP BY
+            deptno
+        HAVING
+            COUNT(empno) >= 5
+    );
+
+--8.Display the top 3 employees based on their salary.
+SELECT
+    top
+3 ename FROM emp1 order by sal desc;
+
+SELECT
+    ename
+FROM
+    (
+        SELECT
+            ename,
+            RANK() OVER(
+                ORDER BY
+                    sal DESC
+            ) rnks
+        FROM
+            emp1
+    ) a
+WHERE
+    rnks < 4;
+--9.Display Nth highest salary.
+
+SELECT
+    ename,
+    sal
+FROM
+    (
+        SELECT
+            ename,
+            sal,
+            RANK() OVER(
+                ORDER BY
+                    sal DESC
+            ) rnks
+        FROM
+            emp1
+    ) a
+WHERE
+    rnks < 4;
+
+--10.Display the employees whose salary is greater than the average salary in its department.
+
+SELECT
+    ename
+FROM
+    emp1 a
+WHERE
+    sal > (
+        SELECT
+            AVG(sal)
+        FROM
+            emp1 b
+        WHERE
+            a.deptno = b.deptno
+    );
+
+--11.Display the employees whose getting the highest salary in each dept.
+
+SELECT
+    ename,
+    deptno,
+    sal
+FROM
+    emp1 a
+WHERE
+    sal = (
+        SELECT
+            MAX(sal)
+        FROM
+            emp1 b
+        WHERE
+            a.deptno = b.deptno
+    )
+
+--12.Display deptwise no. of employees without using group by.
+
+SELECT DISTINCT
+    b.dname,
+    COUNT(empno) OVER(
+        PARTITION BY dname
+    ) AS a
+FROM
+    emp1    a,
+    dept1   b
+WHERE
+    a.deptno = b.deptno
+
+--13.Display the employees whose joined the company from last 2 years.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(yy, hiredate) IN (
+        datepart(yy, getdate()) - 1,
+        datepart(yy, getdate()) - 2
+    );
+
+--14.Display the employees who joined the company in the 3rd quarter of last year.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(q, hiredate) = 3
+    AND datepart(yy, hiredate) = datepart(yy, getdate()) - 1;
+
+
+--15.Display the employees who joined the company this week in this month.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(day, hiredate) / 7 = datepart(day, getdate()) / 7;
+
+----16.Display the employees who joined the company in the first quarter of 1 to 10 days.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(q, hiredate) = 1
+    AND datepart(dd, hiredate) <= 10;
+
+----17.Display the employees who joined the company in the Friday date of last 2 years.
+
+SELECT
+    ename
+FROM
+    emp1
+WHERE
+    datepart(yy, hiredate) IN (
+        datepart(yy, getdate()) - 1,
+        datepart(yy, getdate()) - 2
+    )
+    AND datename(weekday, hiredate) = 'Friday';					
+
+----18.Display the employees whose salary is greater than manager’s salary.
+SELECT
+    ename
+FROM
+    emp1 e
+WHERE
+    sal > (
+        SELECT
+            sal
+        FROM
+            emp1 p
+        WHERE
+            e.mgr = p.empno
+            AND job = 'MANAGER'
+    );
+
+SELECT
+    w.ename
+FROM
+    emp1   w,
+    emp1   m
+WHERE
+    w.mgr = m.empno
+    AND w.sal > m.sal;
+
+--19.Display the youngest employee in each department.
+
+SELECT
+    ename
+FROM
+    emp1 a
+WHERE
+    dob = (
+        SELECT
+            MAX(dob)
+        FROM
+            emp1 b
+        WHERE
+            a.deptno = b.deptno
+    );
+
+--20.Display the department whose number of employees is more than
+--the number of employees in a department ‘HR’.
+
+SELECT
+    dname
+FROM
+    dept1   a,
+    emp1    b
+WHERE
+    a.deptno = b.deptno
+GROUP BY
+    dname
+HAVING
+    COUNT(empno) > (
+        SELECT
+            COUNT(empno)
+        FROM
+            dept1   a,
+            emp1    b
+        WHERE
+            a.deptno = b.deptno
+            AND a.dname = 'accounting'
+        GROUP BY
+            b.deptno
+    );					
+
+--21.Display the departments whose average salary is more 
+--than the average sal of department ‘sales’.
+
+SELECT DISTINCT
+    dname
+FROM
+    dept1   a,
+    emp1    b
+WHERE
+    a.deptno = b.deptno
+GROUP BY
+    a.dname
+HAVING
+    AVG(sal) > (
+        SELECT
+            AVG(sal)
+        FROM
+            emp1    a,
+            dept1   b
+        WHERE
+            a.deptno = b.deptno
+            AND dname = 'SALES'
+    );
+
+--22.Display the number of employees present in a department of ‘Peter’.	
+
+SELECT
+    COUNT(empno)
+FROM
+    emp1
+WHERE
+    deptno IN (
+        SELECT
+            deptno
+        FROM
+            emp1
+        WHERE
+            ename = 'SCOTT'
+    );
+
+--23.Display the departments whose total salary is more than 50000.
+
+SELECT
+    dname
+FROM
+    emp1    a,
+    dept1   b
+WHERE
+    a.deptno = b.deptno
+GROUP BY
+    b.dname
+HAVING
+    SUM(a.sal) > 10000;
+
+--24.Display output as:
+--Using Case or Derived table.
+--O/P
+--Deptno	 emp_count	emp_clerk_count
+
+SELECT
+    a.deptno,
+    count_emp,
+    clerk_count
+FROM
+    (
+        SELECT
+            deptno,
+            COUNT(empno) count_emp
+        FROM
+            emp1
+        GROUP BY
+            deptno
+    ) a,
+    (
+        SELECT
+            deptno,
+            COUNT(empno) clerk_count
+        FROM
+            emp1
+        WHERE
+            job = 'CLERK'
+        GROUP BY
+            deptno
+    ) b
+WHERE
+    a.deptno = b.deptno;
+
+--25. Display gradewise No of employeesby joining emp and salgrade table.
+
+SELECT
+    grade,
+    COUNT(empno) emp_count
+FROM
+    emp,
+    salgrade
+WHERE
+    sal BETWEEN losal AND hisal
+GROUP BY
+    grade;
+
+--26.Display deptno and gradewise no. of employees
+--O/p  Add a column as Salary_range in SalGrade table.
+--Deptno  1201-1400	 1401-2000   2001-3000   3000 and above
+
+SELECT
+    deptno,
+    COUNT(
+        CASE
+            WHEN sal BETWEEN 1201 AND 1400 THEN
+                1
+            ELSE
+                NULL
+        END
+    ) "1201-1400",
+    COUNT(
+        CASE
+            WHEN sal BETWEEN 1401 AND 2000 THEN
+                1
+            ELSE
+                NULL
+        END
+    ) "1401-2000",
+    COUNT(
+        CASE
+            WHEN sal BETWEEN 2001 AND 3000 THEN
+                1
+            ELSE
+                NULL
+        END
+    ) "2001-3000",
+    COUNT(
+        CASE
+            WHEN sal > 3000 THEN
+                1
+            ELSE
+                NULL
+        END
+    ) "3000 AND ABOVE"
+FROM
+    emp
+GROUP BY
+    deptno;
+
+--27.Display the employees whose salary between 3000 and 4000.
+SELECT DISTINCT
+    ename
+FROM
+    emp1,
+    salgrade1
+WHERE
+    sal BETWEEN 3000 AND 4000;
+
+--28.Display the year where maximum number of employees hired.
+
+SELECT
+    datepart(yy, hiredate),
+    COUNT(empno)
+FROM
+    emp1
+GROUP BY
+    datepart(yy, hiredate)
+HAVING
+    COUNT(empno) = (
+        SELECT
+            MAX(counts)
+        FROM
+            (
+                SELECT
+                    COUNT(empno) counts
+                FROM
+                    emp1
+                GROUP BY
+                    datepart(yy, hiredate)
+            ) a
+    )
+
+--30. Alter table emp by adding exp column with number datatype.
+ --Write a query to update the exp column in years by using hiredate column. (Use correlated Update.)
+
+ALTER TABLE emp1 ADD exp INT;
+
+UPDATE emp1
+SET
+    exp = (
+        SELECT
+            datepart(yy, getdate()) - datepart(yy, hiredate)
+        FROM
+            emp1 a
+        WHERE
+            a.empno = emp1.empno
+    )
+
+--31.Display employees who are not managers.
+ 
+SELECT
+    ename
+FROM
+    emp
+WHERE
+    empno NOT IN (
+        SELECT DISTINCT
+            mgr
+        FROM
+            emp
+        WHERE
+            mgr IS NOT NULL
+    );

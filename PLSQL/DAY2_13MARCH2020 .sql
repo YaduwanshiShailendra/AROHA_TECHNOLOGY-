@@ -17,7 +17,6 @@ BEGIN
         dbms_output.put_line(i);
     END LOOP;
 END;
-
 --2. Write a Plsql block to find the circumference and area of a circle.(2*pi*r, pi*r*r).
 
 DECLARE
@@ -25,7 +24,7 @@ DECLARE
     v_pi   NUMBER := 22 / 7;
 BEGIN
     dbms_output.put_line('The circumference of a circle is : ' || 2 * v_pi * v_r);
-    dbms_output.put_line('The circumference of a circle is : ' || v_pi * v_r * v_r);
+    dbms_output.put_line('The area of a circle is : ' || v_pi * v_r * v_r);
 END;
 
 --3. Write a plsql block by passing 3 numbers and find the largest no. in that 3 numbers.
@@ -80,7 +79,8 @@ END;
 
 SET SERVEROUTPUT ON;
 
---6. Write a plsql block by passing empno and ename, insert the passed empno and ename to the table but before inserting validate it whether it is already present or not.
+--6. Write a plsql block by passing empno and ename, insert the passed empno and ename to the table but before inserting 
+--validate it whether it is already present or not.
 --
 
 DECLARE
@@ -128,6 +128,10 @@ update emp_temp1 SET SAL=SAL+1000 WHERE EMPNO='&N';
 END;
 
 select * from emp_temp1;
+
+rollback;
+--copy from emp table and creat new table
+create table emp_temp1 as select * from emp;
 --10. Write a block to print the given string vertically. Eg:Aroha
 --A
 --R

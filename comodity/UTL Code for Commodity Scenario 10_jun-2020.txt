@@ -1,0 +1,195 @@
+
+
+-- data Load to Investor table 
+
+declare
+   f1 utl_file.file_type;
+    v_ins_f_nm varchar(30);
+    v_ins_m_nm varchar(30);
+    v_ins_l_nm varchar(30);
+    v_ins_add varchar(200);
+    v_ins_pan varchar(20);
+    v_ins_email varchar(50);
+    v_ins_phone varchar(10);
+    v_cnt int;
+    v_str varchar(100);
+begin
+      f1 := utl_file.fopen('COMMODITY_DB','source.csv','r');
+
+loop
+
+begin
+
+        utl_file.get_line(f1,v_str);
+        v_ins_f_nm:= substr(v_str,instr(v_str,',',1)+1,(instr(v_str,',',1,2)-1)-(instr(v_str,',',1,1)));
+        v_ins_m_nm:= substr(v_str,instr(v_str,',',1,2)+1,(instr(v_str,',',1,3)-1)-(instr(v_str,',',1,2)));
+        v_ins_l_nm:= substr(v_str,instr(v_str,',',1,3)+1,(instr(v_str,',',1,4)-1)-(instr(v_str,',',1,3)));
+        v_ins_add:= substr(v_str,instr(v_str,',',1,4)+1,(instr(v_str,',',1,5)-1)-(instr(v_str,',',1,4)));
+        v_ins_pan:= substr(v_str,instr(v_str,',',1,5)+1,(instr(v_str,',',1,6)-1)-(instr(v_str,',',1,5)));
+        v_ins_email:= substr(v_str,instr(v_str,',',1,6)+1,(instr(v_str,',',1,7)-1)-(instr(v_str,',',1,6)));
+        v_ins_Phone:= substr(v_str,instr(v_str,',',1,7)+1,(instr(v_str,',',1,8)-1)-(instr(v_str,',',1,7)));
+        
+        select count(*) into v_cnt from c_investor where ins_pan=v_ins_pan;------ Pan card use to Find the duplicate Record insert 
+
+if v_cnt=0 then
+    insert into c_investor (    ins_id,
+                                ins_f_name,
+                                ins_m_name,
+                                ins_l_name,
+                                ins_addr,
+                                ins_pan,
+                                ins_email,
+                                ins_phone) 
+                                
+                values    (     SEQ_N.nextval,
+                                v_ins_f_nm,
+                                v_ins_m_nm,
+                                v_ins_l_nm,
+                                v_ins_add,
+                                v_ins_pan,
+                                v_ins_email,
+                                v_ins_phone);
+ end if;
+   exception
+            when no_data_found then
+              exit;
+       end;
+     end loop;
+      utl_file.fclose_all;
+
+end;
+-----------------------------------------------------------------------------------------------------------------------------
+
+-- Load data to funt table
+
+declare
+   f1 utl_file.file_type;
+    v_funt_type varchar(50);
+    v_cnt int;
+    v_str varchar(100);
+begin
+      f1 := utl_file.fopen('COMMODITY_DB','exchange.csv','r');
+
+loop
+
+begin 
+
+            utl_file.get_line(f1,v_str);
+            v_funt_type := substr(v_str,1,instr(v_str,',',1)-1);
+
+            select count(*) into v_cnt from c_funt_type where funt_name=v_funt_type; --- Find the distinct Records
+
+if v_cnt=0 then
+    insert into c_funt_type (   funt_id,
+                                funt_name)
+                                
+                values      (   SEQ_FUNT.nextval,
+                                v_funt_type);
+ end if;
+   exception
+            when no_data_found then
+              exit;
+       end;
+     end loop;
+      utl_file.fclose_all;
+
+end;
+------------------------------------------------------------------------------------------------------------------------------
+
+--Load data to exchange table
+
+declare
+   f1 utl_file.file_type;
+    v_funt_type varchar2(30);
+    v_exc_rate int;
+    v_exc_date date;
+    v_funt_id int;
+    v_str varchar(100);
+begin
+      f1 := utl_file.fopen('COMMODITY_DB','exchange.csv','r');
+
+loop
+
+begin
+
+        utl_file.get_line(f1,v_str);
+        v_funt_type := substr(v_str,1,instr(v_str,',',1)-1);
+        v_exc_rate := substr(v_str,instr(v_str,',',1)+1,(instr(v_str,',',1,2)-1)-(instr(v_str,',',1,1)));
+        v_exc_date := substr(v_str,instr(v_str,',',1,2)+1);
+
+        select funt_id into v_funt_id from c_funt_type where funt_name=v_funt_type; 
+        
+    insert into c_exchange (    exc_id,
+                                funt_id,
+                                exchange_rate,
+                                exchange_date)
+                
+                values      (   SEQ_EXC.nextval,
+                                v_funt_id,
+                                v_exc_rate,
+                                v_exc_date);
+
+   exception
+            when no_data_found then
+              exit;
+       end;
+     end loop;
+      utl_file.fclose_all;
+
+end;
+--------------------------------------------------------------------------------------------------------------------------
+
+--Load data to txn Table
+
+declare
+   f1 utl_file.file_type;
+    v_txn_id number(10);
+    v_txn_type varchar2(30);
+    v_units int;
+    v_txn_date date;
+    v_ins_pan varchar(50);
+    v_funt_type varchar2(30);
+    v_ins_id int;
+    v_funt_id int;
+    v_str varchar(100);
+begin
+      f1 := utl_file.fopen('COMMODITY_DB','source.csv','r');
+
+loop
+
+begin
+
+        utl_file.get_line(f1,v_str);
+        v_txn_id := substr(v_str,1,instr(v_str,',',1)-1);
+        v_ins_pan:= substr(v_str,instr(v_str,',',1,5)+1,(instr(v_str,',',1,6)-1)-(instr(v_str,',',1,5)));
+        v_funt_type:= substr(v_str,instr(v_str,',',1,8)+1,(instr(v_str,',',1,9)-1)-(instr(v_str,',',1,8)));
+        v_txn_type:= substr(v_str,instr(v_str,',',1,9)+1,(instr(v_str,',',1,10)-1)-(instr(v_str,',',1,9)));
+        v_units:= substr(v_str,instr(v_str,',',1,10)+1,(instr(v_str,',',1,11)-1)-(instr(v_str,',',1,10)));
+        v_txn_date:= substr(v_str,instr(v_str,',',1,11)+1);
+        
+        select ins_id into v_ins_id from c_investor where ins_pan=v_ins_pan; 
+        select funt_id into v_funt_id from c_funt_type where funt_name=v_funt_type;
+        
+
+    insert into c_txn ( Txn_id,
+                        ins_id,
+                        fund_id,
+                        txn_type,
+                        units,
+                        txn_date)
+            values    ( v_txn_id,
+                        v_ins_id,
+                        v_funt_id,
+                        v_txn_type,
+                        v_units,
+                        v_txn_date
+                        );
+
+   exception
+            when no_data_found then
+              exit;
+       end;
+     end loop;
+      utl_file.fclose_all;
+
+end;

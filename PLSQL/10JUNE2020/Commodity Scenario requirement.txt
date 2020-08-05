@@ -1,0 +1,7 @@
+Assumptions:
+- The data comes in as a csv file everyday.
+- There are two files as source, where one is the transaction file and the other is a exchange file containing the exchange rates
+
+Necessary solutions:
+- Design a normalized table structure to load data from the csv source
+- Create scripts to load data from the csv into the normalized tables

@@ -1,0 +1,208 @@
+/*
+##################################################
+ Objective                : PL/SQL EOD LOAD Scenario
+ Author(Creator) Name     : Shailendra Yadav
+ Developed / Created Date : 14-May-2020
+##################################################
+*/
+
+CREATE TABLE customer (
+    customer_id     INT PRIMARY KEY,
+    customer_name   VARCHAR(30),
+    addr            VARCHAR(30),
+    phone           INT,
+    dob             DATE,
+    city            VARCHAR(20),
+    state           VARCHAR(20),
+    country         VARCHAR(20)
+);
+/
+
+CREATE TABLE account (
+    act_id          INT PRIMARY KEY,
+    customer_id     INT
+        REFERENCES customer ( customer_id ),
+    act_type        VARCHAR(20),
+    balance         INT,
+    act_open_date   DATE,
+    act_status      VARCHAR(20)
+);
+/
+
+CREATE TABLE txn (
+    txn_id     INT PRIMARY KEY,
+    act_id     INT
+        REFERENCES account ( act_id ),
+    amount     INT,
+    txn_date   DATE,
+    txn_type   VARCHAR(20)
+);
+/
+
+CREATE TABLE dim_period (
+    period_id      INT PRIMARY KEY,
+    period_date    DATE,
+    month_no       INT,
+    month_desc     VARCHAR(20),
+    qtr            INT,
+    year           INT,
+    holiday_flag   VARCHAR(2)
+);
+/
+
+CREATE TABLE dd_eod_balance (
+    id            INT PRIMARY KEY,
+    customer_id   INT
+        REFERENCES customer ( customer_id ),
+    act_id        INT
+        REFERENCES account ( act_id ),
+    period_id     INT
+        REFERENCES dim_period ( period_id ),
+    balance       INT
+);
+/
+
+-- sequence for unique id for dd_eod_balance table
+CREATE SEQUENCE eod_id_seq START WITH 1 INCREMENT BY 1 MINVALUE 0 MAXVALUE 10000 CYCLE;
+/
+
+
+-- Stored Procedure For generate records for dim_period table
+CREATE OR REPLACE PROCEDURE period_insert (
+    p_insert_year DATE
+) AS
+
+    v_start_date     DATE := trunc(p_insert_year, 'yyyy');
+    v_end_date       DATE := add_months(v_start_date, 12) - 1;
+    v_period_id      INT;
+    v_month_desc     VARCHAR(20);
+    v_month_no       INT;
+    v_qtr            INT;
+    v_year           INT;
+    v_holiday_flag   VARCHAR(1);
+BEGIN
+    WHILE v_start_date <= v_end_date LOOP
+        SELECT
+            nvl(MAX(period_id), 0) + 1
+        INTO v_period_id
+        FROM
+            dim_period;
+
+        v_month_no := to_char(v_start_date, 'mm');
+        v_month_desc := to_char(v_start_date, 'mon');
+        v_qtr := to_char(v_start_date, 'q');
+        v_year := to_char(v_start_date, 'yyyy');
+        v_holiday_flag :=
+            CASE
+                WHEN to_char(v_start_date, 'dy') IN (
+                    'sun',
+                    'sat'
+                ) THEN
+                    'Y'
+                ELSE 'N'
+            END;
+
+        INSERT INTO dim_period (
+            period_id,
+            period_date,
+            month_no,
+            month_desc,
+            qtr,
+            year,
+            holiday_flag
+        ) VALUES (
+            v_period_id,
+            v_start_date,
+            v_month_no,
+            v_month_desc,
+            v_qtr,
+            v_year,
+            v_holiday_flag
+        );
+
+        v_start_date := v_start_date + 1;
+    END LOOP;
+END;
+/
+
+-- execute period_insert procedure
+EXEC period_insert('01-01-2020');
+/
+
+
+-- check dim_period table records
+SELECT
+    *
+FROM
+    dim_period;
+/
+
+
+-- Stored Procedure For EOD_Loads
+
+CREATE OR REPLACE PROCEDURE sp_eod_load AS
+    v_period_id INT;
+BEGIN
+    SELECT
+        period_id
+    INTO v_period_id
+    FROM
+        dim_period
+    WHERE
+        period_date = sysdate;
+
+    INSERT INTO dd_eod_balance
+        SELECT
+            eod_id_seq.NEXTVAL,
+            cust.customer_id,
+            cust.act_id,
+            v_period_id,
+            cust.balance
+        FROM
+            (
+                SELECT
+                    customer_id,
+                    act_id,
+                    balance
+                FROM
+                    account
+                WHERE
+                    act_id NOT IN (
+                        SELECT
+                            act_id
+                        FROM
+                            dd_eod_balance
+                    )
+            ) cust;
+
+END;
+/
+
+
+-- Scheduler Job for the data is to be loaded everyday into the dd_eod_balance at 1 AM (Non business hours) only on working days of the bank. 
+BEGIN
+    DBMS_SCHEDULER.CREATE_JOB (
+            job_name => '"SCOTT"."EOD_LOAD_JOB"',
+            job_type => 'STORED_PROCEDURE',
+            job_action => 'SCOTT.SP_EOD_LOAD',
+            number_of_arguments => 0,
+            start_date => NULL,
+            repeat_interval => 'FREQ=DAILY;BYDAY=MON,TUE,WED,THU,FRI,SAT;BYHOUR=1;BYMINUTE=0;BYSECOND=0',
+            end_date => NULL,
+            enabled => FALSE,
+            auto_drop => FALSE,
+            comments => 'The target table contains end of day balance entered everyday for a customer. The balance is available in the account table so everyday, the data is to be loaded into the dd_eod_balance at 1 AM (Non business hours) only on working days of the bank.');
+
+         
+     
+ 
+    DBMS_SCHEDULER.SET_ATTRIBUTE( 
+             name => '"SCOTT"."EOD_LOAD_JOB"', 
+             attribute => 'logging_level', value => DBMS_SCHEDULER.LOGGING_OFF);
+      
+  
+    
+    DBMS_SCHEDULER.enable(
+             name => '"SCOTT"."EOD_LOAD_JOB"');
+END;
+/

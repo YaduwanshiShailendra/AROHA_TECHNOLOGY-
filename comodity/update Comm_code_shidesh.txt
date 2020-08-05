@@ -1,0 +1,104 @@
+create table Bal_Summary_Info
+(Balance_Id  int primary key ,
+Investor_id int ,
+Fund_type varchar2(20),
+Commodity_balance varchar2(20),
+Net_amount number(20),
+Bal_Date date
+);
+
+
+create table Bal_summary_units(Bal_units_id int,
+                               Fund_id int,
+                               Investor_id int,
+                               Bal_of_units int,
+                               date_bal date );
+
+create table Investor_Order_info(order_id int,
+                            Investor_id int,
+                            Fund_id int,
+                            Txn_type varchar2(20),
+                            units int,
+                            Txn_date date);
+
+create table Exchange_Rate_Info
+(Exchange_ID int,
+Fund_id int,
+Exchange_Rate number(20,4),
+Exchange_date date);
+
+--------------------------------------
+
+
+create or replace procedure Commodity_Bal(P_date date)
+as
+
+
+type t_comm is record (Investor_id int,Fund_type varchar2(10),opening_balance number(20),closing_balance number(20));
+	type tabs is table of  t_comm;
+	v_commodity tabs;
+
+begin
+
+
+
+select a.Investor_id,a.Fund_type,a.opening_balance,b.closing_balance  bulk collect into V_commodity from
+
+(select Investor_id, Fund_type,BAL_Date ,commodity_balance as opening_balance   from Bal_Summary_Info
+where BAL_Date =trunc(P_date,'Mon')-1
+ order by Investor_id)A,
+
+(select Investor_id,Fund_type,commodity_balance as closing_balance from Bal_Summary_Info
+where BAL_Date =P_date
+order by Investor_id
+)B
+
+
+where  a.Investor_id=b.Investor_id and a.fund_type=b.fund_type;
+
+dbms_output.put_line('Investor_id'||' '||'Fund_type'||' ' ||'Opening_bal'||' ' ||'closing_bal');
+
+for i in 1..V_commodity.last 
+loop
+
+	dbms_output.put_line(v_commodity(i).Investor_id||'   '||v_commodity(i).Fund_type ||'      '||v_commodity(i).opening_balance||'         '||v_commodity(i).closing_balance);
+
+end loop;
+
+end;
+
+
+------------------------------------------
+create or replace procedure Update_Bal_summary_units_asset
+as
+type t_comm is record(Investor_id int,fund_id int , Fund_type varchar2(10),units_bal int, asset number(20,4)) ;
+type t_rec is table of t_comm;
+
+t_summ t_rec;
+
+begin
+select a.investor_id,b.fund_id,a.Fund_type,bal+(Buy - sold)  as Units_Bal,(bal+(Buy - sold))*Exchange_rate as Asset bulk collect into t_summ from 
+(select a.investor_id,a.fund_id,c.Fund_type,b.Exchange_rate ,nvl(sum(case when a.TXN_type ='Sell' then a.units end),0) sold,
+                             nvl(sum(case when a.TXN_type ='buy' then a.units end),0) Buy
+                            from Investor_Order_info a,Exchange_Rate_Info b,Fund_Info c
+                            where  a.fund_id=b.fund_id and b.fund_id=c.fund_id
+                            group by a.investor_id,a.fund_id,b.Exchange_rate,c.fund_type)A,
+                   
+(select investor_id,fund_id,bal_of_units as bal from  Bal_summary_units
+where Date_bal=(sysdate-1))B-----------------------EOD balance units of previous day
+
+where a.investor_id=b.investor_id and a.fund_id=b.fund_id;
+
+for i in 1..t_summ.last loop
+insert into Bal_summary_units values(comm_seq.nextval, t_summ(i).fund_id,t_summ(i).investor_id,
+                                     t_summ(i).units_bal,sysdate );
+end loop;
+
+for k in 1..t_summ.last loop
+insert into Bal_Summary_Info values (comm_seq.nextval,t_summ(k).Investor_id,t_summ(k).fund_type,
+                                     t_summ(k).units_bal,t_summ(k).asset,sysdate);
+end loop;
+end;
+
+
+-----------------------------------------------------------------------
