@@ -17,6 +17,6 @@ git push -u origin master
 #####after first commit#######
 
 git add *
-git commit -m "adding Tableau Day_6 files"
+git commit -m "adding files and folders"
 git push -u origin master
 
