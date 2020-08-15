@@ -17,6 +17,6 @@ git push -u origin master
 #####after first commit#######
 
 git add *
-git commit -m "adding files and folders"
+git commit -m "adding java program files"
 git push -u origin master
 
